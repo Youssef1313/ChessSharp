@@ -20,14 +20,24 @@ namespace ChessLibrary
             Player = player;
         }
 
-        public byte GetDeltaX()
+        public byte GetAbsDeltaX()
         {
             return (byte)Math.Abs(Destination.File - Source.File);
         }
 
-        public byte GetDeltaY()
+        public byte GetAbsDeltaY()
         {
             return (byte)Math.Abs(Destination.Rank - Source.Rank);
+        }
+
+        public sbyte GetDeltaX()
+        {
+            return (sbyte)Math.Abs(Destination.File - Source.File);
+        }
+
+        public sbyte GetDeltaY()
+        {
+            return (sbyte)Math.Abs(Destination.Rank - Source.Rank);
         }
     }
 }

@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace ChessLibrary.Pieces
 {
-    class Rook : Piece
+    class Knight : Piece
     {
         protected override bool IsValidPieceMove(Move move)
         {
-            return (move.GetAbsDeltaX() == 0 || move.GetAbsDeltaY() == 0);
+            byte deltaX = move.GetAbsDeltaX();
+            byte deltaY = move.GetAbsDeltaY();
+            return (deltaX == 1 && deltaY == 2) || (deltaX == 2 && deltaY == 1);
         }
 
         public override bool IsValidGameMove(Move move, GameBoard board)

@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ChessLibrary.PositionData;
 
 namespace ChessLibrary.Pieces
 {
-    class Rook : Piece
+    class Queen : Piece
     {
         protected override bool IsValidPieceMove(Move move)
         {
-            return (move.GetAbsDeltaX() == 0 || move.GetAbsDeltaY() == 0);
+            return (move.GetAbsDeltaX() == 0 || move.GetAbsDeltaY() == 0) ||
+                (move.GetAbsDeltaX() == move.GetAbsDeltaY());
         }
 
         public override bool IsValidGameMove(Move move, GameBoard board)
