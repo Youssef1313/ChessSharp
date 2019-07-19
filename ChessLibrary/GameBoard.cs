@@ -1,4 +1,5 @@
-﻿using ChessLibrary.Pieces;
+﻿using System;
+using ChessLibrary.Pieces;
 using ChessLibrary.PositionData;
 
 namespace ChessLibrary
@@ -24,6 +25,10 @@ namespace ChessLibrary
 
         public void MakeMove(Move move)
         {
+            if (move == null)
+            {
+                throw new ArgumentNullException(nameof(move));
+            }
             Piece piece = this[move.Source];
             Board[(int) move.Source.Rank, (int) move.Source.File] = null;
             Board[(int) move.Destination.Rank, (int) move.Destination.File] = piece;
@@ -31,6 +36,10 @@ namespace ChessLibrary
 
         public bool IsValidMove(Move move)
         {
+            if (move == null)
+            {
+                throw new ArgumentNullException(nameof(move));
+            }
             Piece piece = this[move.Source];
             return piece.IsValidGameMove(move, this);
         }
