@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChessLibrary.Pieces
 {
@@ -11,7 +7,6 @@ namespace ChessLibrary.Pieces
         protected override bool IsValidPieceMove(Move move)
         {
             return move.GetAbsDeltaX() == move.GetAbsDeltaY();
-
         }
 
         public override bool IsValidGameMove(Move move, GameBoard board)
