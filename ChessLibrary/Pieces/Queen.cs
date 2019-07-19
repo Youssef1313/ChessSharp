@@ -44,7 +44,8 @@ namespace ChessLibrary.Pieces
             {
                 return false;
             }
-            throw new NotImplementedException();
+
+            return !ChessUtilities.IsTherePieceInBetween(move, board);
         }
     }
 }

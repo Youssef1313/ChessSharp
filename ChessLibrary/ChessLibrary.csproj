@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChessUtilities.cs" />
     <Compile Include="GameBoard.cs" />
     <Compile Include="Move.cs" />
     <Compile Include="Piece.cs" />

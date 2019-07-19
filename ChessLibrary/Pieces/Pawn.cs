@@ -24,8 +24,12 @@ namespace ChessLibrary.Pieces
             }
 
             // Check en-passant.
-            return (move.Player == Player.White && move.GetDeltaY() == 1 && move.GetAbsDeltaX() == 1 && move.Source.Rank == Rank.Fifth) ||
-                   (move.Player == Player.Black && move.GetDeltaY() == -1 && move.GetAbsDeltaX() == 1 && move.Source.Rank == Rank.Forth);
+            //return (move.Player == Player.White && move.GetDeltaY() == 1 && move.GetAbsDeltaX() == 1 && move.Source.Rank == Rank.Fifth) ||
+            //       (move.Player == Player.Black && move.GetDeltaY() == -1 && move.GetAbsDeltaX() == 1 && move.Source.Rank == Rank.Forth);
+
+            // Check capture.
+            return (move.Player == Player.White && move.GetDeltaY() == 1 && move.GetAbsDeltaX() == 1) ||
+                   (move.Player == Player.Black && move.GetDeltaY() == -1 && move.GetAbsDeltaX() == 1);
         }
 
         public override bool IsValidGameMove(Move move, GameBoard board)
@@ -37,7 +41,7 @@ namespace ChessLibrary.Pieces
 
             if (board == null)
             {
-                throw new ArgumentNullException(nameof(move));
+                throw new ArgumentNullException(nameof(board));
             }
 
             if (!IsValidPieceMove(move))

@@ -26,7 +26,7 @@ namespace ChessLibrary.Pieces
 
             if (board == null)
             {
-                throw new ArgumentNullException(nameof(move));
+                throw new ArgumentNullException(nameof(board));
             }
 
             if (!IsValidPieceMove(move))
@@ -44,22 +44,7 @@ namespace ChessLibrary.Pieces
                 return false;
             }
 
-            var xStep = (move.Destination.File > move.Source.File) ? 1 : -1;
-            var yStep = (move.Destination.Rank > move.Source.Rank) ? 1 : -1;
-
-            var source = new Position(move.Source.File, move.Source.Rank);
-            var destination = new Position(move.Source.File, move.Source.Rank);
-            while (source.Rank != destination.Rank)
-            {
-                source.Rank += yStep;
-                source.File += xStep;
-                if (board[source] != null)
-                {
-                    return false;
-                }
-            }
-
-            return true;
+            return !ChessUtilities.IsTherePieceInBetween(move, board);
         }
     }
 }
