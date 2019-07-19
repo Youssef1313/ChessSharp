@@ -11,7 +11,7 @@ namespace ChessLibrary.UnitTests
         public void IndexerTest()
         {
             var x = new GameBoard();
-
+            
             Assert.AreEqual(x[File.A, Rank.First], new Rook { Owner = Player.White });
             Assert.AreEqual(x[File.B, Rank.First], new Knight { Owner = Player.White });
             Assert.AreEqual(x[File.C, Rank.First], new Bishop { Owner = Player.White });
