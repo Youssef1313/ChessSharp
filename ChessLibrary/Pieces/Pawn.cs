@@ -43,22 +43,11 @@ namespace ChessLibrary.Pieces
             {
                 throw new ArgumentNullException(nameof(board));
             }
+            // TODO: En-passant check.
+            return IsValidPieceMove(move) && !ChessUtilities.PlayerWillBeInCheck(move, board) &&
+                   board[move.Destination].Owner != move.Player;
 
-            if (!IsValidPieceMove(move))
-            {
-                return false;
-            }
-
-            if (board[move.Destination].Owner == move.Player)
-            {
-                return false; // Can't take your own piece.
-            }
-
-            if (ChessUtilities.PlayerWillBeInCheck(move, board))
-            {
-                return false;
-            }
-            throw new NotImplementedException();
+            
         }
     }
 }

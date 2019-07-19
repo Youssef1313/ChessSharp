@@ -30,22 +30,10 @@ namespace ChessLibrary.Pieces
                 throw new ArgumentNullException(nameof(move));
             }
 
-            if (!IsValidPieceMove(move))
-            {
-                return false;
-            }
+            return IsValidPieceMove(move) && !ChessUtilities.PlayerWillBeInCheck(move, board) &&
+                   board[move.Destination].Owner != move.Player && !ChessUtilities.IsTherePieceInBetween(move, board);
 
-            if (board[move.Destination].Owner == move.Player)
-            {
-                return false; // Can't take your own piece.
-            }
-
-            if (ChessUtilities.PlayerWillBeInCheck(move, board))
-            {
-                return false;
-            }
-
-            return !ChessUtilities.IsTherePieceInBetween(move, board);
+            
         }
     }
 }
