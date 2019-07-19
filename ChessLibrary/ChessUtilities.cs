@@ -12,9 +12,21 @@ namespace ChessLibrary
 
         public static bool PlayerWillBeInCheck(Move move, GameBoard board)
         {
-            // TODO: Make the move.
-            throw new NotImplementedException();
-            return IsPlayerInCheck(move.Player, board);
+            if (move == null)
+            {
+                throw new ArgumentNullException(nameof(move));
+            }
+
+            if (board == null)
+            {
+                throw new ArgumentNullException(nameof(board));
+            }
+            var boardClone = new GameBoard {Board = board.Board}; // Make the move on this board to keep original board as is.
+
+            Piece piece = boardClone[move.Source];
+            boardClone.Board[(int)move.Source.Rank, (int)move.Source.File] = null;
+            boardClone.Board[(int)move.Destination.Rank, (int)move.Destination.File] = piece;
+            return IsPlayerInCheck(move.Player, boardClone);
         }
 
         public static bool IsTherePieceInBetween(Move move, GameBoard board)
