@@ -44,6 +44,16 @@ namespace ChessLibrary.Pieces
             {
                 return false;
             }
+
+            if (board[move.Destination].Owner == move.Player)
+            {
+                return false; // Can't take your own piece.
+            }
+
+            if (ChessUtilities.PlayerWillBeInCheck(move, board))
+            {
+                return false;
+            }
             throw new NotImplementedException();
         }
     }

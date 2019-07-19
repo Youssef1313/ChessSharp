@@ -8,7 +8,13 @@ namespace ChessLibrary.Pieces
 
         protected override bool IsValidPieceMove(Move move)
         {
-            return (move.GetAbsDeltaX() <= 1 && move.GetAbsDeltaY() <= 1);
+            int deltaX = move.GetAbsDeltaX();
+            int deltaY = move.GetAbsDeltaY();
+            if (deltaX == 0 && deltaY == 0)
+            {
+                return false;
+            }
+            return (deltaX <= 1 && deltaY <= 1);
         }
 
         public override bool IsValidGameMove(Move move, GameBoard board)
@@ -24,6 +30,16 @@ namespace ChessLibrary.Pieces
             }
 
             if (!IsValidPieceMove(move))
+            {
+                return false;
+            }
+
+            if (board[move.Destination].Owner == move.Player)
+            {
+                return false; // Can't take your own piece.
+            }
+
+            if (ChessUtilities.PlayerWillBeInCheck(move, board))
             {
                 return false;
             }
