@@ -2,8 +2,10 @@
 
 namespace ChessLibrary.Pieces
 {
-    class Knight : Piece
+    public class Knight : Piece
     {
+        public override Player Owner { get; set; }
+
         protected override bool IsValidPieceMove(Move move)
         {
             byte deltaX = move.GetAbsDeltaX();

@@ -3,8 +3,10 @@ using ChessLibrary.PositionData;
 
 namespace ChessLibrary.Pieces
 {
-    class Pawn : Piece
+    public class Pawn : Piece
     {
+        public override Player Owner { get; set; }
+
         protected override bool IsValidPieceMove(Move move)
         {
             // Check normal one step pawn move.

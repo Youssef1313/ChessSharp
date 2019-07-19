@@ -2,8 +2,10 @@
 
 namespace ChessLibrary.Pieces
 {
-    class Queen : Piece
+    public class Queen : Piece
     {
+        public override Player Owner { get; set; }
+
         protected override bool IsValidPieceMove(Move move)
         {
             return (move.GetAbsDeltaX() == 0 || move.GetAbsDeltaY() == 0) ||

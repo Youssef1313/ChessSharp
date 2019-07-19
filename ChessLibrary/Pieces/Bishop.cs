@@ -2,8 +2,12 @@
 
 namespace ChessLibrary.Pieces
 {
-    class Bishop : Piece
+    public class Bishop : Piece
     {
+
+        public override Player Owner { get; set; }
+
+
         protected override bool IsValidPieceMove(Move move)
         {
             return move.GetAbsDeltaX() == move.GetAbsDeltaY();
