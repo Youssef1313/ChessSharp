@@ -53,18 +53,20 @@ namespace ChessLibrary
             }
 
             var source = new Position(move.Source.File, move.Source.Rank);
-            var destination = new Position(move.Source.File, move.Source.Rank);
-            while (source.Rank != destination.Rank)
+            var destination = new Position(move.Destination.File, move.Destination.Rank);
+            while (true)
             {
                 source.Rank += yStep;
                 source.File += xStep;
+                if (source.Rank == destination.Rank && source.File == destination.File)
+                {
+                    return false;
+                }
                 if (board[source] != null)
                 {
                     return true;
                 }
             }
-
-            return false;
 
         }
     }
