@@ -1,2 +1,2 @@
-# Chess
-This is a chess library in C# (Still under development)
+# ChessSharp (Still under development)
+This is a chess library in C# with a UI project. 
