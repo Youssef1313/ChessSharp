@@ -72,6 +72,7 @@ namespace ChessLibrary.Pieces
             }
 
             var moveType = GetPawnMoveType(move);
+            // TODO: Promotion
             switch (moveType)
             {
                 case PawnMoveType.Invalid:
