@@ -101,7 +101,6 @@
             // lbl_A1
             // 
             this.lbl_A1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_A1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_A1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_A1.Location = new System.Drawing.Point(12, 506);
             this.lbl_A1.Name = "lbl_A1";
@@ -112,7 +111,6 @@
             // lbl_B1
             // 
             this.lbl_B1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_B1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_B1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_B1.Location = new System.Drawing.Point(80, 506);
             this.lbl_B1.Name = "lbl_B1";
@@ -123,7 +121,6 @@
             // lbl_C1
             // 
             this.lbl_C1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_C1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_C1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_C1.Location = new System.Drawing.Point(148, 506);
             this.lbl_C1.Name = "lbl_C1";
@@ -134,7 +131,6 @@
             // lbl_E1
             // 
             this.lbl_E1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_E1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_E1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_E1.Location = new System.Drawing.Point(284, 506);
             this.lbl_E1.Name = "lbl_E1";
@@ -145,7 +141,6 @@
             // lbl_D1
             // 
             this.lbl_D1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_D1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_D1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_D1.Location = new System.Drawing.Point(216, 506);
             this.lbl_D1.Name = "lbl_D1";
@@ -156,7 +151,6 @@
             // lbl_H1
             // 
             this.lbl_H1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_H1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_H1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_H1.Location = new System.Drawing.Point(488, 506);
             this.lbl_H1.Name = "lbl_H1";
@@ -167,7 +161,6 @@
             // lbl_G1
             // 
             this.lbl_G1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_G1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_G1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_G1.Location = new System.Drawing.Point(420, 506);
             this.lbl_G1.Name = "lbl_G1";
@@ -178,7 +171,6 @@
             // lbl_F1
             // 
             this.lbl_F1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_F1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_F1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_F1.Location = new System.Drawing.Point(352, 506);
             this.lbl_F1.Name = "lbl_F1";
@@ -189,7 +181,6 @@
             // lbl_H2
             // 
             this.lbl_H2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_H2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_H2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_H2.Location = new System.Drawing.Point(488, 438);
             this.lbl_H2.Name = "lbl_H2";
@@ -200,7 +191,6 @@
             // lbl_G2
             // 
             this.lbl_G2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_G2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_G2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_G2.Location = new System.Drawing.Point(420, 438);
             this.lbl_G2.Name = "lbl_G2";
@@ -211,7 +201,6 @@
             // lbl_F2
             // 
             this.lbl_F2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_F2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_F2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_F2.Location = new System.Drawing.Point(352, 438);
             this.lbl_F2.Name = "lbl_F2";
@@ -222,7 +211,6 @@
             // lbl_E2
             // 
             this.lbl_E2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_E2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_E2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_E2.Location = new System.Drawing.Point(284, 438);
             this.lbl_E2.Name = "lbl_E2";
@@ -233,7 +221,6 @@
             // lbl_D2
             // 
             this.lbl_D2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_D2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_D2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_D2.Location = new System.Drawing.Point(216, 438);
             this.lbl_D2.Name = "lbl_D2";
@@ -244,7 +231,6 @@
             // lbl_C2
             // 
             this.lbl_C2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_C2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_C2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_C2.Location = new System.Drawing.Point(148, 438);
             this.lbl_C2.Name = "lbl_C2";
@@ -255,7 +241,6 @@
             // lbl_B2
             // 
             this.lbl_B2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_B2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_B2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_B2.Location = new System.Drawing.Point(80, 438);
             this.lbl_B2.Name = "lbl_B2";
@@ -266,7 +251,6 @@
             // lbl_A2
             // 
             this.lbl_A2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_A2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_A2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_A2.Location = new System.Drawing.Point(12, 438);
             this.lbl_A2.Name = "lbl_A2";
@@ -277,7 +261,6 @@
             // lbl_H3
             // 
             this.lbl_H3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_H3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_H3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_H3.Location = new System.Drawing.Point(488, 370);
             this.lbl_H3.Name = "lbl_H3";
@@ -288,7 +271,6 @@
             // lbl_G3
             // 
             this.lbl_G3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_G3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_G3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_G3.Location = new System.Drawing.Point(420, 370);
             this.lbl_G3.Name = "lbl_G3";
@@ -299,7 +281,6 @@
             // lbl_F3
             // 
             this.lbl_F3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_F3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_F3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_F3.Location = new System.Drawing.Point(352, 370);
             this.lbl_F3.Name = "lbl_F3";
@@ -310,7 +291,6 @@
             // lbl_E3
             // 
             this.lbl_E3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_E3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_E3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_E3.Location = new System.Drawing.Point(284, 370);
             this.lbl_E3.Name = "lbl_E3";
@@ -321,7 +301,6 @@
             // lbl_D3
             // 
             this.lbl_D3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_D3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_D3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_D3.Location = new System.Drawing.Point(216, 370);
             this.lbl_D3.Name = "lbl_D3";
@@ -332,7 +311,6 @@
             // lbl_C3
             // 
             this.lbl_C3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_C3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_C3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_C3.Location = new System.Drawing.Point(148, 370);
             this.lbl_C3.Name = "lbl_C3";
@@ -344,7 +322,6 @@
             // 
             this.lbl_B3.AccessibleDescription = "lbl_B3";
             this.lbl_B3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_B3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_B3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_B3.Location = new System.Drawing.Point(80, 370);
             this.lbl_B3.Name = "lbl_B3";
@@ -355,7 +332,6 @@
             // lbl_A3
             // 
             this.lbl_A3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_A3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_A3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_A3.Location = new System.Drawing.Point(12, 370);
             this.lbl_A3.Name = "lbl_A3";
@@ -366,7 +342,6 @@
             // lbl_H4
             // 
             this.lbl_H4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_H4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_H4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_H4.Location = new System.Drawing.Point(488, 302);
             this.lbl_H4.Name = "lbl_H4";
@@ -377,7 +352,6 @@
             // lbl_G4
             // 
             this.lbl_G4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_G4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_G4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_G4.Location = new System.Drawing.Point(420, 302);
             this.lbl_G4.Name = "lbl_G4";
@@ -388,7 +362,6 @@
             // lbl_F4
             // 
             this.lbl_F4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_F4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_F4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_F4.Location = new System.Drawing.Point(352, 302);
             this.lbl_F4.Name = "lbl_F4";
@@ -399,7 +372,6 @@
             // lbl_E4
             // 
             this.lbl_E4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_E4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_E4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_E4.Location = new System.Drawing.Point(284, 302);
             this.lbl_E4.Name = "lbl_E4";
@@ -410,7 +382,6 @@
             // lbl_D4
             // 
             this.lbl_D4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_D4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_D4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_D4.Location = new System.Drawing.Point(216, 302);
             this.lbl_D4.Name = "lbl_D4";
@@ -421,7 +392,6 @@
             // lbl_C4
             // 
             this.lbl_C4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_C4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_C4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_C4.Location = new System.Drawing.Point(148, 302);
             this.lbl_C4.Name = "lbl_C4";
@@ -432,7 +402,6 @@
             // lbl_B4
             // 
             this.lbl_B4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_B4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_B4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_B4.Location = new System.Drawing.Point(80, 302);
             this.lbl_B4.Name = "lbl_B4";
@@ -443,7 +412,6 @@
             // lbl_A4
             // 
             this.lbl_A4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_A4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_A4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_A4.Location = new System.Drawing.Point(12, 302);
             this.lbl_A4.Name = "lbl_A4";
@@ -454,7 +422,6 @@
             // lbl_H5
             // 
             this.lbl_H5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_H5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_H5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_H5.Location = new System.Drawing.Point(488, 234);
             this.lbl_H5.Name = "lbl_H5";
@@ -465,7 +432,6 @@
             // lbl_G5
             // 
             this.lbl_G5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_G5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_G5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_G5.Location = new System.Drawing.Point(420, 234);
             this.lbl_G5.Name = "lbl_G5";
@@ -476,7 +442,6 @@
             // lbl_F5
             // 
             this.lbl_F5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_F5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_F5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_F5.Location = new System.Drawing.Point(352, 234);
             this.lbl_F5.Name = "lbl_F5";
@@ -487,7 +452,6 @@
             // lbl_E5
             // 
             this.lbl_E5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_E5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_E5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_E5.Location = new System.Drawing.Point(284, 234);
             this.lbl_E5.Name = "lbl_E5";
@@ -498,7 +462,6 @@
             // lbl_D5
             // 
             this.lbl_D5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_D5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_D5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_D5.Location = new System.Drawing.Point(216, 234);
             this.lbl_D5.Name = "lbl_D5";
@@ -509,7 +472,6 @@
             // lbl_C5
             // 
             this.lbl_C5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_C5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_C5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_C5.Location = new System.Drawing.Point(148, 234);
             this.lbl_C5.Name = "lbl_C5";
@@ -520,7 +482,6 @@
             // lbl_B5
             // 
             this.lbl_B5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_B5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_B5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_B5.Location = new System.Drawing.Point(80, 234);
             this.lbl_B5.Name = "lbl_B5";
@@ -531,7 +492,6 @@
             // lbl_A5
             // 
             this.lbl_A5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_A5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_A5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_A5.Location = new System.Drawing.Point(12, 234);
             this.lbl_A5.Name = "lbl_A5";
@@ -542,7 +502,6 @@
             // lbl_H6
             // 
             this.lbl_H6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_H6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_H6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_H6.Location = new System.Drawing.Point(488, 166);
             this.lbl_H6.Name = "lbl_H6";
@@ -553,7 +512,6 @@
             // lbl_G6
             // 
             this.lbl_G6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_G6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_G6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_G6.Location = new System.Drawing.Point(420, 166);
             this.lbl_G6.Name = "lbl_G6";
@@ -564,7 +522,6 @@
             // lbl_F6
             // 
             this.lbl_F6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_F6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_F6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_F6.Location = new System.Drawing.Point(352, 166);
             this.lbl_F6.Name = "lbl_F6";
@@ -575,7 +532,6 @@
             // lbl_E6
             // 
             this.lbl_E6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_E6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_E6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_E6.Location = new System.Drawing.Point(284, 166);
             this.lbl_E6.Name = "lbl_E6";
@@ -586,7 +542,6 @@
             // lbl_D6
             // 
             this.lbl_D6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_D6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_D6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_D6.Location = new System.Drawing.Point(216, 166);
             this.lbl_D6.Name = "lbl_D6";
@@ -597,7 +552,6 @@
             // lbl_C6
             // 
             this.lbl_C6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_C6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_C6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_C6.Location = new System.Drawing.Point(148, 166);
             this.lbl_C6.Name = "lbl_C6";
@@ -608,7 +562,6 @@
             // lbl_B6
             // 
             this.lbl_B6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_B6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_B6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_B6.Location = new System.Drawing.Point(80, 166);
             this.lbl_B6.Name = "lbl_B6";
@@ -619,7 +572,6 @@
             // lbl_A6
             // 
             this.lbl_A6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_A6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_A6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_A6.Location = new System.Drawing.Point(12, 166);
             this.lbl_A6.Name = "lbl_A6";
@@ -630,7 +582,6 @@
             // lbl_H7
             // 
             this.lbl_H7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_H7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_H7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_H7.Location = new System.Drawing.Point(488, 98);
             this.lbl_H7.Name = "lbl_H7";
@@ -641,7 +592,6 @@
             // lbl_G7
             // 
             this.lbl_G7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_G7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_G7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_G7.Location = new System.Drawing.Point(420, 98);
             this.lbl_G7.Name = "lbl_G7";
@@ -652,7 +602,6 @@
             // lbl_F7
             // 
             this.lbl_F7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_F7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_F7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_F7.Location = new System.Drawing.Point(352, 98);
             this.lbl_F7.Name = "lbl_F7";
@@ -663,7 +612,6 @@
             // lbl_E7
             // 
             this.lbl_E7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_E7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_E7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_E7.Location = new System.Drawing.Point(284, 98);
             this.lbl_E7.Name = "lbl_E7";
@@ -674,7 +622,6 @@
             // lbl_D7
             // 
             this.lbl_D7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_D7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_D7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_D7.Location = new System.Drawing.Point(216, 98);
             this.lbl_D7.Name = "lbl_D7";
@@ -685,7 +632,6 @@
             // lbl_C7
             // 
             this.lbl_C7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_C7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_C7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_C7.Location = new System.Drawing.Point(148, 98);
             this.lbl_C7.Name = "lbl_C7";
@@ -696,7 +642,6 @@
             // lbl_B7
             // 
             this.lbl_B7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_B7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_B7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_B7.Location = new System.Drawing.Point(80, 98);
             this.lbl_B7.Name = "lbl_B7";
@@ -707,7 +652,6 @@
             // lbl_A7
             // 
             this.lbl_A7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_A7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_A7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_A7.Location = new System.Drawing.Point(12, 98);
             this.lbl_A7.Name = "lbl_A7";
@@ -718,7 +662,6 @@
             // lbl_H8
             // 
             this.lbl_H8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_H8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_H8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_H8.Location = new System.Drawing.Point(488, 30);
             this.lbl_H8.Name = "lbl_H8";
@@ -729,7 +672,6 @@
             // lbl_G8
             // 
             this.lbl_G8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_G8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_G8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_G8.Location = new System.Drawing.Point(420, 30);
             this.lbl_G8.Name = "lbl_G8";
@@ -740,7 +682,6 @@
             // lbl_F8
             // 
             this.lbl_F8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_F8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_F8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_F8.Location = new System.Drawing.Point(352, 30);
             this.lbl_F8.Name = "lbl_F8";
@@ -751,7 +692,6 @@
             // lbl_E8
             // 
             this.lbl_E8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_E8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_E8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_E8.Location = new System.Drawing.Point(284, 30);
             this.lbl_E8.Name = "lbl_E8";
@@ -762,7 +702,6 @@
             // lbl_D8
             // 
             this.lbl_D8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_D8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_D8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_D8.Location = new System.Drawing.Point(216, 30);
             this.lbl_D8.Name = "lbl_D8";
@@ -773,7 +712,6 @@
             // lbl_C8
             // 
             this.lbl_C8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_C8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_C8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_C8.Location = new System.Drawing.Point(148, 30);
             this.lbl_C8.Name = "lbl_C8";
@@ -784,7 +722,6 @@
             // lbl_B8
             // 
             this.lbl_B8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(136)))), ((int)(((byte)(99)))));
-            this.lbl_B8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_B8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_B8.Location = new System.Drawing.Point(80, 30);
             this.lbl_B8.Name = "lbl_B8";
@@ -795,7 +732,6 @@
             // lbl_A8
             // 
             this.lbl_A8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(217)))), ((int)(((byte)(181)))));
-            this.lbl_A8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_A8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_A8.Location = new System.Drawing.Point(12, 30);
             this.lbl_A8.Name = "lbl_A8";
