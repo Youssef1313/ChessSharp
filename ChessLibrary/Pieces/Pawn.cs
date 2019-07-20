@@ -9,27 +9,54 @@ namespace ChessLibrary.Pieces
 
         protected override bool IsValidPieceMove(Move move)
         {
+            // This method is not needed in this sub-class.
+            throw new NotImplementedException();
+        }
+
+        private enum PawnMoveType
+        {
+            OneStep,
+            TwoSteps,
+            Capture,
+            Enpassant,
+            Invalid
+        }
+
+        private static PawnMoveType GetPawnMoveType(Move move)
+        {
+            sbyte deltaY = move.GetDeltaY();
+            byte absDeltaX = move.GetAbsDeltaX();
+
             // Check normal one step pawn move.
-            if ((move.Player == Player.White && move.GetDeltaY() == 1 && move.GetDeltaX() == 0) ||
-                move.Player == Player.Black && move.GetDeltaY() == -1 && move.GetDeltaX() == 0)
+            if ((move.Player == Player.White && deltaY == 1 && absDeltaX == 0) ||
+                move.Player == Player.Black && deltaY == -1 && absDeltaX == 0)
             {
-                return true;
+                return PawnMoveType.OneStep;
             }
 
             // Check two step move from starting position.
-            if ((move.Player == Player.White && move.GetDeltaY() == 2 && move.GetDeltaX() == 0 && move.Source.Rank == Rank.Second) ||
-                (move.Player == Player.Black && move.GetDeltaY() == -2 && move.GetDeltaX() == 0 && move.Source.Rank == Rank.Seventh))
+            if ((move.Player == Player.White && deltaY == 2 && absDeltaX == 0 && move.Source.Rank == Rank.Second) ||
+                (move.Player == Player.Black && deltaY == -2 && absDeltaX == 0 && move.Source.Rank == Rank.Seventh))
             {
-                return true;
+                return PawnMoveType.TwoSteps;
             }
 
             // Check en-passant.
-            //return (move.Player == Player.White && move.GetDeltaY() == 1 && move.GetAbsDeltaX() == 1 && move.Source.Rank == Rank.Fifth) ||
-            //       (move.Player == Player.Black && move.GetDeltaY() == -1 && move.GetAbsDeltaX() == 1 && move.Source.Rank == Rank.Forth);
+            if ((move.Player == Player.White && deltaY == 1 && absDeltaX == 1 && move.Source.Rank == Rank.Fifth) ||
+                   (move.Player == Player.Black && deltaY == -1 && absDeltaX == 1 && move.Source.Rank == Rank.Forth))
+            {
+                return PawnMoveType.Enpassant;
+            }
+
 
             // Check capture.
-            return (move.Player == Player.White && move.GetDeltaY() == 1 && move.GetAbsDeltaX() == 1) ||
-                   (move.Player == Player.Black && move.GetDeltaY() == -1 && move.GetAbsDeltaX() == 1);
+            if ((move.Player == Player.White && deltaY == 1 && absDeltaX == 1) ||
+                   (move.Player == Player.Black && deltaY == -1 && absDeltaX == 1))
+            {
+                return PawnMoveType.Capture;
+            }
+
+            return PawnMoveType.Invalid;
         }
 
         public override bool IsValidGameMove(Move move, GameBoard board)
@@ -43,9 +70,29 @@ namespace ChessLibrary.Pieces
             {
                 throw new ArgumentNullException(nameof(board));
             }
-            // TODO: En-passant check.
-            return IsValidPieceMove(move) && !ChessUtilities.PlayerWillBeInCheck(move, board) &&
-                   board[move.Destination].Owner != move.Player;
+
+            if (ChessUtilities.PlayerWillBeInCheck(move, board) || board[move.Destination].Owner == move.Player)
+            {
+                return false;
+            }
+
+            var moveType = GetPawnMoveType(move);
+            switch (moveType)
+            {
+                case PawnMoveType.Invalid:
+                    return false;
+                case PawnMoveType.OneStep:
+                    return board[move.Destination] == null;
+                case PawnMoveType.TwoSteps:
+                    return !ChessUtilities.IsTherePieceInBetween(move, board) && board[move.Destination] == null;
+                case PawnMoveType.Capture:
+                    return board[move.Destination] != null;
+                case PawnMoveType.Enpassant:
+                    // TODO: En-passant check.
+                    return true;
+                default:
+                    throw new Exception("Unexpected PawnMoveType.");
+            }
 
             
         }
