@@ -66,11 +66,15 @@ namespace ChessLibrary
                 throw new ArgumentNullException(nameof(move));
             }
             Piece piece = this[move.Source];
-            if (this[move.Destination] != null && this[move.Destination].Owner == move.Player)
+            if (piece == null ||
+                piece.Owner != move.Player ||
+                (this[move.Destination] != null && this[move.Destination].Owner == move.Player) ||
+                ChessUtilities.PlayerWillBeInCheck(move, Board))
             {
                 return false;
             }
-            return piece != null && piece.IsValidGameMove(move, this);
+            
+            return piece.IsValidGameMove(move, this);
         }
         
     }

@@ -30,10 +30,9 @@ namespace ChessLibrary.Pieces
                 throw new ArgumentNullException(nameof(move));
             }
 
-            return IsValidPieceMove(move) && !ChessUtilities.PlayerWillBeInCheck(move, board.Board) &&
-                   !ChessUtilities.IsTherePieceInBetween(move, board);
+            return IsValidPieceMove(move) && !ChessUtilities.IsTherePieceInBetween(move, board);
 
-            
+
         }
     }
 }

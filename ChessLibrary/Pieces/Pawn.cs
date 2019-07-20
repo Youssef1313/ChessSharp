@@ -71,11 +71,6 @@ namespace ChessLibrary.Pieces
                 throw new ArgumentNullException(nameof(board));
             }
 
-            if (ChessUtilities.PlayerWillBeInCheck(move, board.Board))
-            {
-                return false;
-            }
-
             var moveType = GetPawnMoveType(move);
             switch (moveType)
             {
