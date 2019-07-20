@@ -1,16 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 using ChessLibrary.PositionData;
 
 namespace ChessLibrary
 {
     public static class ChessUtilities
     {
-        public static bool IsPlayerInCheck(Player player, GameBoard board)
+        public static GameState GetGameState(GameBoard board)
         {
             throw new NotImplementedException();
         }
 
-        public static GameState GetGameState(GameBoard board)
+        public static List<Move> GetValidMoves(GameBoard board)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static bool IsPlayerInCheck(Player player, GameBoard board)
         {
             throw new NotImplementedException();
         }
