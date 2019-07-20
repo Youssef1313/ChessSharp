@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="ChessUtilities.cs" />
     <Compile Include="GameBoard.cs" />
+    <Compile Include="GameState.cs" />
     <Compile Include="Move.cs" />
     <Compile Include="Piece.cs" />
     <Compile Include="Pieces\Bishop.cs" />
