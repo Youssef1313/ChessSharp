@@ -10,6 +10,11 @@ namespace ChessLibrary
             throw new NotImplementedException();
         }
 
+        public static GameState GetGameState(GameBoard board)
+        {
+            throw new NotImplementedException();
+        }
+
         public static bool PlayerWillBeInCheck(Move move, GameBoard board)
         {
             if (move == null)
