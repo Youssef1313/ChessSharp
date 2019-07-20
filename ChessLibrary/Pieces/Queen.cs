@@ -31,7 +31,7 @@ namespace ChessLibrary.Pieces
             }
 
             return IsValidPieceMove(move) && !ChessUtilities.PlayerWillBeInCheck(move, board.Board) &&
-                   board[move.Destination].Owner != move.Player && !ChessUtilities.IsTherePieceInBetween(move, board);
+                   !ChessUtilities.IsTherePieceInBetween(move, board);
 
             
         }

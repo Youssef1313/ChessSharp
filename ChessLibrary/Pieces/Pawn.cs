@@ -71,8 +71,7 @@ namespace ChessLibrary.Pieces
                 throw new ArgumentNullException(nameof(board));
             }
 
-            if (ChessUtilities.PlayerWillBeInCheck(move, board.Board) ||
-                (board[move.Destination] != null && board[move.Destination].Owner == move.Player))
+            if (ChessUtilities.PlayerWillBeInCheck(move, board.Board))
             {
                 return false;
             }

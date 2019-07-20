@@ -50,16 +50,24 @@ namespace ChessUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var source = new Position(textBox1.Text[0], (byte)(textBox1.Text[1] - '0'));
-            var destination = new Position(textBox2.Text[0], (byte)(textBox2.Text[1] - '0'));
-            var move = new Move(source, destination, _gameBoard.WhoseTurn());
-            if (!_gameBoard.IsValidMove(move))
+            try
             {
-                MessageBox.Show("Invalid Move!", "Chess", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
+                var source = new Position(textBox1.Text[0], (byte)(textBox1.Text[1] - '0'));
+                var destination = new Position(textBox2.Text[0], (byte)(textBox2.Text[1] - '0'));
+                var move = new Move(source, destination, _gameBoard.WhoseTurn());
+                if (!_gameBoard.IsValidMove(move))
+                {
+                    MessageBox.Show("Invalid Move!", "Chess", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                _gameBoard.MakeMove(move);
+                DrawBoard();
             }
-            _gameBoard.MakeMove(move);
-            DrawBoard();
+            catch (Exception exception)
+            {
+                MessageBox.Show($"Error\n{exception.Message}", "Chess", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
     }
 }

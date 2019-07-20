@@ -66,7 +66,10 @@ namespace ChessLibrary
                 throw new ArgumentNullException(nameof(move));
             }
             Piece piece = this[move.Source];
-            //Piece temp = this[File.E, Rank.Second];
+            if (this[move.Destination] != null && this[move.Destination].Owner == move.Player)
+            {
+                return false;
+            }
             return piece != null && piece.IsValidGameMove(move, this);
         }
         
