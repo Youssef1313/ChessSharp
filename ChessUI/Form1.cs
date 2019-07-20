@@ -12,6 +12,7 @@ namespace ChessUI
         public Form1()
         {
             InitializeComponent();
+            Array.ForEach(Controls.OfType<Label>().Where(m => System.Text.RegularExpressions.Regex.IsMatch(m.Name, "lbl_[A-H][1-8]")).ToArray(), lbl => lbl.BackgroundImageLayout = ImageLayout.Zoom);
         }
 
         private GameBoard _gameBoard = new GameBoard();
@@ -34,11 +35,11 @@ namespace ChessUI
                     Piece piece = _gameBoard[file, rank];
                     if (piece == null)
                     {
-                        lbl.Text = "";
+                        lbl.BackgroundImage = null;
                         continue;
                     }
-                    lbl.Text = piece.GetType().Name;
-                    lbl.ForeColor = (piece.Owner == Player.Black) ? Color.Black : Color.White;
+                    lbl.BackgroundImage = (Image)Properties.Resources.ResourceManager.GetObject($"{piece.Owner}{piece.GetType().Name}");
+                    
                 }
                 
             }
@@ -67,6 +68,7 @@ namespace ChessUI
             {
                 MessageBox.Show($"Error\n{exception.Message}", "Chess", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
             
         }
     }
