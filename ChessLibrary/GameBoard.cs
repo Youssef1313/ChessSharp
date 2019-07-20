@@ -49,9 +49,9 @@ namespace ChessLibrary
                 throw new ArgumentNullException(nameof(move));
             }
 
-            if (Moves.Count == 0)
+            if (WhoseTurn() != move.Player)
             {
-
+                throw new InvalidOperationException("Invalid player turn.");
             }
             Piece piece = this[move.Source];
             Board[(int) move.Source.Rank, (int) move.Source.File] = null;
