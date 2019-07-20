@@ -56,6 +56,7 @@ namespace ChessLibrary
             Piece piece = this[move.Source];
             Board[(int) move.Source.Rank, (int) move.Source.File] = null;
             Board[(int) move.Destination.Rank, (int) move.Destination.File] = piece;
+            Moves.Add(move);
         }
 
         public bool IsValidMove(Move move)
