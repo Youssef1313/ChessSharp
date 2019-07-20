@@ -29,7 +29,7 @@ namespace ChessLibrary.Pieces
                 throw new ArgumentNullException(nameof(move));
             }
 
-            return IsValidPieceMove(move) && !ChessUtilities.PlayerWillBeInCheck(move, board) &&
+            return IsValidPieceMove(move) && !ChessUtilities.PlayerWillBeInCheck(move, board.Board) &&
                    board[move.Destination].Owner != move.Player;
         }
     }

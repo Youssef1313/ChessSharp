@@ -16,12 +16,13 @@ namespace ChessLibrary
             throw new NotImplementedException();
         }
 
-        public static bool IsPlayerInCheck(Player player, GameBoard board)
+        public static bool IsPlayerInCheck(Player player, Piece[,] board)
         {
+            return false;
             throw new NotImplementedException();
         }
 
-        public static bool PlayerWillBeInCheck(Move move, GameBoard board)
+        public static bool PlayerWillBeInCheck(Move move, Piece[,] board)
         {
             if (move == null)
             {
@@ -32,11 +33,11 @@ namespace ChessLibrary
             {
                 throw new ArgumentNullException(nameof(board));
             }
-            var boardClone = new GameBoard {Board = board.Board}; // Make the move on this board to keep original board as is.
-
-            Piece piece = boardClone[move.Source];
-            boardClone.Board[(int)move.Source.Rank, (int)move.Source.File] = null;
-            boardClone.Board[(int)move.Destination.Rank, (int)move.Destination.File] = piece;
+            
+            var boardClone = board.Clone() as Piece[,]; // Make the move on this board to keep original board as is.
+            Piece piece = boardClone[(int)move.Source.Rank, (int)move.Source.File];
+            boardClone[(int)move.Source.Rank, (int)move.Source.File] = null;
+            boardClone[(int)move.Destination.Rank, (int)move.Destination.File] = piece;
             return IsPlayerInCheck(move.Player, boardClone);
         }
 

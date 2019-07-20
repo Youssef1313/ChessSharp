@@ -27,12 +27,12 @@ namespace ChessLibrary
 
         public sbyte GetDeltaX()
         {
-            return (sbyte)Math.Abs(Destination.File - Source.File);
+            return (sbyte)(Destination.File - Source.File);
         }
 
         public sbyte GetDeltaY()
         {
-            return (sbyte)Math.Abs(Destination.Rank - Source.Rank);
+            return (sbyte)(Destination.Rank - Source.Rank);
         }
     }
 }
