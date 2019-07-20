@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using ChessLibrary.Pieces;
 using ChessLibrary.PositionData;
 
@@ -7,9 +9,16 @@ namespace ChessLibrary
     
     public class GameBoard
     {
-        // Indexer.
+        // Indexers.
         public Piece this[File file, Rank rank] => Board[(int)rank, (int)file];
         public Piece this[Position position] => this[position.File, position.Rank];
+
+        public List<Move> Moves { get; set; }
+
+        public GameBoard()
+        {
+            Moves = new List<Move>();
+        }
 
         public Piece[,] Board { get; set; } = 
         {
@@ -23,11 +32,26 @@ namespace ChessLibrary
             { new Rook {Owner = Player.Black}, new Knight {Owner = Player.Black}, new Bishop {Owner = Player.Black}, new Queen {Owner = Player.Black}, new King {Owner = Player.Black}, new Bishop {Owner = Player.Black}, new Knight {Owner = Player.Black}, new Rook {Owner = Player.Black} }
         };
 
+        public Player WhoseTurn()
+        {
+            return Moves.Count == 0 ? Player.White : RevertPlayer(Moves.Last().Player);
+        }
+
+        public Player RevertPlayer(Player player)
+        {
+            return player == Player.White ? Player.Black : Player.White;
+        }
+
         public void MakeMove(Move move)
         {
             if (move == null)
             {
                 throw new ArgumentNullException(nameof(move));
+            }
+
+            if (Moves.Count == 0)
+            {
+
             }
             Piece piece = this[move.Source];
             Board[(int) move.Source.Rank, (int) move.Source.File] = null;
