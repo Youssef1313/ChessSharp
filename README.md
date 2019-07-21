@@ -10,11 +10,11 @@
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check the [issues page](https://github.com/Youssef1313/ChessSharp/issues)
+Contributions, issues and feature requests are welcome!<br />Feel free to check the [issues page](https://github.com/Youssef1313/ChessSharp/issues).
 
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
 
-### Please note that this project is *still under development*
+### Please note that this project is *still under development*.
