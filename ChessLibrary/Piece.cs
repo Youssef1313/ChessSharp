@@ -3,7 +3,7 @@
     public abstract class Piece
     {
         protected abstract bool IsValidPieceMove(Move move);
-        public abstract bool IsValidGameMove(Move move, GameBoard board);
+        internal abstract bool IsValidGameMove(Move move, GameBoard board);
         public abstract Player Owner { get; set; }
 
         public override bool Equals(object obj)

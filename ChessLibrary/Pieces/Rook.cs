@@ -17,7 +17,7 @@ namespace ChessLibrary.Pieces
             return (deltaX == 0 || deltaY == 0);
         }
 
-        public override bool IsValidGameMove(Move move, GameBoard board)
+        internal override bool IsValidGameMove(Move move, GameBoard board)
         {
             if (move == null)
             {

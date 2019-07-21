@@ -34,13 +34,9 @@ namespace ChessLibrary
 
         public Player WhoseTurn()
         {
-            return Moves.Count == 0 ? Player.White : RevertPlayer(Moves.Last().Player);
+            return Moves.Count == 0 ? Player.White : ChessUtilities.RevertPlayer(Moves.Last().Player);
         }
 
-        public Player RevertPlayer(Player player)
-        {
-            return player == Player.White ? Player.Black : Player.White;
-        }
 
         public void MakeMove(Move move)
         {
@@ -66,15 +62,10 @@ namespace ChessLibrary
                 throw new ArgumentNullException(nameof(move));
             }
             Piece piece = this[move.Source];
-            if (piece == null ||
-                piece.Owner != move.Player ||
-                (this[move.Destination] != null && this[move.Destination].Owner == move.Player) ||
-                ChessUtilities.PlayerWillBeInCheck(move, Board))
-            {
-                return false;
-            }
-            
-            return piece.IsValidGameMove(move, this);
+
+            return (piece != null && piece.Owner == move.Player &&
+                    (this[move.Destination] == null || this[move.Destination].Owner != move.Player) &&
+                    !ChessUtilities.PlayerWillBeInCheck(move, Board) && piece.IsValidGameMove(move, this));
         }
         
     }

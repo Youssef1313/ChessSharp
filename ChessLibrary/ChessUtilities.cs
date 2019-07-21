@@ -6,23 +6,28 @@ namespace ChessLibrary
 {
     public static class ChessUtilities
     {
+        public static Player RevertPlayer(Player player)
+        {
+            return player == Player.White ? Player.Black : Player.White;
+        }
+
         public static GameState GetGameState(GameBoard board)
         {
             throw new NotImplementedException();
         }
 
-        public static List<Move> GetValidMoves(GameBoard board)
+        internal static List<Move> GetValidMoves(GameBoard board)
         {
             throw new NotImplementedException();
         }
 
-        public static bool IsPlayerInCheck(Player player, Piece[,] board)
+        internal static bool IsPlayerInCheck(Player player, Piece[,] board)
         {
             return false;
             throw new NotImplementedException();
         }
 
-        public static bool PlayerWillBeInCheck(Move move, Piece[,] board)
+        internal static bool PlayerWillBeInCheck(Move move, Piece[,] board)
         {
             if (move == null)
             {
@@ -41,7 +46,7 @@ namespace ChessLibrary
             return IsPlayerInCheck(move.Player, boardClone);
         }
 
-        public static bool IsTherePieceInBetween(Move move, GameBoard board)
+        internal static bool IsTherePieceInBetween(Move move, GameBoard board)
         {
             var xStep = 0;
             var yStep = 0;

@@ -59,7 +59,7 @@ namespace ChessLibrary.Pieces
             return PawnMoveType.Invalid;
         }
 
-        public override bool IsValidGameMove(Move move, GameBoard board)
+        internal override bool IsValidGameMove(Move move, GameBoard board)
         {
             if (move == null)
             {
