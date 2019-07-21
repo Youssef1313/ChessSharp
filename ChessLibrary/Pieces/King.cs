@@ -26,7 +26,7 @@ namespace ChessLibrary.Pieces
 
             if (board == null)
             {
-                throw new ArgumentNullException(nameof(move));
+                throw new ArgumentNullException(nameof(board));
             }
 
             return IsValidPieceMove(move);
