@@ -8,31 +8,14 @@ namespace ChessLibrary.Pieces
 
         protected override bool IsValidPieceMove(Move move)
         {
-            int deltaX = move.GetAbsDeltaX();
-            int deltaY = move.GetAbsDeltaY();
-            if (deltaX == 0 && deltaY == 0)
-            {
-                return false;
-            }
-            return (deltaX == 0 || deltaY == 0) ||
-                (deltaX == deltaY);
+            // This method is not needed for this sub-class.
+            throw new NotImplementedException();
         }
 
         internal override bool IsValidGameMove(Move move, GameBoard board)
         {
-            if (move == null)
-            {
-                throw new ArgumentNullException(nameof(move));
-            }
-
-            if (board == null)
-            {
-                throw new ArgumentNullException(nameof(board));
-            }
-
-            return IsValidPieceMove(move) && !ChessUtilities.IsTherePieceInBetween(move, board);
-
-
+            return new Rook {Owner = move.Player}.IsValidGameMove(move, board) ||
+                   new Bishop { Owner = move.Player}.IsValidGameMove(move, board);
         }
     }
 }

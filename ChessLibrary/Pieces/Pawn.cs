@@ -40,7 +40,7 @@ namespace ChessLibrary.Pieces
             {
                 return PawnMoveType.TwoSteps;
             }
-
+            // TODO: Maybe a bug ? not sure. In some cases, enpassant may be recognized as capture and vice-versa
             // Check en-passant.
             if ((move.Player == Player.White && deltaY == 1 && absDeltaX == 1 && move.Source.Rank == Rank.Fifth) ||
                    (move.Player == Player.Black && deltaY == -1 && absDeltaX == 1 && move.Source.Rank == Rank.Forth))
