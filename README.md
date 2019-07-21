@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to ChessSharp 👋</h1>
 
-<h3 align="center">ChessSharp is a chess library built with C# with a sample UI project.</h3>
+<h3 align="center">ChessSharp is a chess library built in C# with a sample UI project.</h3>
 
 ## Screenshot
 
