@@ -8,6 +8,18 @@ namespace ChessLibrary
         public Position Destination { get; set; }
         public Player Player { get; set; }
 
+        public override bool Equals(object obj)
+        {
+
+            if (obj == null || obj.GetType() != this.GetType())
+            {
+                return false;
+            }
+
+            var moveObj = (Move) obj;
+            return moveObj.Source == this.Source && moveObj.Destination == this.Destination;
+        }
+
         public Move(Position source, Position destination, Player player)
         {
             Source = source;
@@ -17,22 +29,24 @@ namespace ChessLibrary
 
         public byte GetAbsDeltaX()
         {
-            return (byte)Math.Abs(Destination.File - Source.File);
+            return (byte) Math.Abs(Destination.File - Source.File);
         }
 
         public byte GetAbsDeltaY()
         {
-            return (byte)Math.Abs(Destination.Rank - Source.Rank);
+            return (byte) Math.Abs(Destination.Rank - Source.Rank);
         }
 
         public sbyte GetDeltaX()
         {
-            return (sbyte)(Destination.File - Source.File);
+            return (sbyte) (Destination.File - Source.File);
         }
 
         public sbyte GetDeltaY()
         {
-            return (sbyte)(Destination.Rank - Source.Rank);
+            return (sbyte) (Destination.Rank - Source.Rank);
         }
+
+
     }
 }

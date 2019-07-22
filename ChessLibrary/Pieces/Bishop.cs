@@ -9,12 +9,7 @@ namespace ChessLibrary.Pieces
 
         protected override bool IsValidPieceMove(Move move)
         {
-            byte deltaX = move.GetAbsDeltaX();
-            if (deltaX == 0)
-            {
-                return false;
-            }
-            return deltaX == move.GetAbsDeltaY();
+            return move.GetAbsDeltaX() == move.GetAbsDeltaY();
         }
 
         internal override bool IsValidGameMove(Move move, GameBoard board)

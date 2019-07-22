@@ -63,7 +63,7 @@ namespace ChessLibrary
             }
             Piece piece = this[move.Source];
 
-            return (piece != null && piece.Owner == move.Player &&
+            return (piece != null && piece.Owner == move.Player && !Equals(move.Source, move.Destination) &&
                     (this[move.Destination] == null || this[move.Destination].Owner != move.Player) &&
                     !ChessUtilities.PlayerWillBeInCheck(move, Board) && piece.IsValidGameMove(move, this));
         }

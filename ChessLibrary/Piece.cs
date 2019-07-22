@@ -8,17 +8,12 @@
 
         public override bool Equals(object obj)
         {
-            
-            if (obj == null)
-            {
-                return false;
-            }
-            if (obj.GetType() != this.GetType())
+            if (obj == null || obj.GetType() != this.GetType())
             {
                 return false;
             }
 
-            return Owner == ((dynamic)obj).Owner;
+            return Owner == ((Piece) obj).Owner;
         }
 
     }

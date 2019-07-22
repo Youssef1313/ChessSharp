@@ -7,6 +7,18 @@ namespace ChessLibrary.PositionData
         public File File { get; set; }
         public Rank Rank { get; set; }
 
+        public override bool Equals(object obj)
+        {
+
+            if (obj == null || obj.GetType() != this.GetType())
+            {
+                return false;
+            }
+
+            var positionObj = (Position) obj;
+            return positionObj.File == this.File && positionObj.Rank == this.Rank;
+        }
+
         public Position(File file, Rank rank)
         {
             File = file;
