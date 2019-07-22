@@ -9,7 +9,6 @@ namespace ChessLibrary
     
     public class GameBoard
     {
-        // Indexers.
         public Piece this[File file, Rank rank] => Board[(int)rank, (int)file];
         public Piece this[Square square] => this[square.File, square.Rank];
 
