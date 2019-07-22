@@ -1,12 +1,12 @@
-﻿using System;
+﻿using ChessLibrary.Pieces;
 using ChessLibrary.PositionData;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ChessLibrary.Pieces;
+using NUnit.Framework;
+
 namespace ChessLibrary.UnitTests
 {
-    [TestClass]
+    [TestFixture]
     public class GameBoardTests
     {
-      
+     
     }
 }
