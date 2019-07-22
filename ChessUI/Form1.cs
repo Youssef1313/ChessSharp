@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using ChessLibrary;
-using ChessLibrary.PositionData;
+using ChessLibrary.SquareData;
 
 namespace ChessUI
 {
@@ -53,8 +53,8 @@ namespace ChessUI
         {
             try
             {
-                var source = new Position(textBox1.Text[0], (byte)(textBox1.Text[1] - '0'));
-                var destination = new Position(textBox2.Text[0], (byte)(textBox2.Text[1] - '0'));
+                var source = new Square(textBox1.Text[0], (byte)(textBox1.Text[1] - '0'));
+                var destination = new Square(textBox2.Text[0], (byte)(textBox2.Text[1] - '0'));
                 var move = new Move(source, destination, _gameBoard.WhoseTurn());
                 if (!_gameBoard.IsValidMove(move))
                 {

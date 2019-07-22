@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ChessLibrary.Pieces;
-using ChessLibrary.PositionData;
+using ChessLibrary.SquareData;
 
 namespace ChessLibrary
 {
@@ -11,7 +11,7 @@ namespace ChessLibrary
     {
         // Indexers.
         public Piece this[File file, Rank rank] => Board[(int)rank, (int)file];
-        public Piece this[Position position] => this[position.File, position.Rank];
+        public Piece this[Square square] => this[square.File, square.Rank];
 
         public List<Move> Moves { get; set; }
 

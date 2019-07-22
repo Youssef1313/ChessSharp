@@ -1,11 +1,11 @@
 ﻿using System;
-using ChessLibrary.PositionData;
+using ChessLibrary.SquareData;
 namespace ChessLibrary
 {
     public class Move
     {
-        public Position Source { get; }
-        public Position Destination { get; }
+        public Square Source { get; }
+        public Square Destination { get; }
         public Player Player { get; }
 
         public override bool Equals(object obj)
@@ -36,7 +36,7 @@ namespace ChessLibrary
             }
         }
 
-        public Move(Position source, Position destination, Player player)
+        public Move(Square source, Square destination, Player player)
         {
             if (source == null)
             {

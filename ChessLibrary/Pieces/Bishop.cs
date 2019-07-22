@@ -1,5 +1,5 @@
 ﻿using System;
-using ChessLibrary.PositionData;
+using ChessLibrary.SquareData;
 
 namespace ChessLibrary.Pieces
 {

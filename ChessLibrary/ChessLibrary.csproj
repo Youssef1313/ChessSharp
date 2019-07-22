@@ -52,9 +52,9 @@
     <Compile Include="Pieces\Queen.cs" />
     <Compile Include="Pieces\Rook.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="PositionData\File.cs" />
-    <Compile Include="PositionData\Position.cs" />
-    <Compile Include="PositionData\Rank.cs" />
+    <Compile Include="SquareData\File.cs" />
+    <Compile Include="SquareData\Square.cs" />
+    <Compile Include="SquareData\Rank.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

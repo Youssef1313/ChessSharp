@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using ChessLibrary.PositionData;
+using ChessLibrary.SquareData;
 
 namespace ChessLibrary
 {
@@ -69,8 +69,8 @@ namespace ChessLibrary
                 yStep = -1;
             }
 
-            var source = new Position(move.Source.File, move.Source.Rank);
-            var destination = new Position(move.Destination.File, move.Destination.Rank);
+            var source = new Square(move.Source.File, move.Source.Rank);
+            var destination = new Square(move.Destination.File, move.Destination.Rank);
             Rank rank = source.Rank;
             File file = source.File;
             while (true)
