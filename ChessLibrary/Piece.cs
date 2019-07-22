@@ -33,7 +33,7 @@
         }
 
 
-        public Piece(Player player)
+        protected Piece(Player player)
         {
             Owner = player;
         }
