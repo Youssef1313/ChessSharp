@@ -5,7 +5,7 @@
         public Player Owner { get; }
 
         protected abstract bool IsValidPieceMove(Move move);
-        internal abstract bool IsValidGameMove(Move move, GameBoard board);
+        internal abstract bool IsValidGameMove(Move move, Piece[,] board);
 
         public override bool Equals(object obj)
         {

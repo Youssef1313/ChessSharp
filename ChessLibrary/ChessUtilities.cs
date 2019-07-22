@@ -11,12 +11,12 @@ namespace ChessLibrary
             return player == Player.White ? Player.Black : Player.White;
         }
 
-        public static GameState GetGameState(GameBoard board)
+        public static GameState GetGameState(Piece[,] board)
         {
             throw new NotImplementedException();
         }
 
-        internal static List<Move> GetValidMoves(GameBoard board)
+        internal static List<Move> GetValidMoves(Piece[,] board)
         {
             throw new NotImplementedException();
         }
@@ -46,7 +46,7 @@ namespace ChessLibrary
             return IsPlayerInCheck(move.Player, boardClone);
         }
 
-        internal static bool IsTherePieceInBetween(Move move, GameBoard board)
+        internal static bool IsTherePieceInBetween(Move move, Piece[,] board)
         {
             var xStep = 0;
             var yStep = 0;
@@ -81,7 +81,8 @@ namespace ChessLibrary
                 {
                     return false;
                 }
-                if (board[file, rank] != null)
+                
+                if (board[(int)rank, (int)file] != null)
                 {
                     return true;
                 }

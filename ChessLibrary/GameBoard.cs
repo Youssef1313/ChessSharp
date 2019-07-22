@@ -18,19 +18,33 @@ namespace ChessLibrary
         public GameBoard()
         {
             Moves = new List<Move>();
+            var whitePawn = new Pawn(Player.White);
+            var whiteRook = new Rook(Player.White);
+            var whiteKnight = new Knight(Player.White);
+            var whiteBishop = new Bishop(Player.White);
+            var whiteQueen = new Queen(Player.White);
+            var whiteKing = new King(Player.White);
+
+            var blackPawn = new Pawn(Player.Black);
+            var blackRook = new Rook(Player.Black);
+            var blackKnight = new Knight(Player.Black);
+            var blackBishop = new Bishop(Player.Black);
+            var blackQueen = new Queen(Player.Black);
+            var blackKing = new King(Player.Black);
+            Board = new Piece[,]
+            {
+                { whiteRook, whiteKnight, whiteBishop, whiteQueen, whiteKing, whiteBishop, whiteKnight, whiteRook },
+                { whitePawn, whitePawn, whitePawn, whitePawn, whitePawn, whitePawn, whitePawn, whitePawn },
+                { null, null, null, null, null, null, null, null },
+                { null, null, null, null, null, null, null, null },
+                { null, null, null, null, null, null, null, null },
+                { null, null, null, null, null, null, null, null },
+                { blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn},
+                { blackRook, blackKnight, blackBishop, blackQueen, blackKing, blackBishop, blackKnight, blackRook}
+            };
         }
 
-        public Piece[,] Board { get; set; } = 
-        {
-            { new Rook(Player.White), new Knight(Player.White), new Bishop(Player.White), new Queen(Player.White), new King(Player.White), new Bishop(Player.White), new Knight(Player.White), new Rook(Player.White) },
-            { new Pawn(Player.White), new Pawn(Player.White), new Pawn(Player.White), new Pawn(Player.White), new Pawn(Player.White), new Pawn(Player.White), new Pawn(Player.White), new Pawn(Player.White) },
-            { null, null, null, null, null, null, null, null },
-            { null, null, null, null, null, null, null, null },
-            { null, null, null, null, null, null, null, null },
-            { null, null, null, null, null, null, null, null },
-            { new Pawn(Player.Black), new Pawn(Player.Black), new Pawn(Player.Black), new Pawn(Player.Black), new Pawn(Player.Black), new Pawn(Player.Black), new Pawn(Player.Black), new Pawn(Player.Black)},
-            { new Rook(Player.Black), new Knight(Player.Black), new Bishop(Player.Black), new Queen(Player.Black), new King(Player.Black), new Bishop(Player.Black), new Knight(Player.Black), new Rook(Player.Black)}
-        };
+        public Piece[,] Board { get; set; }
 
         public Player WhoseTurn()
         {
@@ -65,7 +79,7 @@ namespace ChessLibrary
 
             return (piece != null && piece.Owner == move.Player && !Equals(move.Source, move.Destination) &&
                     (this[move.Destination] == null || this[move.Destination].Owner != move.Player) &&
-                    !ChessUtilities.PlayerWillBeInCheck(move, Board) && piece.IsValidGameMove(move, this));
+                    !ChessUtilities.PlayerWillBeInCheck(move, Board) && piece.IsValidGameMove(move, Board));
         }
         
     }
