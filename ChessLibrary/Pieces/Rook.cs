@@ -6,10 +6,6 @@ namespace ChessLibrary.Pieces
     {
         public Rook(Player player) : base(player) { }
 
-        protected override bool IsValidPieceMove(Move move)
-        {
-            return move.GetAbsDeltaX() == 0 || move.GetAbsDeltaY() == 0;
-        }
 
         internal override bool IsValidGameMove(Move move, Piece[,] board)
         {
@@ -23,7 +19,7 @@ namespace ChessLibrary.Pieces
                 throw new ArgumentNullException(nameof(board));
             }
 
-            return IsValidPieceMove(move) && !ChessUtilities.IsTherePieceInBetween(move, board);
+            return (move.GetAbsDeltaX() == 0 || move.GetAbsDeltaY() == 0) && !ChessUtilities.IsTherePieceInBetween(move, board);
 
         }
     }

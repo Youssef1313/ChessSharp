@@ -1,5 +1,4 @@
 ﻿using System;
-using ChessLibrary.SquareData;
 
 namespace ChessLibrary.Pieces
 {
@@ -7,10 +6,6 @@ namespace ChessLibrary.Pieces
     {
         public Bishop(Player player) : base(player) { }
 
-        protected override bool IsValidPieceMove(Move move)
-        {
-            return move.GetAbsDeltaX() == move.GetAbsDeltaY();
-        }
 
         internal override bool IsValidGameMove(Move move, Piece[,] board)
         {
@@ -24,7 +19,7 @@ namespace ChessLibrary.Pieces
                 throw new ArgumentNullException(nameof(board));
             }
 
-            return IsValidPieceMove(move) && !ChessUtilities.IsTherePieceInBetween(move, board);
+            return move.GetAbsDeltaX() == move.GetAbsDeltaY() && !ChessUtilities.IsTherePieceInBetween(move, board);
         }
     }
 }

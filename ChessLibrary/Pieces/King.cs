@@ -6,12 +6,6 @@ namespace ChessLibrary.Pieces
     {
         public King(Player player) : base(player) { }
 
-
-        protected override bool IsValidPieceMove(Move move)
-        {
-            return move.GetAbsDeltaX() <= 1 && move.GetAbsDeltaY() <= 1;
-        }
-
         internal override bool IsValidGameMove(Move move, Piece[,] board)
         {
             if (move == null)
@@ -24,7 +18,7 @@ namespace ChessLibrary.Pieces
                 throw new ArgumentNullException(nameof(board));
             }
 
-            return IsValidPieceMove(move);
+            return move.GetAbsDeltaX() <= 1 && move.GetAbsDeltaY() <= 1;
         }
     }
 }

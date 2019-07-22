@@ -7,12 +7,6 @@ namespace ChessLibrary.Pieces
     {
         public Pawn(Player player) : base(player) { }
 
-        protected override bool IsValidPieceMove(Move move)
-        {
-            // This method is not needed in this sub-class.
-            throw new NotImplementedException();
-        }
-
         private enum PawnMoveType
         {
             OneStep,
