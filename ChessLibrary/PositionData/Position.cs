@@ -4,8 +4,8 @@ namespace ChessLibrary.PositionData
 {
     public class Position
     {
-        public File File { get; set; }
-        public Rank Rank { get; set; }
+        public File File { get; }
+        public Rank Rank { get; }
 
         public override bool Equals(object obj)
         {
@@ -17,6 +17,21 @@ namespace ChessLibrary.PositionData
 
             var positionObj = (Position) obj;
             return positionObj.File == this.File && positionObj.Rank == this.Rank;
+        }
+
+        public override int GetHashCode()
+        {
+            // Jon skeet's implementation:
+            // https://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-an-overridden-system-object-gethashcode
+
+            unchecked // Overflow is fine, just wrap
+            {
+                var hash = 17;
+                // Suitable nullity checks etc, of course :)
+                hash = hash * 23 + File.GetHashCode();
+                hash = hash * 23 + Rank.GetHashCode();
+                return hash;
+            }
         }
 
         public Position(File file, Rank rank)

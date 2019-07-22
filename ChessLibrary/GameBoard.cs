@@ -22,14 +22,14 @@ namespace ChessLibrary
 
         public Piece[,] Board { get; set; } = 
         {
-            { new Rook {Owner = Player.White}, new Knight {Owner = Player.White}, new Bishop {Owner = Player.White}, new Queen {Owner = Player.White}, new King {Owner = Player.White}, new Bishop {Owner = Player.White}, new Knight {Owner = Player.White}, new Rook {Owner = Player.White} },
-            { new Pawn {Owner = Player.White}, new Pawn {Owner = Player.White}, new Pawn {Owner = Player.White}, new Pawn {Owner = Player.White}, new Pawn {Owner = Player.White}, new Pawn {Owner = Player.White}, new Pawn {Owner = Player.White}, new Pawn {Owner = Player.White} },
+            { new Rook(Player.White), new Knight(Player.White), new Bishop(Player.White), new Queen(Player.White), new King(Player.White), new Bishop(Player.White), new Knight(Player.White), new Rook(Player.White) },
+            { new Pawn(Player.White), new Pawn(Player.White), new Pawn(Player.White), new Pawn(Player.White), new Pawn(Player.White), new Pawn(Player.White), new Pawn(Player.White), new Pawn(Player.White) },
             { null, null, null, null, null, null, null, null },
             { null, null, null, null, null, null, null, null },
             { null, null, null, null, null, null, null, null },
             { null, null, null, null, null, null, null, null },
-            { new Pawn {Owner = Player.Black}, new Pawn {Owner = Player.Black}, new Pawn {Owner = Player.Black}, new Pawn {Owner = Player.Black}, new Pawn {Owner = Player.Black}, new Pawn {Owner = Player.Black}, new Pawn {Owner = Player.Black}, new Pawn {Owner = Player.Black} },
-            { new Rook {Owner = Player.Black}, new Knight {Owner = Player.Black}, new Bishop {Owner = Player.Black}, new Queen {Owner = Player.Black}, new King {Owner = Player.Black}, new Bishop {Owner = Player.Black}, new Knight {Owner = Player.Black}, new Rook {Owner = Player.Black} }
+            { new Pawn(Player.Black), new Pawn(Player.Black), new Pawn(Player.Black), new Pawn(Player.Black), new Pawn(Player.Black), new Pawn(Player.Black), new Pawn(Player.Black), new Pawn(Player.Black)},
+            { new Rook(Player.Black), new Knight(Player.Black), new Bishop(Player.Black), new Queen(Player.Black), new King(Player.Black), new Bishop(Player.Black), new Knight(Player.Black), new Rook(Player.Black)}
         };
 
         public Player WhoseTurn()

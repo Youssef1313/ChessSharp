@@ -5,7 +5,7 @@ namespace ChessLibrary.Pieces
 {
     public class Bishop : Piece
     {
-        public override Player Owner { get; set; }
+        public Bishop(Player player) : base(player) { }
 
         protected override bool IsValidPieceMove(Move move)
         {
@@ -25,7 +25,6 @@ namespace ChessLibrary.Pieces
             }
 
             return IsValidPieceMove(move) && !ChessUtilities.IsTherePieceInBetween(move, board);
-
         }
     }
 }

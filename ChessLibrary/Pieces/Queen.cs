@@ -4,7 +4,7 @@ namespace ChessLibrary.Pieces
 {
     public class Queen : Piece
     {
-        public override Player Owner { get; set; }
+        public Queen(Player player) : base(player) { }
 
         protected override bool IsValidPieceMove(Move move)
         {
@@ -14,8 +14,8 @@ namespace ChessLibrary.Pieces
 
         internal override bool IsValidGameMove(Move move, GameBoard board)
         {
-            return new Rook {Owner = move.Player}.IsValidGameMove(move, board) ||
-                   new Bishop { Owner = move.Player}.IsValidGameMove(move, board);
+            return new Rook(move.Player).IsValidGameMove(move, board) ||
+                   new Bishop(move.Player).IsValidGameMove(move, board);
         }
     }
 }

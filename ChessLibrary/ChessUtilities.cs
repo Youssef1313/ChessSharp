@@ -71,15 +71,17 @@ namespace ChessLibrary
 
             var source = new Position(move.Source.File, move.Source.Rank);
             var destination = new Position(move.Destination.File, move.Destination.Rank);
+            Rank rank = source.Rank;
+            File file = source.File;
             while (true)
             {
-                source.Rank += yStep;
-                source.File += xStep;
-                if (source.Rank == destination.Rank && source.File == destination.File)
+                rank += yStep;
+                file += xStep;
+                if (rank == destination.Rank && file == destination.File)
                 {
                     return false;
                 }
-                if (board[source] != null)
+                if (board[file, rank] != null)
                 {
                     return true;
                 }

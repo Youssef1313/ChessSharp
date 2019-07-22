@@ -5,7 +5,7 @@ namespace ChessLibrary.Pieces
 {
     public class Pawn : Piece
     {
-        public override Player Owner { get; set; }
+        public Pawn(Player player) : base(player) { }
 
         protected override bool IsValidPieceMove(Move move)
         {

@@ -4,7 +4,7 @@ namespace ChessLibrary.Pieces
 {
     public class Knight : Piece
     {
-        public override Player Owner { get; set; }
+        public Knight(Player player) : base(player) { }
 
         protected override bool IsValidPieceMove(Move move)
         {
