@@ -59,10 +59,6 @@ namespace ChessLibrary
                 throw new ArgumentNullException(nameof(move));
             }
 
-            if (WhoseTurn() != move.Player)
-            {
-                throw new InvalidOperationException("Invalid player turn.");
-            }
             Piece piece = this[move.Source];
             Board[(int) move.Source.Rank, (int) move.Source.File] = null;
             Board[(int) move.Destination.Rank, (int) move.Destination.File] = piece;
@@ -75,9 +71,11 @@ namespace ChessLibrary
             {
                 throw new ArgumentNullException(nameof(move));
             }
+
             Piece piece = this[move.Source];
 
-            return (piece != null && piece.Owner == move.Player && !Equals(move.Source, move.Destination) &&
+            return (WhoseTurn() == move.Player && piece != null && piece.Owner == move.Player && 
+                    !Equals(move.Source, move.Destination) && 
                     (this[move.Destination] == null || this[move.Destination].Owner != move.Player) &&
                     !ChessUtilities.PlayerWillBeInCheck(move, Board) && piece.IsValidGameMove(move, Board));
         }
