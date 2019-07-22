@@ -38,6 +38,14 @@ namespace ChessLibrary
 
         public Move(Position source, Position destination, Player player)
         {
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+            if (destination == null)
+            {
+                throw new ArgumentNullException(nameof(destination));
+            }
             Source = source;
             Destination = destination;
             Player = player;
