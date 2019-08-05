@@ -49,7 +49,7 @@ namespace ChessLibrary
                 Square.ParseSquare("G5"), Square.ParseSquare("G6"), Square.ParseSquare("G7"), Square.ParseSquare("G8"),
 
                 Square.ParseSquare("H1"), Square.ParseSquare("H2"), Square.ParseSquare("H3"), Square.ParseSquare("H4"),
-                Square.ParseSquare("H5"), Square.ParseSquare("H6"), Square.ParseSquare("H7"), Square.ParseSquare("H8"),
+                Square.ParseSquare("H5"), Square.ParseSquare("H6"), Square.ParseSquare("H7"), Square.ParseSquare("H8")
             };
             var opponentOwnedSquares = squares.Where(sq => board[(int)sq.Rank, (int)sq.File] != null &&
                                                            board[(int)sq.Rank, (int)sq.File].Owner != player);
