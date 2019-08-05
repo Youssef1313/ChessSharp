@@ -76,7 +76,7 @@ namespace ChessLibrary.SquareData
             return (Rank)(rank - '0' - 1);
         }
 
-        public static Square ParseSquare(string square)
+        public static Square Parse(string square)
         {
             if (square == null)
             {
