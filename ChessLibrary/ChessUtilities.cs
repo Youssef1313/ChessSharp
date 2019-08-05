@@ -19,7 +19,7 @@ namespace ChessLibrary
             throw new NotImplementedException();
         }
 
-        internal static List<Move> GetValidMoves(Piece[,] board, Player lastPlayer)
+        internal static List<Move> GetValidMoves(Piece[,] board, Player player)
         {
             throw new NotImplementedException();
         }
