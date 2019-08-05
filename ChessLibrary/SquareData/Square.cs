@@ -66,5 +66,31 @@ namespace ChessLibrary.SquareData
             }
             return (Rank)(rank - 1);
         }
+
+        private static Rank ParseRank(char rank)
+        {
+            if (rank < '1' || rank > '8')
+            {
+                throw new ArgumentOutOfRangeException(nameof(rank));
+            }
+            return (Rank)(rank - '0' - 1);
+        }
+
+        public static Square ParseSquare(string square)
+        {
+            if (square == null)
+            {
+                throw new ArgumentNullException(nameof(square));
+            }
+            if (square.Length != 2)
+            {
+                throw new ArgumentException("Argument length must be 2", nameof(square));
+            }
+
+            File file = ParseFile(char.ToUpper(square[0]));
+            Rank rank = ParseRank(square[1]);
+            
+            return new Square(file, rank);
+        }
     }
 }
