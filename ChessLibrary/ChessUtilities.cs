@@ -53,7 +53,7 @@ namespace ChessLibrary
             };
             var opponentOwnedSquares = squares.Where(sq => board[(int)sq.Rank, (int)sq.File] != null &&
                                                            board[(int)sq.Rank, (int)sq.File].Owner != player);
-            var playerKingSquare = squares.First(sq => board[(int) sq.Rank, (int) sq.File].GetHashCode() == new King(player).GetHashCode());
+            var playerKingSquare = squares.First(sq => board[(int) sq.Rank, (int) sq.File].Equals(new King(player)));
 
             return (from opponentOwnedSquare in opponentOwnedSquares
                     let piece = board[(int) opponentOwnedSquare.Rank, (int) opponentOwnedSquare.File]
