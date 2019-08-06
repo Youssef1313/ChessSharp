@@ -31,12 +31,7 @@ namespace ChessLibrary
                 return GameState.Stalemate;
             }
 
-            if (IsInsufficientMaterial(board))
-            {
-                return GameState.Draw;
-            }
-           
-            return GameState.NotCompleted;
+            return IsInsufficientMaterial(board) ? GameState.Draw : GameState.NotCompleted;
         }
 
         /* TODO: Still not sure where to implement it, but I may need methods:
@@ -45,6 +40,40 @@ namespace ChessLibrary
 
         internal static bool IsInsufficientMaterial(Piece[,] board)
         {
+            Piece[] pieces = board.Cast<Piece>().ToArray();
+            var whitePieces = pieces.Where(p => p.Owner == Player.White).ToArray();
+            var blackPieces = pieces.Where(p => p.Owner == Player.Black).ToArray();
+            if (whitePieces.Length == 1 && blackPieces.Length == 1) // King vs King
+            {
+                return true;
+            }
+
+
+            if (whitePieces.Length == 1 && blackPieces.Length == 2 &&
+                blackPieces.Any(p => p.GetType().Name == typeof(Bishop).Name ||
+                                     p.GetType().Name == typeof(Knight).Name)) // White King vs black king and (Bishop|Knight)
+            {
+                return true;
+            }
+
+            if (whitePieces.Length == 2 && blackPieces.Length == 1 &&
+                whitePieces.Any(p => p.GetType().Name == typeof(Bishop).Name ||
+                                     p.GetType().Name == typeof(Knight).Name)) // Black King vs white king and (Bishop|Knight)
+            {
+                return true;
+            }
+
+            if (whitePieces.Length == 2 && blackPieces.Length == 2 &&
+                whitePieces.Any(p => p.GetType().Name == typeof(Bishop).Name) &&
+                blackPieces.Any(p => p.GetType().Name == typeof(Bishop).Name)) // King and bishop vs king and bishop
+            {
+                // TODO: Bug here, should check that bishops are of same color square
+                return true;
+            }
+
+
+
+            return false;
             /* Insufficient material:
              king versus king
              king and bishop versus king
