@@ -16,6 +16,41 @@ namespace ChessLibrary
 
         public static GameState GetGameState(Piece[,] board, Player lastPlayer)
         {
+            // TODO: FIRST PRIORITY!!
+            Player opponent = RevertPlayer(lastPlayer);
+            bool hasValidMoves = GetValidMoves(board, opponent).Count == 0;
+            bool isInCheck = IsPlayerInCheck(opponent, board);
+
+            if (isInCheck && !hasValidMoves)
+            {
+                return lastPlayer == Player.White ? GameState.WhiteWinner : GameState.BlackWinner;
+            }
+
+            if (!hasValidMoves)
+            {
+                return GameState.Stalemate;
+            }
+
+            if (IsInsufficientMaterial(board))
+            {
+                return GameState.Draw;
+            }
+           
+            return GameState.NotCompleted;
+        }
+
+        /* TODO: Still not sure where to implement it, but I may need methods:
+           TODO: bool CanClaimDraw + bool ClaimDraw + OfferDraw
+        */
+
+        internal static bool IsInsufficientMaterial(Piece[,] board)
+        {
+            /* Insufficient material:
+             king versus king
+             king and bishop versus king
+             king and knight versus king
+             king and bishop versus king and bishop with the bishops on the same color.
+             */
             throw new NotImplementedException();
         }
 
