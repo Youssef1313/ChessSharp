@@ -40,7 +40,7 @@ namespace ChessLibrary
         internal static bool IsInsufficientMaterial(Piece[,] board)
         {
             Piece[] pieces = board.Cast<Piece>().ToArray();
-            var whitePieces = pieces.Select((p, i) => new  {Piece = p, SquareColor = (i % 8 + i / 8) % 2 }).Where(p => p.Piece != null && p.Piece.Owner == Player.White).ToArray();
+            var whitePieces = pieces.Select((p, i) => new { Piece = p, SquareColor = (i % 8 + i / 8) % 2 }).Where(p => p.Piece != null && p.Piece.Owner == Player.White).ToArray();
             var blackPieces = pieces.Select((p, i) => new { Piece = p, SquareColor = (i % 8 + i / 8) % 2 }).Where(p => p.Piece != null && p.Piece.Owner == Player.Black).ToArray();
 
             if (whitePieces.Length == 1 && blackPieces.Length == 1) // King vs King
@@ -117,13 +117,13 @@ namespace ChessLibrary
                 "G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8",
                 "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H8",
             }.Select(Square.Parse).ToArray();
-       
+
             var opponentOwnedSquares = squares.Where(sq => board[(int)sq.Rank, (int)sq.File] != null &&
                                                            board[(int)sq.Rank, (int)sq.File].Owner != player);
             var playerKingSquare = squares.First(sq => new King(player).Equals(board[(int)sq.Rank, (int)sq.File]));
 
             return (from opponentOwnedSquare in opponentOwnedSquares
-                    let piece = board[(int) opponentOwnedSquare.Rank, (int) opponentOwnedSquare.File]
+                    let piece = board[(int)opponentOwnedSquare.Rank, (int)opponentOwnedSquare.File]
                     let move = new Move(opponentOwnedSquare, playerKingSquare, RevertPlayer(player))
                     where piece.IsValidGameMove(move, board)
                     select piece).Any();
@@ -140,7 +140,7 @@ namespace ChessLibrary
             {
                 throw new ArgumentNullException(nameof(board));
             }
-            
+
             var boardClone = board.Clone() as Piece[,]; // Make the move on this board to keep original board as is.
             Piece piece = boardClone[(int)move.Source.Rank, (int)move.Source.File];
             boardClone[(int)move.Source.Rank, (int)move.Source.File] = null;
@@ -183,7 +183,7 @@ namespace ChessLibrary
                 {
                     return false;
                 }
-                
+
                 if (board[(int)rank, (int)file] != null)
                 {
                     return true;
