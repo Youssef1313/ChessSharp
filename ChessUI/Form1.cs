@@ -63,6 +63,12 @@ namespace ChessUI
                 }
                 _gameBoard.MakeMove(move);
                 DrawBoard();
+                Player lastPlayer = ChessUtilities.RevertPlayer(_gameBoard.WhoseTurn());
+                GameState state = ChessUtilities.GetGameState(_gameBoard.Board, lastPlayer);
+                if (state != GameState.NotCompleted)
+                {
+                    MessageBox.Show(state.ToString());
+                }
             }
             catch (Exception exception)
             {
