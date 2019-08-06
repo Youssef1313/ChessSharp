@@ -69,17 +69,7 @@ namespace ChessLibrary
                 // TODO: Bug here, should check that bishops are of same color square
                 return true;
             }
-
-
-
             return false;
-            /* Insufficient material:
-             king versus king
-             king and bishop versus king
-             king and knight versus king
-             king and bishop versus king and bishop with the bishops on the same color.
-             */
-            throw new NotImplementedException();
         }
 
         internal static List<Move> GetValidMoves(Piece[,] board, Player player)
