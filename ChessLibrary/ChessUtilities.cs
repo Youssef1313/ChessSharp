@@ -96,8 +96,7 @@ namespace ChessLibrary
             {
                 validMoves.AddRange(from nonPlayerOwnedSquare in nonPlayerOwnedSquares
                                     select new Move(playerOwnedSquare, nonPlayerOwnedSquare, player) into move
-                                    let piece = board[(int) playerOwnedSquare.Rank, (int) playerOwnedSquare.File]
-                                    where piece.IsValidGameMove(move, board)
+                                    where GameBoard.IsValidMove(move, board)
                                     select move);
             }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using ChessLibrary.Pieces;
 using ChessLibrary.SquareData;
 
@@ -13,6 +14,7 @@ namespace ChessLibrary
         public Piece this[Square square] => this[square.File, square.Rank];
 
         public List<Move> Moves { get; set; }
+        public Piece[,] Board { get; set; }
 
         public GameBoard()
         {
@@ -43,7 +45,6 @@ namespace ChessLibrary
             };
         }
 
-        public Piece[,] Board { get; set; }
 
         public Player WhoseTurn()
         {
@@ -73,12 +74,28 @@ namespace ChessLibrary
 
             Piece piece = this[move.Source];
 
-            return (WhoseTurn() == move.Player && piece != null && piece.Owner == move.Player && 
-                    !Equals(move.Source, move.Destination) && 
+            return (WhoseTurn() == move.Player && piece != null && piece.Owner == move.Player &&
+                    !Equals(move.Source, move.Destination) &&
                     (this[move.Destination] == null || this[move.Destination].Owner != move.Player) &&
                     !ChessUtilities.PlayerWillBeInCheck(move, Board) && piece.IsValidGameMove(move, Board));
         }
-        
+
+        public static bool IsValidMove(Move move, Piece[,] board)
+        {
+            if (move == null)
+            {
+                throw new ArgumentNullException(nameof(move));
+            }
+
+            Piece pieceSource = board[(int)move.Source.Rank, (int)move.Source.File];
+            Piece pieceDestination = board[(int)move.Destination.Rank, (int)move.Destination.File];
+
+            return (pieceSource != null && pieceSource.Owner == move.Player &&
+                    !Equals(move.Source, move.Destination) &&
+                    (pieceDestination == null || pieceDestination.Owner != move.Player) &&
+                    !ChessUtilities.PlayerWillBeInCheck(move, board) && pieceSource.IsValidGameMove(move, board));
+        }
+
     }
 
     
