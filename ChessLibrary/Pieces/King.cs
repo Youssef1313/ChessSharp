@@ -5,7 +5,7 @@ namespace ChessLibrary.Pieces
     public class King : Piece
     {
         public King(Player player) : base(player) { }
-
+        // TODO: Castling
         internal override bool IsValidGameMove(Move move, Piece[,] board)
         {
             if (move == null)
