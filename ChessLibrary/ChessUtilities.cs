@@ -40,8 +40,9 @@ namespace ChessLibrary
         internal static bool IsInsufficientMaterial(Piece[,] board)
         {
             Piece[] pieces = board.Cast<Piece>().ToArray();
-            var whitePieces = pieces.Where(p => p != null && p.Owner == Player.White).ToArray();
-            var blackPieces = pieces.Where(p => p != null && p.Owner == Player.Black).ToArray();
+            var whitePieces = pieces.Select((p, i) => new  {Piece = p, SquareColor = (i % 8 + i / 8) % 2 }).Where(p => p.Piece != null && p.Piece.Owner == Player.White).ToArray();
+            var blackPieces = pieces.Select((p, i) => new { Piece = p, SquareColor = (i % 8 + i / 8) % 2 }).Where(p => p.Piece != null && p.Piece.Owner == Player.Black).ToArray();
+
             if (whitePieces.Length == 1 && blackPieces.Length == 1) // King vs King
             {
                 return true;
@@ -62,12 +63,12 @@ namespace ChessLibrary
                 return true;
             }
 
-            if (whitePieces.Length == 2 && blackPieces.Length == 2 &&
-                whitePieces.Any(p => p.GetType().Name == typeof(Bishop).Name) &&
-                blackPieces.Any(p => p.GetType().Name == typeof(Bishop).Name)) // King and bishop vs king and bishop
+            if (whitePieces.Length == 2 && blackPieces.Length == 2) // King and bishop vs king and bishop
             {
-                // TODO: Bug here, should check that bishops are of same color square
-                return true;
+                var whiteBishop = whitePieces.First(p => p.GetType().Name == typeof(Bishop).Name);
+                var blackBishop = blackPieces.First(p => p.GetType().Name == typeof(Bishop).Name);
+                return whiteBishop != null && blackBishop != null &&
+                       whiteBishop.SquareColor == blackBishop.SquareColor;
             }
             return false;
         }
