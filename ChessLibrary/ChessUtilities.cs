@@ -40,8 +40,8 @@ namespace ChessLibrary
         internal static bool IsInsufficientMaterial(Piece[,] board)
         {
             Piece[] pieces = board.Cast<Piece>().ToArray();
-            var whitePieces = pieces.Where(p => p.Owner == Player.White).ToArray();
-            var blackPieces = pieces.Where(p => p.Owner == Player.Black).ToArray();
+            var whitePieces = pieces.Where(p => p != null && p.Owner == Player.White).ToArray();
+            var blackPieces = pieces.Where(p => p != null && p.Owner == Player.Black).ToArray();
             if (whitePieces.Length == 1 && blackPieces.Length == 1) // King vs King
             {
                 return true;
