@@ -16,7 +16,6 @@ namespace ChessLibrary
 
         public static GameState GetGameState(Piece[,] board, Player lastPlayer)
         {
-            // TODO: FIRST PRIORITY!!
             Player opponent = RevertPlayer(lastPlayer);
             bool hasValidMoves = GetValidMoves(board, opponent).Count == 0;
             bool isInCheck = IsPlayerInCheck(opponent, board);
