@@ -89,6 +89,7 @@ namespace ChessLibrary.Pieces
             if (moveType.Contains(PawnMoveType.Promotion))
             {
                 // TODO: Promotion
+                return false;
             }
 
 
