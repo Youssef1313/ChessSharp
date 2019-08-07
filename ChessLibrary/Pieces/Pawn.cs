@@ -53,7 +53,7 @@ namespace ChessLibrary.Pieces
             return PawnMoveType.Invalid;
         }
 
-        internal override bool IsValidGameMove(Move move, Piece[,] board)
+        internal override bool IsValidGameMove(Move move, GameBoard board)
         {
             if (move == null)
             {
@@ -72,11 +72,11 @@ namespace ChessLibrary.Pieces
                 case PawnMoveType.Invalid:
                     return false;
                 case PawnMoveType.OneStep:
-                    return board[(int)move.Destination.Rank, (int)move.Destination.File] == null;
+                    return board[move.Destination] == null;
                 case PawnMoveType.TwoSteps:
-                    return !ChessUtilities.IsTherePieceInBetween(move, board) && board[(int)move.Destination.Rank, (int)move.Destination.File] == null;
+                    return !ChessUtilities.IsTherePieceInBetween(move, board.Board) && board[move.Destination] == null;
                 case PawnMoveType.Capture:
-                    return board[(int)move.Destination.Rank, (int)move.Destination.File] != null;
+                    return board[move.Destination] != null;
                 case PawnMoveType.Enpassant:
                     // TODO: En-passant check.
                     return true;

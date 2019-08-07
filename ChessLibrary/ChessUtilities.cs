@@ -14,7 +14,7 @@ namespace ChessLibrary
             return player == Player.White ? Player.Black : Player.White;
         }
 
-        public static GameState GetGameState(Piece[,] board, Player lastPlayer)
+        public static GameState GetGameState(GameBoard board, Player lastPlayer)
         {
             Player opponent = RevertPlayer(lastPlayer);
             bool hasValidMoves = GetValidMoves(board, opponent).Count > 0;
@@ -30,7 +30,7 @@ namespace ChessLibrary
                 return GameState.Stalemate;
             }
 
-            return IsInsufficientMaterial(board) ? GameState.Draw : GameState.NotCompleted;
+            return IsInsufficientMaterial(board.Board) ? GameState.Draw : GameState.NotCompleted;
         }
 
         /* TODO: Still not sure where to implement it, but I may need methods:
@@ -73,7 +73,7 @@ namespace ChessLibrary
             return false;
         }
 
-        public static List<Move> GetValidMoves(Piece[,] board, Player player)
+        public static List<Move> GetValidMoves(GameBoard board, Player player)
         {
             var validMoves = new List<Move>();
             Square[] squares = new[]
@@ -88,10 +88,10 @@ namespace ChessLibrary
                 "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H8",
             }.Select(Square.Parse).ToArray();
 
-            var playerOwnedSquares = squares.Where(sq => board[(int)sq.Rank, (int)sq.File] != null &&
-                                                         board[(int)sq.Rank, (int)sq.File].Owner == player).ToArray();
-            var nonPlayerOwnedSquares = squares.Where(sq => board[(int)sq.Rank, (int)sq.File] == null ||
-                                                            board[(int)sq.Rank, (int)sq.File].Owner != player).ToArray();
+            var playerOwnedSquares = squares.Where(sq => board[sq] != null &&
+                                                         board[sq].Owner == player).ToArray();
+            var nonPlayerOwnedSquares = squares.Where(sq => board[sq] == null ||
+                                                            board[sq].Owner != player).ToArray();
 
             foreach (var playerOwnedSquare in playerOwnedSquares)
             {
@@ -104,7 +104,7 @@ namespace ChessLibrary
             return validMoves;
         }
 
-        internal static bool IsPlayerInCheck(Player player, Piece[,] board)
+        internal static bool IsPlayerInCheck(Player player, GameBoard board)
         {
             Square[] squares = new[]
             {
@@ -118,18 +118,18 @@ namespace ChessLibrary
                 "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H8",
             }.Select(Square.Parse).ToArray();
 
-            var opponentOwnedSquares = squares.Where(sq => board[(int)sq.Rank, (int)sq.File] != null &&
-                                                           board[(int)sq.Rank, (int)sq.File].Owner != player);
-            var playerKingSquare = squares.First(sq => new King(player).Equals(board[(int)sq.Rank, (int)sq.File]));
+            var opponentOwnedSquares = squares.Where(sq => board[sq] != null &&
+                                                           board[sq].Owner != player);
+            var playerKingSquare = squares.First(sq => new King(player).Equals(board[sq]));
 
             return (from opponentOwnedSquare in opponentOwnedSquares
-                    let piece = board[(int)opponentOwnedSquare.Rank, (int)opponentOwnedSquare.File]
+                    let piece = board[opponentOwnedSquare]
                     let move = new Move(opponentOwnedSquare, playerKingSquare, RevertPlayer(player))
                     where piece.IsValidGameMove(move, board)
                     select piece).Any();
         }
 
-        internal static bool PlayerWillBeInCheck(Move move, Piece[,] board)
+        internal static bool PlayerWillBeInCheck(Move move, GameBoard board)
         {
             if (move == null)
             {
@@ -141,11 +141,11 @@ namespace ChessLibrary
                 throw new ArgumentNullException(nameof(board));
             }
 
-            var boardClone = board.Clone() as Piece[,]; // Make the move on this board to keep original board as is.
+            var boardClone = board.Board.Clone() as Piece[,]; // Make the move on this board to keep original board as is.
             Piece piece = boardClone[(int)move.Source.Rank, (int)move.Source.File];
             boardClone[(int)move.Source.Rank, (int)move.Source.File] = null;
             boardClone[(int)move.Destination.Rank, (int)move.Destination.File] = piece;
-            return IsPlayerInCheck(move.Player, boardClone);
+            return IsPlayerInCheck(move.Player, new GameBoard { Board = boardClone });
         }
 
         internal static bool IsTherePieceInBetween(Move move, Piece[,] board)

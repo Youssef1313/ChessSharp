@@ -16,6 +16,14 @@ namespace ChessLibrary
         public List<Move> Moves { get; set; }
         public Piece[,] Board { get; set; }
 
+        public bool IsWhiteQueenSideRookMoved { get; private set; }
+        public bool IsWhiteKingSideRookMoved { get; private set; }
+        public bool IsWhiteKingMoved { get; private set; }
+
+        public bool IsBlackQueenSideRookMoved { get; private set; }
+        public bool IsBlackKingSideRookMoved { get; private set; }
+        public bool IsBlackKingMoved { get; private set; }
+
         public GameBoard()
         {
             Moves = new List<Move>();
@@ -60,6 +68,47 @@ namespace ChessLibrary
             }
 
             Piece piece = this[move.Source];
+
+            if (piece == null)
+            {
+                throw new InvalidOperationException("Source square has no piece.");
+            }
+
+            if (piece.Owner == Player.White && piece.GetType().Name == typeof(King).Name)
+            {
+                IsWhiteKingMoved = true;
+            }
+
+            if (piece.Owner == Player.White && piece.GetType().Name == typeof(Rook).Name &&
+                move.Source.File == File.A && move.Source.Rank == Rank.First)
+            {
+                IsWhiteQueenSideRookMoved = true;
+            }
+
+            if (piece.Owner == Player.White && piece.GetType().Name == typeof(Rook).Name &&
+                move.Source.File == File.H && move.Source.Rank == Rank.First)
+            {
+                IsWhiteKingSideRookMoved = true;
+            }
+
+            if (piece.Owner == Player.Black && piece.GetType().Name == typeof(King).Name)
+            {
+                IsBlackKingMoved = true;
+            }
+
+            if (piece.Owner == Player.Black && piece.GetType().Name == typeof(Rook).Name &&
+                move.Source.File == File.A && move.Source.Rank == Rank.Eighth)
+            {
+                IsBlackQueenSideRookMoved = true;
+            }
+
+            if (piece.Owner == Player.Black && piece.GetType().Name == typeof(Rook).Name &&
+                move.Source.File == File.H && move.Source.Rank == Rank.Eighth)
+            {
+                IsBlackKingSideRookMoved = true;
+            }
+
+
             Board[(int) move.Source.Rank, (int) move.Source.File] = null;
             Board[(int) move.Destination.Rank, (int) move.Destination.File] = piece;
             Moves.Add(move);
@@ -72,23 +121,23 @@ namespace ChessLibrary
                 throw new ArgumentNullException(nameof(move));
             }
 
-            Piece piece = this[move.Source];
-
-            return (WhoseTurn() == move.Player && piece != null && piece.Owner == move.Player &&
+            Piece pieceSource = this[move.Source];
+            Piece pieceDestination = this[move.Destination];
+            return (WhoseTurn() == move.Player && pieceSource != null && pieceSource.Owner == move.Player &&
                     !Equals(move.Source, move.Destination) &&
-                    (this[move.Destination] == null || this[move.Destination].Owner != move.Player) &&
-                    !ChessUtilities.PlayerWillBeInCheck(move, Board) && piece.IsValidGameMove(move, Board));
+                    (pieceDestination == null || pieceDestination.Owner != move.Player) &&
+                    !ChessUtilities.PlayerWillBeInCheck(move, this) && pieceSource.IsValidGameMove(move, this));
         }
 
-        internal static bool IsValidMove(Move move, Piece[,] board)
+        internal static bool IsValidMove(Move move, GameBoard board)
         {
             if (move == null)
             {
                 throw new ArgumentNullException(nameof(move));
             }
 
-            Piece pieceSource = board[(int)move.Source.Rank, (int)move.Source.File];
-            Piece pieceDestination = board[(int)move.Destination.Rank, (int)move.Destination.File];
+            Piece pieceSource = board[move.Source];
+            Piece pieceDestination = board[move.Destination];
 
             return (pieceSource != null && pieceSource.Owner == move.Player &&
                     !Equals(move.Source, move.Destination) &&

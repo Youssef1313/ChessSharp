@@ -6,7 +6,7 @@ namespace ChessLibrary.Pieces
     {
         public Queen(Player player) : base(player) { }
 
-        internal override bool IsValidGameMove(Move move, Piece[,] board)
+        internal override bool IsValidGameMove(Move move, GameBoard board)
         {
             return new Rook(move.Player).IsValidGameMove(move, board) ||
                    new Bishop(move.Player).IsValidGameMove(move, board);

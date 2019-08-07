@@ -7,7 +7,7 @@ namespace ChessLibrary.Pieces
         public Bishop(Player player) : base(player) { }
 
 
-        internal override bool IsValidGameMove(Move move, Piece[,] board)
+        internal override bool IsValidGameMove(Move move, GameBoard board)
         {
             if (move == null)
             {
@@ -19,7 +19,7 @@ namespace ChessLibrary.Pieces
                 throw new ArgumentNullException(nameof(board));
             }
 
-            return move.GetAbsDeltaX() == move.GetAbsDeltaY() && !ChessUtilities.IsTherePieceInBetween(move, board);
+            return move.GetAbsDeltaX() == move.GetAbsDeltaY() && !ChessUtilities.IsTherePieceInBetween(move, board.Board);
         }
     }
 }

@@ -6,7 +6,7 @@ namespace ChessLibrary.Pieces
     {
         public Knight(Player player) : base(player) { }
 
-        internal override bool IsValidGameMove(Move move, Piece[,] board)
+        internal override bool IsValidGameMove(Move move, GameBoard board)
         {
             if (move == null)
             {
