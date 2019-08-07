@@ -3,20 +3,9 @@ using ChessLibrary.SquareData;
 
 namespace ChessLibrary.Pieces
 {
-    public class Pawn : Piece
+    public partial class Pawn : Piece
     {
         public Pawn(Player player) : base(player) { }
-
-        [Flags]
-        public enum PawnMoveType
-        {
-            Invalid = 0,
-            OneStep = 1,
-            TwoSteps = 2,
-            Capture = 4,
-            Promotion = 8
-        }
-
 
 
         private static PawnMoveType GetPawnMoveType(Move move, GameBoard board)
