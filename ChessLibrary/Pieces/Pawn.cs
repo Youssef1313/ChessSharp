@@ -4,7 +4,7 @@ using ChessLibrary.SquareData;
 
 namespace ChessLibrary.Pieces
 {
-    public partial class Pawn : Piece
+    public class Pawn : Piece
     {
         public Pawn(Player player) : base(player) { }
 
