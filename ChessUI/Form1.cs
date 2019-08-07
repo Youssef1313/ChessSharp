@@ -39,7 +39,7 @@ namespace ChessUI
                 DrawBoard(); // Remove previously colored labels.
                 if (selectedLabel.Tag.ToString() != _gameBoard.WhoseTurn().ToString()) return;
                 _selectedSourceSquare = Square.Parse(selectedLabel.Name.Substring("lbl_".Length));
-                var validDestinations = ChessUtilities.GetValidMoves(_gameBoard, _gameBoard.WhoseTurn()).Where(m => m.Source.Equals(_selectedSourceSquare)).Select(m => m.Destination).ToArray();
+                var validDestinations = ChessUtilities.GetValidMovesOfSourceSquare(_selectedSourceSquare, _gameBoard).Select(m => m.Destination).ToArray();
                 if (validDestinations.Length == 0) return;
                 selectedLabel.BackColor = Color.Cyan;
                 Array.ForEach(validDestinations, square =>
@@ -105,7 +105,7 @@ namespace ChessUI
                 _gameBoard.MakeMove(move);
                 DrawBoard();
                 
-                GameState state = ChessUtilities.GetGameState(_gameBoard, player);
+                GameState state = ChessUtilities.GetGameState(_gameBoard);
                 if (state != GameState.NotCompleted)
                 {
                     MessageBox.Show(state.ToString());
