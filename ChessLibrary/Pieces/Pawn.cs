@@ -76,6 +76,12 @@ namespace ChessLibrary.Pieces
 
             if (moveType.Contains(PawnMoveType.Capture))
             {
+                // Capture isn't possible as first move.
+                // This prevents exception when getting board.Moves.Last() later.
+                if (board.Moves.Count == 0)
+                {
+                    return false;
+                }
                 // Check regular capture.
                 if (board[move.Destination] != null)
                 {
