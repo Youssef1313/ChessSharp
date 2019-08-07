@@ -7,51 +7,53 @@ namespace ChessLibrary.Pieces
     {
         public Pawn(Player player) : base(player) { }
 
-        private enum PawnMoveType
+        [Flags]
+        public enum PawnMoveType
         {
-            OneStep,
-            TwoSteps,
-            Capture,
-            Enpassant,
-            Invalid
+            Invalid = 0,
+            OneStep = 1,
+            TwoSteps = 2,
+            Capture = 4,
+            Promotion = 8
         }
 
-        private static PawnMoveType GetPawnMoveType(Move move)
+
+
+        private static PawnMoveType GetPawnMoveType(Move move, GameBoard board)
         {
+            PawnMoveType result = PawnMoveType.Invalid;
             sbyte deltaY = move.GetDeltaY();
             byte absDeltaX = move.GetAbsDeltaX();
+
+            // Check promotion move.
+            if ((move.Player == Player.White && move.Destination.Rank == Rank.Eighth) ||
+                (move.Player == Player.Black && move.Destination.Rank == Rank.First))
+            {
+                result |= PawnMoveType.Promotion;
+            }
 
             // Check normal one step pawn move.
             if ((move.Player == Player.White && deltaY == 1 && absDeltaX == 0) ||
                 move.Player == Player.Black && deltaY == -1 && absDeltaX == 0)
             {
-                return PawnMoveType.OneStep;
+                result |= PawnMoveType.OneStep;
             }
 
             // Check two step move from starting position.
             if ((move.Player == Player.White && deltaY == 2 && absDeltaX == 0 && move.Source.Rank == Rank.Second) ||
                 (move.Player == Player.Black && deltaY == -2 && absDeltaX == 0 && move.Source.Rank == Rank.Seventh))
             {
-                return PawnMoveType.TwoSteps;
+                result |= PawnMoveType.TwoSteps;
             }
-            // TODO: Maybe a bug ? not sure. In some cases, normal capture may be recognized as enpassant
-            // TODO: I should check if the player will be in check after enpassant HERE, because it won't work correctly in GameBoard.IsValidMove
-            // Check en-passant.
-            if ((move.Player == Player.White && deltaY == 1 && absDeltaX == 1 && move.Source.Rank == Rank.Fifth) ||
-                   (move.Player == Player.Black && deltaY == -1 && absDeltaX == 1 && move.Source.Rank == Rank.Forth))
-            {
-                return PawnMoveType.Enpassant;
-            }
-
-
-            // Check capture.
+            
+            // Check capture (Enpassant is special case from capture).
             if ((move.Player == Player.White && deltaY == 1 && absDeltaX == 1) ||
-                   (move.Player == Player.Black && deltaY == -1 && absDeltaX == 1))
+                (move.Player == Player.Black && deltaY == -1 && absDeltaX == 1))
             {
-                return PawnMoveType.Capture;
+                result |= PawnMoveType.Capture;
             }
 
-            return PawnMoveType.Invalid;
+            return result;
         }
 
         internal override bool IsValidGameMove(Move move, GameBoard board)
@@ -66,24 +68,43 @@ namespace ChessLibrary.Pieces
                 throw new ArgumentNullException(nameof(board));
             }
 
-            var moveType = GetPawnMoveType(move);
-            // TODO: Promotion
-            switch (moveType)
+            var moveType = GetPawnMoveType(move, board);
+            if (moveType == PawnMoveType.Invalid)
             {
-                case PawnMoveType.Invalid:
-                    return false;
-                case PawnMoveType.OneStep:
-                    return board[move.Destination] == null;
-                case PawnMoveType.TwoSteps:
-                    return !ChessUtilities.IsTherePieceInBetween(move, board.Board) && board[move.Destination] == null;
-                case PawnMoveType.Capture:
-                    return board[move.Destination] != null;
-                case PawnMoveType.Enpassant:
-                    // TODO: En-passant check.
-                    return true;
-                default:
-                    throw new Exception("Unexpected PawnMoveType.");
+                return false;
             }
+
+            if (moveType.Contains(PawnMoveType.OneStep))
+            {
+                return board[move.Destination] == null;
+            }
+
+            if (moveType.Contains(PawnMoveType.TwoSteps))
+            {
+                return !ChessUtilities.IsTherePieceInBetween(move, board.Board) && board[move.Destination] == null;
+            }
+
+            if (moveType.Contains(PawnMoveType.Capture))
+            {
+                // Check regular capture.
+                if (board[move.Destination] != null)
+                {
+                    return true;
+                }
+
+                // Check enpassant.
+                // TODO: I should check if the player will be in check after enpassant HERE IN Pawn.cs, because it won't work correctly in GameBoard.IsValidMove
+                return false;
+            }
+
+            if (moveType.Contains(PawnMoveType.Promotion))
+            {
+                // TODO: Promotion
+            }
+
+
+            throw new Exception("Unexpected PawnMoveType.");
+
 
             
         }
