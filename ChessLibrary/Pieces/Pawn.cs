@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using ChessLibrary.SquareData;
 
 namespace ChessLibrary.Pieces
@@ -8,7 +9,7 @@ namespace ChessLibrary.Pieces
         public Pawn(Player player) : base(player) { }
 
 
-        private static PawnMoveType GetPawnMoveType(Move move, GameBoard board)
+        private static PawnMoveType GetPawnMoveType(Move move)
         {
             PawnMoveType result = PawnMoveType.Invalid;
             sbyte deltaY = move.GetDeltaY();
@@ -57,7 +58,7 @@ namespace ChessLibrary.Pieces
                 throw new ArgumentNullException(nameof(board));
             }
 
-            var moveType = GetPawnMoveType(move, board);
+            var moveType = GetPawnMoveType(move);
             if (moveType == PawnMoveType.Invalid)
             {
                 return false;
@@ -82,6 +83,14 @@ namespace ChessLibrary.Pieces
                 }
 
                 // Check enpassant.
+                Move lastMove = board.Moves.Last();
+                Piece lastMovedPiece = board[lastMove.Destination];
+
+                // Not enpassant.
+                if (lastMovedPiece.GetType().Name != typeof(Pawn).Name || !GetPawnMoveType(lastMove).Contains(PawnMoveType.TwoSteps))
+                {
+                    return false;
+                }
                 // TODO: I should check if the player will be in check after enpassant HERE IN Pawn.cs, because it won't work correctly in GameBoard.IsValidMove
                 return false;
             }
