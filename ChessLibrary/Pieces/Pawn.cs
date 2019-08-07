@@ -35,6 +35,7 @@ namespace ChessLibrary.Pieces
                 return PawnMoveType.TwoSteps;
             }
             // TODO: Maybe a bug ? not sure. In some cases, normal capture may be recognized as enpassant
+            // TODO: I should check if the player will be in check after enpassant HERE, because it won't work correctly in GameBoard.IsValidMove
             // Check en-passant.
             if ((move.Player == Player.White && deltaY == 1 && absDeltaX == 1 && move.Source.Rank == Rank.Fifth) ||
                    (move.Player == Player.Black && deltaY == -1 && absDeltaX == 1 && move.Source.Rank == Rank.Forth))
