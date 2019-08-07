@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using ChessLibrary;
 using ChessLibrary.SquareData;
@@ -9,18 +10,51 @@ namespace ChessUI
 {
     public partial class Form1 : Form
     {
+        private Square _selectedSourceSquare;
+        private readonly Label[] _squareLabels;
+        private GameBoard _gameBoard = new GameBoard();
+
+
+
+
         public Form1()
         {
             InitializeComponent();
-            Array.ForEach(Controls.OfType<Label>().Where(m => System.Text.RegularExpressions.Regex.IsMatch(m.Name, "lbl_[A-H][1-8]")).ToArray(), lbl => lbl.BackgroundImageLayout = ImageLayout.Zoom);
-        }
+            _squareLabels = Controls.OfType<Label>()
+                                 .Where(m => Regex.IsMatch(m.Name, "lbl_[A-H][1-8]")).ToArray();
 
-        private GameBoard _gameBoard = new GameBoard();
-        private void Form1_Load(object sender, EventArgs e)
-        {
+            Array.ForEach(_squareLabels, lbl =>
+            {
+                lbl.BackgroundImageLayout = ImageLayout.Zoom;
+                lbl.Click += SquaresLabels_Click;
+            });
             DrawBoard();
         }
 
+        private void SquaresLabels_Click(object sender, EventArgs e)
+        {
+            Label selectedLabel = (Label)sender;
+            if (selectedLabel.BackColor != Color.DarkCyan)
+            {
+                DrawBoard(); // Remove previously colored labels.
+                if (selectedLabel.Tag.ToString() != _gameBoard.WhoseTurn().ToString()) return;
+                _selectedSourceSquare = Square.Parse(selectedLabel.Name.Substring("lbl_".Length));
+                var validDestinations = ChessUtilities.GetValidMoves(_gameBoard.Board, _gameBoard.WhoseTurn()).Where(m => m.Source.Equals(_selectedSourceSquare)).Select(m => m.Destination).ToArray();
+                if (validDestinations.Length == 0) return;
+                selectedLabel.BackColor = Color.Cyan;
+                Array.ForEach(validDestinations, square =>
+                    {
+                        _squareLabels.First(lbl => lbl.Name == "lbl_" + square.ToString()).BackColor = Color.DarkCyan;
+                    });
+            }
+            else
+            {
+                MakeMove(_selectedSourceSquare.ToString(), selectedLabel.Name.Substring("lbl_".Length));
+            }
+            //throw new NotImplementedException();
+        }
+
+ 
         private void DrawBoard()
         {
             
@@ -30,16 +64,17 @@ namespace ChessUI
                 {
                     var file = (File)i;
                     var rank = (Rank)j;
-                    Label lbl = this.Controls.OfType<Label>()
-                        .First(m => m.Name == "lbl_" + file.ToString() + ((int) rank + 1));
+                    Label lbl = _squareLabels.First(m => m.Name == "lbl_" + file.ToString() + ((int) rank + 1));
                     Piece piece = _gameBoard[file, rank];
+                    lbl.BackColor = ((i + j) % 2 == 0) ? Color.FromArgb(181, 136, 99) : Color.FromArgb(240, 217, 181);
                     if (piece == null)
                     {
                         lbl.BackgroundImage = null;
+                        lbl.Tag = "empty";
                         continue;
                     }
                     lbl.BackgroundImage = (Image)Properties.Resources.ResourceManager.GetObject($"{piece.Owner}{piece.GetType().Name}");
-                    
+                    lbl.Tag = piece.Owner.ToString();
                 }
                 
             }
@@ -51,11 +86,17 @@ namespace ChessUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+           MakeMove(textBox1.Text, textBox2.Text);
+        }
+
+        private void MakeMove(string source, string destination)
+        {
             try
             {
-                var source = new Square(textBox1.Text[0], (byte)(textBox1.Text[1] - '0'));
-                var destination = new Square(textBox2.Text[0], (byte)(textBox2.Text[1] - '0'));
-                var move = new Move(source, destination, _gameBoard.WhoseTurn());
+                var squareSource = Square.Parse(source);
+                var squareDestination = Square.Parse(destination);
+                Player player = _gameBoard.WhoseTurn();
+                var move = new Move(squareSource, squareDestination, player);
                 if (!_gameBoard.IsValidMove(move))
                 {
                     MessageBox.Show("Invalid Move!", "Chess", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -63,8 +104,8 @@ namespace ChessUI
                 }
                 _gameBoard.MakeMove(move);
                 DrawBoard();
-                Player lastPlayer = ChessUtilities.RevertPlayer(_gameBoard.WhoseTurn());
-                GameState state = ChessUtilities.GetGameState(_gameBoard.Board, lastPlayer);
+                
+                GameState state = ChessUtilities.GetGameState(_gameBoard.Board, player);
                 if (state != GameState.NotCompleted)
                 {
                     MessageBox.Show(state.ToString());
@@ -74,8 +115,6 @@ namespace ChessUI
             {
                 MessageBox.Show($"Error\n{exception.Message}", "Chess", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            
         }
     }
 }

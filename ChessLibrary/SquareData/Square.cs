@@ -34,6 +34,11 @@ namespace ChessLibrary.SquareData
             }
         }
 
+        public override string ToString()
+        {
+            return File.ToString() + ((int) Rank + 1);
+        }
+
         public Square(File file, Rank rank)
         {
             File = file;

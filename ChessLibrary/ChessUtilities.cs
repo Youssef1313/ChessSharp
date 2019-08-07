@@ -73,7 +73,7 @@ namespace ChessLibrary
             return false;
         }
 
-        internal static List<Move> GetValidMoves(Piece[,] board, Player player)
+        public static List<Move> GetValidMoves(Piece[,] board, Player player)
         {
             var validMoves = new List<Move>();
             Square[] squares = new[]

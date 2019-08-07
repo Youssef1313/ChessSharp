@@ -80,7 +80,7 @@ namespace ChessLibrary
                     !ChessUtilities.PlayerWillBeInCheck(move, Board) && piece.IsValidGameMove(move, Board));
         }
 
-        public static bool IsValidMove(Move move, Piece[,] board)
+        internal static bool IsValidMove(Move move, Piece[,] board)
         {
             if (move == null)
             {
