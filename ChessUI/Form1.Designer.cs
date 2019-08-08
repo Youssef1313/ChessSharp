@@ -689,6 +689,7 @@
             this.Controls.Add(this.lbl_C1);
             this.Controls.Add(this.lbl_B1);
             this.Controls.Add(this.lbl_A1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
