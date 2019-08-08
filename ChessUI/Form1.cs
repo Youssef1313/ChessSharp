@@ -59,15 +59,13 @@ namespace ChessUI
             Array.ForEach(_squareLabels, lbl => lbl.Location = locationsDictionary[lbl.Name]);
         }
 
-        private Player? GetPlayerInCheck(GameState? knownState = null)
+        private Player? GetPlayerInCheck()
         {
-            GameState state = knownState ?? ChessUtilities.GetGameState(_gameBoard);
-
-            if (state == GameState.BlackInCheck || state == GameState.WhiteWinner)
+            if (_gameBoard.GameState == GameState.BlackInCheck || _gameBoard.GameState == GameState.WhiteWinner)
             {
                 return Player.Black;
             }
-            if (state == GameState.WhiteInCheck || state == GameState.BlackWinner)
+            if (_gameBoard.GameState == GameState.WhiteInCheck || _gameBoard.GameState == GameState.BlackWinner)
             {
                 return Player.White;
             }
@@ -136,13 +134,6 @@ namespace ChessUI
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MakeMove(textBox1.Text, textBox2.Text);
-            textBox1.Clear();
-            textBox2.Clear();
-        }
-
         private void MakeMove(string source, string destination)
         {
             try
@@ -159,14 +150,14 @@ namespace ChessUI
                 _gameBoard.MakeMove(move);
                 
                 
-                GameState state = ChessUtilities.GetGameState(_gameBoard);
+                
             
-                DrawBoard(GetPlayerInCheck(state));
+                DrawBoard(GetPlayerInCheck());
 
-                if (state == GameState.Draw || state == GameState.Stalemate ||
-                    state == GameState.BlackWinner || state == GameState.WhiteWinner)
+                if (_gameBoard.GameState == GameState.Draw || _gameBoard.GameState == GameState.Stalemate ||
+                    _gameBoard.GameState == GameState.BlackWinner || _gameBoard.GameState == GameState.WhiteWinner)
                 {
-                    MessageBox.Show(state.ToString());
+                    MessageBox.Show(_gameBoard.GameState.ToString());
                     return;
                 }
 

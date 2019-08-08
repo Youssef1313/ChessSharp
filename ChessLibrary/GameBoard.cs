@@ -16,6 +16,7 @@ namespace ChessLibrary
         public List<Move> Moves { get; set; }
         public Piece[,] Board { get; set; }
 
+        public GameState GameState { get; private set; }
         public bool IsWhiteQueenSideRookMoved { get; private set; }
         public bool IsWhiteKingSideRookMoved { get; private set; }
         public bool IsWhiteKingMoved { get; private set; }
@@ -112,6 +113,7 @@ namespace ChessLibrary
             Board[(int) move.Source.Rank, (int) move.Source.File] = null;
             Board[(int) move.Destination.Rank, (int) move.Destination.File] = piece;
             Moves.Add(move);
+            GameState = ChessUtilities.GetGameState(this);
         }
 
         public bool IsValidMove(Move move)

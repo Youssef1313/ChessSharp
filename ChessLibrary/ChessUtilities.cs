@@ -14,7 +14,7 @@ namespace ChessLibrary
             return player == Player.White ? Player.Black : Player.White;
         }
 
-        public static GameState GetGameState(GameBoard board)
+        internal static GameState GetGameState(GameBoard board)
         {
             Player opponent = board.WhoseTurn();
             Player lastPlayer = RevertPlayer(opponent);
