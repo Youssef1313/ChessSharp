@@ -122,7 +122,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_A1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 506</value>
+    <value>10, 520</value>
   </data>
   <data name="lbl_A1.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -150,7 +150,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_B1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 506</value>
+    <value>80, 520</value>
   </data>
   <data name="lbl_B1.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -177,7 +177,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_C1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 506</value>
+    <value>150, 520</value>
   </data>
   <data name="lbl_C1.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -204,7 +204,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_E1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 506</value>
+    <value>290, 520</value>
   </data>
   <data name="lbl_E1.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -231,7 +231,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_D1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 506</value>
+    <value>220, 520</value>
   </data>
   <data name="lbl_D1.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -258,7 +258,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_H1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 506</value>
+    <value>500, 520</value>
   </data>
   <data name="lbl_H1.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -285,7 +285,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_G1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 506</value>
+    <value>430, 520</value>
   </data>
   <data name="lbl_G1.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -312,7 +312,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_F1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 506</value>
+    <value>360, 520</value>
   </data>
   <data name="lbl_F1.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -339,7 +339,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_H2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 438</value>
+    <value>500, 450</value>
   </data>
   <data name="lbl_H2.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -366,7 +366,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_G2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 438</value>
+    <value>430, 450</value>
   </data>
   <data name="lbl_G2.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -393,7 +393,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_F2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 438</value>
+    <value>360, 450</value>
   </data>
   <data name="lbl_F2.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -420,7 +420,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_E2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 438</value>
+    <value>290, 450</value>
   </data>
   <data name="lbl_E2.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -447,7 +447,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_D2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 438</value>
+    <value>220, 450</value>
   </data>
   <data name="lbl_D2.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -474,7 +474,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_C2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 438</value>
+    <value>150, 450</value>
   </data>
   <data name="lbl_C2.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -501,7 +501,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_B2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 438</value>
+    <value>80, 450</value>
   </data>
   <data name="lbl_B2.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -528,7 +528,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_A2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 438</value>
+    <value>10, 450</value>
   </data>
   <data name="lbl_A2.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -555,7 +555,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_H3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 370</value>
+    <value>500, 380</value>
   </data>
   <data name="lbl_H3.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -582,7 +582,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_G3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 370</value>
+    <value>430, 380</value>
   </data>
   <data name="lbl_G3.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -609,7 +609,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_F3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 370</value>
+    <value>360, 380</value>
   </data>
   <data name="lbl_F3.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -636,7 +636,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_E3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 370</value>
+    <value>290, 380</value>
   </data>
   <data name="lbl_E3.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -663,7 +663,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_D3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 370</value>
+    <value>220, 380</value>
   </data>
   <data name="lbl_D3.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -690,7 +690,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_C3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 370</value>
+    <value>150, 380</value>
   </data>
   <data name="lbl_C3.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -720,7 +720,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_B3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 370</value>
+    <value>80, 380</value>
   </data>
   <data name="lbl_B3.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -747,7 +747,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_A3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 370</value>
+    <value>10, 380</value>
   </data>
   <data name="lbl_A3.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -774,7 +774,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_H4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 302</value>
+    <value>500, 310</value>
   </data>
   <data name="lbl_H4.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -801,7 +801,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_G4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 302</value>
+    <value>430, 310</value>
   </data>
   <data name="lbl_G4.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -828,7 +828,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_F4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 302</value>
+    <value>360, 310</value>
   </data>
   <data name="lbl_F4.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -855,7 +855,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_E4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 302</value>
+    <value>290, 310</value>
   </data>
   <data name="lbl_E4.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -882,7 +882,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_D4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 302</value>
+    <value>220, 310</value>
   </data>
   <data name="lbl_D4.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -909,7 +909,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_C4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 302</value>
+    <value>150, 310</value>
   </data>
   <data name="lbl_C4.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -936,7 +936,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_B4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 302</value>
+    <value>80, 310</value>
   </data>
   <data name="lbl_B4.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -963,7 +963,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_A4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 302</value>
+    <value>10, 310</value>
   </data>
   <data name="lbl_A4.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -990,7 +990,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_H5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 234</value>
+    <value>500, 240</value>
   </data>
   <data name="lbl_H5.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1017,7 +1017,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_G5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 234</value>
+    <value>430, 240</value>
   </data>
   <data name="lbl_G5.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1044,7 +1044,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_F5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 234</value>
+    <value>360, 240</value>
   </data>
   <data name="lbl_F5.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1071,7 +1071,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_E5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 234</value>
+    <value>290, 240</value>
   </data>
   <data name="lbl_E5.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1098,7 +1098,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_D5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 234</value>
+    <value>220, 240</value>
   </data>
   <data name="lbl_D5.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1125,7 +1125,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_C5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 234</value>
+    <value>150, 240</value>
   </data>
   <data name="lbl_C5.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1152,7 +1152,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_B5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 234</value>
+    <value>80, 240</value>
   </data>
   <data name="lbl_B5.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1179,7 +1179,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_A5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 234</value>
+    <value>10, 240</value>
   </data>
   <data name="lbl_A5.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1206,7 +1206,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_H6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 166</value>
+    <value>500, 170</value>
   </data>
   <data name="lbl_H6.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1233,7 +1233,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_G6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 166</value>
+    <value>430, 170</value>
   </data>
   <data name="lbl_G6.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1260,7 +1260,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_F6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 166</value>
+    <value>360, 170</value>
   </data>
   <data name="lbl_F6.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1287,7 +1287,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_E6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 166</value>
+    <value>290, 170</value>
   </data>
   <data name="lbl_E6.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1314,7 +1314,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_D6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 166</value>
+    <value>220, 170</value>
   </data>
   <data name="lbl_D6.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1341,7 +1341,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_C6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 166</value>
+    <value>150, 170</value>
   </data>
   <data name="lbl_C6.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1368,7 +1368,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_B6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 166</value>
+    <value>80, 170</value>
   </data>
   <data name="lbl_B6.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1395,7 +1395,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_A6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 166</value>
+    <value>10, 170</value>
   </data>
   <data name="lbl_A6.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1422,7 +1422,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_H7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 98</value>
+    <value>500, 100</value>
   </data>
   <data name="lbl_H7.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1449,7 +1449,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_G7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 98</value>
+    <value>430, 100</value>
   </data>
   <data name="lbl_G7.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1476,7 +1476,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_F7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 98</value>
+    <value>360, 100</value>
   </data>
   <data name="lbl_F7.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1503,7 +1503,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_E7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 98</value>
+    <value>290, 100</value>
   </data>
   <data name="lbl_E7.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1530,7 +1530,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_D7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 98</value>
+    <value>220, 100</value>
   </data>
   <data name="lbl_D7.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1557,7 +1557,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_C7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 98</value>
+    <value>150, 100</value>
   </data>
   <data name="lbl_C7.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1584,7 +1584,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_B7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 98</value>
+    <value>80, 100</value>
   </data>
   <data name="lbl_B7.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1611,7 +1611,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_A7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 98</value>
+    <value>10, 100</value>
   </data>
   <data name="lbl_A7.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1638,7 +1638,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_H8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 30</value>
+    <value>500, 30</value>
   </data>
   <data name="lbl_H8.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1665,7 +1665,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_G8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 30</value>
+    <value>430, 30</value>
   </data>
   <data name="lbl_G8.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1692,7 +1692,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_F8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 30</value>
+    <value>360, 30</value>
   </data>
   <data name="lbl_F8.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1719,7 +1719,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_E8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 30</value>
+    <value>290, 30</value>
   </data>
   <data name="lbl_E8.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1746,7 +1746,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_D8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 30</value>
+    <value>220, 30</value>
   </data>
   <data name="lbl_D8.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1773,7 +1773,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_C8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 30</value>
+    <value>150, 30</value>
   </data>
   <data name="lbl_C8.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1827,7 +1827,7 @@
     <value>Times New Roman, 12pt, style=Bold</value>
   </data>
   <data name="lbl_A8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 30</value>
+    <value>10, 30</value>
   </data>
   <data name="lbl_A8.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 70</value>
@@ -1944,7 +1944,7 @@
     <value>True</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 590</value>
+    <value>30, 600</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 17</value>
@@ -1971,7 +1971,7 @@
     <value>True</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 590</value>
+    <value>100, 600</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 17</value>
@@ -1998,7 +1998,7 @@
     <value>True</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 590</value>
+    <value>170, 600</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 17</value>
@@ -2025,7 +2025,7 @@
     <value>True</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 590</value>
+    <value>240, 600</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 17</value>
@@ -2052,7 +2052,7 @@
     <value>True</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 590</value>
+    <value>310, 600</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 17</value>
@@ -2079,7 +2079,7 @@
     <value>True</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>380, 590</value>
+    <value>380, 600</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 17</value>
@@ -2106,7 +2106,7 @@
     <value>True</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>450, 590</value>
+    <value>450, 600</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 17</value>
@@ -2133,7 +2133,7 @@
     <value>True</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 590</value>
+    <value>520, 600</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 17</value>
@@ -2160,7 +2160,7 @@
     <value>True</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>564, 545</value>
+    <value>580, 545</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 17</value>
@@ -2187,7 +2187,7 @@
     <value>True</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>564, 475</value>
+    <value>580, 475</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 17</value>
@@ -2214,7 +2214,7 @@
     <value>True</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>564, 405</value>
+    <value>580, 405</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 17</value>
@@ -2241,7 +2241,7 @@
     <value>True</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>564, 335</value>
+    <value>580, 335</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 17</value>
@@ -2268,7 +2268,7 @@
     <value>True</value>
   </data>
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>564, 265</value>
+    <value>580, 265</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 17</value>
@@ -2295,7 +2295,7 @@
     <value>True</value>
   </data>
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>564, 195</value>
+    <value>580, 195</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 17</value>
@@ -2322,7 +2322,7 @@
     <value>True</value>
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>564, 125</value>
+    <value>580, 125</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 17</value>
@@ -2349,7 +2349,7 @@
     <value>True</value>
   </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>564, 55</value>
+    <value>580, 55</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 17</value>
@@ -2386,7 +2386,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Form1</value>
+    <value>Chess</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>

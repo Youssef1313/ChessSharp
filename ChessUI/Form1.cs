@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows.Forms;
 using ChessLibrary;
 using ChessLibrary.SquareData;
@@ -57,6 +59,9 @@ namespace ChessUI
  
         private void DrawBoard()
         {
+
+            Player whoseTurn = _gameBoard.WhoseTurn();
+            lblWhoseTurn.Text = whoseTurn.ToString();
             
             for (var i = 0; i < 8; i++)
             {
@@ -79,14 +84,13 @@ namespace ChessUI
                 
             }
 
-            lblWhoseTurn.Text = _gameBoard.WhoseTurn().ToString();
-            textBox1.Clear();
-            textBox2.Clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           MakeMove(textBox1.Text, textBox2.Text);
+            MakeMove(textBox1.Text, textBox2.Text);
+            textBox1.Clear();
+            textBox2.Clear();
         }
 
         private void MakeMove(string source, string destination)
