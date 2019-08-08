@@ -31,6 +31,11 @@ namespace ChessLibrary
                 return GameState.Stalemate;
             }
 
+            if (isInCheck)
+            {
+                return opponent == Player.White ? GameState.WhiteInCheck : GameState.BlackInCheck;
+            }
+
             return IsInsufficientMaterial(board.Board) ? GameState.Draw : GameState.NotCompleted;
         }
 

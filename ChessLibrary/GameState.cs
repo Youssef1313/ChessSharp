@@ -6,6 +6,8 @@
         BlackWinner,
         Draw,
         Stalemate,
+        WhiteInCheck,
+        BlackInCheck,
         NotCompleted
     }
 }

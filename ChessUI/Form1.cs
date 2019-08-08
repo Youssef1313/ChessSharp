@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 using ChessLibrary;
+using ChessLibrary.Pieces;
 using ChessLibrary.SquareData;
 
 namespace ChessUI
@@ -57,10 +58,7 @@ namespace ChessUI
         private void FlipUi(Player player)
         {
             var locationsDictionary = player == Player.White ? _whiteLocations : _blackLocations;
-            foreach (Label squareLabel in _squareLabels)
-            {
-                squareLabel.Location = locationsDictionary[squareLabel.Name];
-            }
+            Array.ForEach(_squareLabels, lbl => lbl.Location = locationsDictionary[lbl.Name]);
         }
 
 
@@ -89,10 +87,6 @@ namespace ChessUI
  
         private void DrawBoard()
         {
-
-            Player whoseTurn = _gameBoard.WhoseTurn();
-            lblWhoseTurn.Text = whoseTurn.ToString();
-            FlipUi(whoseTurn);
             for (var i = 0; i < 8; i++)
             {
                 for (var j = 0; j < 8; j++)
@@ -140,10 +134,36 @@ namespace ChessUI
                 DrawBoard();
                 
                 GameState state = ChessUtilities.GetGameState(_gameBoard);
-                if (state != GameState.NotCompleted)
+                if (state == GameState.Draw || state == GameState.Stalemate ||
+                    state == GameState.BlackWinner || state == GameState.WhiteWinner)
                 {
                     MessageBox.Show(state.ToString());
+                    return;
                 }
+
+                if (state == GameState.BlackInCheck)
+                {
+                    // Division => Rank             Modulus => File
+
+                    Square blackKingSquare = _gameBoard.Board.Cast<Piece>()
+                        .Select((p, i) => new { Piece = p, Square = new Square((File)(i / 8), (Rank)(i / 8)) })
+                        .First(m => new King(Player.Black).Equals(m.Piece)).Square;
+                    _squareLabels.First(lbl => lbl.Name == "lbl_" + blackKingSquare).BackColor = Color.Red;
+                }
+
+                if (state == GameState.WhiteInCheck)
+                {
+                    // Division => Rank             Modulus => File
+
+                    Square whiteKingSquare = _gameBoard.Board.Cast<Piece>()
+                        .Select((p, i) => new { Piece = p, Square = new Square((File)(i % 8), (Rank)(i / 8)) })
+                        .First(m => new King(Player.White).Equals(m.Piece)).Square;
+                    _squareLabels.First(lbl => lbl.Name == "lbl_" + whiteKingSquare).BackColor = Color.Red;
+                }
+
+                Player whoseTurn = _gameBoard.WhoseTurn();
+                lblWhoseTurn.Text = whoseTurn.ToString();
+                FlipUi(whoseTurn);
             }
             catch (Exception exception)
             {
