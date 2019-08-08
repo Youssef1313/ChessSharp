@@ -157,7 +157,7 @@ namespace ChessUI
                     MessageBox.Show("Invalid Move!", "Chess", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
-                _gameBoard.MakeMove(move);
+                _gameBoard.MakeMove(move, isMoveValidated: true);
                 
                 
                 

@@ -61,7 +61,7 @@ namespace ChessLibrary
         }
 
 
-        public void MakeMove(Move move)
+        public bool MakeMove(Move move, bool isMoveValidated)
         {
             if (move == null)
             {
@@ -72,6 +72,11 @@ namespace ChessLibrary
             if (piece == null)
             {
                 throw new InvalidOperationException("Source square has no piece.");
+            }
+
+            if (!isMoveValidated && !IsValidMove(move))
+            {
+                return false;
             }
 
             SetCastleStatus(move, piece);
@@ -111,6 +116,7 @@ namespace ChessLibrary
             Board[(int) move.Destination.Rank, (int) move.Destination.File] = piece;
             Moves.Add(move);
             GameState = ChessUtilities.GetGameState(this);
+            return true;
         }
 
         private void SetCastleStatus(Move move, Piece piece)
