@@ -112,7 +112,7 @@ namespace ChessLibrary.Pieces
                 var boardClone = board.Board.Clone() as Piece[,];
                 boardClone[(int) move.Destination.Rank, (int) move.Destination.File] = null;
                 boardClone[((int) move.Destination.Rank + (int) move.Source.Rank) / 2, (int) move.Destination.File] = lastMovedPiece;
-                return !ChessUtilities.PlayerWillBeInCheck(move, new GameBoard() {Board = boardClone});;
+                return !ChessUtilities.PlayerWillBeInCheck(move, new GameBoard() {Board = boardClone, Moves = board.Moves});;
             }
 
             throw new Exception("Unexpected PawnMoveType.");

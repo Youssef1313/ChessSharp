@@ -756,7 +756,7 @@
             // lblWhoseTurn
             // 
             this.lblWhoseTurn.AutoSize = true;
-            this.lblWhoseTurn.Location = new System.Drawing.Point(40, 647);
+            this.lblWhoseTurn.Location = new System.Drawing.Point(175, 9);
             this.lblWhoseTurn.Name = "lblWhoseTurn";
             this.lblWhoseTurn.Size = new System.Drawing.Size(0, 17);
             this.lblWhoseTurn.TabIndex = 66;
@@ -919,7 +919,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 650);
+            this.ClientSize = new System.Drawing.Size(619, 664);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);

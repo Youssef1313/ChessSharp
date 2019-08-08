@@ -186,7 +186,8 @@ namespace ChessLibrary
             Piece piece = boardClone[(int)move.Source.Rank, (int)move.Source.File];
             boardClone[(int)move.Source.Rank, (int)move.Source.File] = null;
             boardClone[(int)move.Destination.Rank, (int)move.Destination.File] = piece;
-            return IsPlayerInCheck(move.Player, new GameBoard { Board = boardClone });
+
+            return IsPlayerInCheck(move.Player, new GameBoard { Board = boardClone, Moves = board.Moves});
         }
 
         internal static bool IsTherePieceInBetween(Move move, Piece[,] board)
