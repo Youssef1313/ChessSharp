@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Windows.Forms;
 using ChessLibrary;
 using ChessLibrary.Pieces;
@@ -14,10 +12,10 @@ namespace ChessUI
 {
     public partial class Form1 : Form
     {
-        private Square _selectedSourceSquare;
         private readonly Label[] _squareLabels;
         private readonly Dictionary<string, Point> _whiteLocations;
         private readonly Dictionary<string, Point> _blackLocations;
+        private Square _selectedSourceSquare;
         private GameBoard _gameBoard = new GameBoard();
 
 
