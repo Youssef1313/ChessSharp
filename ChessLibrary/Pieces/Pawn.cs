@@ -9,41 +9,43 @@ namespace ChessLibrary.Pieces
         public Pawn(Player player) : base(player) { }
 
 
-        private static PawnMoveType GetPawnMoveType(Move move)
+        internal static PawnMoveType GetPawnMoveType(Move move)
         {
-            PawnMoveType result = PawnMoveType.Invalid;
             sbyte deltaY = move.GetDeltaY();
             byte absDeltaX = move.GetAbsDeltaX();
-
-            // Check promotion move.
-            if ((move.Player == Player.White && move.Destination.Rank == Rank.Eighth) ||
-                (move.Player == Player.Black && move.Destination.Rank == Rank.First))
-            {
-                result |= PawnMoveType.Promotion;
-            }
-
+            
             // Check normal one step pawn move.
             if ((move.Player == Player.White && deltaY == 1 && absDeltaX == 0) ||
                 move.Player == Player.Black && deltaY == -1 && absDeltaX == 0)
             {
-                result |= PawnMoveType.OneStep;
+                if ((move.Player == Player.White && move.Destination.Rank == Rank.Eighth) ||
+                    (move.Player == Player.Black && move.Destination.Rank == Rank.First))
+                {
+                    return PawnMoveType.OneStep | PawnMoveType.Promotion;
+                }
+                return PawnMoveType.OneStep;
             }
 
             // Check two step move from starting position.
             if ((move.Player == Player.White && deltaY == 2 && absDeltaX == 0 && move.Source.Rank == Rank.Second) ||
                 (move.Player == Player.Black && deltaY == -2 && absDeltaX == 0 && move.Source.Rank == Rank.Seventh))
             {
-                result |= PawnMoveType.TwoSteps;
+                return PawnMoveType.TwoSteps;
             }
             
             // Check capture (Enpassant is special case from capture).
             if ((move.Player == Player.White && deltaY == 1 && absDeltaX == 1) ||
                 (move.Player == Player.Black && deltaY == -1 && absDeltaX == 1))
             {
-                result |= PawnMoveType.Capture;
+                if ((move.Player == Player.White && move.Destination.Rank == Rank.Eighth) ||
+                    (move.Player == Player.Black && move.Destination.Rank == Rank.First))
+                {
+                    return PawnMoveType.Capture | PawnMoveType.Promotion;
+                }
+                return PawnMoveType.Capture;
             }
 
-            return result;
+            return PawnMoveType.Invalid;
         }
 
         internal override bool IsValidGameMove(Move move, GameBoard board)
@@ -59,19 +61,25 @@ namespace ChessLibrary.Pieces
             }
 
             var moveType = GetPawnMoveType(move);
+
             if (moveType == PawnMoveType.Invalid)
             {
                 return false;
             }
 
-            if (moveType.Contains(PawnMoveType.OneStep))
+            if (moveType.Contains(PawnMoveType.Promotion) && move.PromoteTo == null)
             {
-                return board[move.Destination] == null;
+                return false;
             }
 
             if (moveType.Contains(PawnMoveType.TwoSteps))
             {
                 return !ChessUtilities.IsTherePieceInBetween(move, board.Board) && board[move.Destination] == null;
+            }
+
+            if (moveType.Contains(PawnMoveType.OneStep))
+            {
+                return board[move.Destination] == null;
             }
 
             if (moveType.Contains(PawnMoveType.Capture))
@@ -92,26 +100,24 @@ namespace ChessLibrary.Pieces
                 Move lastMove = board.Moves.Last();
                 Piece lastMovedPiece = board[lastMove.Destination];
 
-                // Not enpassant.
-                if (lastMovedPiece.GetType().Name != typeof(Pawn).Name || !GetPawnMoveType(lastMove).Contains(PawnMoveType.TwoSteps))
+                if (lastMovedPiece.GetType().Name != typeof(Pawn).Name || 
+                    !GetPawnMoveType(lastMove).Contains(PawnMoveType.TwoSteps) || lastMove.Destination.File != move.Destination.File ||
+                    lastMove.Destination.Rank != move.Source.Rank)
                 {
                     return false;
                 }
-                // TODO: I should check if the player will be in check after enpassant HERE IN Pawn.cs, because it won't work correctly in GameBoard.IsValidMove
-                return false;
+                // Two Step pawn move ( white from rank 2 to 4 ) ( black from rank 7 to 5 )
+                // SHOULDN'T REMOVE CAPTURED PAWN HERE!! THIS IS ONLY FOR CHECKING IF MOVE IS LEGAL OR NOT!!
+                // REMOVAL SHOULD BE DONE IN MAKEMOVE METHOD!!!
+                var boardClone = board.Board.Clone() as Piece[,];
+                boardClone[(int) move.Destination.Rank, (int) move.Destination.File] = null;
+                boardClone[((int) move.Destination.Rank + (int) move.Source.Rank) / 2, (int) move.Destination.File] = lastMovedPiece;
+                return !ChessUtilities.PlayerWillBeInCheck(move, new GameBoard() {Board = boardClone});;
             }
-
-            if (moveType.Contains(PawnMoveType.Promotion))
-            {
-                // TODO: Promotion
-                return false;
-            }
-
 
             throw new Exception("Unexpected PawnMoveType.");
 
 
-            
         }
     }
 }

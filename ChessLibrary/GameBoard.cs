@@ -69,12 +69,52 @@ namespace ChessLibrary
             }
 
             Piece piece = this[move.Source];
-
             if (piece == null)
             {
                 throw new InvalidOperationException("Source square has no piece.");
             }
 
+            SetCastleStatus(move, piece);
+
+            if (piece.GetType().Name == typeof(Pawn).Name)
+            {
+                if ((move.Player == Player.White && move.Destination.Rank == Rank.Eighth) ||
+                    (move.Player == Player.Black && move.Destination.Rank == Rank.First))
+                {
+                    switch (move.PromoteTo)
+                    {
+                        case PawnPromotion.Knight:
+                            piece = new Knight(piece.Owner);
+                            break;
+                        case PawnPromotion.Bishop:
+                            piece = new Bishop(piece.Owner);
+                            break;
+                        case PawnPromotion.Rook:
+                            piece = new Rook(piece.Owner);
+                            break;
+                        case PawnPromotion.Queen:
+                            piece = new Queen(piece.Owner);
+                            break;
+                        default:
+                            throw new ArgumentNullException(nameof(move.PromoteTo));
+                    }
+                }
+                // Enpassant
+                if (Pawn.GetPawnMoveType(move) == PawnMoveType.Capture &&
+                    this[move.Destination] == null)
+                {
+                    Board[(int) Moves.Last().Destination.Rank, (int) Moves.Last().Destination.File] = null;
+                }
+
+            }
+            Board[(int) move.Source.Rank, (int) move.Source.File] = null;
+            Board[(int) move.Destination.Rank, (int) move.Destination.File] = piece;
+            Moves.Add(move);
+            GameState = ChessUtilities.GetGameState(this);
+        }
+
+        private void SetCastleStatus(Move move, Piece piece)
+        {
             if (piece.Owner == Player.White && piece.GetType().Name == typeof(King).Name)
             {
                 IsWhiteKingMoved = true;
@@ -108,12 +148,6 @@ namespace ChessLibrary
             {
                 IsBlackKingSideRookMoved = true;
             }
-
-
-            Board[(int) move.Source.Rank, (int) move.Source.File] = null;
-            Board[(int) move.Destination.Rank, (int) move.Destination.File] = piece;
-            Moves.Add(move);
-            GameState = ChessUtilities.GetGameState(this);
         }
 
         public bool IsValidMove(Move move)

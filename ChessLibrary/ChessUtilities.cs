@@ -138,7 +138,7 @@ namespace ChessLibrary
 
 
             validMoves.AddRange(from nonPlayerOwnedSquare in nonPlayerOwnedSquares
-                                select new Move(source, nonPlayerOwnedSquare, player) into move
+                                select new Move(source, nonPlayerOwnedSquare, player, PawnPromotion.Queen) into move
                                 where GameBoard.IsValidMove(move, board)
                                 select move);
 

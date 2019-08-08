@@ -1,4 +1,5 @@
 ﻿using System;
+using ChessLibrary.Pieces;
 using ChessLibrary.SquareData;
 namespace ChessLibrary
 {
@@ -7,7 +8,7 @@ namespace ChessLibrary
         public Square Source { get; }
         public Square Destination { get; }
         public Player Player { get; }
-
+        public PawnPromotion? PromoteTo { get; }
         public override bool Equals(object obj)
         {
 
@@ -36,7 +37,7 @@ namespace ChessLibrary
             }
         }
 
-        public Move(Square source, Square destination, Player player)
+        public Move(Square source, Square destination, Player player, PawnPromotion? promoteTo = null)
         {
             if (source == null)
             {
@@ -46,9 +47,11 @@ namespace ChessLibrary
             {
                 throw new ArgumentNullException(nameof(destination));
             }
+
             Source = source;
             Destination = destination;
             Player = player;
+            PromoteTo = promoteTo;
         }
 
         public byte GetAbsDeltaX()

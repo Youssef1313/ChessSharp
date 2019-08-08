@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using ChessLibrary;
 using ChessLibrary.Pieces;
 using ChessLibrary.SquareData;
-
+using Microsoft.VisualBasic;
 namespace ChessUI
 {
     public partial class Form1 : Form
@@ -55,6 +55,7 @@ namespace ChessUI
 
         private void FlipUi(Player player)
         {
+            if (checkBox1.Checked) return;
             var locationsDictionary = player == Player.White ? _whiteLocations : _blackLocations;
             Array.ForEach(_squareLabels, lbl => lbl.Location = locationsDictionary[lbl.Name]);
         }
@@ -79,8 +80,6 @@ namespace ChessUI
             {
                 // Re-draw to remove previously colored labels.
                 DrawBoard(GetPlayerInCheck());
-
-
 
                 if (selectedLabel.Tag.ToString() != _gameBoard.WhoseTurn().ToString()) return;
                 _selectedSourceSquare = Square.Parse(selectedLabel.Name.Substring("lbl_".Length));
@@ -141,7 +140,18 @@ namespace ChessUI
                 var squareSource = Square.Parse(source);
                 var squareDestination = Square.Parse(destination);
                 Player player = _gameBoard.WhoseTurn();
-                var move = new Move(squareSource, squareDestination, player);
+                PawnPromotion? pawnPromotion = null;
+                if (_gameBoard[squareSource].GetType().Name == typeof(Pawn).Name)
+                {
+                    if ((player == Player.White && squareDestination.Rank == Rank.Eighth) ||
+                        (player == Player.Black && squareDestination.Rank == Rank.First))
+                    {
+                        var promotion = Interaction.InputBox("Promote to what ?", "Promotion").ToLower();
+                        pawnPromotion = (PawnPromotion) Enum.Parse(typeof(PawnPromotion), promotion, true);
+                    }
+                }
+
+                var move = new Move(squareSource, squareDestination, player, pawnPromotion);
                 if (!_gameBoard.IsValidMove(move))
                 {
                     MessageBox.Show("Invalid Move!", "Chess", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
