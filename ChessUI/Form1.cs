@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -14,10 +15,20 @@ namespace ChessUI
     {
         private Square _selectedSourceSquare;
         private readonly Label[] _squareLabels;
+        private readonly Dictionary<string, Point> _whiteLocations;
+        private readonly Dictionary<string, Point> _blackLocations;
         private GameBoard _gameBoard = new GameBoard();
 
 
-
+        private static string InvertSquare(string sq)
+        {
+            // sq is like lbl_A7 for example.
+            // file char at index 4,
+            // rank char at index 5.
+            var f = (char)('A' + 'H' - sq[4]);
+            var r = '9' - sq[5];
+            return "lbl_" + f + r;
+        }
 
         public Form1()
         {
@@ -30,8 +41,28 @@ namespace ChessUI
                 lbl.BackgroundImageLayout = ImageLayout.Zoom;
                 lbl.Click += SquaresLabels_Click;
             });
+
+
+
+
+            _whiteLocations = _squareLabels.ToDictionary(lbl => lbl.Name,
+                                                        lbl => lbl.Location);
+
+            _blackLocations = _squareLabels.ToDictionary(lbl => InvertSquare(lbl.Name),
+                                                        lbl => lbl.Location);
+
             DrawBoard();
         }
+
+        private void FlipUi(Player player)
+        {
+            var locationsDictionary = player == Player.White ? _whiteLocations : _blackLocations;
+            foreach (Label squareLabel in _squareLabels)
+            {
+                squareLabel.Location = locationsDictionary[squareLabel.Name];
+            }
+        }
+
 
         private void SquaresLabels_Click(object sender, EventArgs e)
         {
@@ -53,7 +84,6 @@ namespace ChessUI
             {
                 MakeMove(_selectedSourceSquare.ToString(), selectedLabel.Name.Substring("lbl_".Length));
             }
-            //throw new NotImplementedException();
         }
 
  
@@ -62,7 +92,7 @@ namespace ChessUI
 
             Player whoseTurn = _gameBoard.WhoseTurn();
             lblWhoseTurn.Text = whoseTurn.ToString();
-            
+            FlipUi(whoseTurn);
             for (var i = 0; i < 8; i++)
             {
                 for (var j = 0; j < 8; j++)
