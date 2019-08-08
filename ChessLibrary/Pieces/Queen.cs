@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ChessLibrary.Pieces
+﻿namespace ChessLibrary.Pieces
 {
     public class Queen : Piece
     {

@@ -1,6 +1,6 @@
-﻿using System;
-using ChessLibrary.Pieces;
+﻿using ChessLibrary.Pieces;
 using ChessLibrary.SquareData;
+using System;
 namespace ChessLibrary
 {
     public class Move

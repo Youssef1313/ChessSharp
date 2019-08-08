@@ -1,13 +1,12 @@
-﻿using System;
+﻿using ChessLibrary.Pieces;
+using ChessLibrary.SquareData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using ChessLibrary.Pieces;
-using ChessLibrary.SquareData;
 
 namespace ChessLibrary
 {
-    
+
     public class GameBoard
     {
         public Piece this[File file, Rank rank] => Board[(int)rank, (int)file];

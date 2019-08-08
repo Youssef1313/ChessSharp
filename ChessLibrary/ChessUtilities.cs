@@ -1,8 +1,8 @@
-﻿using System;
+﻿using ChessLibrary.Pieces;
+using ChessLibrary.SquareData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using ChessLibrary.Pieces;
-using ChessLibrary.SquareData;
 
 namespace ChessLibrary
 {

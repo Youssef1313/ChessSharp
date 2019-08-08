@@ -1,13 +1,13 @@
-﻿using System;
+﻿using ChessLibrary;
+using ChessLibrary.Pieces;
+using ChessLibrary.SquareData;
+using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using ChessLibrary;
-using ChessLibrary.Pieces;
-using ChessLibrary.SquareData;
-using Microsoft.VisualBasic;
 namespace ChessUI
 {
     public partial class Form1 : Form

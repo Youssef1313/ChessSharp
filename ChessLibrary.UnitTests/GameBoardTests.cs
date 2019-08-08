@@ -1,6 +1,4 @@
-﻿using ChessLibrary.Pieces;
-using ChessLibrary.SquareData;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace ChessLibrary.UnitTests
 {

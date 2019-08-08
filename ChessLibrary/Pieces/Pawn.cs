@@ -1,6 +1,6 @@
-﻿using System;
+﻿using ChessLibrary.SquareData;
+using System;
 using System.Linq;
-using ChessLibrary.SquareData;
 
 namespace ChessLibrary.Pieces
 {
