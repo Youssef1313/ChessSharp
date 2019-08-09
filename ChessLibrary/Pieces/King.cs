@@ -27,11 +27,11 @@ namespace ChessLibrary.Pieces
             {
                 return true;
             }
-
             // Not castle move.
             if (absDeltaX != 2 || absDeltaY != 0 || move.Source.File != File.E ||
                 (move.Player == Player.White && move.Source.Rank != Rank.First) ||
-                (move.Player == Player.Black && move.Source.Rank != Rank.Eighth))
+                (move.Player == Player.Black && move.Source.Rank != Rank.Eighth) ||
+                (board.GameState == GameState.BlackInCheck || board.GameState == GameState.WhiteInCheck))
             {
                 return false;
             }
