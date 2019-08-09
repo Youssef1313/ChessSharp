@@ -11,6 +11,7 @@
 ## 🤝 Contributing
 
 Contributions, issues, bug reports and feature requests are welcome!<br />Feel free to check the [issues page](https://github.com/Youssef1313/ChessSharp/issues).
+
 Can you make ChessSharp better ? Feel free to open a pull request.
 
 ## Show your support
