@@ -19,7 +19,7 @@ namespace ChessLibrary.Pieces
                 throw new ArgumentNullException(nameof(board));
             }
 
-            return move.GetAbsDeltaX() == move.GetAbsDeltaY() && !ChessUtilities.IsTherePieceInBetween(move, board.Board);
+            return move.GetAbsDeltaX() == move.GetAbsDeltaY() && !ChessUtilities.IsTherePieceInBetween(move.Source, move.Destination, board.Board);
         }
     }
 }

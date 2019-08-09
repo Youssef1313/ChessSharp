@@ -190,31 +190,31 @@ namespace ChessLibrary
             return IsPlayerInCheck(move.Player, boardClone);
         }
 
-        internal static bool IsTherePieceInBetween(Move move, Piece[,] board)
+        internal static bool IsTherePieceInBetween(Square square1, Square square2, Piece[,] board)
         {
             var xStep = 0;
             var yStep = 0;
 
-            if (move.Destination.File > move.Source.File)
+            if (square2.File > square1.File)
             {
                 xStep = 1;
             }
-            if (move.Destination.Rank > move.Source.Rank)
+            if (square2.Rank > square1.Rank)
             {
                 yStep = 1;
             }
 
-            if (move.Destination.File < move.Source.File)
+            if (square2.File < square1.File)
             {
                 xStep = -1;
             }
-            if (move.Destination.Rank < move.Source.Rank)
+            if (square2.Rank < square1.Rank)
             {
                 yStep = -1;
             }
 
-            var source = new Square(move.Source.File, move.Source.Rank);
-            var destination = new Square(move.Destination.File, move.Destination.Rank);
+            var source = new Square(square1.File, square1.Rank);
+            var destination = new Square(square2.File, square2.Rank);
             Rank rank = source.Rank;
             File file = source.File;
             while (true)

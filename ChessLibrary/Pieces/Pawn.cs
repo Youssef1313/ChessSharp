@@ -74,7 +74,7 @@ namespace ChessLibrary.Pieces
 
             if (moveType.Contains(PawnMoveType.TwoSteps))
             {
-                return !ChessUtilities.IsTherePieceInBetween(move, board.Board) && board[move.Destination] == null;
+                return !ChessUtilities.IsTherePieceInBetween(move.Source, move.Destination, board.Board) && board[move.Destination] == null;
             }
 
             if (moveType.Contains(PawnMoveType.OneStep))

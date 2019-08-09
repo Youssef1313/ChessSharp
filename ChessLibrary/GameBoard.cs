@@ -55,7 +55,7 @@ namespace ChessLibrary
             return new GameBoard
             {
                 Board = board.Board.Clone() as Piece[,],
-                Moves = board.Moves,
+                Moves = board.Moves, // BUG: May or may not produce a bug, it sends a reference to the list, not really clone.
                 GameState =  board.GameState,
                 CanBlackCastleKingSide =  board.CanBlackCastleKingSide,
                 CanBlackCastleQueenSide = board.CanBlackCastleQueenSide,
