@@ -40,32 +40,32 @@ namespace ChessLibrary.Pieces
             if (move.Player == Player.White && move.Destination.File == File.G && board.CanWhiteCastleKingSide &&
                 !ChessUtilities.IsTherePieceInBetween(move.Source, new Square(File.H, Rank.First), board.Board))
             {
-                // BUG? : Should check first if king will be in check if moved one square only ?
-                return true;
+                return !ChessUtilities.PlayerWillBeInCheck(
+                    new Move(move.Source, new Square(File.F, Rank.First), move.Player), board);
             }
 
             // Black king-side castle move.
             if (move.Player == Player.Black && move.Destination.File == File.G && board.CanBlackCastleKingSide &&
                 !ChessUtilities.IsTherePieceInBetween(move.Source, new Square(File.H, Rank.Eighth), board.Board))
             {
-                // BUG? : Should check first if king will be in check if moved one square only ?
-                return true;
+                return !ChessUtilities.PlayerWillBeInCheck(
+                    new Move(move.Source, new Square(File.F, Rank.Eighth), move.Player), board);
             }
 
             // White queen-side castle move.
             if (move.Player == Player.White && move.Destination.File == File.C && board.CanWhiteCastleQueenSide &&
                 !ChessUtilities.IsTherePieceInBetween(move.Source, new Square(File.A, Rank.First), board.Board))
             {
-                // BUG? : Should check first if king will be in check if moved one square only ?
-                return true;
+                return !ChessUtilities.PlayerWillBeInCheck(
+                    new Move(move.Source, new Square(File.D, Rank.First), move.Player), board);
             }
 
             // Black queen-side castle move.
             if (move.Player == Player.Black && move.Destination.File == File.C && board.CanBlackCastleQueenSide &&
                 !ChessUtilities.IsTherePieceInBetween(move.Source, new Square(File.A, Rank.Eighth), board.Board))
             {
-                // BUG? : Should check first if king will be in check if moved one square only ?
-                return true;
+                return !ChessUtilities.PlayerWillBeInCheck(
+                    new Move(move.Source, new Square(File.D, Rank.Eighth), move.Player), board);
             }
 
             return false;
