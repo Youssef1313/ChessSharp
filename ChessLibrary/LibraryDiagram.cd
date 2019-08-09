@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ChessLibrary.SquareData.Square">
-    <Position X="22.75" Y="3.25" Width="1.5" />
+    <Position X="18" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAAAAQAgAABAAAAAAAEAIAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAhAAAAAAAAAAQEgAABAAAAAAAEAIAAAAAAAAAAAAA=</HashCode>
       <FileName>SquareData\Square.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -50,52 +50,59 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ChessLibrary.ChessUtilities">
-    <Position X="21" Y="0.5" Width="1.5" />
+    <Position X="20.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAIAAAAAAAAAAAIAAACAAAAAAAAAAAQBAAA=</HashCode>
+      <HashCode>AQAAAAAAAAIAAAAAAAAAAAIAAACAAAIAAAAAAAQBAAg=</HashCode>
       <FileName>ChessUtilities.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChessLibrary.GameBoard">
-    <Position X="22.75" Y="0.5" Width="1.75" />
+    <Position X="23.25" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAAAACAAAAAAAAACAAkAAAAAAACAAAAA=</HashCode>
+      <HashCode>AAAACAAAQAIACAAACAAAAAAAAACIAkJAAACAACAAIAA=</HashCode>
       <FileName>GameBoard.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChessLibrary.Move">
-    <Position X="21" Y="2.75" Width="1.5" />
+    <Position X="20.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAgAACBAAAAAAAAIAEAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAgAAAAAAgAACBAAAAAAAAIAEAAAAAwAAAAA=</HashCode>
       <FileName>Move.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChessLibrary.Piece">
-    <Position X="13" Y="1.5" Width="1.5" />
+    <Position X="13.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAgA=</HashCode>
       <FileName>Piece.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="ChessLibrary.SquareData.File">
-    <Position X="15.25" Y="0.5" Width="1.5" />
+    <Position X="15" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvkEAAAA=</HashCode>
       <FileName>SquareData\File.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="ChessLibrary.SquareData.Rank">
-    <Position X="17" Y="0.5" Width="1.5" />
+    <Position X="16.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAgAAAAAAAAQAAAAAAAAIAIAABAAAAAAAAAAAAAYA=</HashCode>
       <FileName>SquareData\Rank.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="ChessLibrary.Player">
-    <Position X="18.75" Y="0.5" Width="1.5" />
+    <Position X="13.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ChessLibrary.GameState">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAABAAAAAgAAAAAAAgAAAEAgAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>GameState.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />
