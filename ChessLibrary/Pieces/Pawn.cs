@@ -109,10 +109,10 @@ namespace ChessLibrary.Pieces
                 // Two Step pawn move ( white from rank 2 to 4 ) ( black from rank 7 to 5 )
                 // SHOULDN'T REMOVE CAPTURED PAWN HERE!! THIS IS ONLY FOR CHECKING IF MOVE IS LEGAL OR NOT!!
                 // REMOVAL SHOULD BE DONE IN MAKEMOVE METHOD!!!
-                var boardClone = board.Board.Clone() as Piece[,];
-                boardClone[(int) move.Destination.Rank, (int) move.Destination.File] = null;
-                boardClone[((int) move.Destination.Rank + (int) move.Source.Rank) / 2, (int) move.Destination.File] = lastMovedPiece;
-                return !ChessUtilities.PlayerWillBeInCheck(move, new GameBoard() {Board = boardClone, Moves = board.Moves});;
+                var boardClone = GameBoard.Clone(board);
+                boardClone.Board[(int) move.Destination.Rank, (int) move.Destination.File] = null;
+                boardClone.Board[((int) move.Destination.Rank + (int) move.Source.Rank) / 2, (int) move.Destination.File] = lastMovedPiece;
+                return !ChessUtilities.PlayerWillBeInCheck(move, boardClone);;
             }
 
             throw new Exception("Unexpected PawnMoveType.");

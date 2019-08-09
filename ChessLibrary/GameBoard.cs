@@ -50,7 +50,19 @@ namespace ChessLibrary
             };
         }
 
-
+        public static GameBoard Clone(GameBoard board)
+        {
+            return new GameBoard
+            {
+                Board = board.Board.Clone() as Piece[,],
+                Moves = board.Moves,
+                GameState =  board.GameState,
+                CanBlackCastleKingSide =  board.CanBlackCastleKingSide,
+                CanBlackCastleQueenSide = board.CanBlackCastleQueenSide,
+                CanWhiteCastleKingSide = board.CanWhiteCastleKingSide,
+                CanWhiteCastleQueenSide = board.CanWhiteCastleQueenSide
+            };
+        }
         public Player WhoseTurn()
         {
             return Moves.Count == 0 ? Player.White : ChessUtilities.RevertPlayer(Moves.Last().Player);
