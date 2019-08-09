@@ -2,6 +2,7 @@
 using ChessLibrary.SquareData;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace ChessLibrary
@@ -88,6 +89,25 @@ namespace ChessLibrary
             }
 
             SetCastleStatus(move, piece);
+
+            if (piece.GetType().Name == typeof(King).Name && move.GetAbsDeltaX() == 2)
+            {
+                // Queen-side castle
+                if (move.Destination.File == File.C)
+                {
+                    var rook = this[File.A, move.Source.Rank];
+                    Board[(int)move.Source.Rank, (int)File.A] = null;
+                    Board[(int)move.Source.Rank, (int)File.D] = rook;
+                }
+
+                // King-side castle
+                if (move.Destination.File == File.G)
+                {
+                    var rook = this[File.H, move.Source.Rank];
+                    Board[(int)move.Source.Rank, (int)File.H] = null;
+                    Board[(int)move.Source.Rank, (int)File.F] = rook;
+                }
+            }
 
             if (piece.GetType().Name == typeof(Pawn).Name)
             {
