@@ -17,4 +17,4 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 
 Give a ⭐️ if this project helped you!
 
-### Please note that this project is *still under development*.
+### Please note that this project is *still under development*, but it's working well!
