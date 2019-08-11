@@ -11,7 +11,7 @@ namespace ChessWebsite.Models
         public int Id { get; set; }
         public ApplicationUser WhitePlayer { get; set; }
         public ApplicationUser BlackPlayer { get; set; }
-        public GameBoard GameBoard { get; set; }
+        public string GameBoardJson { get; set; }
 
     }
 }
