@@ -21,6 +21,7 @@ namespace ChessWebsite
             _context = new ApplicationDbContext();
         }
 
+        [Authorize]
         public override Task OnConnected()
         {
             var gameId = int.Parse(Context.QueryString["gameId"]);
