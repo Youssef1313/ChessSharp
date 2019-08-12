@@ -51,7 +51,7 @@ namespace ChessLibrary
             };
         }
 
-        public static GameBoard Clone(GameBoard board)
+        internal static GameBoard Clone(GameBoard board)
         {
             return new GameBoard
             {
@@ -64,6 +64,7 @@ namespace ChessLibrary
                 CanWhiteCastleQueenSide = board.CanWhiteCastleQueenSide
             };
         }
+
         public Player WhoseTurn()
         {
             return Moves.Count == 0 ? Player.White : ChessUtilities.RevertPlayer(Moves.Last().Player);

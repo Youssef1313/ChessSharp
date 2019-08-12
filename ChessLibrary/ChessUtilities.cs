@@ -8,7 +8,7 @@ namespace ChessLibrary
 {
     public static class ChessUtilities
     {
-        public static Player RevertPlayer(Player player)
+        internal static Player RevertPlayer(Player player)
         {
             return player == Player.White ? Player.Black : Player.White;
         }
