@@ -46,10 +46,14 @@
         $(document).ready(function() {
             $('.square').on('click',
                 function () {
-                    var sourceColor = 'red';
-                    var destinationColor = 'red';
-                    document.getElementById(this.id).backgroundColor = sourceColor;
-                    alert(this.id);
+                    $.connection.chessHub.server.getValidMovesOfSquare(this.id)
+                        .done(function (validMoves) {
+                            console.log(validMoves);
+                        })
+                        .fail(function () {
+                        alert('fail');
+                    });
+                    
                 });
         });
 

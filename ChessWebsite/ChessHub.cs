@@ -21,12 +21,26 @@ namespace ChessWebsite
             _context = new ApplicationDbContext();
         }
 
+        private Game GetGameFromId(int gameId)
+        {
+            return _context.Games.Include(g => g.WhitePlayer).Include(g => g.BlackPlayer).First(g => g.Id == gameId); // TODO: Can it be null ?
+        }
+
+        private static GameBoard GetGameBoardFromJson(string json)
+        {
+            var settings = new JsonSerializerSettings
+            {
+                TypeNameHandling = TypeNameHandling.All
+            };
+            return JsonConvert.DeserializeObject<GameBoard>(json, settings);
+        }
+
         [Authorize]
         public override Task OnConnected()
         {
             var gameId = int.Parse(Context.QueryString["gameId"]);
             var userId = Context.User.Identity.GetUserId();
-            var game = _context.Games.Include(g => g.WhitePlayer).Include(g => g.BlackPlayer).First(g => g.Id == gameId); // TODO: Can it be null ?
+            var game = GetGameFromId(gameId);
             if (userId == game.WhitePlayer.Id)
             {
                 Groups.Add(Context.ConnectionId, Context.QueryString["gameId"]);
@@ -42,6 +56,15 @@ namespace ChessWebsite
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
+        }
+
+        public List<Move> GetValidMovesOfSquare(string square)
+        {
+            var gameId = int.Parse(Context.QueryString["gameId"]);
+            var game = GetGameFromId(gameId);
+            var gameBoard = GetGameBoardFromJson(game.GameBoardJson);
+            return ChessUtilities.GetValidMovesOfSourceSquare(Square.Parse(square), gameBoard);
+            //return square;
         }
 
         public async Task MakeMove(int gameId, string source, string destination, int? promoteTo = null)

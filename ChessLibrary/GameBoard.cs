@@ -219,6 +219,4 @@ namespace ChessLibrary
         }
 
     }
-
-    
 }
