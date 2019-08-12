@@ -101,10 +101,9 @@ namespace ChessLibrary
 
             foreach (var playerOwnedSquare in playerOwnedSquares)
             {
-                validMoves.AddRange(from nonPlayerOwnedSquare in nonPlayerOwnedSquares
-                    select new Move(playerOwnedSquare, nonPlayerOwnedSquare, player) into move
-                    where GameBoard.IsValidMove(move, board)
-                    select move);
+                validMoves.AddRange(nonPlayerOwnedSquares
+                    .Select(nonPlayerOwnedSquare => new Move(playerOwnedSquare, nonPlayerOwnedSquare, player))
+                    .Where(move => GameBoard.IsValidMove(move, board)));
             }
 
             return validMoves;
@@ -136,12 +135,9 @@ namespace ChessLibrary
                                                             board[sq].Owner != player).ToArray();
 
 
-            validMoves.AddRange(from nonPlayerOwnedSquare in nonPlayerOwnedSquares
-                                select new Move(source, nonPlayerOwnedSquare, player, PawnPromotion.Queen) into move
-                                where GameBoard.IsValidMove(move, board)
-                                select move);
-
-
+            validMoves.AddRange(nonPlayerOwnedSquares
+                .Select(nonPlayerOwnedSquare => new Move(source, nonPlayerOwnedSquare, player, PawnPromotion.Queen)) // If promoteTo is null, valid pawn promotion will cause exception. Need to implement this better and cleaner in the future.
+                .Where(move => GameBoard.IsValidMove(move, board)));
             return validMoves;
         }
 
