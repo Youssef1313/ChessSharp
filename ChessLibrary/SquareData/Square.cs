@@ -4,6 +4,8 @@ namespace ChessLibrary.SquareData
 {
     public class Square
     {
+        public static implicit operator Square(string s) => Square.Parse(s);
+
         public File File { get; }
         public Rank Rank { get; }
 
