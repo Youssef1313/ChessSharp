@@ -55,23 +55,23 @@ namespace ChessLibrary
 
 
             if (whitePieces.Length == 1 && blackPieces.Length == 2 &&
-                blackPieces.Any(p => p.GetType().Name == typeof(Bishop).Name ||
-                                     p.GetType().Name == typeof(Knight).Name)) // White King vs black king and (Bishop|Knight)
+                blackPieces.Any(p => p.Piece is Bishop ||
+                                     p.Piece is Knight)) // White King vs black king and (Bishop|Knight)
             {
                 return true;
             }
 
             if (whitePieces.Length == 2 && blackPieces.Length == 1 &&
-                whitePieces.Any(p => p.GetType().Name == typeof(Bishop).Name ||
-                                     p.GetType().Name == typeof(Knight).Name)) // Black King vs white king and (Bishop|Knight)
+                whitePieces.Any(p => p.Piece is Bishop ||
+                                     p.Piece is Knight)) // Black King vs white king and (Bishop|Knight)
             {
                 return true;
             }
 
             if (whitePieces.Length == 2 && blackPieces.Length == 2) // King and bishop vs king and bishop
             {
-                var whiteBishop = whitePieces.First(p => p.GetType().Name == typeof(Bishop).Name);
-                var blackBishop = blackPieces.First(p => p.GetType().Name == typeof(Bishop).Name);
+                var whiteBishop = whitePieces.First(p => p.Piece is Bishop);
+                var blackBishop = blackPieces.First(p => p.Piece is Bishop);
                 return whiteBishop != null && blackBishop != null &&
                        whiteBishop.SquareColor == blackBishop.SquareColor;
             }

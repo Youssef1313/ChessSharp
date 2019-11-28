@@ -91,7 +91,7 @@ namespace ChessLibrary
 
             SetCastleStatus(move, piece);
 
-            if (piece.GetType().Name == typeof(King).Name && move.GetAbsDeltaX() == 2)
+            if (piece is King && move.GetAbsDeltaX() == 2)
             {
                 // Queen-side castle
                 if (move.Destination.File == File.C)
@@ -110,7 +110,7 @@ namespace ChessLibrary
                 }
             }
 
-            if (piece.GetType().Name == typeof(Pawn).Name)
+            if (piece is Pawn)
             {
                 if ((move.Player == Player.White && move.Destination.Rank == Rank.Eighth) ||
                     (move.Player == Player.Black && move.Destination.Rank == Rank.First))
@@ -150,37 +150,37 @@ namespace ChessLibrary
 
         private void SetCastleStatus(Move move, Piece piece)
         {
-            if (piece.Owner == Player.White && piece.GetType().Name == typeof(King).Name)
+            if (piece.Owner == Player.White && piece is King)
             {
                 CanWhiteCastleKingSide = false;
                 CanWhiteCastleQueenSide = false;
             }
 
-            if (piece.Owner == Player.White && piece.GetType().Name == typeof(Rook).Name &&
+            if (piece.Owner == Player.White && piece is Rook &&
                 move.Source.File == File.A && move.Source.Rank == Rank.First)
             {
                 CanWhiteCastleQueenSide= false;
             }
 
-            if (piece.Owner == Player.White && piece.GetType().Name == typeof(Rook).Name &&
+            if (piece.Owner == Player.White && piece is Rook &&
                 move.Source.File == File.H && move.Source.Rank == Rank.First)
             {
                 CanWhiteCastleKingSide = false;
             }
 
-            if (piece.Owner == Player.Black && piece.GetType().Name == typeof(King).Name)
+            if (piece.Owner == Player.Black && piece is King)
             {
                 CanBlackCastleKingSide = false;
                 CanBlackCastleQueenSide = false;
             }
 
-            if (piece.Owner == Player.Black && piece.GetType().Name == typeof(Rook).Name &&
+            if (piece.Owner == Player.Black && piece is Rook &&
                 move.Source.File == File.A && move.Source.Rank == Rank.Eighth)
             {
                 CanBlackCastleQueenSide= false;
             }
 
-            if (piece.Owner == Player.Black && piece.GetType().Name == typeof(Rook).Name &&
+            if (piece.Owner == Player.Black && piece is Rook &&
                 move.Source.File == File.H && move.Source.Rank == Rank.Eighth)
             {
                 CanBlackCastleKingSide = false;

@@ -100,7 +100,7 @@ namespace ChessLibrary.Pieces
                 Move lastMove = board.Moves.Last();
                 Piece lastMovedPiece = board[lastMove.Destination];
 
-                if (lastMovedPiece.GetType().Name != typeof(Pawn).Name || 
+                if (lastMovedPiece is Pawn || 
                     !GetPawnMoveType(lastMove).Contains(PawnMoveType.TwoSteps) || lastMove.Destination.File != move.Destination.File ||
                     lastMove.Destination.Rank != move.Source.Rank)
                 {

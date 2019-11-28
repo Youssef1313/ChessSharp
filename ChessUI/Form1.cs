@@ -141,7 +141,7 @@ namespace ChessUI
                 var squareDestination = Square.Parse(destination);
                 Player player = _gameBoard.WhoseTurn();
                 PawnPromotion? pawnPromotion = null;
-                if (_gameBoard[squareSource].GetType().Name == typeof(Pawn).Name)
+                if (_gameBoard[squareSource] is Pawn)
                 {
                     if ((player == Player.White && squareDestination.Rank == Rank.Eighth) ||
                         (player == Player.Black && squareDestination.Rank == Rank.First))
