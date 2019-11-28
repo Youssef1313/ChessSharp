@@ -161,7 +161,7 @@ namespace ChessLibrary
 
             return (from opponentOwnedSquare in opponentOwnedSquares
                     let piece = board[opponentOwnedSquare]
-                    let move = new Move(opponentOwnedSquare, playerKingSquare, RevertPlayer(player))
+                    let move = new Move(opponentOwnedSquare, playerKingSquare, RevertPlayer(player), PawnPromotion.Queen) // Added PawnPromotion in the Move because omitting it causes a bug when King in its rank is in a check by a pawn.
                     where piece.IsValidGameMove(move, board)
                     select piece).Any();
         }
