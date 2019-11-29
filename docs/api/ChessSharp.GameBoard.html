@@ -1,0 +1,636 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class GameBoard
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class GameBoard
+   ">
+    <meta name="generator" content="docfx 2.47.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc">
+    <meta property="docfx:tocrel" content="toc">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+                
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../api/index.md" title="Api Documentation">Api Documentation</a>
+                      </li>
+                </ul>    </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+                  
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="ChessSharp.html" title="ChessSharp" class="">ChessSharp</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="ChessSharp.ChessUtilities.html" title="ChessUtilities" class="">ChessUtilities</a>
+                          </li>
+                          <li class="active">
+                            <a href="ChessSharp.GameBoard.html" title="GameBoard" class="active">GameBoard</a>
+                          </li>
+                          <li class="">
+                            <a href="ChessSharp.GameState.html" title="GameState" class="">GameState</a>
+                          </li>
+                          <li class="">
+                            <a href="ChessSharp.Move.html" title="Move" class="">Move</a>
+                          </li>
+                          <li class="">
+                            <a href="ChessSharp.Piece.html" title="Piece" class="">Piece</a>
+                          </li>
+                          <li class="">
+                            <a href="ChessSharp.Player.html" title="Player" class="">Player</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="ChessSharp.Pieces.html" title="ChessSharp.Pieces" class="">ChessSharp.Pieces</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="ChessSharp.Pieces.Bishop.html" title="Bishop" class="">Bishop</a>
+                          </li>
+                          <li class="">
+                            <a href="ChessSharp.Pieces.King.html" title="King" class="">King</a>
+                          </li>
+                          <li class="">
+                            <a href="ChessSharp.Pieces.Knight.html" title="Knight" class="">Knight</a>
+                          </li>
+                          <li class="">
+                            <a href="ChessSharp.Pieces.Pawn.html" title="Pawn" class="">Pawn</a>
+                          </li>
+                          <li class="">
+                            <a href="ChessSharp.Pieces.PawnPromotion.html" title="PawnPromotion" class="">PawnPromotion</a>
+                          </li>
+                          <li class="">
+                            <a href="ChessSharp.Pieces.Queen.html" title="Queen" class="">Queen</a>
+                          </li>
+                          <li class="">
+                            <a href="ChessSharp.Pieces.Rook.html" title="Rook" class="">Rook</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="ChessSharp.SquareData.html" title="ChessSharp.SquareData" class="">ChessSharp.SquareData</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="ChessSharp.SquareData.File.html" title="File" class="">File</a>
+                          </li>
+                          <li class="">
+                            <a href="ChessSharp.SquareData.Rank.html" title="Rank" class="">Rank</a>
+                          </li>
+                          <li class="">
+                            <a href="ChessSharp.SquareData.Square.html" title="Square" class="">Square</a>
+                          </li>
+                        </ul>  </li>
+                  </ul>        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ChessSharp.GameBoard">
+  
+  
+  <h1 id="ChessSharp_GameBoard" data-uid="ChessSharp.GameBoard" class="text-break">Class GameBoard
+  </h1>
+  <div class="markdown level0 summary"><p>Represents the chess game.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">GameBoard</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ChessSharp.html">ChessSharp</a></h6>
+  <h6><strong>Assembly</strong>: ChessSharp.dll</h6>
+  <h5 id="ChessSharp_GameBoard_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class GameBoard</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Youssef1313/ChessSharp/new/master/apiSpec/new?filename=ChessSharp_GameBoard__ctor.md&amp;value=---%0Auid%3A%20ChessSharp.GameBoard.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Youssef1313/ChessSharp/blob/master/src/ChessSharp/GameBoard.cs/#L38">View Source</a>
+  </span>
+  <a id="ChessSharp_GameBoard__ctor_" data-uid="ChessSharp.GameBoard.#ctor*"></a>
+  <h4 id="ChessSharp_GameBoard__ctor" data-uid="ChessSharp.GameBoard.#ctor">GameBoard()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of <a class="xref" href="ChessSharp.GameBoard.html">GameBoard</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameBoard()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Youssef1313/ChessSharp/new/master/apiSpec/new?filename=ChessSharp_GameBoard_Board.md&amp;value=---%0Auid%3A%20ChessSharp.GameBoard.Board%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Youssef1313/ChessSharp/blob/master/src/ChessSharp/GameBoard.cs/#L26">View Source</a>
+  </span>
+  <a id="ChessSharp_GameBoard_Board_" data-uid="ChessSharp.GameBoard.Board*"></a>
+  <h4 id="ChessSharp_GameBoard_Board" data-uid="ChessSharp.GameBoard.Board">Board</h4>
+  <div class="markdown level1 summary"><p>Gets a 2D array of <a class="xref" href="ChessSharp.Piece.html">Piece</a>s in the board.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Piece[, ] Board { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ChessSharp.Piece.html">Piece</a>[,]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Youssef1313/ChessSharp/new/master/apiSpec/new?filename=ChessSharp_GameBoard_GameState.md&amp;value=---%0Auid%3A%20ChessSharp.GameBoard.GameState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Youssef1313/ChessSharp/blob/master/src/ChessSharp/GameBoard.cs/#L29">View Source</a>
+  </span>
+  <a id="ChessSharp_GameBoard_GameState_" data-uid="ChessSharp.GameBoard.GameState*"></a>
+  <h4 id="ChessSharp_GameBoard_GameState" data-uid="ChessSharp.GameBoard.GameState">GameState</h4>
+  <div class="markdown level1 summary"><p>Gets the current <a class="xref" href="ChessSharp.GameState.html">GameState</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameState GameState { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ChessSharp.GameState.html">GameState</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Youssef1313/ChessSharp/new/master/apiSpec/new?filename=ChessSharp_GameBoard_Item_ChessSharp_SquareData_File_ChessSharp_SquareData_Rank_.md&amp;value=---%0Auid%3A%20ChessSharp.GameBoard.Item(ChessSharp.SquareData.File%2CChessSharp.SquareData.Rank)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Youssef1313/ChessSharp/blob/master/src/ChessSharp/GameBoard.cs/#L16">View Source</a>
+  </span>
+  <a id="ChessSharp_GameBoard_Item_" data-uid="ChessSharp.GameBoard.Item*"></a>
+  <h4 id="ChessSharp_GameBoard_Item_ChessSharp_SquareData_File_ChessSharp_SquareData_Rank_" data-uid="ChessSharp.GameBoard.Item(ChessSharp.SquareData.File,ChessSharp.SquareData.Rank)">Item[File, Rank]</h4>
+  <div class="markdown level1 summary"><p>Gets <a class="xref" href="ChessSharp.Piece.html">Piece</a> in a specific square.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Piece this[File file, Rank rank] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ChessSharp.SquareData.File.html">File</a></td>
+        <td><span class="parametername">file</span></td>
+        <td><p>The <a class="xref" href="ChessSharp.SquareData.File.html">File</a> of the square.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ChessSharp.SquareData.Rank.html">Rank</a></td>
+        <td><span class="parametername">rank</span></td>
+        <td><p>The <a class="xref" href="ChessSharp.SquareData.Rank.html">Rank</a> of the square.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ChessSharp.Piece.html">Piece</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Youssef1313/ChessSharp/new/master/apiSpec/new?filename=ChessSharp_GameBoard_Item_ChessSharp_SquareData_Square_.md&amp;value=---%0Auid%3A%20ChessSharp.GameBoard.Item(ChessSharp.SquareData.Square)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Youssef1313/ChessSharp/blob/master/src/ChessSharp/GameBoard.cs/#L20">View Source</a>
+  </span>
+  <a id="ChessSharp_GameBoard_Item_" data-uid="ChessSharp.GameBoard.Item*"></a>
+  <h4 id="ChessSharp_GameBoard_Item_ChessSharp_SquareData_Square_" data-uid="ChessSharp.GameBoard.Item(ChessSharp.SquareData.Square)">Item[Square]</h4>
+  <div class="markdown level1 summary"><p>Gets <a class="xref" href="ChessSharp.Piece.html">Piece</a> in a specific square.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Piece this[Square square] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ChessSharp.SquareData.Square.html">Square</a></td>
+        <td><span class="parametername">square</span></td>
+        <td><p>The <a class="xref" href="ChessSharp.SquareData.Square.html">Square</a> to get its <a class="xref" href="ChessSharp.Piece.html">Piece</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ChessSharp.Piece.html">Piece</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Youssef1313/ChessSharp/new/master/apiSpec/new?filename=ChessSharp_GameBoard_Moves.md&amp;value=---%0Auid%3A%20ChessSharp.GameBoard.Moves%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Youssef1313/ChessSharp/blob/master/src/ChessSharp/GameBoard.cs/#L23">View Source</a>
+  </span>
+  <a id="ChessSharp_GameBoard_Moves_" data-uid="ChessSharp.GameBoard.Moves*"></a>
+  <h4 id="ChessSharp_GameBoard_Moves" data-uid="ChessSharp.GameBoard.Moves">Moves</h4>
+  <div class="markdown level1 summary"><p>Gets a list of the game moves.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Move&gt; Moves { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="ChessSharp.Move.html">Move</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Youssef1313/ChessSharp/new/master/apiSpec/new?filename=ChessSharp_GameBoard_IsValidMove_ChessSharp_Move_.md&amp;value=---%0Auid%3A%20ChessSharp.GameBoard.IsValidMove(ChessSharp.Move)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Youssef1313/ChessSharp/blob/master/src/ChessSharp/GameBoard.cs/#L222">View Source</a>
+  </span>
+  <a id="ChessSharp_GameBoard_IsValidMove_" data-uid="ChessSharp.GameBoard.IsValidMove*"></a>
+  <h4 id="ChessSharp_GameBoard_IsValidMove_ChessSharp_Move_" data-uid="ChessSharp.GameBoard.IsValidMove(ChessSharp.Move)">IsValidMove(Move)</h4>
+  <div class="markdown level1 summary"><p>Checks if a given move is valid or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsValidMove(Move move)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ChessSharp.Move.html">Move</a></td>
+        <td><span class="parametername">move</span></td>
+        <td><p>The <a class="xref" href="ChessSharp.Move.html">Move</a> to check its validity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>Returns true if the given <code>move</code> is valid; false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>The given <code>move</code> is null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Youssef1313/ChessSharp/new/master/apiSpec/new?filename=ChessSharp_GameBoard_MakeMove_ChessSharp_Move_System_Boolean_.md&amp;value=---%0Auid%3A%20ChessSharp.GameBoard.MakeMove(ChessSharp.Move%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Youssef1313/ChessSharp/blob/master/src/ChessSharp/GameBoard.cs/#L100">View Source</a>
+  </span>
+  <a id="ChessSharp_GameBoard_MakeMove_" data-uid="ChessSharp.GameBoard.MakeMove*"></a>
+  <h4 id="ChessSharp_GameBoard_MakeMove_ChessSharp_Move_System_Boolean_" data-uid="ChessSharp.GameBoard.MakeMove(ChessSharp.Move,System.Boolean)">MakeMove(Move, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Makes a move in the game.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool MakeMove(Move move, bool isMoveValidated)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ChessSharp.Move.html">Move</a></td>
+        <td><span class="parametername">move</span></td>
+        <td><p>The <a class="xref" href="ChessSharp.Move.html">Move</a> you want to make.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">isMoveValidated</span></td>
+        <td><p>Only pass true when you've already checked that the move is valid.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>Returns true if the move is made; false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>The <code>move</code> is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>The <a class="xref" href="ChessSharp.Move.html#ChessSharp_Move_Source">Source</a> square of the <code>move</code> doesn't contain a piece.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>The <code>move.PromoteTo</code> is null and the move is a pawn promotion move.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Youssef1313/ChessSharp/new/master/apiSpec/new?filename=ChessSharp_GameBoard_WhoseTurn.md&amp;value=---%0Auid%3A%20ChessSharp.GameBoard.WhoseTurn%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Youssef1313/ChessSharp/blob/master/src/ChessSharp/GameBoard.cs/#L82">View Source</a>
+  </span>
+  <a id="ChessSharp_GameBoard_WhoseTurn_" data-uid="ChessSharp.GameBoard.WhoseTurn*"></a>
+  <h4 id="ChessSharp_GameBoard_WhoseTurn" data-uid="ChessSharp.GameBoard.WhoseTurn">WhoseTurn()</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="ChessSharp.Player.html">Player</a> who has turn.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Player WhoseTurn()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ChessSharp.Player.html">Player</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Youssef1313/ChessSharp/new/master/apiSpec/new?filename=ChessSharp_GameBoard.md&amp;value=---%0Auid%3A%20ChessSharp.GameBoard%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Youssef1313/ChessSharp/blob/master/src/ChessSharp/GameBoard.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

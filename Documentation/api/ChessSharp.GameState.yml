@@ -1,0 +1,293 @@
+### YamlMime:ManagedReference
+items:
+- uid: ChessSharp.GameState
+  commentId: T:ChessSharp.GameState
+  id: GameState
+  parent: ChessSharp
+  children:
+  - ChessSharp.GameState.BlackInCheck
+  - ChessSharp.GameState.BlackWinner
+  - ChessSharp.GameState.Draw
+  - ChessSharp.GameState.NotCompleted
+  - ChessSharp.GameState.Stalemate
+  - ChessSharp.GameState.WhiteInCheck
+  - ChessSharp.GameState.WhiteWinner
+  langs:
+  - csharp
+  - vb
+  name: GameState
+  nameWithType: GameState
+  fullName: ChessSharp.GameState
+  type: Enum
+  source:
+    remote:
+      path: src/ChessSharp/GameState.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: GameState
+    path: ../src/ChessSharp/GameState.cs
+    startLine: 3
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Specifies the state of the game.
+  example: []
+  syntax:
+    content: public enum GameState
+    content.vb: Public Enum GameState
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: ChessSharp.GameState.NotCompleted
+  commentId: F:ChessSharp.GameState.NotCompleted
+  id: NotCompleted
+  parent: ChessSharp.GameState
+  langs:
+  - csharp
+  - vb
+  name: NotCompleted
+  nameWithType: GameState.NotCompleted
+  fullName: ChessSharp.GameState.NotCompleted
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/GameState.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: NotCompleted
+    path: ../src/ChessSharp/GameState.cs
+    startLine: 6
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: The game is still in progress.
+  example: []
+  syntax:
+    content: NotCompleted = 0
+    return:
+      type: ChessSharp.GameState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.GameState.WhiteWinner
+  commentId: F:ChessSharp.GameState.WhiteWinner
+  id: WhiteWinner
+  parent: ChessSharp.GameState
+  langs:
+  - csharp
+  - vb
+  name: WhiteWinner
+  nameWithType: GameState.WhiteWinner
+  fullName: ChessSharp.GameState.WhiteWinner
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/GameState.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: WhiteWinner
+    path: ../src/ChessSharp/GameState.cs
+    startLine: 8
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: The game is over and white has won.
+  example: []
+  syntax:
+    content: WhiteWinner = 1
+    return:
+      type: ChessSharp.GameState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.GameState.BlackWinner
+  commentId: F:ChessSharp.GameState.BlackWinner
+  id: BlackWinner
+  parent: ChessSharp.GameState
+  langs:
+  - csharp
+  - vb
+  name: BlackWinner
+  nameWithType: GameState.BlackWinner
+  fullName: ChessSharp.GameState.BlackWinner
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/GameState.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: BlackWinner
+    path: ../src/ChessSharp/GameState.cs
+    startLine: 10
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: The game is over and black has won.
+  example: []
+  syntax:
+    content: BlackWinner = 2
+    return:
+      type: ChessSharp.GameState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.GameState.Draw
+  commentId: F:ChessSharp.GameState.Draw
+  id: Draw
+  parent: ChessSharp.GameState
+  langs:
+  - csharp
+  - vb
+  name: Draw
+  nameWithType: GameState.Draw
+  fullName: ChessSharp.GameState.Draw
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/GameState.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Draw
+    path: ../src/ChessSharp/GameState.cs
+    startLine: 12
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: The game is over and ended in a draw.
+  example: []
+  syntax:
+    content: Draw = 3
+    return:
+      type: ChessSharp.GameState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.GameState.Stalemate
+  commentId: F:ChessSharp.GameState.Stalemate
+  id: Stalemate
+  parent: ChessSharp.GameState
+  langs:
+  - csharp
+  - vb
+  name: Stalemate
+  nameWithType: GameState.Stalemate
+  fullName: ChessSharp.GameState.Stalemate
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/GameState.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Stalemate
+    path: ../src/ChessSharp/GameState.cs
+    startLine: 14
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: The game is over and ended in a stalemate.
+  example: []
+  syntax:
+    content: Stalemate = 4
+    return:
+      type: ChessSharp.GameState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.GameState.WhiteInCheck
+  commentId: F:ChessSharp.GameState.WhiteInCheck
+  id: WhiteInCheck
+  parent: ChessSharp.GameState
+  langs:
+  - csharp
+  - vb
+  name: WhiteInCheck
+  nameWithType: GameState.WhiteInCheck
+  fullName: ChessSharp.GameState.WhiteInCheck
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/GameState.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: WhiteInCheck
+    path: ../src/ChessSharp/GameState.cs
+    startLine: 16
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: The game is not over and white is in check.
+  example: []
+  syntax:
+    content: WhiteInCheck = 5
+    return:
+      type: ChessSharp.GameState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.GameState.BlackInCheck
+  commentId: F:ChessSharp.GameState.BlackInCheck
+  id: BlackInCheck
+  parent: ChessSharp.GameState
+  langs:
+  - csharp
+  - vb
+  name: BlackInCheck
+  nameWithType: GameState.BlackInCheck
+  fullName: ChessSharp.GameState.BlackInCheck
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/GameState.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: BlackInCheck
+    path: ../src/ChessSharp/GameState.cs
+    startLine: 18
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: The game is not over and black is in check.
+  example: []
+  syntax:
+    content: BlackInCheck = 6
+    return:
+      type: ChessSharp.GameState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: ChessSharp
+  commentId: N:ChessSharp
+  name: ChessSharp
+  nameWithType: ChessSharp
+  fullName: ChessSharp
+- uid: ChessSharp.GameState
+  commentId: T:ChessSharp.GameState
+  parent: ChessSharp
+  name: GameState
+  nameWithType: GameState
+  fullName: ChessSharp.GameState

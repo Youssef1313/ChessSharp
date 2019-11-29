@@ -1,0 +1,538 @@
+### YamlMime:ManagedReference
+items:
+- uid: ChessSharp.Piece
+  commentId: T:ChessSharp.Piece
+  id: Piece
+  parent: ChessSharp
+  children:
+  - ChessSharp.Piece.#ctor(ChessSharp.Player)
+  - ChessSharp.Piece.Equals(System.Object)
+  - ChessSharp.Piece.GetHashCode
+  - ChessSharp.Piece.Owner
+  langs:
+  - csharp
+  - vb
+  name: Piece
+  nameWithType: Piece
+  fullName: ChessSharp.Piece
+  type: Class
+  source:
+    remote:
+      path: src/ChessSharp/Piece.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Piece
+    path: ../src/ChessSharp/Piece.cs
+    startLine: 3
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Represents the base class of the pieces.
+  example: []
+  syntax:
+    content: public abstract class Piece
+    content.vb: Public MustInherit Class Piece
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - ChessSharp.Pieces.Bishop
+  - ChessSharp.Pieces.King
+  - ChessSharp.Pieces.Knight
+  - ChessSharp.Pieces.Pawn
+  - ChessSharp.Pieces.Queen
+  - ChessSharp.Pieces.Rook
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: ChessSharp.Piece.Owner
+  commentId: P:ChessSharp.Piece.Owner
+  id: Owner
+  parent: ChessSharp.Piece
+  langs:
+  - csharp
+  - vb
+  name: Owner
+  nameWithType: Piece.Owner
+  fullName: ChessSharp.Piece.Owner
+  type: Property
+  source:
+    remote:
+      path: src/ChessSharp/Piece.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Owner
+    path: ../src/ChessSharp/Piece.cs
+    startLine: 7
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Gets the owner <xref href="ChessSharp.Player" data-throw-if-not-resolved="false"></xref> of the piece.
+  example: []
+  syntax:
+    content: public Player Owner { get; }
+    parameters: []
+    return:
+      type: ChessSharp.Player
+    content.vb: Public ReadOnly Property Owner As Player
+  overload: ChessSharp.Piece.Owner*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ChessSharp.Piece.Equals(System.Object)
+  commentId: M:ChessSharp.Piece.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: ChessSharp.Piece
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: Piece.Equals(Object)
+  fullName: ChessSharp.Piece.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/ChessSharp/Piece.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Equals
+    path: ../src/ChessSharp/Piece.cs
+    startLine: 11
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: ChessSharp.Piece.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: ChessSharp.Piece.GetHashCode
+  commentId: M:ChessSharp.Piece.GetHashCode
+  id: GetHashCode
+  parent: ChessSharp.Piece
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Piece.GetHashCode()
+  fullName: ChessSharp.Piece.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/ChessSharp/Piece.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: GetHashCode
+    path: ../src/ChessSharp/Piece.cs
+    startLine: 21
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: ChessSharp.Piece.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: ChessSharp.Piece.#ctor(ChessSharp.Player)
+  commentId: M:ChessSharp.Piece.#ctor(ChessSharp.Player)
+  id: '#ctor(ChessSharp.Player)'
+  parent: ChessSharp.Piece
+  langs:
+  - csharp
+  - vb
+  name: Piece(Player)
+  nameWithType: Piece.Piece(Player)
+  fullName: ChessSharp.Piece.Piece(ChessSharp.Player)
+  type: Constructor
+  source:
+    remote:
+      path: src/ChessSharp/Piece.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: .ctor
+    path: ../src/ChessSharp/Piece.cs
+    startLine: 37
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  syntax:
+    content: protected Piece(Player player)
+    parameters:
+    - id: player
+      type: ChessSharp.Player
+    content.vb: Protected Sub New(player As Player)
+  overload: ChessSharp.Piece.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: ChessSharp
+  commentId: N:ChessSharp
+  name: ChessSharp
+  nameWithType: ChessSharp
+  fullName: ChessSharp
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ChessSharp.Player
+  commentId: T:ChessSharp.Player
+  parent: ChessSharp
+  name: Player
+  nameWithType: Player
+  fullName: ChessSharp.Player
+- uid: ChessSharp.Piece.Owner*
+  commentId: Overload:ChessSharp.Piece.Owner
+  name: Owner
+  nameWithType: Piece.Owner
+  fullName: ChessSharp.Piece.Owner
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ChessSharp.Piece.Equals*
+  commentId: Overload:ChessSharp.Piece.Equals
+  name: Equals
+  nameWithType: Piece.Equals
+  fullName: ChessSharp.Piece.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ChessSharp.Piece.GetHashCode*
+  commentId: Overload:ChessSharp.Piece.GetHashCode
+  name: GetHashCode
+  nameWithType: Piece.GetHashCode
+  fullName: ChessSharp.Piece.GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: ChessSharp.Piece.#ctor*
+  commentId: Overload:ChessSharp.Piece.#ctor
+  name: Piece
+  nameWithType: Piece.Piece
+  fullName: ChessSharp.Piece.Piece

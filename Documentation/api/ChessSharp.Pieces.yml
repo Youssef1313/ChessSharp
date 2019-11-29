@@ -1,0 +1,64 @@
+### YamlMime:ManagedReference
+items:
+- uid: ChessSharp.Pieces
+  commentId: N:ChessSharp.Pieces
+  id: ChessSharp.Pieces
+  children:
+  - ChessSharp.Pieces.Bishop
+  - ChessSharp.Pieces.King
+  - ChessSharp.Pieces.Knight
+  - ChessSharp.Pieces.Pawn
+  - ChessSharp.Pieces.PawnPromotion
+  - ChessSharp.Pieces.Queen
+  - ChessSharp.Pieces.Rook
+  langs:
+  - csharp
+  - vb
+  name: ChessSharp.Pieces
+  nameWithType: ChessSharp.Pieces
+  fullName: ChessSharp.Pieces
+  type: Namespace
+  assemblies:
+  - ChessSharp
+references:
+- uid: ChessSharp.Pieces.Bishop
+  commentId: T:ChessSharp.Pieces.Bishop
+  name: Bishop
+  nameWithType: Bishop
+  fullName: ChessSharp.Pieces.Bishop
+- uid: ChessSharp.Pieces.King
+  commentId: T:ChessSharp.Pieces.King
+  name: King
+  nameWithType: King
+  fullName: ChessSharp.Pieces.King
+- uid: ChessSharp.Pieces.Knight
+  commentId: T:ChessSharp.Pieces.Knight
+  name: Knight
+  nameWithType: Knight
+  fullName: ChessSharp.Pieces.Knight
+- uid: ChessSharp.Pieces.Pawn
+  commentId: T:ChessSharp.Pieces.Pawn
+  name: Pawn
+  nameWithType: Pawn
+  fullName: ChessSharp.Pieces.Pawn
+- uid: ChessSharp.Pieces.PawnPromotion
+  commentId: T:ChessSharp.Pieces.PawnPromotion
+  parent: ChessSharp.Pieces
+  name: PawnPromotion
+  nameWithType: PawnPromotion
+  fullName: ChessSharp.Pieces.PawnPromotion
+- uid: ChessSharp.Pieces.Queen
+  commentId: T:ChessSharp.Pieces.Queen
+  name: Queen
+  nameWithType: Queen
+  fullName: ChessSharp.Pieces.Queen
+- uid: ChessSharp.Pieces.Rook
+  commentId: T:ChessSharp.Pieces.Rook
+  name: Rook
+  nameWithType: Rook
+  fullName: ChessSharp.Pieces.Rook
+- uid: ChessSharp.Pieces
+  commentId: N:ChessSharp.Pieces
+  name: ChessSharp.Pieces
+  nameWithType: ChessSharp.Pieces
+  fullName: ChessSharp.Pieces

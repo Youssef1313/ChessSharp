@@ -1,0 +1,963 @@
+### YamlMime:ManagedReference
+items:
+- uid: ChessSharp.Move
+  commentId: T:ChessSharp.Move
+  id: Move
+  parent: ChessSharp
+  children:
+  - ChessSharp.Move.#ctor(ChessSharp.SquareData.Square,ChessSharp.SquareData.Square,ChessSharp.Player,System.Nullable{ChessSharp.Pieces.PawnPromotion})
+  - ChessSharp.Move.Destination
+  - ChessSharp.Move.Equals(System.Object)
+  - ChessSharp.Move.GetAbsDeltaX
+  - ChessSharp.Move.GetAbsDeltaY
+  - ChessSharp.Move.GetDeltaX
+  - ChessSharp.Move.GetDeltaY
+  - ChessSharp.Move.GetHashCode
+  - ChessSharp.Move.Player
+  - ChessSharp.Move.PromoteTo
+  - ChessSharp.Move.Source
+  langs:
+  - csharp
+  - vb
+  name: Move
+  nameWithType: Move
+  fullName: ChessSharp.Move
+  type: Class
+  source:
+    remote:
+      path: src/ChessSharp/Move.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Move
+    path: ../src/ChessSharp/Move.cs
+    startLine: 6
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Represents a game move.
+  example: []
+  syntax:
+    content: public class Move
+    content.vb: Public Class Move
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ChessSharp.Move.Source
+  commentId: P:ChessSharp.Move.Source
+  id: Source
+  parent: ChessSharp.Move
+  langs:
+  - csharp
+  - vb
+  name: Source
+  nameWithType: Move.Source
+  fullName: ChessSharp.Move.Source
+  type: Property
+  source:
+    remote:
+      path: src/ChessSharp/Move.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Source
+    path: ../src/ChessSharp/Move.cs
+    startLine: 9
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Gets the source <xref href="ChessSharp.SquareData.Square" data-throw-if-not-resolved="false"></xref> of the <xref href="ChessSharp.Move" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Square Source { get; }
+    parameters: []
+    return:
+      type: ChessSharp.SquareData.Square
+    content.vb: Public ReadOnly Property Source As Square
+  overload: ChessSharp.Move.Source*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ChessSharp.Move.Destination
+  commentId: P:ChessSharp.Move.Destination
+  id: Destination
+  parent: ChessSharp.Move
+  langs:
+  - csharp
+  - vb
+  name: Destination
+  nameWithType: Move.Destination
+  fullName: ChessSharp.Move.Destination
+  type: Property
+  source:
+    remote:
+      path: src/ChessSharp/Move.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Destination
+    path: ../src/ChessSharp/Move.cs
+    startLine: 11
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Gets the destination <xref href="ChessSharp.SquareData.Square" data-throw-if-not-resolved="false"></xref> of the <xref href="ChessSharp.Move" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Square Destination { get; }
+    parameters: []
+    return:
+      type: ChessSharp.SquareData.Square
+    content.vb: Public ReadOnly Property Destination As Square
+  overload: ChessSharp.Move.Destination*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ChessSharp.Move.Player
+  commentId: P:ChessSharp.Move.Player
+  id: Player
+  parent: ChessSharp.Move
+  langs:
+  - csharp
+  - vb
+  name: Player
+  nameWithType: Move.Player
+  fullName: ChessSharp.Move.Player
+  type: Property
+  source:
+    remote:
+      path: src/ChessSharp/Move.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Player
+    path: ../src/ChessSharp/Move.cs
+    startLine: 13
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Gets the <xref href="ChessSharp.Move.Player" data-throw-if-not-resolved="false"></xref> of the <xref href="ChessSharp.Move" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Player Player { get; }
+    parameters: []
+    return:
+      type: ChessSharp.Player
+    content.vb: Public ReadOnly Property Player As Player
+  overload: ChessSharp.Move.Player*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ChessSharp.Move.PromoteTo
+  commentId: P:ChessSharp.Move.PromoteTo
+  id: PromoteTo
+  parent: ChessSharp.Move
+  langs:
+  - csharp
+  - vb
+  name: PromoteTo
+  nameWithType: Move.PromoteTo
+  fullName: ChessSharp.Move.PromoteTo
+  type: Property
+  source:
+    remote:
+      path: src/ChessSharp/Move.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: PromoteTo
+    path: ../src/ChessSharp/Move.cs
+    startLine: 15
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Gets a nullable <xref href="ChessSharp.Pieces.PawnPromotion" data-throw-if-not-resolved="false"></xref> of the <xref href="ChessSharp.Move" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public PawnPromotion? PromoteTo { get; }
+    parameters: []
+    return:
+      type: System.Nullable{ChessSharp.Pieces.PawnPromotion}
+    content.vb: Public ReadOnly Property PromoteTo As PawnPromotion?
+  overload: ChessSharp.Move.PromoteTo*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ChessSharp.Move.Equals(System.Object)
+  commentId: M:ChessSharp.Move.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: ChessSharp.Move
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: Move.Equals(Object)
+  fullName: ChessSharp.Move.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/ChessSharp/Move.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Equals
+    path: ../src/ChessSharp/Move.cs
+    startLine: 17
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: ChessSharp.Move.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: ChessSharp.Move.GetHashCode
+  commentId: M:ChessSharp.Move.GetHashCode
+  id: GetHashCode
+  parent: ChessSharp.Move
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Move.GetHashCode()
+  fullName: ChessSharp.Move.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/ChessSharp/Move.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: GetHashCode
+    path: ../src/ChessSharp/Move.cs
+    startLine: 29
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: ChessSharp.Move.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: ChessSharp.Move.#ctor(ChessSharp.SquareData.Square,ChessSharp.SquareData.Square,ChessSharp.Player,System.Nullable{ChessSharp.Pieces.PawnPromotion})
+  commentId: M:ChessSharp.Move.#ctor(ChessSharp.SquareData.Square,ChessSharp.SquareData.Square,ChessSharp.Player,System.Nullable{ChessSharp.Pieces.PawnPromotion})
+  id: '#ctor(ChessSharp.SquareData.Square,ChessSharp.SquareData.Square,ChessSharp.Player,System.Nullable{ChessSharp.Pieces.PawnPromotion})'
+  parent: ChessSharp.Move
+  langs:
+  - csharp
+  - vb
+  name: Move(Square, Square, Player, Nullable<PawnPromotion>)
+  nameWithType: Move.Move(Square, Square, Player, Nullable<PawnPromotion>)
+  fullName: ChessSharp.Move.Move(ChessSharp.SquareData.Square, ChessSharp.SquareData.Square, ChessSharp.Player, System.Nullable<ChessSharp.Pieces.PawnPromotion>)
+  type: Constructor
+  source:
+    remote:
+      path: src/ChessSharp/Move.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: .ctor
+    path: ../src/ChessSharp/Move.cs
+    startLine: 50
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Initializes a new instance of the <xref href="ChessSharp.Move" data-throw-if-not-resolved="false"></xref> class with the given arguments.
+  example: []
+  syntax:
+    content: public Move(Square source, Square destination, Player player, PawnPromotion? promoteTo = default(PawnPromotion? ))
+    parameters:
+    - id: source
+      type: ChessSharp.SquareData.Square
+      description: The source <xref href="ChessSharp.SquareData.Square" data-throw-if-not-resolved="false"></xref> of the <xref href="ChessSharp.Move" data-throw-if-not-resolved="false"></xref>.
+    - id: destination
+      type: ChessSharp.SquareData.Square
+      description: The destination <xref href="ChessSharp.SquareData.Square" data-throw-if-not-resolved="false"></xref> of the <xref href="ChessSharp.Move" data-throw-if-not-resolved="false"></xref>.
+    - id: player
+      type: ChessSharp.Player
+      description: The <xref href="ChessSharp.Move.Player" data-throw-if-not-resolved="false"></xref> of the <xref href="ChessSharp.Move" data-throw-if-not-resolved="false"></xref>.
+    - id: promoteTo
+      type: System.Nullable{ChessSharp.Pieces.PawnPromotion}
+      description: Optional nullable <xref href="ChessSharp.Pieces.PawnPromotion" data-throw-if-not-resolved="false"></xref> of the <xref href="ChessSharp.Move" data-throw-if-not-resolved="false"></xref>. Default value is null.
+    content.vb: Public Sub New(source As Square, destination As Square, player As Player, promoteTo As PawnPromotion? = Nothing)
+  overload: ChessSharp.Move.#ctor*
+  nameWithType.vb: Move.Move(Square, Square, Player, Nullable(Of PawnPromotion))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ChessSharp.Move.Move(ChessSharp.SquareData.Square, ChessSharp.SquareData.Square, ChessSharp.Player, System.Nullable(Of ChessSharp.Pieces.PawnPromotion))
+  name.vb: Move(Square, Square, Player, Nullable(Of PawnPromotion))
+- uid: ChessSharp.Move.GetAbsDeltaX
+  commentId: M:ChessSharp.Move.GetAbsDeltaX
+  id: GetAbsDeltaX
+  parent: ChessSharp.Move
+  langs:
+  - csharp
+  - vb
+  name: GetAbsDeltaX()
+  nameWithType: Move.GetAbsDeltaX()
+  fullName: ChessSharp.Move.GetAbsDeltaX()
+  type: Method
+  source:
+    remote:
+      path: src/ChessSharp/Move.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: GetAbsDeltaX
+    path: ../src/ChessSharp/Move.cs
+    startLine: 69
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Gets the absolute value of the subtraction of the source file and the destination file.
+  example: []
+  syntax:
+    content: public byte GetAbsDeltaX()
+    return:
+      type: System.Byte
+      description: Returns a byte that is the subtraction of the source file and the destination file.
+    content.vb: Public Function GetAbsDeltaX As Byte
+  overload: ChessSharp.Move.GetAbsDeltaX*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ChessSharp.Move.GetAbsDeltaY
+  commentId: M:ChessSharp.Move.GetAbsDeltaY
+  id: GetAbsDeltaY
+  parent: ChessSharp.Move
+  langs:
+  - csharp
+  - vb
+  name: GetAbsDeltaY()
+  nameWithType: Move.GetAbsDeltaY()
+  fullName: ChessSharp.Move.GetAbsDeltaY()
+  type: Method
+  source:
+    remote:
+      path: src/ChessSharp/Move.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: GetAbsDeltaY
+    path: ../src/ChessSharp/Move.cs
+    startLine: 76
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Gets the absolute value of the subtraction of the source rank and the destination rank.
+  example: []
+  syntax:
+    content: public byte GetAbsDeltaY()
+    return:
+      type: System.Byte
+      description: Returns a byte that is the subtraction of the source rank and the destination rank.
+    content.vb: Public Function GetAbsDeltaY As Byte
+  overload: ChessSharp.Move.GetAbsDeltaY*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ChessSharp.Move.GetDeltaX
+  commentId: M:ChessSharp.Move.GetDeltaX
+  id: GetDeltaX
+  parent: ChessSharp.Move
+  langs:
+  - csharp
+  - vb
+  name: GetDeltaX()
+  nameWithType: Move.GetDeltaX()
+  fullName: ChessSharp.Move.GetDeltaX()
+  type: Method
+  source:
+    remote:
+      path: src/ChessSharp/Move.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: GetDeltaX
+    path: ../src/ChessSharp/Move.cs
+    startLine: 83
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Gets the subtraction of the source file from the destination file.
+  example: []
+  syntax:
+    content: public sbyte GetDeltaX()
+    return:
+      type: System.SByte
+      description: Returns a signed-byte that is the subtraction of the source file from the destination file.
+    content.vb: Public Function GetDeltaX As SByte
+  overload: ChessSharp.Move.GetDeltaX*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ChessSharp.Move.GetDeltaY
+  commentId: M:ChessSharp.Move.GetDeltaY
+  id: GetDeltaY
+  parent: ChessSharp.Move
+  langs:
+  - csharp
+  - vb
+  name: GetDeltaY()
+  nameWithType: Move.GetDeltaY()
+  fullName: ChessSharp.Move.GetDeltaY()
+  type: Method
+  source:
+    remote:
+      path: src/ChessSharp/Move.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: GetDeltaY
+    path: ../src/ChessSharp/Move.cs
+    startLine: 90
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Gets the subtraction of the source rank from the destination rank.
+  example: []
+  syntax:
+    content: public sbyte GetDeltaY()
+    return:
+      type: System.SByte
+      description: Returns a signed-byte that is the subtraction of the source rank from the destination rank.
+    content.vb: Public Function GetDeltaY As SByte
+  overload: ChessSharp.Move.GetDeltaY*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: ChessSharp
+  commentId: N:ChessSharp
+  name: ChessSharp
+  nameWithType: ChessSharp
+  fullName: ChessSharp
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ChessSharp.SquareData.Square
+  commentId: T:ChessSharp.SquareData.Square
+  parent: ChessSharp.SquareData
+  name: Square
+  nameWithType: Square
+  fullName: ChessSharp.SquareData.Square
+- uid: ChessSharp.Move
+  commentId: T:ChessSharp.Move
+  parent: ChessSharp
+  name: Move
+  nameWithType: Move
+  fullName: ChessSharp.Move
+- uid: ChessSharp.Move.Source*
+  commentId: Overload:ChessSharp.Move.Source
+  name: Source
+  nameWithType: Move.Source
+  fullName: ChessSharp.Move.Source
+- uid: ChessSharp.SquareData
+  commentId: N:ChessSharp.SquareData
+  name: ChessSharp.SquareData
+  nameWithType: ChessSharp.SquareData
+  fullName: ChessSharp.SquareData
+- uid: ChessSharp.Move.Destination*
+  commentId: Overload:ChessSharp.Move.Destination
+  name: Destination
+  nameWithType: Move.Destination
+  fullName: ChessSharp.Move.Destination
+- uid: ChessSharp.Move.Player
+  commentId: P:ChessSharp.Move.Player
+  isExternal: true
+- uid: ChessSharp.Move.Player*
+  commentId: Overload:ChessSharp.Move.Player
+  name: Player
+  nameWithType: Move.Player
+  fullName: ChessSharp.Move.Player
+- uid: ChessSharp.Player
+  commentId: T:ChessSharp.Player
+  parent: ChessSharp
+  name: Player
+  nameWithType: Player
+  fullName: ChessSharp.Player
+- uid: ChessSharp.Pieces.PawnPromotion
+  commentId: T:ChessSharp.Pieces.PawnPromotion
+  parent: ChessSharp.Pieces
+  name: PawnPromotion
+  nameWithType: PawnPromotion
+  fullName: ChessSharp.Pieces.PawnPromotion
+- uid: ChessSharp.Move.PromoteTo*
+  commentId: Overload:ChessSharp.Move.PromoteTo
+  name: PromoteTo
+  nameWithType: Move.PromoteTo
+  fullName: ChessSharp.Move.PromoteTo
+- uid: System.Nullable{ChessSharp.Pieces.PawnPromotion}
+  commentId: T:System.Nullable{ChessSharp.Pieces.PawnPromotion}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<PawnPromotion>
+  nameWithType: Nullable<PawnPromotion>
+  fullName: System.Nullable<ChessSharp.Pieces.PawnPromotion>
+  nameWithType.vb: Nullable(Of PawnPromotion)
+  fullName.vb: System.Nullable(Of ChessSharp.Pieces.PawnPromotion)
+  name.vb: Nullable(Of PawnPromotion)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ChessSharp.Pieces.PawnPromotion
+    name: PawnPromotion
+    nameWithType: PawnPromotion
+    fullName: ChessSharp.Pieces.PawnPromotion
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ChessSharp.Pieces.PawnPromotion
+    name: PawnPromotion
+    nameWithType: PawnPromotion
+    fullName: ChessSharp.Pieces.PawnPromotion
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ChessSharp.Pieces
+  commentId: N:ChessSharp.Pieces
+  name: ChessSharp.Pieces
+  nameWithType: ChessSharp.Pieces
+  fullName: ChessSharp.Pieces
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ChessSharp.Move.Equals*
+  commentId: Overload:ChessSharp.Move.Equals
+  name: Equals
+  nameWithType: Move.Equals
+  fullName: ChessSharp.Move.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ChessSharp.Move.GetHashCode*
+  commentId: Overload:ChessSharp.Move.GetHashCode
+  name: GetHashCode
+  nameWithType: Move.GetHashCode
+  fullName: ChessSharp.Move.GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: ChessSharp.Move.#ctor*
+  commentId: Overload:ChessSharp.Move.#ctor
+  name: Move
+  nameWithType: Move.Move
+  fullName: ChessSharp.Move.Move
+- uid: ChessSharp.Move.GetAbsDeltaX*
+  commentId: Overload:ChessSharp.Move.GetAbsDeltaX
+  name: GetAbsDeltaX
+  nameWithType: Move.GetAbsDeltaX
+  fullName: ChessSharp.Move.GetAbsDeltaX
+- uid: System.Byte
+  commentId: T:System.Byte
+  parent: System
+  isExternal: true
+  name: Byte
+  nameWithType: Byte
+  fullName: System.Byte
+- uid: ChessSharp.Move.GetAbsDeltaY*
+  commentId: Overload:ChessSharp.Move.GetAbsDeltaY
+  name: GetAbsDeltaY
+  nameWithType: Move.GetAbsDeltaY
+  fullName: ChessSharp.Move.GetAbsDeltaY
+- uid: ChessSharp.Move.GetDeltaX*
+  commentId: Overload:ChessSharp.Move.GetDeltaX
+  name: GetDeltaX
+  nameWithType: Move.GetDeltaX
+  fullName: ChessSharp.Move.GetDeltaX
+- uid: System.SByte
+  commentId: T:System.SByte
+  parent: System
+  isExternal: true
+  name: SByte
+  nameWithType: SByte
+  fullName: System.SByte
+- uid: ChessSharp.Move.GetDeltaY*
+  commentId: Overload:ChessSharp.Move.GetDeltaY
+  name: GetDeltaY
+  nameWithType: Move.GetDeltaY
+  fullName: ChessSharp.Move.GetDeltaY

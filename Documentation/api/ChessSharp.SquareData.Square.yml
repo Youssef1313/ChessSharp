@@ -1,0 +1,813 @@
+### YamlMime:ManagedReference
+items:
+- uid: ChessSharp.SquareData.Square
+  commentId: T:ChessSharp.SquareData.Square
+  id: Square
+  parent: ChessSharp.SquareData
+  children:
+  - ChessSharp.SquareData.Square.#ctor(ChessSharp.SquareData.File,ChessSharp.SquareData.Rank)
+  - ChessSharp.SquareData.Square.#ctor(System.Char,System.Byte)
+  - ChessSharp.SquareData.Square.Equals(System.Object)
+  - ChessSharp.SquareData.Square.File
+  - ChessSharp.SquareData.Square.GetHashCode
+  - ChessSharp.SquareData.Square.op_Implicit(System.String)~ChessSharp.SquareData.Square
+  - ChessSharp.SquareData.Square.Parse(System.String)
+  - ChessSharp.SquareData.Square.Rank
+  - ChessSharp.SquareData.Square.ToString
+  langs:
+  - csharp
+  - vb
+  name: Square
+  nameWithType: Square
+  fullName: ChessSharp.SquareData.Square
+  type: Class
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Square.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Square
+    path: ../src/ChessSharp/SquareData/Square.cs
+    startLine: 6
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents a chess square.
+  example: []
+  syntax:
+    content: public class Square
+    content.vb: Public Class Square
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ChessSharp.SquareData.Square.op_Implicit(System.String)~ChessSharp.SquareData.Square
+  commentId: M:ChessSharp.SquareData.Square.op_Implicit(System.String)~ChessSharp.SquareData.Square
+  id: op_Implicit(System.String)~ChessSharp.SquareData.Square
+  parent: ChessSharp.SquareData.Square
+  langs:
+  - csharp
+  - vb
+  name: Implicit(String to Square)
+  nameWithType: Square.Implicit(String to Square)
+  fullName: ChessSharp.SquareData.Square.Implicit(System.String to ChessSharp.SquareData.Square)
+  type: Operator
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Square.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: op_Implicit
+    path: ../src/ChessSharp/SquareData/Square.cs
+    startLine: 8
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  syntax:
+    content: public static implicit operator Square(string s)
+    parameters:
+    - id: s
+      type: System.String
+    return:
+      type: ChessSharp.SquareData.Square
+    content.vb: Public Shared Widening Operator CType(s As String) As Square
+  overload: ChessSharp.SquareData.Square.op_Implicit*
+  nameWithType.vb: Square.Widening(String to Square)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: ChessSharp.SquareData.Square.Widening(System.String to ChessSharp.SquareData.Square)
+  name.vb: Widening(String to Square)
+- uid: ChessSharp.SquareData.Square.File
+  commentId: P:ChessSharp.SquareData.Square.File
+  id: File
+  parent: ChessSharp.SquareData.Square
+  langs:
+  - csharp
+  - vb
+  name: File
+  nameWithType: Square.File
+  fullName: ChessSharp.SquareData.Square.File
+  type: Property
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Square.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: File
+    path: ../src/ChessSharp/SquareData/Square.cs
+    startLine: 11
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Gets the <xref href="ChessSharp.SquareData.File" data-throw-if-not-resolved="false"></xref> of the square.
+  example: []
+  syntax:
+    content: public File File { get; }
+    parameters: []
+    return:
+      type: ChessSharp.SquareData.File
+    content.vb: Public ReadOnly Property File As File
+  overload: ChessSharp.SquareData.Square.File*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ChessSharp.SquareData.Square.Rank
+  commentId: P:ChessSharp.SquareData.Square.Rank
+  id: Rank
+  parent: ChessSharp.SquareData.Square
+  langs:
+  - csharp
+  - vb
+  name: Rank
+  nameWithType: Square.Rank
+  fullName: ChessSharp.SquareData.Square.Rank
+  type: Property
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Square.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Rank
+    path: ../src/ChessSharp/SquareData/Square.cs
+    startLine: 13
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Gets the <xref href="ChessSharp.SquareData.Rank" data-throw-if-not-resolved="false"></xref> of the square.
+  example: []
+  syntax:
+    content: public Rank Rank { get; }
+    parameters: []
+    return:
+      type: ChessSharp.SquareData.Rank
+    content.vb: Public ReadOnly Property Rank As Rank
+  overload: ChessSharp.SquareData.Square.Rank*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ChessSharp.SquareData.Square.Equals(System.Object)
+  commentId: M:ChessSharp.SquareData.Square.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: ChessSharp.SquareData.Square
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: Square.Equals(Object)
+  fullName: ChessSharp.SquareData.Square.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Square.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Equals
+    path: ../src/ChessSharp/SquareData/Square.cs
+    startLine: 15
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: ChessSharp.SquareData.Square.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: ChessSharp.SquareData.Square.GetHashCode
+  commentId: M:ChessSharp.SquareData.Square.GetHashCode
+  id: GetHashCode
+  parent: ChessSharp.SquareData.Square
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Square.GetHashCode()
+  fullName: ChessSharp.SquareData.Square.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Square.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: GetHashCode
+    path: ../src/ChessSharp/SquareData/Square.cs
+    startLine: 27
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: ChessSharp.SquareData.Square.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: ChessSharp.SquareData.Square.ToString
+  commentId: M:ChessSharp.SquareData.Square.ToString
+  id: ToString
+  parent: ChessSharp.SquareData.Square
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Square.ToString()
+  fullName: ChessSharp.SquareData.Square.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Square.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: ToString
+    path: ../src/ChessSharp/SquareData/Square.cs
+    startLine: 44
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Converts the given square to a string.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: Returns string representation of the square. For example, it returns &quot;G2&quot; for a square with G file and second rank.
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: ChessSharp.SquareData.Square.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: ChessSharp.SquareData.Square.#ctor(ChessSharp.SquareData.File,ChessSharp.SquareData.Rank)
+  commentId: M:ChessSharp.SquareData.Square.#ctor(ChessSharp.SquareData.File,ChessSharp.SquareData.Rank)
+  id: '#ctor(ChessSharp.SquareData.File,ChessSharp.SquareData.Rank)'
+  parent: ChessSharp.SquareData.Square
+  langs:
+  - csharp
+  - vb
+  name: Square(File, Rank)
+  nameWithType: Square.Square(File, Rank)
+  fullName: ChessSharp.SquareData.Square.Square(ChessSharp.SquareData.File, ChessSharp.SquareData.Rank)
+  type: Constructor
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Square.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: .ctor
+    path: ../src/ChessSharp/SquareData/Square.cs
+    startLine: 54
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: "\nInitializes a new instance of the <code>Square</code>class.\n"
+  example: []
+  syntax:
+    content: public Square(File file, Rank rank)
+    parameters:
+    - id: file
+      type: ChessSharp.SquareData.File
+      description: A <xref href="ChessSharp.SquareData.File" data-throw-if-not-resolved="false"></xref> enum representing the file of the square.
+    - id: rank
+      type: ChessSharp.SquareData.Rank
+      description: A <xref href="ChessSharp.SquareData.Rank" data-throw-if-not-resolved="false"></xref> enum representing the rank of the square.
+    content.vb: Public Sub New(file As File, rank As Rank)
+  overload: ChessSharp.SquareData.Square.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ChessSharp.SquareData.Square.#ctor(System.Char,System.Byte)
+  commentId: M:ChessSharp.SquareData.Square.#ctor(System.Char,System.Byte)
+  id: '#ctor(System.Char,System.Byte)'
+  parent: ChessSharp.SquareData.Square
+  langs:
+  - csharp
+  - vb
+  name: Square(Char, Byte)
+  nameWithType: Square.Square(Char, Byte)
+  fullName: ChessSharp.SquareData.Square.Square(System.Char, System.Byte)
+  type: Constructor
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Square.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: .ctor
+    path: ../src/ChessSharp/SquareData/Square.cs
+    startLine: 68
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: "\nInitializes a new instance of the Square class.\n"
+  example: []
+  syntax:
+    content: public Square(char file, byte rank)
+    parameters:
+    - id: file
+      type: System.Char
+      description: A char representing the file of the square.
+    - id: rank
+      type: System.Byte
+      description: A char representing the rank of the square.
+    content.vb: Public Sub New(file As Char, rank As Byte)
+  overload: ChessSharp.SquareData.Square.#ctor*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "\nEither <code>file</code> or <code>rank</code> is out of range. <code>file</code> should be a char between &apos;A&apos; and &apos;H&apos; (case insensitive). <code>rank</code> should be a char between &apos;1&apos; and &apos;8&apos;.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ChessSharp.SquareData.Square.Parse(System.String)
+  commentId: M:ChessSharp.SquareData.Square.Parse(System.String)
+  id: Parse(System.String)
+  parent: ChessSharp.SquareData.Square
+  langs:
+  - csharp
+  - vb
+  name: Parse(String)
+  nameWithType: Square.Parse(String)
+  fullName: ChessSharp.SquareData.Square.Parse(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Square.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Parse
+    path: ../src/ChessSharp/SquareData/Square.cs
+    startLine: 115
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Parses a string representation of the square.
+  example: []
+  syntax:
+    content: public static Square Parse(string square)
+    parameters:
+    - id: square
+      type: System.String
+      description: The string representation of the square.
+    return:
+      type: ChessSharp.SquareData.Square
+      description: Returns a Square object.
+    content.vb: Public Shared Function Parse(square As String) As Square
+  overload: ChessSharp.SquareData.Square.Parse*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe given <code>square</code> string is null.\n"
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nThe given <code>square</code> string has length less or greater than two. The <code>square</code> string should have length of two (For example, &quot;G2&quot;).\n"
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "\nEither the file or the rank char of the <code>square</code> string is out of range. The file should be between &apos;A&apos; and &apos;H&apos; (case insensitive). The <code>rank</code> should be between &apos;1&apos; and &apos;8&apos;.\n"
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: ChessSharp.SquareData
+  commentId: N:ChessSharp.SquareData
+  name: ChessSharp.SquareData
+  nameWithType: ChessSharp.SquareData
+  fullName: ChessSharp.SquareData
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ChessSharp.SquareData.Square.op_Implicit*
+  commentId: Overload:ChessSharp.SquareData.Square.op_Implicit
+  name: Implicit
+  nameWithType: Square.Implicit
+  fullName: ChessSharp.SquareData.Square.Implicit
+  nameWithType.vb: Square.Widening
+  fullName.vb: ChessSharp.SquareData.Square.Widening
+  name.vb: Widening
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: ChessSharp.SquareData.Square
+  commentId: T:ChessSharp.SquareData.Square
+  parent: ChessSharp.SquareData
+  name: Square
+  nameWithType: Square
+  fullName: ChessSharp.SquareData.Square
+- uid: ChessSharp.SquareData.File
+  commentId: T:ChessSharp.SquareData.File
+  parent: ChessSharp.SquareData
+  name: File
+  nameWithType: File
+  fullName: ChessSharp.SquareData.File
+- uid: ChessSharp.SquareData.Square.File*
+  commentId: Overload:ChessSharp.SquareData.Square.File
+  name: File
+  nameWithType: Square.File
+  fullName: ChessSharp.SquareData.Square.File
+- uid: ChessSharp.SquareData.Rank
+  commentId: T:ChessSharp.SquareData.Rank
+  parent: ChessSharp.SquareData
+  name: Rank
+  nameWithType: Rank
+  fullName: ChessSharp.SquareData.Rank
+- uid: ChessSharp.SquareData.Square.Rank*
+  commentId: Overload:ChessSharp.SquareData.Square.Rank
+  name: Rank
+  nameWithType: Square.Rank
+  fullName: ChessSharp.SquareData.Square.Rank
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ChessSharp.SquareData.Square.Equals*
+  commentId: Overload:ChessSharp.SquareData.Square.Equals
+  name: Equals
+  nameWithType: Square.Equals
+  fullName: ChessSharp.SquareData.Square.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ChessSharp.SquareData.Square.GetHashCode*
+  commentId: Overload:ChessSharp.SquareData.Square.GetHashCode
+  name: GetHashCode
+  nameWithType: Square.GetHashCode
+  fullName: ChessSharp.SquareData.Square.GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ChessSharp.SquareData.Square.ToString*
+  commentId: Overload:ChessSharp.SquareData.Square.ToString
+  name: ToString
+  nameWithType: Square.ToString
+  fullName: ChessSharp.SquareData.Square.ToString
+- uid: ChessSharp.SquareData.Square.#ctor*
+  commentId: Overload:ChessSharp.SquareData.Square.#ctor
+  name: Square
+  nameWithType: Square.Square
+  fullName: ChessSharp.SquareData.Square.Square
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+- uid: System.Char
+  commentId: T:System.Char
+  parent: System
+  isExternal: true
+  name: Char
+  nameWithType: Char
+  fullName: System.Char
+- uid: System.Byte
+  commentId: T:System.Byte
+  parent: System
+  isExternal: true
+  name: Byte
+  nameWithType: Byte
+  fullName: System.Byte
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+- uid: ChessSharp.SquareData.Square.Parse*
+  commentId: Overload:ChessSharp.SquareData.Square.Parse
+  name: Parse
+  nameWithType: Square.Parse
+  fullName: ChessSharp.SquareData.Square.Parse

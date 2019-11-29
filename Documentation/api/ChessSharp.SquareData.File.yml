@@ -1,0 +1,328 @@
+### YamlMime:ManagedReference
+items:
+- uid: ChessSharp.SquareData.File
+  commentId: T:ChessSharp.SquareData.File
+  id: File
+  parent: ChessSharp.SquareData
+  children:
+  - ChessSharp.SquareData.File.A
+  - ChessSharp.SquareData.File.B
+  - ChessSharp.SquareData.File.C
+  - ChessSharp.SquareData.File.D
+  - ChessSharp.SquareData.File.E
+  - ChessSharp.SquareData.File.F
+  - ChessSharp.SquareData.File.G
+  - ChessSharp.SquareData.File.H
+  langs:
+  - csharp
+  - vb
+  name: File
+  nameWithType: File
+  fullName: ChessSharp.SquareData.File
+  type: Enum
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/File.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: File
+    path: ../src/ChessSharp/SquareData/File.cs
+    startLine: 4
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents a square file.
+  example: []
+  syntax:
+    content: public enum File
+    content.vb: Public Enum File
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: ChessSharp.SquareData.File.A
+  commentId: F:ChessSharp.SquareData.File.A
+  id: A
+  parent: ChessSharp.SquareData.File
+  langs:
+  - csharp
+  - vb
+  name: A
+  nameWithType: File.A
+  fullName: ChessSharp.SquareData.File.A
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/File.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: A
+    path: ../src/ChessSharp/SquareData/File.cs
+    startLine: 7
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents the A file.
+  example: []
+  syntax:
+    content: A = 0
+    return:
+      type: ChessSharp.SquareData.File
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.SquareData.File.B
+  commentId: F:ChessSharp.SquareData.File.B
+  id: B
+  parent: ChessSharp.SquareData.File
+  langs:
+  - csharp
+  - vb
+  name: B
+  nameWithType: File.B
+  fullName: ChessSharp.SquareData.File.B
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/File.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: B
+    path: ../src/ChessSharp/SquareData/File.cs
+    startLine: 9
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents the B file.
+  example: []
+  syntax:
+    content: B = 1
+    return:
+      type: ChessSharp.SquareData.File
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.SquareData.File.C
+  commentId: F:ChessSharp.SquareData.File.C
+  id: C
+  parent: ChessSharp.SquareData.File
+  langs:
+  - csharp
+  - vb
+  name: C
+  nameWithType: File.C
+  fullName: ChessSharp.SquareData.File.C
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/File.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: C
+    path: ../src/ChessSharp/SquareData/File.cs
+    startLine: 11
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents the C file.
+  example: []
+  syntax:
+    content: C = 2
+    return:
+      type: ChessSharp.SquareData.File
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.SquareData.File.D
+  commentId: F:ChessSharp.SquareData.File.D
+  id: D
+  parent: ChessSharp.SquareData.File
+  langs:
+  - csharp
+  - vb
+  name: D
+  nameWithType: File.D
+  fullName: ChessSharp.SquareData.File.D
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/File.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: D
+    path: ../src/ChessSharp/SquareData/File.cs
+    startLine: 13
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents the D file.
+  example: []
+  syntax:
+    content: D = 3
+    return:
+      type: ChessSharp.SquareData.File
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.SquareData.File.E
+  commentId: F:ChessSharp.SquareData.File.E
+  id: E
+  parent: ChessSharp.SquareData.File
+  langs:
+  - csharp
+  - vb
+  name: E
+  nameWithType: File.E
+  fullName: ChessSharp.SquareData.File.E
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/File.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: E
+    path: ../src/ChessSharp/SquareData/File.cs
+    startLine: 15
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents the E file.
+  example: []
+  syntax:
+    content: E = 4
+    return:
+      type: ChessSharp.SquareData.File
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.SquareData.File.F
+  commentId: F:ChessSharp.SquareData.File.F
+  id: F
+  parent: ChessSharp.SquareData.File
+  langs:
+  - csharp
+  - vb
+  name: F
+  nameWithType: File.F
+  fullName: ChessSharp.SquareData.File.F
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/File.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: F
+    path: ../src/ChessSharp/SquareData/File.cs
+    startLine: 17
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents the F file.
+  example: []
+  syntax:
+    content: F = 5
+    return:
+      type: ChessSharp.SquareData.File
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.SquareData.File.G
+  commentId: F:ChessSharp.SquareData.File.G
+  id: G
+  parent: ChessSharp.SquareData.File
+  langs:
+  - csharp
+  - vb
+  name: G
+  nameWithType: File.G
+  fullName: ChessSharp.SquareData.File.G
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/File.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: G
+    path: ../src/ChessSharp/SquareData/File.cs
+    startLine: 19
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents the G file.
+  example: []
+  syntax:
+    content: G = 6
+    return:
+      type: ChessSharp.SquareData.File
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.SquareData.File.H
+  commentId: F:ChessSharp.SquareData.File.H
+  id: H
+  parent: ChessSharp.SquareData.File
+  langs:
+  - csharp
+  - vb
+  name: H
+  nameWithType: File.H
+  fullName: ChessSharp.SquareData.File.H
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/File.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: H
+    path: ../src/ChessSharp/SquareData/File.cs
+    startLine: 21
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents the H file.
+  example: []
+  syntax:
+    content: H = 7
+    return:
+      type: ChessSharp.SquareData.File
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: ChessSharp.SquareData
+  commentId: N:ChessSharp.SquareData
+  name: ChessSharp.SquareData
+  nameWithType: ChessSharp.SquareData
+  fullName: ChessSharp.SquareData
+- uid: ChessSharp.SquareData.File
+  commentId: T:ChessSharp.SquareData.File
+  parent: ChessSharp.SquareData
+  name: File
+  nameWithType: File
+  fullName: ChessSharp.SquareData.File

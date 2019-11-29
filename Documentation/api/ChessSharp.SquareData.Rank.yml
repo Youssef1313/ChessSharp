@@ -1,0 +1,328 @@
+### YamlMime:ManagedReference
+items:
+- uid: ChessSharp.SquareData.Rank
+  commentId: T:ChessSharp.SquareData.Rank
+  id: Rank
+  parent: ChessSharp.SquareData
+  children:
+  - ChessSharp.SquareData.Rank.Eighth
+  - ChessSharp.SquareData.Rank.Fifth
+  - ChessSharp.SquareData.Rank.First
+  - ChessSharp.SquareData.Rank.Forth
+  - ChessSharp.SquareData.Rank.Second
+  - ChessSharp.SquareData.Rank.Seventh
+  - ChessSharp.SquareData.Rank.Sixth
+  - ChessSharp.SquareData.Rank.Third
+  langs:
+  - csharp
+  - vb
+  name: Rank
+  nameWithType: Rank
+  fullName: ChessSharp.SquareData.Rank
+  type: Enum
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Rank.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Rank
+    path: ../src/ChessSharp/SquareData/Rank.cs
+    startLine: 4
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents a square rank.
+  example: []
+  syntax:
+    content: public enum Rank
+    content.vb: Public Enum Rank
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: ChessSharp.SquareData.Rank.First
+  commentId: F:ChessSharp.SquareData.Rank.First
+  id: First
+  parent: ChessSharp.SquareData.Rank
+  langs:
+  - csharp
+  - vb
+  name: First
+  nameWithType: Rank.First
+  fullName: ChessSharp.SquareData.Rank.First
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Rank.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: First
+    path: ../src/ChessSharp/SquareData/Rank.cs
+    startLine: 7
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents the first rank.
+  example: []
+  syntax:
+    content: First = 0
+    return:
+      type: ChessSharp.SquareData.Rank
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.SquareData.Rank.Second
+  commentId: F:ChessSharp.SquareData.Rank.Second
+  id: Second
+  parent: ChessSharp.SquareData.Rank
+  langs:
+  - csharp
+  - vb
+  name: Second
+  nameWithType: Rank.Second
+  fullName: ChessSharp.SquareData.Rank.Second
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Rank.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Second
+    path: ../src/ChessSharp/SquareData/Rank.cs
+    startLine: 9
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents the second rank.
+  example: []
+  syntax:
+    content: Second = 1
+    return:
+      type: ChessSharp.SquareData.Rank
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.SquareData.Rank.Third
+  commentId: F:ChessSharp.SquareData.Rank.Third
+  id: Third
+  parent: ChessSharp.SquareData.Rank
+  langs:
+  - csharp
+  - vb
+  name: Third
+  nameWithType: Rank.Third
+  fullName: ChessSharp.SquareData.Rank.Third
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Rank.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Third
+    path: ../src/ChessSharp/SquareData/Rank.cs
+    startLine: 11
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents the third rank.
+  example: []
+  syntax:
+    content: Third = 2
+    return:
+      type: ChessSharp.SquareData.Rank
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.SquareData.Rank.Forth
+  commentId: F:ChessSharp.SquareData.Rank.Forth
+  id: Forth
+  parent: ChessSharp.SquareData.Rank
+  langs:
+  - csharp
+  - vb
+  name: Forth
+  nameWithType: Rank.Forth
+  fullName: ChessSharp.SquareData.Rank.Forth
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Rank.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Forth
+    path: ../src/ChessSharp/SquareData/Rank.cs
+    startLine: 13
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents the forth rank.
+  example: []
+  syntax:
+    content: Forth = 3
+    return:
+      type: ChessSharp.SquareData.Rank
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.SquareData.Rank.Fifth
+  commentId: F:ChessSharp.SquareData.Rank.Fifth
+  id: Fifth
+  parent: ChessSharp.SquareData.Rank
+  langs:
+  - csharp
+  - vb
+  name: Fifth
+  nameWithType: Rank.Fifth
+  fullName: ChessSharp.SquareData.Rank.Fifth
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Rank.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Fifth
+    path: ../src/ChessSharp/SquareData/Rank.cs
+    startLine: 15
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents the fifth rank.
+  example: []
+  syntax:
+    content: Fifth = 4
+    return:
+      type: ChessSharp.SquareData.Rank
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.SquareData.Rank.Sixth
+  commentId: F:ChessSharp.SquareData.Rank.Sixth
+  id: Sixth
+  parent: ChessSharp.SquareData.Rank
+  langs:
+  - csharp
+  - vb
+  name: Sixth
+  nameWithType: Rank.Sixth
+  fullName: ChessSharp.SquareData.Rank.Sixth
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Rank.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Sixth
+    path: ../src/ChessSharp/SquareData/Rank.cs
+    startLine: 17
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents the sixth rank.
+  example: []
+  syntax:
+    content: Sixth = 5
+    return:
+      type: ChessSharp.SquareData.Rank
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.SquareData.Rank.Seventh
+  commentId: F:ChessSharp.SquareData.Rank.Seventh
+  id: Seventh
+  parent: ChessSharp.SquareData.Rank
+  langs:
+  - csharp
+  - vb
+  name: Seventh
+  nameWithType: Rank.Seventh
+  fullName: ChessSharp.SquareData.Rank.Seventh
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Rank.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Seventh
+    path: ../src/ChessSharp/SquareData/Rank.cs
+    startLine: 19
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents the seventh rank.
+  example: []
+  syntax:
+    content: Seventh = 6
+    return:
+      type: ChessSharp.SquareData.Rank
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.SquareData.Rank.Eighth
+  commentId: F:ChessSharp.SquareData.Rank.Eighth
+  id: Eighth
+  parent: ChessSharp.SquareData.Rank
+  langs:
+  - csharp
+  - vb
+  name: Eighth
+  nameWithType: Rank.Eighth
+  fullName: ChessSharp.SquareData.Rank.Eighth
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/SquareData/Rank.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Eighth
+    path: ../src/ChessSharp/SquareData/Rank.cs
+    startLine: 21
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.SquareData
+  summary: Represents the eigth rank.
+  example: []
+  syntax:
+    content: Eighth = 7
+    return:
+      type: ChessSharp.SquareData.Rank
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: ChessSharp.SquareData
+  commentId: N:ChessSharp.SquareData
+  name: ChessSharp.SquareData
+  nameWithType: ChessSharp.SquareData
+  fullName: ChessSharp.SquareData
+- uid: ChessSharp.SquareData.Rank
+  commentId: T:ChessSharp.SquareData.Rank
+  parent: ChessSharp.SquareData
+  name: Rank
+  nameWithType: Rank
+  fullName: ChessSharp.SquareData.Rank

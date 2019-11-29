@@ -1,0 +1,42 @@
+### YamlMime:ManagedReference
+items:
+- uid: ChessSharp.SquareData
+  commentId: N:ChessSharp.SquareData
+  id: ChessSharp.SquareData
+  children:
+  - ChessSharp.SquareData.File
+  - ChessSharp.SquareData.Rank
+  - ChessSharp.SquareData.Square
+  langs:
+  - csharp
+  - vb
+  name: ChessSharp.SquareData
+  nameWithType: ChessSharp.SquareData
+  fullName: ChessSharp.SquareData
+  type: Namespace
+  assemblies:
+  - ChessSharp
+references:
+- uid: ChessSharp.SquareData.File
+  commentId: T:ChessSharp.SquareData.File
+  parent: ChessSharp.SquareData
+  name: File
+  nameWithType: File
+  fullName: ChessSharp.SquareData.File
+- uid: ChessSharp.SquareData.Rank
+  commentId: T:ChessSharp.SquareData.Rank
+  parent: ChessSharp.SquareData
+  name: Rank
+  nameWithType: Rank
+  fullName: ChessSharp.SquareData.Rank
+- uid: ChessSharp.SquareData.Square
+  commentId: T:ChessSharp.SquareData.Square
+  parent: ChessSharp.SquareData
+  name: Square
+  nameWithType: Square
+  fullName: ChessSharp.SquareData.Square
+- uid: ChessSharp.SquareData
+  commentId: N:ChessSharp.SquareData
+  name: ChessSharp.SquareData
+  nameWithType: ChessSharp.SquareData
+  fullName: ChessSharp.SquareData

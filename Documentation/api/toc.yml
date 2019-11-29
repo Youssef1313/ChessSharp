@@ -1,0 +1,42 @@
+### YamlMime:TableOfContent
+- uid: ChessSharp
+  name: ChessSharp
+  items:
+  - uid: ChessSharp.ChessUtilities
+    name: ChessUtilities
+  - uid: ChessSharp.GameBoard
+    name: GameBoard
+  - uid: ChessSharp.GameState
+    name: GameState
+  - uid: ChessSharp.Move
+    name: Move
+  - uid: ChessSharp.Piece
+    name: Piece
+  - uid: ChessSharp.Player
+    name: Player
+- uid: ChessSharp.Pieces
+  name: ChessSharp.Pieces
+  items:
+  - uid: ChessSharp.Pieces.Bishop
+    name: Bishop
+  - uid: ChessSharp.Pieces.King
+    name: King
+  - uid: ChessSharp.Pieces.Knight
+    name: Knight
+  - uid: ChessSharp.Pieces.Pawn
+    name: Pawn
+  - uid: ChessSharp.Pieces.PawnPromotion
+    name: PawnPromotion
+  - uid: ChessSharp.Pieces.Queen
+    name: Queen
+  - uid: ChessSharp.Pieces.Rook
+    name: Rook
+- uid: ChessSharp.SquareData
+  name: ChessSharp.SquareData
+  items:
+  - uid: ChessSharp.SquareData.File
+    name: File
+  - uid: ChessSharp.SquareData.Rank
+    name: Rank
+  - uid: ChessSharp.SquareData.Square
+    name: Square

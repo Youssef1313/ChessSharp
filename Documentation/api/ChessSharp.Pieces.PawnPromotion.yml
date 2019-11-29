@@ -1,0 +1,188 @@
+### YamlMime:ManagedReference
+items:
+- uid: ChessSharp.Pieces.PawnPromotion
+  commentId: T:ChessSharp.Pieces.PawnPromotion
+  id: PawnPromotion
+  parent: ChessSharp.Pieces
+  children:
+  - ChessSharp.Pieces.PawnPromotion.Bishop
+  - ChessSharp.Pieces.PawnPromotion.Knight
+  - ChessSharp.Pieces.PawnPromotion.Queen
+  - ChessSharp.Pieces.PawnPromotion.Rook
+  langs:
+  - csharp
+  - vb
+  name: PawnPromotion
+  nameWithType: PawnPromotion
+  fullName: ChessSharp.Pieces.PawnPromotion
+  type: Enum
+  source:
+    remote:
+      path: src/ChessSharp/Pieces/PawnPromotion.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: PawnPromotion
+    path: ../src/ChessSharp/Pieces/PawnPromotion.cs
+    startLine: 3
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.Pieces
+  summary: Represents the promotion of the pawn.
+  example: []
+  syntax:
+    content: public enum PawnPromotion
+    content.vb: Public Enum PawnPromotion
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: ChessSharp.Pieces.PawnPromotion.Knight
+  commentId: F:ChessSharp.Pieces.PawnPromotion.Knight
+  id: Knight
+  parent: ChessSharp.Pieces.PawnPromotion
+  langs:
+  - csharp
+  - vb
+  name: Knight
+  nameWithType: PawnPromotion.Knight
+  fullName: ChessSharp.Pieces.PawnPromotion.Knight
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/Pieces/PawnPromotion.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Knight
+    path: ../src/ChessSharp/Pieces/PawnPromotion.cs
+    startLine: 6
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.Pieces
+  summary: Promote the pawn to a knight.
+  example: []
+  syntax:
+    content: Knight = 0
+    return:
+      type: ChessSharp.Pieces.PawnPromotion
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.Pieces.PawnPromotion.Bishop
+  commentId: F:ChessSharp.Pieces.PawnPromotion.Bishop
+  id: Bishop
+  parent: ChessSharp.Pieces.PawnPromotion
+  langs:
+  - csharp
+  - vb
+  name: Bishop
+  nameWithType: PawnPromotion.Bishop
+  fullName: ChessSharp.Pieces.PawnPromotion.Bishop
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/Pieces/PawnPromotion.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Bishop
+    path: ../src/ChessSharp/Pieces/PawnPromotion.cs
+    startLine: 8
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.Pieces
+  summary: Promote the pawn to a bishop.
+  example: []
+  syntax:
+    content: Bishop = 1
+    return:
+      type: ChessSharp.Pieces.PawnPromotion
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.Pieces.PawnPromotion.Rook
+  commentId: F:ChessSharp.Pieces.PawnPromotion.Rook
+  id: Rook
+  parent: ChessSharp.Pieces.PawnPromotion
+  langs:
+  - csharp
+  - vb
+  name: Rook
+  nameWithType: PawnPromotion.Rook
+  fullName: ChessSharp.Pieces.PawnPromotion.Rook
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/Pieces/PawnPromotion.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Rook
+    path: ../src/ChessSharp/Pieces/PawnPromotion.cs
+    startLine: 10
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.Pieces
+  summary: Promote the pawn to a rook.
+  example: []
+  syntax:
+    content: Rook = 2
+    return:
+      type: ChessSharp.Pieces.PawnPromotion
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.Pieces.PawnPromotion.Queen
+  commentId: F:ChessSharp.Pieces.PawnPromotion.Queen
+  id: Queen
+  parent: ChessSharp.Pieces.PawnPromotion
+  langs:
+  - csharp
+  - vb
+  name: Queen
+  nameWithType: PawnPromotion.Queen
+  fullName: ChessSharp.Pieces.PawnPromotion.Queen
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/Pieces/PawnPromotion.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Queen
+    path: ../src/ChessSharp/Pieces/PawnPromotion.cs
+    startLine: 12
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp.Pieces
+  summary: Promote the pawn to a queen.
+  example: []
+  syntax:
+    content: Queen = 3
+    return:
+      type: ChessSharp.Pieces.PawnPromotion
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: ChessSharp.Pieces
+  commentId: N:ChessSharp.Pieces
+  name: ChessSharp.Pieces
+  nameWithType: ChessSharp.Pieces
+  fullName: ChessSharp.Pieces
+- uid: ChessSharp.Pieces.PawnPromotion
+  commentId: T:ChessSharp.Pieces.PawnPromotion
+  parent: ChessSharp.Pieces
+  name: PawnPromotion
+  nameWithType: PawnPromotion
+  fullName: ChessSharp.Pieces.PawnPromotion

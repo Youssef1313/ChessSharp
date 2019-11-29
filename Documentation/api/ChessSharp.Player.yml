@@ -1,0 +1,118 @@
+### YamlMime:ManagedReference
+items:
+- uid: ChessSharp.Player
+  commentId: T:ChessSharp.Player
+  id: Player
+  parent: ChessSharp
+  children:
+  - ChessSharp.Player.Black
+  - ChessSharp.Player.White
+  langs:
+  - csharp
+  - vb
+  name: Player
+  nameWithType: Player
+  fullName: ChessSharp.Player
+  type: Enum
+  source:
+    remote:
+      path: src/ChessSharp/Player.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Player
+    path: ../src/ChessSharp/Player.cs
+    startLine: 3
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Represents a player.
+  example: []
+  syntax:
+    content: public enum Player
+    content.vb: Public Enum Player
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: ChessSharp.Player.White
+  commentId: F:ChessSharp.Player.White
+  id: White
+  parent: ChessSharp.Player
+  langs:
+  - csharp
+  - vb
+  name: White
+  nameWithType: Player.White
+  fullName: ChessSharp.Player.White
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/Player.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: White
+    path: ../src/ChessSharp/Player.cs
+    startLine: 6
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Represents the white player.
+  example: []
+  syntax:
+    content: White = 0
+    return:
+      type: ChessSharp.Player
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ChessSharp.Player.Black
+  commentId: F:ChessSharp.Player.Black
+  id: Black
+  parent: ChessSharp.Player
+  langs:
+  - csharp
+  - vb
+  name: Black
+  nameWithType: Player.Black
+  fullName: ChessSharp.Player.Black
+  type: Field
+  source:
+    remote:
+      path: src/ChessSharp/Player.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Black
+    path: ../src/ChessSharp/Player.cs
+    startLine: 8
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Represents the black player.
+  example: []
+  syntax:
+    content: Black = 1
+    return:
+      type: ChessSharp.Player
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: ChessSharp
+  commentId: N:ChessSharp
+  name: ChessSharp
+  nameWithType: ChessSharp
+  fullName: ChessSharp
+- uid: ChessSharp.Player
+  commentId: T:ChessSharp.Player
+  parent: ChessSharp
+  name: Player
+  nameWithType: Player
+  fullName: ChessSharp.Player

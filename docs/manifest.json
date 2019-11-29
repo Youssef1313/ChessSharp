@@ -1,0 +1,294 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/Important To Me/Chess/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.ChessUtilities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.ChessUtilities.html",
+          "hash": "r+eXz3ursNuKnRndXI4MEA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.GameBoard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.GameBoard.html",
+          "hash": "susyCbg+RWbwbpwQ3K6EhQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.GameState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.GameState.html",
+          "hash": "B3A6fWSXtt0q4cMrxrU/aw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.Move.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.Move.html",
+          "hash": "KxQ2lHHIBR39bfJRVVfdDw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.Piece.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.Piece.html",
+          "hash": "FrmniKZKNjQAxBP7ZGwIYQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.Pieces.Bishop.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.Pieces.Bishop.html",
+          "hash": "mQ1OQHaSN3UXolO5f2rvUw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.Pieces.King.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.Pieces.King.html",
+          "hash": "XhGcM9MxZTRtGnOfbuCCJg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.Pieces.Knight.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.Pieces.Knight.html",
+          "hash": "7Z/7hZ8F8gpRsbwPaSMf1Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.Pieces.Pawn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.Pieces.Pawn.html",
+          "hash": "DBx9jPtGTvr7g56VE48dQw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.Pieces.PawnPromotion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.Pieces.PawnPromotion.html",
+          "hash": "QPCSYgDb+BOF/QdMbGuZew=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.Pieces.Queen.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.Pieces.Queen.html",
+          "hash": "61vqb2T5G7dWCIb44qDz9g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.Pieces.Rook.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.Pieces.Rook.html",
+          "hash": "A7LkcSgf76iuxxVUXqlRyA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.Pieces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.Pieces.html",
+          "hash": "p/om+j5YaNHiYdq8+Ugu3A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.Player.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.Player.html",
+          "hash": "VOozmq8Q5Xey7UzDRusstA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.SquareData.File.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.SquareData.File.html",
+          "hash": "n4ZVhm34OGikOZrrL+H3cQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.SquareData.Rank.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.SquareData.Rank.html",
+          "hash": "mUZEtU6HStna5V86uOFjWg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.SquareData.Square.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.SquareData.Square.html",
+          "hash": "5O1+KQhtG+16C1v6j5vSWw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.SquareData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.SquareData.html",
+          "hash": "NNt6XzqwmPBznro1s3K7Wg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ChessSharp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ChessSharp.html",
+          "hash": "GZWcQ3/V6yfHbBEKShVX+g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "elMEml8GflebGLGaomHOcg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 1
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 19,
+          "skipped_file_count": 19
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+### YamlMime:ManagedReference
+items:
+- uid: ChessSharp
+  commentId: N:ChessSharp
+  id: ChessSharp
+  children:
+  - ChessSharp.ChessUtilities
+  - ChessSharp.GameBoard
+  - ChessSharp.GameState
+  - ChessSharp.Move
+  - ChessSharp.Piece
+  - ChessSharp.Player
+  langs:
+  - csharp
+  - vb
+  name: ChessSharp
+  nameWithType: ChessSharp
+  fullName: ChessSharp
+  type: Namespace
+  assemblies:
+  - ChessSharp
+references:
+- uid: ChessSharp.ChessUtilities
+  commentId: T:ChessSharp.ChessUtilities
+  name: ChessUtilities
+  nameWithType: ChessUtilities
+  fullName: ChessSharp.ChessUtilities
+- uid: ChessSharp.GameBoard
+  commentId: T:ChessSharp.GameBoard
+  parent: ChessSharp
+  name: GameBoard
+  nameWithType: GameBoard
+  fullName: ChessSharp.GameBoard
+- uid: ChessSharp.GameState
+  commentId: T:ChessSharp.GameState
+  parent: ChessSharp
+  name: GameState
+  nameWithType: GameState
+  fullName: ChessSharp.GameState
+- uid: ChessSharp.Move
+  commentId: T:ChessSharp.Move
+  parent: ChessSharp
+  name: Move
+  nameWithType: Move
+  fullName: ChessSharp.Move
+- uid: ChessSharp.Piece
+  commentId: T:ChessSharp.Piece
+  parent: ChessSharp
+  name: Piece
+  nameWithType: Piece
+  fullName: ChessSharp.Piece
+- uid: ChessSharp.Player
+  commentId: T:ChessSharp.Player
+  parent: ChessSharp
+  name: Player
+  nameWithType: Player
+  fullName: ChessSharp.Player
+- uid: ChessSharp
+  commentId: N:ChessSharp
+  name: ChessSharp
+  nameWithType: ChessSharp
+  fullName: ChessSharp

@@ -1,0 +1,934 @@
+### YamlMime:ManagedReference
+items:
+- uid: ChessSharp.GameBoard
+  commentId: T:ChessSharp.GameBoard
+  id: GameBoard
+  parent: ChessSharp
+  children:
+  - ChessSharp.GameBoard.#ctor
+  - ChessSharp.GameBoard.Board
+  - ChessSharp.GameBoard.GameState
+  - ChessSharp.GameBoard.IsValidMove(ChessSharp.Move)
+  - ChessSharp.GameBoard.Item(ChessSharp.SquareData.File,ChessSharp.SquareData.Rank)
+  - ChessSharp.GameBoard.Item(ChessSharp.SquareData.Square)
+  - ChessSharp.GameBoard.MakeMove(ChessSharp.Move,System.Boolean)
+  - ChessSharp.GameBoard.Moves
+  - ChessSharp.GameBoard.WhoseTurn
+  langs:
+  - csharp
+  - vb
+  name: GameBoard
+  nameWithType: GameBoard
+  fullName: ChessSharp.GameBoard
+  type: Class
+  source:
+    remote:
+      path: src/ChessSharp/GameBoard.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: GameBoard
+    path: ../src/ChessSharp/GameBoard.cs
+    startLine: 10
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Represents the chess game.
+  example: []
+  syntax:
+    content: public class GameBoard
+    content.vb: Public Class GameBoard
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ChessSharp.GameBoard.Item(ChessSharp.SquareData.File,ChessSharp.SquareData.Rank)
+  commentId: P:ChessSharp.GameBoard.Item(ChessSharp.SquareData.File,ChessSharp.SquareData.Rank)
+  id: Item(ChessSharp.SquareData.File,ChessSharp.SquareData.Rank)
+  parent: ChessSharp.GameBoard
+  langs:
+  - csharp
+  - vb
+  name: Item[File, Rank]
+  nameWithType: GameBoard.Item[File, Rank]
+  fullName: ChessSharp.GameBoard.Item[ChessSharp.SquareData.File, ChessSharp.SquareData.Rank]
+  type: Property
+  source:
+    remote:
+      path: src/ChessSharp/GameBoard.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: this[]
+    path: ../src/ChessSharp/GameBoard.cs
+    startLine: 15
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Gets <xref href="ChessSharp.Piece" data-throw-if-not-resolved="false"></xref> in a specific square.
+  example: []
+  syntax:
+    content: public Piece this[File file, Rank rank] { get; }
+    parameters:
+    - id: file
+      type: ChessSharp.SquareData.File
+      description: The <xref href="ChessSharp.SquareData.File" data-throw-if-not-resolved="false"></xref> of the square.
+    - id: rank
+      type: ChessSharp.SquareData.Rank
+      description: The <xref href="ChessSharp.SquareData.Rank" data-throw-if-not-resolved="false"></xref> of the square.
+    return:
+      type: ChessSharp.Piece
+    content.vb: Public ReadOnly Property Item(file As File, rank As Rank) As Piece
+  overload: ChessSharp.GameBoard.Item*
+  nameWithType.vb: GameBoard.Item(File, Rank)
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: ChessSharp.GameBoard.Item(ChessSharp.SquareData.File, ChessSharp.SquareData.Rank)
+  name.vb: Item(File, Rank)
+- uid: ChessSharp.GameBoard.Item(ChessSharp.SquareData.Square)
+  commentId: P:ChessSharp.GameBoard.Item(ChessSharp.SquareData.Square)
+  id: Item(ChessSharp.SquareData.Square)
+  parent: ChessSharp.GameBoard
+  langs:
+  - csharp
+  - vb
+  name: Item[Square]
+  nameWithType: GameBoard.Item[Square]
+  fullName: ChessSharp.GameBoard.Item[ChessSharp.SquareData.Square]
+  type: Property
+  source:
+    remote:
+      path: src/ChessSharp/GameBoard.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: this[]
+    path: ../src/ChessSharp/GameBoard.cs
+    startLine: 19
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Gets <xref href="ChessSharp.Piece" data-throw-if-not-resolved="false"></xref> in a specific square.
+  example: []
+  syntax:
+    content: public Piece this[Square square] { get; }
+    parameters:
+    - id: square
+      type: ChessSharp.SquareData.Square
+      description: The <xref href="ChessSharp.SquareData.Square" data-throw-if-not-resolved="false"></xref> to get its <xref href="ChessSharp.Piece" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: ChessSharp.Piece
+    content.vb: Public ReadOnly Property Item(square As Square) As Piece
+  overload: ChessSharp.GameBoard.Item*
+  nameWithType.vb: GameBoard.Item(Square)
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: ChessSharp.GameBoard.Item(ChessSharp.SquareData.Square)
+  name.vb: Item(Square)
+- uid: ChessSharp.GameBoard.Moves
+  commentId: P:ChessSharp.GameBoard.Moves
+  id: Moves
+  parent: ChessSharp.GameBoard
+  langs:
+  - csharp
+  - vb
+  name: Moves
+  nameWithType: GameBoard.Moves
+  fullName: ChessSharp.GameBoard.Moves
+  type: Property
+  source:
+    remote:
+      path: src/ChessSharp/GameBoard.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Moves
+    path: ../src/ChessSharp/GameBoard.cs
+    startLine: 22
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Gets a list of the game moves.
+  example: []
+  syntax:
+    content: public List<Move> Moves { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{ChessSharp.Move}
+    content.vb: Public ReadOnly Property Moves As List(Of Move)
+  overload: ChessSharp.GameBoard.Moves*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ChessSharp.GameBoard.Board
+  commentId: P:ChessSharp.GameBoard.Board
+  id: Board
+  parent: ChessSharp.GameBoard
+  langs:
+  - csharp
+  - vb
+  name: Board
+  nameWithType: GameBoard.Board
+  fullName: ChessSharp.GameBoard.Board
+  type: Property
+  source:
+    remote:
+      path: src/ChessSharp/GameBoard.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: Board
+    path: ../src/ChessSharp/GameBoard.cs
+    startLine: 25
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Gets a 2D array of <xref href="ChessSharp.Piece" data-throw-if-not-resolved="false"></xref>s in the board.
+  example: []
+  syntax:
+    content: public Piece[, ] Board { get; }
+    parameters: []
+    return:
+      type: ChessSharp.Piece[,]
+    content.vb: Public ReadOnly Property Board As Piece(,)
+  overload: ChessSharp.GameBoard.Board*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ChessSharp.GameBoard.GameState
+  commentId: P:ChessSharp.GameBoard.GameState
+  id: GameState
+  parent: ChessSharp.GameBoard
+  langs:
+  - csharp
+  - vb
+  name: GameState
+  nameWithType: GameBoard.GameState
+  fullName: ChessSharp.GameBoard.GameState
+  type: Property
+  source:
+    remote:
+      path: src/ChessSharp/GameBoard.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: GameState
+    path: ../src/ChessSharp/GameBoard.cs
+    startLine: 28
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Gets the current <xref href="ChessSharp.GameState" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public GameState GameState { get; }
+    parameters: []
+    return:
+      type: ChessSharp.GameState
+    content.vb: Public ReadOnly Property GameState As GameState
+  overload: ChessSharp.GameBoard.GameState*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: ChessSharp.GameBoard.#ctor
+  commentId: M:ChessSharp.GameBoard.#ctor
+  id: '#ctor'
+  parent: ChessSharp.GameBoard
+  langs:
+  - csharp
+  - vb
+  name: GameBoard()
+  nameWithType: GameBoard.GameBoard()
+  fullName: ChessSharp.GameBoard.GameBoard()
+  type: Constructor
+  source:
+    remote:
+      path: src/ChessSharp/GameBoard.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: .ctor
+    path: ../src/ChessSharp/GameBoard.cs
+    startLine: 37
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Initializes a new instance of <xref href="ChessSharp.GameBoard" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public GameBoard()
+    content.vb: Public Sub New
+  overload: ChessSharp.GameBoard.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ChessSharp.GameBoard.WhoseTurn
+  commentId: M:ChessSharp.GameBoard.WhoseTurn
+  id: WhoseTurn
+  parent: ChessSharp.GameBoard
+  langs:
+  - csharp
+  - vb
+  name: WhoseTurn()
+  nameWithType: GameBoard.WhoseTurn()
+  fullName: ChessSharp.GameBoard.WhoseTurn()
+  type: Method
+  source:
+    remote:
+      path: src/ChessSharp/GameBoard.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: WhoseTurn
+    path: ../src/ChessSharp/GameBoard.cs
+    startLine: 81
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Gets the <xref href="ChessSharp.Player" data-throw-if-not-resolved="false"></xref> who has turn.
+  example: []
+  syntax:
+    content: public Player WhoseTurn()
+    return:
+      type: ChessSharp.Player
+    content.vb: Public Function WhoseTurn As Player
+  overload: ChessSharp.GameBoard.WhoseTurn*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ChessSharp.GameBoard.MakeMove(ChessSharp.Move,System.Boolean)
+  commentId: M:ChessSharp.GameBoard.MakeMove(ChessSharp.Move,System.Boolean)
+  id: MakeMove(ChessSharp.Move,System.Boolean)
+  parent: ChessSharp.GameBoard
+  langs:
+  - csharp
+  - vb
+  name: MakeMove(Move, Boolean)
+  nameWithType: GameBoard.MakeMove(Move, Boolean)
+  fullName: ChessSharp.GameBoard.MakeMove(ChessSharp.Move, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/ChessSharp/GameBoard.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: MakeMove
+    path: ../src/ChessSharp/GameBoard.cs
+    startLine: 99
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Makes a move in the game.
+  example: []
+  syntax:
+    content: public bool MakeMove(Move move, bool isMoveValidated)
+    parameters:
+    - id: move
+      type: ChessSharp.Move
+      description: The <xref href="ChessSharp.Move" data-throw-if-not-resolved="false"></xref> you want to make.
+    - id: isMoveValidated
+      type: System.Boolean
+      description: Only pass true when you&apos;ve already checked that the move is valid.
+    return:
+      type: System.Boolean
+      description: Returns true if the move is made; false otherwise.
+    content.vb: Public Function MakeMove(move As Move, isMoveValidated As Boolean) As Boolean
+  overload: ChessSharp.GameBoard.MakeMove*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <code>move</code> is null.\n"
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: "\nThe <xref href=\"ChessSharp.Move.Source\" data-throw-if-not-resolved=\"false\"></xref> square of the <code>move</code> doesn&apos;t contain a piece.\n"
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <code>move.PromoteTo</code> is null and the move is a pawn promotion move.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ChessSharp.GameBoard.IsValidMove(ChessSharp.Move)
+  commentId: M:ChessSharp.GameBoard.IsValidMove(ChessSharp.Move)
+  id: IsValidMove(ChessSharp.Move)
+  parent: ChessSharp.GameBoard
+  langs:
+  - csharp
+  - vb
+  name: IsValidMove(Move)
+  nameWithType: GameBoard.IsValidMove(Move)
+  fullName: ChessSharp.GameBoard.IsValidMove(ChessSharp.Move)
+  type: Method
+  source:
+    remote:
+      path: src/ChessSharp/GameBoard.cs
+      branch: master
+      repo: https://github.com/Youssef1313/ChessSharp.git
+    id: IsValidMove
+    path: ../src/ChessSharp/GameBoard.cs
+    startLine: 221
+  assemblies:
+  - ChessSharp
+  namespace: ChessSharp
+  summary: Checks if a given move is valid or not.
+  example: []
+  syntax:
+    content: public bool IsValidMove(Move move)
+    parameters:
+    - id: move
+      type: ChessSharp.Move
+      description: The <xref href="ChessSharp.Move" data-throw-if-not-resolved="false"></xref> to check its validity.
+    return:
+      type: System.Boolean
+      description: Returns true if the given <code>move</code> is valid; false otherwise.
+    content.vb: Public Function IsValidMove(move As Move) As Boolean
+  overload: ChessSharp.GameBoard.IsValidMove*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe given <code>move</code> is null.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: ChessSharp
+  commentId: N:ChessSharp
+  name: ChessSharp
+  nameWithType: ChessSharp
+  fullName: ChessSharp
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ChessSharp.Piece
+  commentId: T:ChessSharp.Piece
+  parent: ChessSharp
+  name: Piece
+  nameWithType: Piece
+  fullName: ChessSharp.Piece
+- uid: ChessSharp.SquareData.File
+  commentId: T:ChessSharp.SquareData.File
+  parent: ChessSharp.SquareData
+  name: File
+  nameWithType: File
+  fullName: ChessSharp.SquareData.File
+- uid: ChessSharp.SquareData.Rank
+  commentId: T:ChessSharp.SquareData.Rank
+  parent: ChessSharp.SquareData
+  name: Rank
+  nameWithType: Rank
+  fullName: ChessSharp.SquareData.Rank
+- uid: ChessSharp.GameBoard.Item*
+  commentId: Overload:ChessSharp.GameBoard.Item
+  name: Item
+  nameWithType: GameBoard.Item
+  fullName: ChessSharp.GameBoard.Item
+- uid: ChessSharp.SquareData
+  commentId: N:ChessSharp.SquareData
+  name: ChessSharp.SquareData
+  nameWithType: ChessSharp.SquareData
+  fullName: ChessSharp.SquareData
+- uid: ChessSharp.SquareData.Square
+  commentId: T:ChessSharp.SquareData.Square
+  parent: ChessSharp.SquareData
+  name: Square
+  nameWithType: Square
+  fullName: ChessSharp.SquareData.Square
+- uid: ChessSharp.GameBoard.Moves*
+  commentId: Overload:ChessSharp.GameBoard.Moves
+  name: Moves
+  nameWithType: GameBoard.Moves
+  fullName: ChessSharp.GameBoard.Moves
+- uid: System.Collections.Generic.List{ChessSharp.Move}
+  commentId: T:System.Collections.Generic.List{ChessSharp.Move}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Move>
+  nameWithType: List<Move>
+  fullName: System.Collections.Generic.List<ChessSharp.Move>
+  nameWithType.vb: List(Of Move)
+  fullName.vb: System.Collections.Generic.List(Of ChessSharp.Move)
+  name.vb: List(Of Move)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ChessSharp.Move
+    name: Move
+    nameWithType: Move
+    fullName: ChessSharp.Move
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ChessSharp.Move
+    name: Move
+    nameWithType: Move
+    fullName: ChessSharp.Move
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: ChessSharp.GameBoard.Board*
+  commentId: Overload:ChessSharp.GameBoard.Board
+  name: Board
+  nameWithType: GameBoard.Board
+  fullName: ChessSharp.GameBoard.Board
+- uid: ChessSharp.Piece[,]
+  isExternal: true
+  name: Piece[,]
+  nameWithType: Piece[,]
+  fullName: ChessSharp.Piece[,]
+  nameWithType.vb: Piece(,)
+  fullName.vb: ChessSharp.Piece(,)
+  name.vb: Piece(,)
+  spec.csharp:
+  - uid: ChessSharp.Piece
+    name: Piece
+    nameWithType: Piece
+    fullName: ChessSharp.Piece
+  - name: '[,]'
+    nameWithType: '[,]'
+    fullName: '[,]'
+  spec.vb:
+  - uid: ChessSharp.Piece
+    name: Piece
+    nameWithType: Piece
+    fullName: ChessSharp.Piece
+  - name: (,)
+    nameWithType: (,)
+    fullName: (,)
+- uid: ChessSharp.GameState
+  commentId: T:ChessSharp.GameState
+  parent: ChessSharp
+  name: GameState
+  nameWithType: GameState
+  fullName: ChessSharp.GameState
+- uid: ChessSharp.GameBoard.GameState*
+  commentId: Overload:ChessSharp.GameBoard.GameState
+  name: GameState
+  nameWithType: GameBoard.GameState
+  fullName: ChessSharp.GameBoard.GameState
+- uid: ChessSharp.GameBoard
+  commentId: T:ChessSharp.GameBoard
+  parent: ChessSharp
+  name: GameBoard
+  nameWithType: GameBoard
+  fullName: ChessSharp.GameBoard
+- uid: ChessSharp.GameBoard.#ctor*
+  commentId: Overload:ChessSharp.GameBoard.#ctor
+  name: GameBoard
+  nameWithType: GameBoard.GameBoard
+  fullName: ChessSharp.GameBoard.GameBoard
+- uid: ChessSharp.Player
+  commentId: T:ChessSharp.Player
+  parent: ChessSharp
+  name: Player
+  nameWithType: Player
+  fullName: ChessSharp.Player
+- uid: ChessSharp.GameBoard.WhoseTurn*
+  commentId: Overload:ChessSharp.GameBoard.WhoseTurn
+  name: WhoseTurn
+  nameWithType: GameBoard.WhoseTurn
+  fullName: ChessSharp.GameBoard.WhoseTurn
+- uid: ChessSharp.Move
+  commentId: T:ChessSharp.Move
+  parent: ChessSharp
+  name: Move
+  nameWithType: Move
+  fullName: ChessSharp.Move
+- uid: ChessSharp.Move.Source
+  commentId: P:ChessSharp.Move.Source
+  isExternal: true
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+- uid: ChessSharp.GameBoard.MakeMove*
+  commentId: Overload:ChessSharp.GameBoard.MakeMove
+  name: MakeMove
+  nameWithType: GameBoard.MakeMove
+  fullName: ChessSharp.GameBoard.MakeMove
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: ChessSharp.GameBoard.IsValidMove*
+  commentId: Overload:ChessSharp.GameBoard.IsValidMove
+  name: IsValidMove
+  nameWithType: GameBoard.IsValidMove
+  fullName: ChessSharp.GameBoard.IsValidMove
