@@ -1,12 +1,31 @@
-<h1 align="center">Welcome to ChessSharp 👋</h1>
+# Welcome to ChessSharp 👋
 
-<h3 align="center">ChessSharp is a chess library built in C# with a sample UI project.</h3>
+ChessSharp is a chess library built in C#. The repository includes a simple WinForms application that consumes the library.
 
-## Screenshot
+## Install the package
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/31348972/62772795-c8ecb300-baa0-11e9-80a0-fc334f643547.png">
-</p>
+- To install the package from Package Manager Console, run the following command:
+
+    ```
+    Install-Package ChessSharp
+    ```
+
+- To install the package from .NET CLI, run the following command:
+
+    ```
+    dotnet add package ChessSharp
+    ```
+
+- To install using the PackageReference, add the following XML node into your project file. For more information about PackageReference, see [NuGet package reference format](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files).
+
+    ```xml
+    <PackageReference Include="ChessSharp" Version="1.0.0" />
+    ```
+
+## Screenshot of the UI (WinForms) project
+
+![Screenshot](https://user-images.githubusercontent.com/31348972/62772795-c8ecb300-baa0-11e9-80a0-fc334f643547.png)
+
 
 ## 🤝 Contributing
 
