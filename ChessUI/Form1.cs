@@ -1,6 +1,6 @@
-﻿using ChessLibrary;
-using ChessLibrary.Pieces;
-using ChessLibrary.SquareData;
+﻿using ChessSharp;
+using ChessSharp.Pieces;
+using ChessSharp.SquareData;
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;

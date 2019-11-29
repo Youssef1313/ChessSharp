@@ -1,6 +1,6 @@
-﻿using ChessLibrary.Pieces;
+﻿using ChessSharp.Pieces;
 
-namespace ChessLibrary
+namespace ChessSharp
 {
     public static class ExtensionMethods
     {

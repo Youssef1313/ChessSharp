@@ -81,9 +81,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ChessLibrary\ChessLibrary.csproj">
+    <ProjectReference Include="..\ChessSharp\ChessSharp.csproj">
       <Project>{14AF9C40-B183-41EB-A2FB-40D97EC71125}</Project>
-      <Name>ChessLibrary</Name>
+      <Name>ChessSharp</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿namespace ChessLibrary.Pieces
+﻿namespace ChessSharp.Pieces
 {
     public enum PawnPromotion
     {

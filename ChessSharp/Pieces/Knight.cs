@@ -1,11 +1,10 @@
 ﻿using System;
 
-namespace ChessLibrary.Pieces
+namespace ChessSharp.Pieces
 {
-    public class Rook : Piece
+    public class Knight : Piece
     {
-        public Rook(Player player) : base(player) { }
-
+        public Knight(Player player) : base(player) { }
 
         internal override bool IsValidGameMove(Move move, GameBoard board)
         {
@@ -18,9 +17,9 @@ namespace ChessLibrary.Pieces
             {
                 throw new ArgumentNullException(nameof(board));
             }
-
-            return (move.GetAbsDeltaX() == 0 || move.GetAbsDeltaY() == 0) && !ChessUtilities.IsTherePieceInBetween(move.Source, move.Destination, board.Board);
-
+            byte deltaX = move.GetAbsDeltaX();
+            byte deltaY = move.GetAbsDeltaY();
+            return (deltaX == 1 && deltaY == 2) || (deltaX == 2 && deltaY == 1);
         }
     }
 }

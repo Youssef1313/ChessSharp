@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessLibrary", "ChessLibrary\ChessLibrary.csproj", "{14AF9C40-B183-41EB-A2FB-40D97EC71125}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChessSharp", "ChessSharp\ChessSharp.csproj", "{14AF9C40-B183-41EB-A2FB-40D97EC71125}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessLibrary.UnitTests", "ChessLibrary.UnitTests\ChessLibrary.UnitTests.csproj", "{ACBC36C7-4D69-4193-A35A-F5A3CF3E9DDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessSharp.UnitTests", "ChessSharp.UnitTests\ChessSharp.UnitTests.csproj", "{ACBC36C7-4D69-4193-A35A-F5A3CF3E9DDC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessUI", "ChessUI\ChessUI.csproj", "{A2031F2D-08AB-4C04-832D-21C9B1708887}"
 EndProject
@@ -36,5 +36,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {510EDAEF-7FB9-48B2-9BED-389416606E34}
 	EndGlobalSection
 EndGlobal

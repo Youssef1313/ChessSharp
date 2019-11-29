@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace ChessLibrary.Pieces
+namespace ChessSharp.Pieces
 {
-    public class Bishop : Piece
+    public class Rook : Piece
     {
-        public Bishop(Player player) : base(player) { }
+        public Rook(Player player) : base(player) { }
 
 
         internal override bool IsValidGameMove(Move move, GameBoard board)
@@ -19,7 +19,8 @@ namespace ChessLibrary.Pieces
                 throw new ArgumentNullException(nameof(board));
             }
 
-            return move.GetAbsDeltaX() == move.GetAbsDeltaY() && !ChessUtilities.IsTherePieceInBetween(move.Source, move.Destination, board.Board);
+            return (move.GetAbsDeltaX() == 0 || move.GetAbsDeltaY() == 0) && !ChessUtilities.IsTherePieceInBetween(move.Source, move.Destination, board.Board);
+
         }
     }
 }

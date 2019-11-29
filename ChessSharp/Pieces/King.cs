@@ -1,7 +1,7 @@
 ﻿using System;
-using ChessLibrary.SquareData;
+using ChessSharp.SquareData;
 
-namespace ChessLibrary.Pieces
+namespace ChessSharp.Pieces
 {
     public class King : Piece
     {

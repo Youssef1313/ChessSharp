@@ -1,104 +1,104 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="ChessLibrary.SquareData.Square">
+  <Class Name="ChessSharp.SquareData.Square">
     <Position X="18" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAhAAAAAAAAAAQEgAABAAAAAAAEAIAAAAAAAAAAAAA=</HashCode>
       <FileName>SquareData\Square.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ChessLibrary.Pieces.Bishop" Collapsed="true">
+  <Class Name="ChessSharp.Pieces.Bishop" Collapsed="true">
     <Position X="17" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Pieces\Bishop.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ChessLibrary.Pieces.King" Collapsed="true">
+  <Class Name="ChessSharp.Pieces.King" Collapsed="true">
     <Position X="11" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Pieces\King.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ChessLibrary.Pieces.Knight" Collapsed="true">
+  <Class Name="ChessSharp.Pieces.Knight" Collapsed="true">
     <Position X="14" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Pieces\Knight.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ChessLibrary.Pieces.Pawn" Collapsed="true">
+  <Class Name="ChessSharp.Pieces.Pawn" Collapsed="true">
     <Position X="15.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAgA=</HashCode>
       <FileName>Pieces\Pawn.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ChessLibrary.Pieces.Queen" Collapsed="true">
+  <Class Name="ChessSharp.Pieces.Queen" Collapsed="true">
     <Position X="18.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Pieces\Queen.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ChessLibrary.Pieces.Rook" Collapsed="true">
+  <Class Name="ChessSharp.Pieces.Rook" Collapsed="true">
     <Position X="12.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Pieces\Rook.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ChessLibrary.ChessUtilities">
+  <Class Name="ChessSharp.ChessUtilities">
     <Position X="20.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAAIAAAAAAAAAAAIAAACAAAIAAAAAAAQBAAg=</HashCode>
       <FileName>ChessUtilities.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ChessLibrary.GameBoard">
+  <Class Name="ChessSharp.GameBoard">
     <Position X="23.25" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAQAIACAAACAAAAAAAAACIAkJAAACAACAAIAA=</HashCode>
       <FileName>GameBoard.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ChessLibrary.Move">
+  <Class Name="ChessSharp.Move">
     <Position X="20.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAAAAAAgAACBAAAAAAAAIAEAAAAAwAAAAA=</HashCode>
       <FileName>Move.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ChessLibrary.Piece">
+  <Class Name="ChessSharp.Piece">
     <Position X="13.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAgA=</HashCode>
       <FileName>Piece.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="ChessLibrary.SquareData.File">
+  <Enum Name="ChessSharp.SquareData.File">
     <Position X="15" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvkEAAAA=</HashCode>
       <FileName>SquareData\File.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="ChessLibrary.SquareData.Rank">
+  <Enum Name="ChessSharp.SquareData.Rank">
     <Position X="16.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAgAAAAAAAAQAAAAAAAAIAIAABAAAAAAAAAAAAAYA=</HashCode>
       <FileName>SquareData\Rank.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="ChessLibrary.Player">
+  <Enum Name="ChessSharp.Player">
     <Position X="13.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="ChessLibrary.GameState">
+  <Enum Name="ChessSharp.GameState">
     <Position X="11.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAABAAAAAgAAAAAAAgAAAEAgAAQAAAAAAAAAAAA=</HashCode>

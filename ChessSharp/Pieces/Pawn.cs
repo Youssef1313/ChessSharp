@@ -1,8 +1,8 @@
-﻿using ChessLibrary.SquareData;
+﻿using ChessSharp.SquareData;
 using System;
 using System.Linq;
 
-namespace ChessLibrary.Pieces
+namespace ChessSharp.Pieces
 {
     public class Pawn : Piece
     {

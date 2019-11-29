@@ -1,7 +1,7 @@
-﻿using ChessLibrary.Pieces;
-using ChessLibrary.SquareData;
+﻿using ChessSharp.Pieces;
+using ChessSharp.SquareData;
 using System;
-namespace ChessLibrary
+namespace ChessSharp
 {
     public class Move
     {

@@ -1,4 +1,4 @@
-﻿namespace ChessLibrary
+﻿namespace ChessSharp
 {
     public abstract class Piece
     {

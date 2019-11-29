@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace ChessLibrary.UnitTests
+namespace ChessSharp.UnitTests
 {
     [TestFixture]
     public class GameBoardTests

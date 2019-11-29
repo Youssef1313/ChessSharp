@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ChessLibrary.SquareData
+namespace ChessSharp.SquareData
 {
     public class Square
     {

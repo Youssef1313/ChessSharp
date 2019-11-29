@@ -1,11 +1,11 @@
-﻿using ChessLibrary.Pieces;
-using ChessLibrary.SquareData;
+﻿using ChessSharp.Pieces;
+using ChessSharp.SquareData;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-namespace ChessLibrary
+namespace ChessSharp
 {
 
     public class GameBoard

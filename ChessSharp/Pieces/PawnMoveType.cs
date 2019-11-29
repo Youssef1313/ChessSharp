@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ChessLibrary.Pieces
+namespace ChessSharp.Pieces
 {
     [Flags]
     public enum PawnMoveType

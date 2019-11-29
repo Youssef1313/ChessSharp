@@ -1,4 +1,4 @@
-﻿namespace ChessLibrary.SquareData
+﻿namespace ChessSharp.SquareData
 {
     public enum File
     {
