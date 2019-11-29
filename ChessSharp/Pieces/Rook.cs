@@ -2,9 +2,10 @@
 
 namespace ChessSharp.Pieces
 {
+    /// <summary>Represents a rook <see cref="Piece"/>.</summary>
     public class Rook : Piece
     {
-        public Rook(Player player) : base(player) { }
+        internal Rook(Player player) : base(player) { }
 
 
         internal override bool IsValidGameMove(Move move, GameBoard board)

@@ -7,21 +7,34 @@ using System.Linq;
 
 namespace ChessSharp
 {
-
+    /// <summary>Represents the chess game.</summary>
     public class GameBoard
     {
+        /// <summary>Gets <see cref="Piece"/> in a specific square.</summary>
+        /// <param name="file">The <see cref="File"/> of the square.</param>
+        /// <param name="rank">The <see cref="Rank"/> of the square.</param>
         public Piece this[File file, Rank rank] => Board[(int)rank, (int)file];
+
+        /// <summary>Gets <see cref="Piece"/> in a specific square.</summary>
+        /// <param name="square">The <see cref="Square"/> to get its <see cref="Piece"/>.</param>
         public Piece this[Square square] => this[square.File, square.Rank];
 
-        public List<Move> Moves { get; set; }
-        public Piece[,] Board { get; set; }
+        /// <summary>Gets a list of the game moves.</summary>
+        public List<Move> Moves { get; private set; }
 
+        /// <summary>Gets a 2D array of <see cref="Piece"/>s in the board.</summary>
+        public Piece[,] Board { get; private set; }
+
+        /// <summary>Gets the current <see cref="ChessSharp.GameState"/>.</summary>
         public GameState GameState { get; private set; }
-        public bool CanWhiteCastleKingSide { get; private set; } = true;
-        public bool CanWhiteCastleQueenSide { get; private set; } = true;
-        public bool CanBlackCastleKingSide { get; private set; } = true;
-        public bool CanBlackCastleQueenSide { get; private set; } = true;
 
+
+        internal bool CanWhiteCastleKingSide { get; set; } = true;
+        internal bool CanWhiteCastleQueenSide { get; set; } = true;
+        internal bool CanBlackCastleKingSide { get; set; } = true;
+        internal bool CanBlackCastleQueenSide { get; set; } = true;
+
+        /// <summary>Initializes a new instance of <see cref="GameBoard"/>.</summary>
         public GameBoard()
         {
             Moves = new List<Move>();
@@ -65,12 +78,25 @@ namespace ChessSharp
             };
         }
 
+        /// <summary>Gets the <see cref="Player"/> who has turn.</summary>
         public Player WhoseTurn()
         {
             return Moves.Count == 0 ? Player.White : ChessUtilities.RevertPlayer(Moves.Last().Player);
         }
 
-
+        /// <summary>Makes a move in the game.</summary>
+        /// <param name="move">The <see cref="Move"/> you want to make.</param>
+        /// <param name="isMoveValidated">Only pass true when you've already checked that the move is valid.</param>
+        /// <returns>Returns true if the move is made; false otherwise.</returns>
+        /// <exception cref="ArgumentNullException">
+        ///     The <c>move</c> is null.
+        /// </exception>
+        /// <exception cref="InvalidOperationException">
+        ///     The <see cref="Move.Source"/> square of the <c>move</c> doesn't contain a piece.
+        /// </exception>
+        /// <exception cref="ArgumentNullException">
+        ///    The <c>move.PromoteTo</c> is null and the move is a pawn promotion move.
+        /// </exception>
         public bool MakeMove(Move move, bool isMoveValidated)
         {
             if (move == null)
@@ -187,6 +213,12 @@ namespace ChessSharp
             }
         }
 
+        /// <summary>Checks if a given move is valid or not.</summary>
+        /// <param name="move">The <see cref="Move"/> to check its validity.</param>
+        /// <returns>Returns true if the given <c>move</c> is valid; false otherwise.</returns>
+        /// <exception cref="ArgumentNullException">
+        ///     The given <c>move</c> is null.
+        /// </exception>
         public bool IsValidMove(Move move)
         {
             if (move == null)

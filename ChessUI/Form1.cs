@@ -127,7 +127,7 @@ namespace ChessUI
 
             Square checkedKingSquare = _gameBoard.Board.Cast<Piece>()
                 .Select((p, i) => new { Piece = p, Square = new Square((File)(i % 8), (Rank)(i / 8)) })
-                .First(m => new King((Player)playerInCheck).Equals(m.Piece)).Square;
+                .First(m => m.Piece is King && m.Piece.Owner == playerInCheck).Square;
             _squareLabels.First(lbl => lbl.Name == "lbl_" + checkedKingSquare).BackColor = Color.Red;
 
 

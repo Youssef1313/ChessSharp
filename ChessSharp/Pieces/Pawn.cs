@@ -4,9 +4,10 @@ using System.Linq;
 
 namespace ChessSharp.Pieces
 {
+    /// <summary>Represents a pawn <see cref="Piece"/>.</summary>
     public class Pawn : Piece
     {
-        public Pawn(Player player) : base(player) { }
+        internal Pawn(Player player) : base(player) { }
 
 
         internal static PawnMoveType GetPawnMoveType(Move move)

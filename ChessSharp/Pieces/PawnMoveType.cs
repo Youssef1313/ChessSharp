@@ -3,7 +3,7 @@
 namespace ChessSharp.Pieces
 {
     [Flags]
-    public enum PawnMoveType
+    internal enum PawnMoveType
     {
         Invalid = 0,
         OneStep = 1,

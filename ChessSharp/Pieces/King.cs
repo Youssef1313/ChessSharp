@@ -3,9 +3,10 @@ using ChessSharp.SquareData;
 
 namespace ChessSharp.Pieces
 {
+    /// <summary>Represents a king <see cref="Piece"/>.</summary>
     public class King : Piece
     {
-        public King(Player player) : base(player) { }
+        internal King(Player player) : base(player) { }
         
         internal override bool IsValidGameMove(Move move, GameBoard board)
         {

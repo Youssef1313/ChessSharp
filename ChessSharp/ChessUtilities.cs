@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace ChessSharp
 {
+    /// <summary>
+    /// A static class containing helper methods.
+    /// </summary>
     public static class ChessUtilities
     {
         internal static Player RevertPlayer(Player player)
@@ -78,6 +81,9 @@ namespace ChessSharp
             return false;
         }
 
+        /// <summary>Gets the valid moves of the given <see cref="GameBoard"/>.</summary>
+        /// <param name="board">The <see cref="GameBoard"/> that you want to get its valid moves.</param>
+        /// <returns>Returns a list of the valid moves.</returns>
         public static List<Move> GetValidMoves(GameBoard board)
         {
             var player = board.WhoseTurn();
@@ -109,6 +115,11 @@ namespace ChessSharp
             return validMoves;
         }
 
+        /// <summary>Gets the valid moves of the given <see cref="GameBoard"/> that has a specific given source <see cref="Square"/>.</summary>
+        /// <param name="source">The source <see cref="Square"/> that you're looking for its valid moves.</param>
+        /// <param name="board">The <see cref="GameBoard"/> that you want to get its valid moves from the specified square.</param>
+        /// <returns>Returns a list of the valid moves that has the given source square.</returns>
+        /// 
         public static List<Move> GetValidMovesOfSourceSquare(Square source, GameBoard board)
         {
             var validMoves = new List<Move>();

@@ -2,11 +2,15 @@
 
 namespace ChessSharp.SquareData
 {
+    
+    /// <summary>Represents a chess square.</summary>
     public class Square
     {
         public static implicit operator Square(string s) => Square.Parse(s);
 
+        /// <summary>Gets the <see cref="SquareData.File"/> of the square.</summary>
         public File File { get; }
+        /// <summary>Gets the <see cref="SquareData.Rank"/> of the square.</summary>
         public Rank Rank { get; }
 
         public override bool Equals(object obj)
@@ -36,17 +40,32 @@ namespace ChessSharp.SquareData
             }
         }
 
+        /// <summary>Converts the given square to a string.</summary>
+        /// <returns>Returns string representation of the square. For example, it returns "G2" for a square with G file and second rank.</returns>
         public override string ToString()
         {
             return File.ToString() + ((int) Rank + 1);
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <c>Square</c>class.
+        /// </summary>
+        /// <param name="file">A <see cref="SquareData.File"/> enum representing the file of the square.</param>
+        /// <param name="rank">A <see cref="SquareData.Rank"/> enum representing the rank of the square.</param>
         public Square(File file, Rank rank)
         {
             File = file;
             Rank = rank;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the Square class.
+        /// </summary>
+        /// <param name="file">A char representing the file of the square.</param>
+        /// <param name="rank">A char representing the rank of the square.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Either <c>file</c> or <c>rank</c> is out of range. <c>file</c> should be a char between 'A' and 'H' (case insensitive). <c>rank</c> should be a char between '1' and '8'.
+        /// </exception>
         public Square(char file, byte rank)
         {
             File = ParseFile(file);
@@ -60,8 +79,7 @@ namespace ChessSharp.SquareData
             {
                 throw new ArgumentOutOfRangeException(nameof(file));
             }
-            File tempFile;
-            Enum.TryParse(file.ToString(), out tempFile);
+            Enum.TryParse(file.ToString(), out File tempFile);
             return tempFile;
         }
 
@@ -83,6 +101,18 @@ namespace ChessSharp.SquareData
             return (Rank)(rank - '0' - 1);
         }
 
+        /// <summary>Parses a string representation of the square.</summary>
+        /// <param name="square">The string representation of the square.</param>
+        /// <returns>Returns a Square object.</returns>
+        /// <exception cref="ArgumentNullException">
+        ///     The given <c>square</c> string is null.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        ///     The given <c>square</c> string has length less or greater than two. The <c>square</c> string should have length of two (For example, "G2").
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Either the file or the rank char of the <c>square</c> string is out of range. The file should be between 'A' and 'H' (case insensitive). The <c>rank</c> should be between '1' and '8'.
+        /// </exception>
         public static Square Parse(string square)
         {
             if (square == null)

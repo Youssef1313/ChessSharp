@@ -2,9 +2,10 @@
 
 namespace ChessSharp.Pieces
 {
+    /// <summary>Represents a knight <see cref="Piece"/>.</summary>
     public class Knight : Piece
     {
-        public Knight(Player player) : base(player) { }
+        internal Knight(Player player) : base(player) { }
 
         internal override bool IsValidGameMove(Move move, GameBoard board)
         {
