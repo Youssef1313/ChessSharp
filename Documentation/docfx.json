@@ -3,10 +3,10 @@
   [
     {
       "src":
-	  [
+      [
         {
           "files": [ "ChessSharp/ChessSharp.csproj" ],
-		  "src": "../src"
+          "src": "../src"
         }
       ],
       "dest": "api",
@@ -16,12 +16,15 @@
   ],
   "build":
   {
-    "content":
-	[
+    "content": [{ "files": [ "api/**.yml", "toc.yml", "index.md" ]}],
+    "resource":
+    [
       {
-        "files": [ "api/**.yml", "toc.yml", "index.md" ]
+        "files": [ "images/**" ], 
+        "exclude": [ "obj/**" ]
       }
     ],
+    "globalMetadata": { "_appLogoPath": "images/logo.ico", "_appFaviconPath": "images/logo.ico" },
     "dest": "../docs",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],

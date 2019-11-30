@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.ChessUtilities.html",
-          "hash": "r+eXz3ursNuKnRndXI4MEA=="
+          "hash": "I4gdETDfWs6CKi//Fs3D5A=="
         }
       },
       "is_incremental": true,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.GameBoard.html",
-          "hash": "susyCbg+RWbwbpwQ3K6EhQ=="
+          "hash": "0bJ9c12IClH9uYO+rOMDeA=="
         }
       },
       "is_incremental": true,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.GameState.html",
-          "hash": "B3A6fWSXtt0q4cMrxrU/aw=="
+          "hash": "CbkWWu4vape3IfDrgett0Q=="
         }
       },
       "is_incremental": true,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.Move.html",
-          "hash": "KxQ2lHHIBR39bfJRVVfdDw=="
+          "hash": "oOnwqY6J6GPFvTOuCIuLSw=="
         }
       },
       "is_incremental": true,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.Piece.html",
-          "hash": "FrmniKZKNjQAxBP7ZGwIYQ=="
+          "hash": "bm//flHZJvKkKtmhgfYlKA=="
         }
       },
       "is_incremental": true,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.Pieces.Bishop.html",
-          "hash": "mQ1OQHaSN3UXolO5f2rvUw=="
+          "hash": "OEpiwW+iFXSHn1HvIKBzLw=="
         }
       },
       "is_incremental": true,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.Pieces.King.html",
-          "hash": "XhGcM9MxZTRtGnOfbuCCJg=="
+          "hash": "TMLkDkXj+4qQ3uovW3Qh8w=="
         }
       },
       "is_incremental": true,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.Pieces.Knight.html",
-          "hash": "7Z/7hZ8F8gpRsbwPaSMf1Q=="
+          "hash": "L2E5Rp6oVto3tbEuoNQwRg=="
         }
       },
       "is_incremental": true,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.Pieces.Pawn.html",
-          "hash": "DBx9jPtGTvr7g56VE48dQw=="
+          "hash": "f4UjZHYM0orKoOvJ0CPrGw=="
         }
       },
       "is_incremental": true,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.Pieces.PawnPromotion.html",
-          "hash": "QPCSYgDb+BOF/QdMbGuZew=="
+          "hash": "xll3VhrUWvg/Sj5JK6SLYQ=="
         }
       },
       "is_incremental": true,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.Pieces.Queen.html",
-          "hash": "61vqb2T5G7dWCIb44qDz9g=="
+          "hash": "3usjS9JbBEEIFEhRVl+S5g=="
         }
       },
       "is_incremental": true,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.Pieces.Rook.html",
-          "hash": "A7LkcSgf76iuxxVUXqlRyA=="
+          "hash": "MqPUX7bchHQH66JmcOcejQ=="
         }
       },
       "is_incremental": true,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.Pieces.html",
-          "hash": "p/om+j5YaNHiYdq8+Ugu3A=="
+          "hash": "bI8afUd+bYRaWi/u4LmIVw=="
         }
       },
       "is_incremental": true,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.Player.html",
-          "hash": "VOozmq8Q5Xey7UzDRusstA=="
+          "hash": "6jr9gSQykD7BdJ6U55iqBA=="
         }
       },
       "is_incremental": true,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.SquareData.File.html",
-          "hash": "n4ZVhm34OGikOZrrL+H3cQ=="
+          "hash": "IbgDcHquo11+tiMlWZGhjQ=="
         }
       },
       "is_incremental": true,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.SquareData.Rank.html",
-          "hash": "mUZEtU6HStna5V86uOFjWg=="
+          "hash": "vL7Hspbqi0gfIOHAYb5lSg=="
         }
       },
       "is_incremental": true,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.SquareData.Square.html",
-          "hash": "5O1+KQhtG+16C1v6j5vSWw=="
+          "hash": "MVQ9qgRRPOstafdZ9qnmVQ=="
         }
       },
       "is_incremental": true,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.SquareData.html",
-          "hash": "NNt6XzqwmPBznro1s3K7Wg=="
+          "hash": "OXzJRooLu8nfcjtYKsReqw=="
         }
       },
       "is_incremental": true,
@@ -225,10 +225,21 @@
       "output": {
         ".html": {
           "relative_path": "api/ChessSharp.html",
-          "hash": "W4XH2CP+NsVSwsnXUtJ8QQ=="
+          "hash": "1FGw0bD1Qe1AmnpGC7DLpQ=="
         }
       },
       "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.ico",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.ico"
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -237,7 +248,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "gqYKTSNBHfPrcuEflFJsig=="
+          "hash": "qZmfePJICYP9pNTB9Sjy9Q=="
         }
       },
       "is_incremental": true,
@@ -260,17 +271,24 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 19,
-          "skipped_file_count": 19
+          "total_file_count": 0,
+          "skipped_file_count": 0
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 1,
           "skipped_file_count": 1
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 19,
+          "skipped_file_count": 19
         }
       }
     },
