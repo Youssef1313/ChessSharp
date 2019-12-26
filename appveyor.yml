@@ -13,6 +13,6 @@ build_script:
   # dotnet info
   - ps: dotnet --version
   # Run dotnet new
-  - ps: dotnet restore
+  - ps: dotnet restore src\ChessSharp\ChessSharp.csproj
   - ps: dotnet build
   
