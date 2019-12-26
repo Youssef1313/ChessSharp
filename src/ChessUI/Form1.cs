@@ -1,13 +1,14 @@
-﻿using ChessSharp;
-using ChessSharp.Pieces;
-using ChessSharp.SquareData;
-using Microsoft.VisualBasic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using ChessSharp;
+using ChessSharp.Pieces;
+using ChessSharp.SquareData;
+using Microsoft.VisualBasic;
+
 namespace ChessUI
 {
     public partial class Form1 : Form
@@ -146,7 +147,15 @@ namespace ChessUI
                     if ((player == Player.White && squareDestination.Rank == Rank.Eighth) ||
                         (player == Player.Black && squareDestination.Rank == Rank.First))
                     {
-                        var promotion = Interaction.InputBox("Promote to what ?", "Promotion").ToLower();
+                        //var promotion = Interaction.InputBox("Promote to what ?", "Promotion").ToLower();
+                        // Interaction.InputBox isn't supported in .NET Core currently.
+                        // Consider using it and remove InputBox if it became supported in future release.
+                        string promotion;
+                        using (var inputBox = new InputBox())
+                        {
+                            inputBox.ShowDialog();
+                            promotion = inputBox.UserInput;
+                        }
                         pawnPromotion = (PawnPromotion) Enum.Parse(typeof(PawnPromotion), promotion, true);
                     }
                 }
