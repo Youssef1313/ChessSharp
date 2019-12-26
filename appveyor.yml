@@ -1,3 +1,5 @@
+os: Visual Studio 2019
+
 dotnet_csproj:
   patch: true
   file: 'src\ChessSharp\ChessSharp.csproj'
