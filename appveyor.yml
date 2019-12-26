@@ -1,17 +1,8 @@
 os: Visual Studio 2019
-
-dotnet_csproj:
-  patch: true
-  file: 'src\ChessSharp\ChessSharp.csproj;src\ChessUI\ChessUI.csproj'
-  version: '{version}'
-  package_version: '{version}'
-  assembly_version: '{version}'
-  file_version: '{version}'
-  informational_version: '{version}'
-
 build_script:
   # dotnet version
   - ps: dotnet --version
   # Run dotnet build
   - ps: dotnet build src\ChessSharp\ChessSharp.csproj
+  - ps: dotnet build src\ChessUI\ChessUI.csproj
   
