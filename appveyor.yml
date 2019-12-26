@@ -1,0 +1,18 @@
+os: Visual Studio 2019
+
+dotnet_csproj:
+  patch: true
+  file: 'src\ChessSharp\ChessSharp.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+
+build_script:
+  # dotnet info
+  - ps: dotnet --version
+  # Run dotnet new
+  - ps: dotnet restore src\ChessSharp\ChessSharp.csproj
+  - ps: dotnet build src\ChessSharp\ChessSharp.csproj
+  
