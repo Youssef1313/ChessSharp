@@ -10,9 +10,8 @@ dotnet_csproj:
   informational_version: '{version}'
 
 build_script:
-  # dotnet info
+  # dotnet version
   - ps: dotnet --version
-  # Run dotnet new
-  - ps: dotnet restore src\ChessSharp\ChessSharp.csproj
+  # Run dotnet build
   - ps: dotnet build src\ChessSharp\ChessSharp.csproj
   
