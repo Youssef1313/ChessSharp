@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_A1 = new System.Windows.Forms.Label();
             this.lbl_B1 = new System.Windows.Forms.Label();
             this.lbl_C1 = new System.Windows.Forms.Label();
