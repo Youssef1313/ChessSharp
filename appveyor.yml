@@ -8,3 +8,11 @@ dotnet_csproj:
   assembly_version: '{version}'
   file_version: '{version}'
   informational_version: '{version}'
+
+build_script:
+  # dotnet info
+  - ps: dotnet --version
+  # Run dotnet new
+  - ps: dotnet restore
+  - ps: dotnet build
+  
