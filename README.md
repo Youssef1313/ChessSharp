@@ -1,5 +1,7 @@
 # Welcome to ChessSharp 👋
 
+[![Build status](https://ci.appveyor.com/api/projects/status/fbrec04diyk4vf2s/branch/master?svg=true)](https://ci.appveyor.com/project/Youssef1313/chesssharp/branch/master)
+
 ChessSharp is a chess library built in C#. The repository includes a simple WinForms application that consumes the library.
 
 ## Install the package
