@@ -48,22 +48,14 @@ namespace ChessWebsite
         [Authorize]
         public override async Task OnConnectedAsync()
         {
-            // TODO: QueryString doesn't exist in Core.
-            //var gameId = int.Parse(Context.QueryString["gameId"]);
-            int gameId = Convert.ToInt32(Context.GetHttpContext().Items["gameId"]);
-
+            int gameId = Convert.ToInt32(Context.GetHttpContext().Items["gameId"]); // THE BUG IS HERE. gameId is zero!! there is no gameId in Items.
             Game game = GetGameFromId(gameId);
             if (_loggedUserId == game.WhitePlayer.Id)
             {
-                // TODO: QueryString doesn't exist in Core.
-                //await Groups.AddToGroupAsync(Context.ConnectionId, Context.QueryString["gameId"]);
                 await Groups.AddToGroupAsync(Context.ConnectionId, gameId.ToString());
             }
             else if (game.BlackPlayer != null && game.BlackPlayer.Id == _loggedUserId)
             {
-                // TODO: QueryString doesn't exist in Core.
-                //await Groups.AddToGroupAsync(Context.ConnectionId, Context.QueryString["gameId"]);
-                //Clients.Group(gameId.ToString()).blackJoined(game.BlackPlayer.UserName);
                 await Clients.Group(gameId.ToString()).SendAsync("BlackJoined", game.BlackPlayer.UserName);
             }
             await base.OnConnectedAsync();
@@ -128,7 +120,6 @@ namespace ChessWebsite
                 gameBoard.MakeMove(move, true);
                 game.GameBoardJson = JsonConvert.SerializeObject(gameBoard, settings);
                 await _context.SaveChangesAsync();
-                //Clients.Users(new List<string>() { game.WhitePlayer.Id, game.BlackPlayer.Id }).showGame(gameBoard.Board);
                 await Clients.Users(new List<string>() { game.WhitePlayer.Id, game.BlackPlayer.Id }).SendAsync("ShowGame", gameBoard.Board);
             }
         }

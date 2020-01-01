@@ -37,8 +37,8 @@ namespace ChessSharpWeb
             services.AddControllersWithViews();
             services.AddRazorPages();
             // My added services.
-            services.AddSignalR();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
