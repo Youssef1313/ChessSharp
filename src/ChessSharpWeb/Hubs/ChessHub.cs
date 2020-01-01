@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Text.RegularExpressions;
@@ -49,13 +50,14 @@ namespace ChessWebsite
         {
             // TODO: QueryString doesn't exist in Core.
             //var gameId = int.Parse(Context.QueryString["gameId"]);
-            var gameId = 1; // SHOULD BE DELETED LATER AFTER FIXING THE TODO!!!
+            int gameId = Convert.ToInt32(Context.GetHttpContext().Items["gameId"]);
 
-            var game = GetGameFromId(gameId);
+            Game game = GetGameFromId(gameId);
             if (_loggedUserId == game.WhitePlayer.Id)
             {
                 // TODO: QueryString doesn't exist in Core.
                 //await Groups.AddToGroupAsync(Context.ConnectionId, Context.QueryString["gameId"]);
+                await Groups.AddToGroupAsync(Context.ConnectionId, gameId.ToString());
             }
             else if (game.BlackPlayer != null && game.BlackPlayer.Id == _loggedUserId)
             {

@@ -7,17 +7,8 @@
     <script src="~/js/signalr/dist/browser/signalr.min.js"></script>
     <script src="~/js/ChessSharp.js"></script>
     <script>
-        var connection = new signalR.HubConnectionBuilder().withUrl("/chesshub").build();
+        var connection = new signalR.HubConnectionBuilder().withUrl("/chesshub?gameId=" + @Model.Id).build();
         // $.connection.hub.qs = 'gameId=@Model.Id'; // TODO: LOOK FOR ALTERNATIVE!!
-        /*
-        $.connection.hub.start()
-            .done(function () {
-                console.log('connected.');
-            })
-            .fail(function () {
-                alert('Connection failed!');
-            });
-        */
 
         connection.on("ShowGame", showGame);
         connection.on("BlackJoined", blackJoined);
@@ -73,3 +64,4 @@
 <h3 class="lead">Black player: <span id="blackUsername">@((Model.BlackPlayer == null) ? "waiting for opponent to enter." : Model.BlackPlayer.UserName)</span></h3>
 <h4 id="how-to-invite" class="@(Model.BlackPlayer == null ? "lead" : "hide") ">Use this page link to invite a friend.</h4>
 
+<div id="GameBoard"></div>
