@@ -3,6 +3,21 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">ChessSharp</h1>
+    <p class="lead">Welcome to ChessSharp!</p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Invite a friend to game</h2>
+        <p>
+            Click the button below to invite a friend to game!
+        </p>
+
+        <p><a class="btn btn-outline-primary" asp-controller="Game" asp-action="Create">Create game</a></p>
+    </div>
+    <div class="col-md-6">
+        <h2>Join a game</h2>
+        <p>Ask your friend who created the game to give you the game link.</p>
+    </div>
 </div>
