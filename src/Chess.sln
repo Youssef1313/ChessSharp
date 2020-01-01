@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessSharp.UnitTests", "Che
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessWebsite", "ChessWebsite\ChessWebsite.csproj", "{99473730-38FC-4C18-B28E-3B797E080542}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessUI", "ChessUI\ChessUI.csproj", "{1A14EB92-18BF-4CEB-AAB2-1E5E357EC84D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChessUI", "ChessUI\ChessUI.csproj", "{1A14EB92-18BF-4CEB-AAB2-1E5E357EC84D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessSharpWeb", "ChessSharpWeb\ChessSharpWeb.csproj", "{6C3157EA-B624-4347-88D9-AF60EC7BFB06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{1A14EB92-18BF-4CEB-AAB2-1E5E357EC84D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A14EB92-18BF-4CEB-AAB2-1E5E357EC84D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A14EB92-18BF-4CEB-AAB2-1E5E357EC84D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C3157EA-B624-4347-88D9-AF60EC7BFB06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C3157EA-B624-4347-88D9-AF60EC7BFB06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C3157EA-B624-4347-88D9-AF60EC7BFB06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C3157EA-B624-4347-88D9-AF60EC7BFB06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
