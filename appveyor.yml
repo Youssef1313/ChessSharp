@@ -5,4 +5,4 @@ build_script:
   # Run dotnet build
   - ps: dotnet build src\ChessSharp\ChessSharp.csproj
   - ps: dotnet build src\ChessUI\ChessUI.csproj
-  
+  - ps: dotnet build src\ChessWebsite\ChessWebsite.csproj
