@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
@@ -9,6 +10,7 @@ using ChessSharp.SquareData;
 using ChessSharpWeb.Data;
 using ChessSharpWeb.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -18,10 +20,12 @@ namespace ChessWebsite
     public class ChessHub : Hub
     {
         private readonly ApplicationDbContext _context;
+        private readonly string _loggedUserId;
 
-        public ChessHub(ApplicationDbContext context)
+        public ChessHub(ApplicationDbContext context, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
+            _loggedUserId = httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
         }
 
         private Game GetGameFromId(int gameId)
@@ -38,35 +42,42 @@ namespace ChessWebsite
             return JsonConvert.DeserializeObject<GameBoard>(json, settings);
         }
 
-        /*
+
 
         [Authorize]
-        public override Task OnConnected()
+        public override async Task OnConnectedAsync()
         {
-            var gameId = int.Parse(Context.QueryString["gameId"]);
-            var userId = Context.User.Identity.GetUserId();
+            // TODO: QueryString doesn't exist in Core.
+            //var gameId = int.Parse(Context.QueryString["gameId"]);
+            var gameId = 1; // SHOULD BE DELETED LATER AFTER FIXING THE TODO!!!
+
             var game = GetGameFromId(gameId);
-            if (userId == game.WhitePlayer.Id)
+            if (_loggedUserId == game.WhitePlayer.Id)
             {
-                Groups.Add(Context.ConnectionId, Context.QueryString["gameId"]);
+                // TODO: QueryString doesn't exist in Core.
+                //await Groups.AddToGroupAsync(Context.ConnectionId, Context.QueryString["gameId"]);
             }
-            else if (game.BlackPlayer != null && game.BlackPlayer.Id == userId)
+            else if (game.BlackPlayer != null && game.BlackPlayer.Id == _loggedUserId)
             {
-                Groups.Add(Context.ConnectionId, Context.QueryString["gameId"]);
-                Clients.Group(gameId.ToString()).blackJoined(game.BlackPlayer.UserName);
+                // TODO: QueryString doesn't exist in Core.
+                //await Groups.AddToGroupAsync(Context.ConnectionId, Context.QueryString["gameId"]);
+                //Clients.Group(gameId.ToString()).blackJoined(game.BlackPlayer.UserName);
+                await Clients.Group(gameId.ToString()).SendAsync("BlackJoined", game.BlackPlayer.UserName);
             }
-            return base.OnConnected();
+            await base.OnConnectedAsync();
         }
 
         public List<Move> GetValidMovesOfSquare(string square)
         {
-            var gameId = int.Parse(Context.QueryString["gameId"]);
+            // TODO: QueryString doesn't exist in Core.
+            //var gameId = int.Parse(Context.QueryString["gameId"]);
+            var gameId = 1; ; // SHOULD BE DELETED AFTER FIXING QueryString. This is just to make build succeed temporarily!!
             var game = GetGameFromId(gameId);
             var gameBoard = GetGameBoardFromJson(game.GameBoardJson);
             return ChessUtilities.GetValidMovesOfSourceSquare(Square.Parse(square), gameBoard);
             //return square;
         }
-*/
+
         public async Task MakeMove(int gameId, string source, string destination, int? promoteTo = null)
         {
             var settings = new JsonSerializerSettings
@@ -116,6 +127,7 @@ namespace ChessWebsite
                 game.GameBoardJson = JsonConvert.SerializeObject(gameBoard, settings);
                 await _context.SaveChangesAsync();
                 //Clients.Users(new List<string>() { game.WhitePlayer.Id, game.BlackPlayer.Id }).showGame(gameBoard.Board);
+                await Clients.Users(new List<string>() { game.WhitePlayer.Id, game.BlackPlayer.Id }).SendAsync("ShowGame", gameBoard.Board);
             }
         }
 

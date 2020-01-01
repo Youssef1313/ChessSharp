@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Http;
+using ChessWebsite;
 
 namespace ChessSharpWeb
 {
@@ -68,6 +69,7 @@ namespace ChessSharpWeb
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
+                endpoints.MapHub<ChessHub>("/chesshub");
             });
         }
     }

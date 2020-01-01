@@ -70,9 +70,9 @@ namespace ChessSharpWeb.Controllers
                 game.BlackPlayer = _context.Users.First(u => u.Id == _loggedUserId);
                 await _context.SaveChangesAsync();
             }
-
             if (game.WhitePlayer.Id == _loggedUserId || game.BlackPlayer.Id == _loggedUserId)
             {
+                ViewBag.UserId = _loggedUserId;
                 return View(game);
             }
 
