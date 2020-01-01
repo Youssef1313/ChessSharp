@@ -43,12 +43,11 @@ namespace ChessWebsite
             return JsonConvert.DeserializeObject<GameBoard>(json, settings);
         }
 
-
-
         [Authorize]
         public override async Task OnConnectedAsync()
         {
-            int gameId = Convert.ToInt32(Context.GetHttpContext().Items["gameId"]); // THE BUG IS HERE. gameId is zero!! there is no gameId in Items.
+            
+            int gameId = Convert.ToInt32(Context.GetHttpContext().Request.Query["gameId"]);
             Game game = GetGameFromId(gameId);
             if (_loggedUserId == game.WhitePlayer.Id)
             {
@@ -63,13 +62,10 @@ namespace ChessWebsite
 
         public List<Move> GetValidMovesOfSquare(string square)
         {
-            // TODO: QueryString doesn't exist in Core.
-            //var gameId = int.Parse(Context.QueryString["gameId"]);
-            var gameId = 1; ; // SHOULD BE DELETED AFTER FIXING QueryString. This is just to make build succeed temporarily!!
+            int gameId = Convert.ToInt32(Context.GetHttpContext().Request.Query["gameId"]);
             var game = GetGameFromId(gameId);
             var gameBoard = GetGameBoardFromJson(game.GameBoardJson);
             return ChessUtilities.GetValidMovesOfSourceSquare(Square.Parse(square), gameBoard);
-            //return square;
         }
 
         public async Task MakeMove(int gameId, string source, string destination, int? promoteTo = null)
