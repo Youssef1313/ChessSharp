@@ -34,7 +34,7 @@ The repository consists of three folders:
     - `ChessSharp.UnitTests`: *Currently, there are no unit tests for the library.*
     - `ChessSharp`: The source code of the library.
     - `ChessUI`: a WinForms project that consumes the library.
-    - `ChessWebsite`: an ASP.NET MVC project that consumes the library. **Not completed, and not working currently.**
+    - `ChessSharpWeb`: an ASP.NET Core MVC project that consumes the library. **Not completed, and not working currently.**
 
 ## Screenshot of the UI (WinForms) project
 
@@ -42,7 +42,7 @@ The repository consists of three folders:
 
 ## 🤝 Contributing
 
-Contributions, issues, bug reports and feature requests are welcome!
+Contributions, issues, bug reports, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/Youssef1313/ChessSharp/issues).
 

@@ -1,8 +1,4 @@
 os: Visual Studio 2019
 build_script:
-  # dotnet version
   - ps: dotnet --version
-  # Run dotnet build
-  - ps: dotnet build src\ChessSharp\ChessSharp.csproj
-  - ps: dotnet build src\ChessUI\ChessUI.csproj
-  - ps: dotnet build src\ChessSharpWeb\ChessSharpWeb.csproj
+  - ps: dotnet build src
