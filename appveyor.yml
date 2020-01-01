@@ -2,3 +2,4 @@ os: Visual Studio 2019
 build_script:
   - ps: dotnet --version
   - ps: dotnet build src
+  - ps: dotnet test src/ChessSharp.UnitTests
