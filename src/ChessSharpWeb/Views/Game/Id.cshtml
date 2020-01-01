@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewData["Title"] = "Id";
+}
+
+@section scripts {
+    <script src="~/js/signalr/dist/browser/signalr.min.js"></script>
+    <script src="~/js/ChessSharp.js"></script>
+    <script>
+        var connection = new signalR.HubConnectionBuilder().withUrl("/chesshub?gameId=" + @Model.Id).build();
+        // $.connection.hub.qs = 'gameId=@Model.Id'; // TODO: LOOK FOR ALTERNATIVE!!
+
+        connection.on("ShowGame", showGame);
+        connection.on("BlackJoined", blackJoined);
+
+
+        // TODO: Be aware of XSS.
+        function blackJoined(username) {
+            document.getElementById('blackUsername').innerHTML = username;
+            @if (ViewBag.UserId == Model.WhitePlayer.Id)
+            {
+                <text>
+                    drawForWhite();
+                    showGame('@Html.Raw(Model.GameBoardJson)');
+                </text>
+            }
+
+            @if (Model.BlackPlayer != null && ViewBag.UserId == Model.BlackPlayer.Id)
+            {
+                <text>
+                    drawForBlack();
+                    showGame('@Html.Raw(Model.GameBoardJson)');
+                </text>
+            }
+            document.getElementById('how-to-invite').setAttribute('class', 'hide');
+        }
+
+        @if (Model.BlackPlayer != null && Model.WhitePlayer != null) {
+            <text>blackJoined('@Model.BlackPlayer.UserName');</text>
+        }
+
+
+        $(document).ready(function() {
+            $('.square').on('click',
+                function () {
+                    connection.invoke("GetValidMovesOfQuare", this.id)
+                        .then(function (validMoves) {
+                            console.log(validMoves);
+                        })
+                        .catch(err => console.error(err.toString()));
+                });
+        });
+
+        connection.start().then(function () {
+            console.log('connected.');
+        }).catch(function (err) {
+            return console.error(err.toString());
+        });
+
+    </script>
+}
+
+<h3 class="lead">White player: @Model.WhitePlayer.UserName</h3>
+<h3 class="lead">Black player: <span id="blackUsername">@((Model.BlackPlayer == null) ? "waiting for opponent to enter." : Model.BlackPlayer.UserName)</span></h3>
+<h4 id="how-to-invite" class="@(Model.BlackPlayer == null ? "lead" : "hide") ">Use this page link to invite a friend.</h4>
+
+<div id="GameBoard"></div>
