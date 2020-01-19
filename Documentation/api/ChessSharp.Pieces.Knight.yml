@@ -29,7 +29,6 @@ items:
     content: 'public class Knight : Piece'
     content.vb: >-
       Public Class Knight
-
           Inherits Piece
   inheritance:
   - System.Object

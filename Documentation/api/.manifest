@@ -74,7 +74,7 @@
   "ChessSharp.SquareData.Rank.Third": "ChessSharp.SquareData.Rank.yml",
   "ChessSharp.SquareData.Square": "ChessSharp.SquareData.Square.yml",
   "ChessSharp.SquareData.Square.#ctor(ChessSharp.SquareData.File,ChessSharp.SquareData.Rank)": "ChessSharp.SquareData.Square.yml",
-  "ChessSharp.SquareData.Square.#ctor(System.Char,System.Byte)": "ChessSharp.SquareData.Square.yml",
+  "ChessSharp.SquareData.Square.#ctor(System.Char,System.Int32)": "ChessSharp.SquareData.Square.yml",
   "ChessSharp.SquareData.Square.Equals(System.Object)": "ChessSharp.SquareData.Square.yml",
   "ChessSharp.SquareData.Square.File": "ChessSharp.SquareData.Square.yml",
   "ChessSharp.SquareData.Square.GetHashCode": "ChessSharp.SquareData.Square.yml",

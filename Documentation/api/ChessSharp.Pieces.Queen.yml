@@ -29,7 +29,6 @@ items:
     content: 'public class Queen : Piece'
     content.vb: >-
       Public Class Queen
-
           Inherits Piece
   inheritance:
   - System.Object

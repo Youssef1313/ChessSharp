@@ -29,7 +29,6 @@ items:
     content: 'public class Pawn : Piece'
     content.vb: >-
       Public Class Pawn
-
           Inherits Piece
   inheritance:
   - System.Object

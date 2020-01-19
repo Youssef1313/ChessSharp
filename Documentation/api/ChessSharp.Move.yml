@@ -347,11 +347,11 @@ items:
   summary: Gets the absolute value of the subtraction of the source file and the destination file.
   example: []
   syntax:
-    content: public byte GetAbsDeltaX()
+    content: public int GetAbsDeltaX()
     return:
-      type: System.Byte
-      description: Returns a byte that is the subtraction of the source file and the destination file.
-    content.vb: Public Function GetAbsDeltaX As Byte
+      type: System.Int32
+      description: Returns an integer that is the subtraction of the source file and the destination file.
+    content.vb: Public Function GetAbsDeltaX As Integer
   overload: ChessSharp.Move.GetAbsDeltaX*
   modifiers.csharp:
   - public
@@ -382,11 +382,11 @@ items:
   summary: Gets the absolute value of the subtraction of the source rank and the destination rank.
   example: []
   syntax:
-    content: public byte GetAbsDeltaY()
+    content: public int GetAbsDeltaY()
     return:
-      type: System.Byte
-      description: Returns a byte that is the subtraction of the source rank and the destination rank.
-    content.vb: Public Function GetAbsDeltaY As Byte
+      type: System.Int32
+      description: Returns an integer that is the subtraction of the source rank and the destination rank.
+    content.vb: Public Function GetAbsDeltaY As Integer
   overload: ChessSharp.Move.GetAbsDeltaY*
   modifiers.csharp:
   - public
@@ -417,11 +417,11 @@ items:
   summary: Gets the subtraction of the source file from the destination file.
   example: []
   syntax:
-    content: public sbyte GetDeltaX()
+    content: public int GetDeltaX()
     return:
-      type: System.SByte
-      description: Returns a signed-byte that is the subtraction of the source file from the destination file.
-    content.vb: Public Function GetDeltaX As SByte
+      type: System.Int32
+      description: Returns an integer that is the subtraction of the source file from the destination file.
+    content.vb: Public Function GetDeltaX As Integer
   overload: ChessSharp.Move.GetDeltaX*
   modifiers.csharp:
   - public
@@ -452,11 +452,11 @@ items:
   summary: Gets the subtraction of the source rank from the destination rank.
   example: []
   syntax:
-    content: public sbyte GetDeltaY()
+    content: public int GetDeltaY()
     return:
-      type: System.SByte
-      description: Returns a signed-byte that is the subtraction of the source rank from the destination rank.
-    content.vb: Public Function GetDeltaY As SByte
+      type: System.Int32
+      description: Returns an integer that is the subtraction of the source rank from the destination rank.
+    content.vb: Public Function GetDeltaY As Integer
   overload: ChessSharp.Move.GetDeltaY*
   modifiers.csharp:
   - public
@@ -932,13 +932,6 @@ references:
   name: GetAbsDeltaX
   nameWithType: Move.GetAbsDeltaX
   fullName: ChessSharp.Move.GetAbsDeltaX
-- uid: System.Byte
-  commentId: T:System.Byte
-  parent: System
-  isExternal: true
-  name: Byte
-  nameWithType: Byte
-  fullName: System.Byte
 - uid: ChessSharp.Move.GetAbsDeltaY*
   commentId: Overload:ChessSharp.Move.GetAbsDeltaY
   name: GetAbsDeltaY
@@ -949,13 +942,6 @@ references:
   name: GetDeltaX
   nameWithType: Move.GetDeltaX
   fullName: ChessSharp.Move.GetDeltaX
-- uid: System.SByte
-  commentId: T:System.SByte
-  parent: System
-  isExternal: true
-  name: SByte
-  nameWithType: SByte
-  fullName: System.SByte
 - uid: ChessSharp.Move.GetDeltaY*
   commentId: Overload:ChessSharp.Move.GetDeltaY
   name: GetDeltaY

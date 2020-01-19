@@ -29,7 +29,6 @@ items:
     content: 'public class Bishop : Piece'
     content.vb: >-
       Public Class Bishop
-
           Inherits Piece
   inheritance:
   - System.Object

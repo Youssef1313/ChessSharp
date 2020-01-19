@@ -635,12 +635,12 @@ references:
   commentId: M:ChessSharp.SquareData.Square.#ctor(ChessSharp.SquareData.File,ChessSharp.SquareData.Rank)
   fullName: ChessSharp.SquareData.Square.Square(ChessSharp.SquareData.File, ChessSharp.SquareData.Rank)
   nameWithType: Square.Square(File, Rank)
-- uid: ChessSharp.SquareData.Square.#ctor(System.Char,System.Byte)
-  name: Square(Char, Byte)
-  href: api/ChessSharp.SquareData.Square.html#ChessSharp_SquareData_Square__ctor_System_Char_System_Byte_
-  commentId: M:ChessSharp.SquareData.Square.#ctor(System.Char,System.Byte)
-  fullName: ChessSharp.SquareData.Square.Square(System.Char, System.Byte)
-  nameWithType: Square.Square(Char, Byte)
+- uid: ChessSharp.SquareData.Square.#ctor(System.Char,System.Int32)
+  name: Square(Char, Int32)
+  href: api/ChessSharp.SquareData.Square.html#ChessSharp_SquareData_Square__ctor_System_Char_System_Int32_
+  commentId: M:ChessSharp.SquareData.Square.#ctor(System.Char,System.Int32)
+  fullName: ChessSharp.SquareData.Square.Square(System.Char, System.Int32)
+  nameWithType: Square.Square(Char, Int32)
 - uid: ChessSharp.SquareData.Square.#ctor*
   name: Square
   href: api/ChessSharp.SquareData.Square.html#ChessSharp_SquareData_Square__ctor_

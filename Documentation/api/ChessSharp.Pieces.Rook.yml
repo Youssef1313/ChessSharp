@@ -29,7 +29,6 @@ items:
     content: 'public class Rook : Piece'
     content.vb: >-
       Public Class Rook
-
           Inherits Piece
   inheritance:
   - System.Object

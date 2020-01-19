@@ -6,7 +6,7 @@ items:
   parent: ChessSharp.SquareData
   children:
   - ChessSharp.SquareData.Square.#ctor(ChessSharp.SquareData.File,ChessSharp.SquareData.Rank)
-  - ChessSharp.SquareData.Square.#ctor(System.Char,System.Byte)
+  - ChessSharp.SquareData.Square.#ctor(System.Char,System.Int32)
   - ChessSharp.SquareData.Square.Equals(System.Object)
   - ChessSharp.SquareData.Square.File
   - ChessSharp.SquareData.Square.GetHashCode
@@ -314,16 +314,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: ChessSharp.SquareData.Square.#ctor(System.Char,System.Byte)
-  commentId: M:ChessSharp.SquareData.Square.#ctor(System.Char,System.Byte)
-  id: '#ctor(System.Char,System.Byte)'
+- uid: ChessSharp.SquareData.Square.#ctor(System.Char,System.Int32)
+  commentId: M:ChessSharp.SquareData.Square.#ctor(System.Char,System.Int32)
+  id: '#ctor(System.Char,System.Int32)'
   parent: ChessSharp.SquareData.Square
   langs:
   - csharp
   - vb
-  name: Square(Char, Byte)
-  nameWithType: Square.Square(Char, Byte)
-  fullName: ChessSharp.SquareData.Square.Square(System.Char, System.Byte)
+  name: Square(Char, Int32)
+  nameWithType: Square.Square(Char, Int32)
+  fullName: ChessSharp.SquareData.Square.Square(System.Char, System.Int32)
   type: Constructor
   source:
     remote:
@@ -339,15 +339,15 @@ items:
   summary: "\nInitializes a new instance of the Square class.\n"
   example: []
   syntax:
-    content: public Square(char file, byte rank)
+    content: public Square(char file, int rank)
     parameters:
     - id: file
       type: System.Char
       description: A char representing the file of the square.
     - id: rank
-      type: System.Byte
+      type: System.Int32
       description: A char representing the rank of the square.
-    content.vb: Public Sub New(file As Char, rank As Byte)
+    content.vb: Public Sub New(file As Char, rank As Integer)
   overload: ChessSharp.SquareData.Square.#ctor*
   exceptions:
   - type: System.ArgumentOutOfRangeException
@@ -793,13 +793,6 @@ references:
   name: Char
   nameWithType: Char
   fullName: System.Char
-- uid: System.Byte
-  commentId: T:System.Byte
-  parent: System
-  isExternal: true
-  name: Byte
-  nameWithType: Byte
-  fullName: System.Byte
 - uid: System.ArgumentNullException
   commentId: T:System.ArgumentNullException
   isExternal: true
