@@ -66,7 +66,7 @@ namespace ChessSharp.SquareData
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Either <c>file</c> or <c>rank</c> is out of range. <c>file</c> should be a char between 'A' and 'H' (case insensitive). <c>rank</c> should be a char between '1' and '8'.
         /// </exception>
-        public Square(char file, byte rank)
+        public Square(char file, int rank)
         {
             File = ParseFile(file);
             Rank = ParseRank(rank);
@@ -83,7 +83,7 @@ namespace ChessSharp.SquareData
             return tempFile;
         }
 
-        private static Rank ParseRank(byte rank)
+        private static Rank ParseRank(int rank)
         {
             if (rank < 1 || rank > 8)
             {

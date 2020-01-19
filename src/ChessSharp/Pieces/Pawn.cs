@@ -12,8 +12,9 @@ namespace ChessSharp.Pieces
 
         internal static PawnMoveType GetPawnMoveType(Move move)
         {
-            sbyte deltaY = move.GetDeltaY();
-            byte absDeltaX = move.GetAbsDeltaX();
+            int deltaY = move.GetDeltaY();
+            int absDeltaX = move.GetAbsDeltaX();
+            
             
             // Check normal one step pawn move.
             if ((move.Player == Player.White && deltaY == 1 && absDeltaX == 0) ||

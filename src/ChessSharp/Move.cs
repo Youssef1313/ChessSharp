@@ -66,31 +66,31 @@ namespace ChessSharp
         }
 
         /// <summary>Gets the absolute value of the subtraction of the source file and the destination file.</summary>
-        /// <returns>Returns a byte that is the subtraction of the source file and the destination file.</returns>
-        public byte GetAbsDeltaX()
+        /// <returns>Returns an integer that is the subtraction of the source file and the destination file.</returns>
+        public int GetAbsDeltaX()
         {
-            return (byte) Math.Abs(Destination.File - Source.File);
+            return Math.Abs(Destination.File - Source.File);
         }
 
         /// <summary>Gets the absolute value of the subtraction of the source rank and the destination rank.</summary>
-        /// <returns>Returns a byte that is the subtraction of the source rank and the destination rank.</returns>
-        public byte GetAbsDeltaY()
+        /// <returns>Returns an integer that is the subtraction of the source rank and the destination rank.</returns>
+        public int GetAbsDeltaY()
         {
-            return (byte) Math.Abs(Destination.Rank - Source.Rank);
+            return Math.Abs(Destination.Rank - Source.Rank);
         }
 
         /// <summary>Gets the subtraction of the source file from the destination file.</summary>
-        /// <returns>Returns a signed-byte that is the subtraction of the source file from the destination file.</returns>
-        public sbyte GetDeltaX()
+        /// <returns>Returns an integer that is the subtraction of the source file from the destination file.</returns>
+        public int GetDeltaX()
         {
-            return (sbyte) (Destination.File - Source.File);
+            return Destination.File - Source.File;
         }
 
         /// <summary>Gets the subtraction of the source rank from the destination rank.</summary>
-        /// <returns>Returns a signed-byte that is the subtraction of the source rank from the destination rank.</returns>
-        public sbyte GetDeltaY()
+        /// <returns>Returns an integer that is the subtraction of the source rank from the destination rank.</returns>
+        public int GetDeltaY()
         {
-            return (sbyte) (Destination.Rank - Source.Rank);
+            return Destination.Rank - Source.Rank;
         }
 
 
