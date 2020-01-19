@@ -20,8 +20,8 @@ namespace ChessSharp.Pieces
                 throw new ArgumentNullException(nameof(board));
             }
 
-            byte absDeltaX = move.GetAbsDeltaX();
-            byte absDeltaY = move.GetAbsDeltaY();
+            int absDeltaX = move.GetAbsDeltaX();
+            int absDeltaY = move.GetAbsDeltaY();
 
             // Regular king move.
             if (move.GetAbsDeltaX() <= 1 && move.GetAbsDeltaY() <= 1)

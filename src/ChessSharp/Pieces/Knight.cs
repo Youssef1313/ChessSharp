@@ -18,8 +18,8 @@ namespace ChessSharp.Pieces
             {
                 throw new ArgumentNullException(nameof(board));
             }
-            byte deltaX = move.GetAbsDeltaX();
-            byte deltaY = move.GetAbsDeltaY();
+            int deltaX = move.GetAbsDeltaX();
+            int deltaY = move.GetAbsDeltaY();
             return (deltaX == 1 && deltaY == 2) || (deltaX == 2 && deltaY == 1);
         }
     }
