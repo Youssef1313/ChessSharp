@@ -83,7 +83,7 @@ namespace ChessUI
                 DrawBoard(GetPlayerInCheck());
 
                 if (selectedLabel.Tag.ToString() != _gameBoard.WhoseTurn().ToString()) return;
-                _selectedSourceSquare = Square.Parse(selectedLabel.Name.Substring("lbl_".Length));
+                _selectedSourceSquare = selectedLabel.Name.Substring("lbl_".Length);
                 var validDestinations = ChessUtilities.GetValidMovesOfSourceSquare(_selectedSourceSquare, _gameBoard).Select(m => m.Destination).ToArray();
                 if (validDestinations.Length == 0) return;
                 selectedLabel.BackColor = Color.Cyan;
