@@ -22,7 +22,7 @@ namespace ChessSharp
         public List<Move> Moves { get; private set; }
 
         /// <summary>Gets a 2D array of <see cref="Piece"/>s in the board.</summary>
-        public Piece[,] Board { get; private set; }
+        public Piece[,] Board { get; private set; } // TODO: It's bad idea to expose this to public.
 
         /// <summary>Gets the current <see cref="ChessSharp.GameState"/>.</summary>
         public GameState GameState { get; private set; }
