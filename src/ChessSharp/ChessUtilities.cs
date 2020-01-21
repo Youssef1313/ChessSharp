@@ -11,17 +11,19 @@ namespace ChessSharp
     /// </summary>
     public static class ChessUtilities
     {
-        internal static Player RevertPlayer(Player player)
-        {
-            return player == Player.White ? Player.Black : Player.White;
-        }
+        private static readonly IEnumerable<Square> s_allSquares =
+            from file in Enum.GetValues(typeof(File)).Cast<File>()
+            from rank in Enum.GetValues(typeof(Rank)).Cast<Rank>()
+            select new Square(file, rank);
+
+        internal static Player RevertPlayer(Player player) => player == Player.White ? Player.Black : Player.White;
 
         internal static GameState GetGameState(GameBoard board)
         {
             Player opponent = board.WhoseTurn();
             Player lastPlayer = RevertPlayer(opponent);
-            bool hasValidMoves = GetValidMoves(board).Count > 0;
             bool isInCheck = IsPlayerInCheck(opponent, board);
+            var hasValidMoves = GetValidMoves(board).Count > 0;
 
             if (isInCheck && !hasValidMoves)
             {
@@ -48,37 +50,35 @@ namespace ChessSharp
         internal static bool IsInsufficientMaterial(Piece[,] board)
         {
             Piece[] pieces = board.Cast<Piece>().ToArray();
-            var whitePieces = pieces.Select((p, i) => new { Piece = p, SquareColor = (i % 8 + i / 8) % 2 }).Where(p => p.Piece != null && p.Piece.Owner == Player.White).ToArray();
-            var blackPieces = pieces.Select((p, i) => new { Piece = p, SquareColor = (i % 8 + i / 8) % 2 }).Where(p => p.Piece != null && p.Piece.Owner == Player.Black).ToArray();
+            
+            var whitePieces = pieces.Select((p, i) => new {Piece = p, SquareColor = (i % 8 + i / 8) % 2})
+                .Where(p => p.Piece?.Owner == Player.White).ToArray();
 
-            if (whitePieces.Length == 1 && blackPieces.Length == 1) // King vs King
+            var blackPieces = pieces.Select((p, i) => new {Piece = p, SquareColor = (i % 8 + i / 8) % 2})
+                .Where(p => p.Piece?.Owner == Player.Black).ToArray();
+
+            switch (whitePieces.Length)
             {
-                return true;
+                // King vs King
+                case 1 when blackPieces.Length == 1:
+                // White King vs black king and (Bishop|Knight)
+                case 1 when blackPieces.Length == 2 && blackPieces.Any(p => p.Piece is Bishop ||
+                                                                            p.Piece is Knight):
+                // Black King vs white king and (Bishop|Knight)
+                case 2 when blackPieces.Length == 1 && whitePieces.Any(p => p.Piece is Bishop ||
+                                                                            p.Piece is Knight):
+                    return true;
+                // King and bishop vs king and bishop
+                case 2 when blackPieces.Length == 2:
+                {
+                    var whiteBishop = whitePieces.First(p => p.Piece is Bishop);
+                    var blackBishop = blackPieces.First(p => p.Piece is Bishop);
+                    return whiteBishop != null && blackBishop != null &&
+                           whiteBishop.SquareColor == blackBishop.SquareColor;
+                }
+                default:
+                    return false;
             }
-
-
-            if (whitePieces.Length == 1 && blackPieces.Length == 2 &&
-                blackPieces.Any(p => p.Piece is Bishop ||
-                                     p.Piece is Knight)) // White King vs black king and (Bishop|Knight)
-            {
-                return true;
-            }
-
-            if (whitePieces.Length == 2 && blackPieces.Length == 1 &&
-                whitePieces.Any(p => p.Piece is Bishop ||
-                                     p.Piece is Knight)) // Black King vs white king and (Bishop|Knight)
-            {
-                return true;
-            }
-
-            if (whitePieces.Length == 2 && blackPieces.Length == 2) // King and bishop vs king and bishop
-            {
-                var whiteBishop = whitePieces.First(p => p.Piece is Bishop);
-                var blackBishop = blackPieces.First(p => p.Piece is Bishop);
-                return whiteBishop != null && blackBishop != null &&
-                       whiteBishop.SquareColor == blackBishop.SquareColor;
-            }
-            return false;
         }
 
         /// <summary>Gets the valid moves of the given <see cref="GameBoard"/>.</summary>
@@ -86,26 +86,13 @@ namespace ChessSharp
         /// <returns>Returns a list of the valid moves.</returns>
         public static List<Move> GetValidMoves(GameBoard board)
         {
-            var player = board.WhoseTurn();
+            Player player = board.WhoseTurn();
             var validMoves = new List<Move>();
-            Square[] squares = new[]
-            {
-                "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8",
-                "B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8",
-                "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8",
-                "D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8",
-                "E1", "E2", "E3", "E4", "E5", "E6", "E7", "E8",
-                "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8",
-                "G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8",
-                "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H8",
-            }.Select(Square.Parse).ToArray();
 
-            var playerOwnedSquares = squares.Where(sq => board[sq] != null &&
-                                                         board[sq].Owner == player).ToArray();
-            var nonPlayerOwnedSquares = squares.Where(sq => board[sq] == null ||
-                                                            board[sq].Owner != player).ToArray();
+            IEnumerable<Square> playerOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner == player);
+            Square[] nonPlayerOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner != player).ToArray(); // Converting to array to avoid "Possible multiple enumeration" as suggested by ReSharper.
 
-            foreach (var playerOwnedSquare in playerOwnedSquares)
+            foreach (Square playerOwnedSquare in playerOwnedSquares)
             {
                 validMoves.AddRange(nonPlayerOwnedSquares
                     .Select(nonPlayerOwnedSquare => new Move(playerOwnedSquare, nonPlayerOwnedSquare, player))
@@ -123,28 +110,14 @@ namespace ChessSharp
         public static List<Move> GetValidMovesOfSourceSquare(Square source, GameBoard board)
         {
             var validMoves = new List<Move>();
-            var piece = board[source];
-            if (piece == null)
+            Piece piece = board[source];
+            if (piece == null || piece.Owner != board.WhoseTurn())
             {
                 return validMoves;
             }
 
-            Square[] squares = new[]
-            {
-                "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8",
-                "B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8",
-                "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8",
-                "D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8",
-                "E1", "E2", "E3", "E4", "E5", "E6", "E7", "E8",
-                "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8",
-                "G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8",
-                "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H8",
-            }.Select(Square.Parse).ToArray();
-
-            var player = piece.Owner;
-            var nonPlayerOwnedSquares = squares.Where(sq => board[sq] == null ||
-                                                            board[sq].Owner != player).ToArray();
-
+            Player player = piece.Owner;
+            Square[] nonPlayerOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner != player).ToArray();
 
             validMoves.AddRange(nonPlayerOwnedSquares
                 .Select(nonPlayerOwnedSquare => new Move(source, nonPlayerOwnedSquare, player, PawnPromotion.Queen)) // If promoteTo is null, valid pawn promotion will cause exception. Need to implement this better and cleaner in the future.
@@ -154,21 +127,8 @@ namespace ChessSharp
 
         internal static bool IsPlayerInCheck(Player player, GameBoard board)
         {
-            Square[] squares = new[]
-            {
-                "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8",
-                "B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8",
-                "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8",
-                "D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8",
-                "E1", "E2", "E3", "E4", "E5", "E6", "E7", "E8",
-                "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8",
-                "G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8",
-                "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H8",
-            }.Select(Square.Parse).ToArray();
-
-            var opponentOwnedSquares = squares.Where(sq => board[sq] != null &&
-                                                           board[sq].Owner != player);
-            var playerKingSquare = squares.First(sq => new King(player).Equals(board[sq]));
+            IEnumerable<Square> opponentOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner != player);
+            Square playerKingSquare = s_allSquares.First(sq => new King(player).Equals(board[sq]));
 
             return (from opponentOwnedSquare in opponentOwnedSquares
                     let piece = board[opponentOwnedSquare]
@@ -199,36 +159,16 @@ namespace ChessSharp
 
         internal static bool IsTherePieceInBetween(Square square1, Square square2, Piece[,] board)
         {
-            var xStep = 0;
-            var yStep = 0;
+            int xStep = Math.Sign(square2.File - square1.File);
+            int yStep = Math.Sign(square2.Rank - square1.Rank);
 
-            if (square2.File > square1.File)
-            {
-                xStep = 1;
-            }
-            if (square2.Rank > square1.Rank)
-            {
-                yStep = 1;
-            }
-
-            if (square2.File < square1.File)
-            {
-                xStep = -1;
-            }
-            if (square2.Rank < square1.Rank)
-            {
-                yStep = -1;
-            }
-
-            var source = new Square(square1.File, square1.Rank);
-            var destination = new Square(square2.File, square2.Rank);
-            Rank rank = source.Rank;
-            File file = source.File;
-            while (true)
+            Rank rank = square1.Rank;
+            File file = square1.File;
+            while (true) // TODO: Prevent possible infinite loop (by throwing an exception) when passing un-logical squares (two squares not on same file, rank, or diagonal).
             {
                 rank += yStep;
                 file += xStep;
-                if (rank == destination.Rank && file == destination.File)
+                if (rank == square2.Rank && file == square2.File)
                 {
                     return false;
                 }
