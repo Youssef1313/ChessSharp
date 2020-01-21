@@ -83,13 +83,13 @@ namespace ChessUI
                 DrawBoard(GetPlayerInCheck());
 
                 if (selectedLabel.Tag.ToString() != _gameBoard.WhoseTurn().ToString()) return;
-                _selectedSourceSquare = Square.Parse(selectedLabel.Name.Substring("lbl_".Length));
+                _selectedSourceSquare = selectedLabel.Name.Substring("lbl_".Length);
                 var validDestinations = ChessUtilities.GetValidMovesOfSourceSquare(_selectedSourceSquare, _gameBoard).Select(m => m.Destination).ToArray();
                 if (validDestinations.Length == 0) return;
                 selectedLabel.BackColor = Color.Cyan;
                 Array.ForEach(validDestinations, square =>
                     {
-                        _squareLabels.First(lbl => lbl.Name == "lbl_" + square.ToString()).BackColor = Color.DarkCyan;
+                        _squareLabels.First(lbl => lbl.Name == $"lbl_{square}").BackColor = Color.DarkCyan;
                     });
             }
             else
@@ -138,8 +138,8 @@ namespace ChessUI
         {
             try
             {
-                var squareSource = Square.Parse(source);
-                var squareDestination = Square.Parse(destination);
+                Square squareSource = source;
+                Square squareDestination = destination;
                 Player player = _gameBoard.WhoseTurn();
                 PawnPromotion? pawnPromotion = null;
                 if (_gameBoard[squareSource] is Pawn)
@@ -168,9 +168,6 @@ namespace ChessUI
                 }
                 _gameBoard.MakeMove(move, isMoveValidated: true);
                 
-                
-                
-            
                 DrawBoard(GetPlayerInCheck());
 
                 if (_gameBoard.GameState == GameState.Draw || _gameBoard.GameState == GameState.Stalemate ||

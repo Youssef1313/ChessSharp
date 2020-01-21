@@ -34,7 +34,6 @@
             }
         }
 
-
         protected Piece(Player player)
         {
             Owner = player;
