@@ -40,46 +40,12 @@ namespace ChessSharp
                 return opponent == Player.White ? GameState.WhiteInCheck : GameState.BlackInCheck;
             }
 
-            return IsInsufficientMaterial(board.Board) ? GameState.Draw : GameState.NotCompleted;
+            return board.IsInsufficientMaterial() ? GameState.Draw : GameState.NotCompleted;
         }
 
         /* TODO: Still not sure where to implement it, but I may need methods:
            TODO: bool CanClaimDraw + bool ClaimDraw + OfferDraw
         */
-
-        internal static bool IsInsufficientMaterial(Piece[,] board)
-        {
-            Piece[] pieces = board.Cast<Piece>().ToArray();
-            
-            var whitePieces = pieces.Select((p, i) => new {Piece = p, SquareColor = (i % 8 + i / 8) % 2})
-                .Where(p => p.Piece?.Owner == Player.White).ToArray();
-
-            var blackPieces = pieces.Select((p, i) => new {Piece = p, SquareColor = (i % 8 + i / 8) % 2})
-                .Where(p => p.Piece?.Owner == Player.Black).ToArray();
-
-            switch (whitePieces.Length)
-            {
-                // King vs King
-                case 1 when blackPieces.Length == 1:
-                // White King vs black king and (Bishop|Knight)
-                case 1 when blackPieces.Length == 2 && blackPieces.Any(p => p.Piece is Bishop ||
-                                                                            p.Piece is Knight):
-                // Black King vs white king and (Bishop|Knight)
-                case 2 when blackPieces.Length == 1 && whitePieces.Any(p => p.Piece is Bishop ||
-                                                                            p.Piece is Knight):
-                    return true;
-                // King and bishop vs king and bishop
-                case 2 when blackPieces.Length == 2:
-                {
-                    var whiteBishop = whitePieces.First(p => p.Piece is Bishop);
-                    var blackBishop = blackPieces.First(p => p.Piece is Bishop);
-                    return whiteBishop != null && blackBishop != null &&
-                           whiteBishop.SquareColor == blackBishop.SquareColor;
-                }
-                default:
-                    return false;
-            }
-        }
 
         /// <summary>Gets the valid moves of the given <see cref="GameBoard"/>.</summary>
         /// <param name="board">The <see cref="GameBoard"/> that you want to get its valid moves.</param>
