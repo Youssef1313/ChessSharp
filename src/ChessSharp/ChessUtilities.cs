@@ -127,7 +127,7 @@ namespace ChessSharp
 
         internal static bool IsPlayerInCheck(Player player, GameBoard board)
         {
-            IEnumerable<Square> opponentOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner != player);
+            IEnumerable<Square> opponentOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner == RevertPlayer(player));
             Square playerKingSquare = s_allSquares.First(sq => new King(player).Equals(board[sq]));
 
             return (from opponentOwnedSquare in opponentOwnedSquares
