@@ -18,7 +18,7 @@
         Sixth,
         /// <summary>Represents the seventh rank.</summary>
         Seventh,
-        /// <summary>Represents the eigth rank.</summary>
+        /// <summary>Represents the eighth rank.</summary>
         Eighth
     }
 }
