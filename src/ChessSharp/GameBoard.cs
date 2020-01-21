@@ -2,13 +2,12 @@
 using ChessSharp.SquareData;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace ChessSharp
 {
     /// <summary>Represents the chess game.</summary>
-    public class GameBoard
+    public class GameBoard : IDeepCloneable<GameBoard>
     {
         /// <summary>Gets <see cref="Piece"/> in a specific square.</summary>
         /// <param name="file">The <see cref="File"/> of the square.</param>
@@ -23,7 +22,7 @@ namespace ChessSharp
         public List<Move> Moves { get; private set; }
 
         /// <summary>Gets a 2D array of <see cref="Piece"/>s in the board.</summary>
-        public Piece[,] Board { get; private set; }
+        public Piece[,] Board { get; private set; } // TODO: It's bad idea to expose this to public.
 
         /// <summary>Gets the current <see cref="ChessSharp.GameState"/>.</summary>
         public GameState GameState { get; private set; }
@@ -61,20 +60,6 @@ namespace ChessSharp
                 { null, null, null, null, null, null, null, null },
                 { blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn},
                 { blackRook, blackKnight, blackBishop, blackQueen, blackKing, blackBishop, blackKnight, blackRook}
-            };
-        }
-
-        internal static GameBoard Clone(GameBoard board)
-        {
-            return new GameBoard
-            {
-                Board = board.Board.Clone() as Piece[,],
-                Moves = board.Moves, // BUG: May or may not produce a bug, it sends a reference to the list, not really clone.
-                GameState =  board.GameState,
-                CanBlackCastleKingSide =  board.CanBlackCastleKingSide,
-                CanBlackCastleQueenSide = board.CanBlackCastleQueenSide,
-                CanWhiteCastleKingSide = board.CanWhiteCastleKingSide,
-                CanWhiteCastleQueenSide = board.CanWhiteCastleQueenSide
             };
         }
 
@@ -250,5 +235,18 @@ namespace ChessSharp
                     !ChessUtilities.PlayerWillBeInCheck(move, board) && pieceSource.IsValidGameMove(move, board));
         }
 
+        public GameBoard DeepClone()
+        {
+            return new GameBoard
+            {
+                Board = Board.Clone() as Piece[,],
+                Moves = Moves.Select(m => m.DeepClone()).ToList(),
+                GameState = GameState,
+                CanBlackCastleKingSide = CanBlackCastleKingSide,
+                CanBlackCastleQueenSide = CanBlackCastleQueenSide,
+                CanWhiteCastleKingSide = CanWhiteCastleKingSide,
+                CanWhiteCastleQueenSide = CanWhiteCastleQueenSide
+            };
+        }
     }
 }

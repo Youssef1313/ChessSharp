@@ -127,7 +127,7 @@ namespace ChessSharp
 
         internal static bool IsPlayerInCheck(Player player, GameBoard board)
         {
-            IEnumerable<Square> opponentOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner != player);
+            IEnumerable<Square> opponentOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner == RevertPlayer(player));
             Square playerKingSquare = s_allSquares.First(sq => new King(player).Equals(board[sq]));
 
             return (from opponentOwnedSquare in opponentOwnedSquares
@@ -149,7 +149,7 @@ namespace ChessSharp
                 throw new ArgumentNullException(nameof(board));
             }
 
-            var boardClone = GameBoard.Clone(board); // Make the move on this board to keep original board as is.
+            GameBoard boardClone = board.DeepClone(); // Make the move on this board to keep original board as is.
             Piece piece = boardClone[move.Source];
             boardClone.Board[(int)move.Source.Rank, (int)move.Source.File] = null;
             boardClone.Board[(int)move.Destination.Rank, (int)move.Destination.File] = piece;

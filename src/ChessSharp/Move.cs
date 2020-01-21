@@ -1,10 +1,11 @@
 ﻿using ChessSharp.Pieces;
 using ChessSharp.SquareData;
 using System;
+
 namespace ChessSharp
 {
     /// <summary>Represents a game move.</summary>
-    public class Move
+    public class Move : IDeepCloneable<Move>
     {
         /// <summary>Gets the source <see cref="Square"/> of the <see cref="Move"/>.</summary>
         public Square Source { get; }
@@ -14,6 +15,11 @@ namespace ChessSharp
         public Player Player { get; }
         /// <summary>Gets a nullable <see cref="PawnPromotion"/> of the <see cref="Move"/>.</summary>
         public PawnPromotion? PromoteTo { get; }
+
+        public Move DeepClone()
+        {
+            return new Move(Source, Destination, Player, PromoteTo);
+        }
 
         public override bool Equals(object obj)
         {
@@ -50,45 +56,28 @@ namespace ChessSharp
         /// <param name="promoteTo">Optional nullable <see cref="PawnPromotion"/> of the <see cref="Move"/>. Default value is null.</param>
         public Move(Square source, Square destination, Player player, PawnPromotion? promoteTo = null)
         {
-            if (source == null)
-            {
-                throw new ArgumentNullException(nameof(source));
-            }
-            if (destination == null)
-            {
-                throw new ArgumentNullException(nameof(destination));
-            }
-
-            Source = source;
-            Destination = destination;
+            Source = source ?? throw new ArgumentNullException(nameof(source));
+            Destination = destination ?? throw new ArgumentNullException(nameof(destination));
             Player = player;
             PromoteTo = promoteTo;
         }
 
-        /// <summary>Gets the absolute value of the subtraction of the source file and the destination file.</summary>
-        /// <returns>Returns an integer that is the subtraction of the source file and the destination file.</returns>
-        public int GetAbsDeltaX()
+        internal int GetAbsDeltaX()
         {
             return Math.Abs(Destination.File - Source.File);
         }
 
-        /// <summary>Gets the absolute value of the subtraction of the source rank and the destination rank.</summary>
-        /// <returns>Returns an integer that is the subtraction of the source rank and the destination rank.</returns>
-        public int GetAbsDeltaY()
+        internal int GetAbsDeltaY()
         {
             return Math.Abs(Destination.Rank - Source.Rank);
         }
 
-        /// <summary>Gets the subtraction of the source file from the destination file.</summary>
-        /// <returns>Returns an integer that is the subtraction of the source file from the destination file.</returns>
-        public int GetDeltaX()
+        internal int GetDeltaX()
         {
             return Destination.File - Source.File;
         }
 
-        /// <summary>Gets the subtraction of the source rank from the destination rank.</summary>
-        /// <returns>Returns an integer that is the subtraction of the source rank from the destination rank.</returns>
-        public int GetDeltaY()
+        internal int GetDeltaY()
         {
             return Destination.Rank - Source.Rank;
         }
