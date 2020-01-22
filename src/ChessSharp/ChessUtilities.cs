@@ -76,6 +76,5 @@ namespace ChessSharp
                     select piece).Any();
         }
 
-
     }
 }

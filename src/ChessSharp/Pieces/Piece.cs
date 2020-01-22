@@ -7,7 +7,7 @@
         /// <summary>Gets the owner <see cref="Player"/> of the piece.</summary>
         public Player Owner { get; }
 
-        internal abstract bool IsValidGameMove(Move move, GameBoard board);
+        internal abstract bool IsValidGameMove(Move move, ChessGame board);
 
         public override bool Equals(object obj)
         {
