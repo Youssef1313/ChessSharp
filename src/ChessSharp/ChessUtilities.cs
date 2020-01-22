@@ -20,10 +20,10 @@ namespace ChessSharp
            TODO: bool CanClaimDraw + bool ClaimDraw + OfferDraw
         */
 
-        /// <summary>Gets the valid moves of the given <see cref="GameBoard"/>.</summary>
-        /// <param name="board">The <see cref="GameBoard"/> that you want to get its valid moves.</param>
+        /// <summary>Gets the valid moves of the given <see cref="ChessGame"/>.</summary>
+        /// <param name="board">The <see cref="ChessGame"/> that you want to get its valid moves.</param>
         /// <returns>Returns a list of the valid moves.</returns>
-        public static List<Move> GetValidMoves(GameBoard board)
+        public static List<Move> GetValidMoves(ChessGame board)
         {
             Player player = board.WhoseTurn();
             var validMoves = new List<Move>();
@@ -35,18 +35,18 @@ namespace ChessSharp
             {
                 validMoves.AddRange(nonPlayerOwnedSquares
                     .Select(nonPlayerOwnedSquare => new Move(playerOwnedSquare, nonPlayerOwnedSquare, player))
-                    .Where(move => GameBoard.IsValidMove(move, board)));
+                    .Where(move => ChessGame.IsValidMove(move, board)));
             }
 
             return validMoves;
         }
 
-        /// <summary>Gets the valid moves of the given <see cref="GameBoard"/> that has a specific given source <see cref="Square"/>.</summary>
+        /// <summary>Gets the valid moves of the given <see cref="ChessGame"/> that has a specific given source <see cref="Square"/>.</summary>
         /// <param name="source">The source <see cref="Square"/> that you're looking for its valid moves.</param>
-        /// <param name="board">The <see cref="GameBoard"/> that you want to get its valid moves from the specified square.</param>
+        /// <param name="board">The <see cref="ChessGame"/> that you want to get its valid moves from the specified square.</param>
         /// <returns>Returns a list of the valid moves that has the given source square.</returns>
         /// 
-        public static List<Move> GetValidMovesOfSourceSquare(Square source, GameBoard board)
+        public static List<Move> GetValidMovesOfSourceSquare(Square source, ChessGame board)
         {
             var validMoves = new List<Move>();
             Piece piece = board[source];
@@ -60,11 +60,11 @@ namespace ChessSharp
 
             validMoves.AddRange(nonPlayerOwnedSquares
                 .Select(nonPlayerOwnedSquare => new Move(source, nonPlayerOwnedSquare, player, PawnPromotion.Queen)) // If promoteTo is null, valid pawn promotion will cause exception. Need to implement this better and cleaner in the future.
-                .Where(move => GameBoard.IsValidMove(move, board)));
+                .Where(move => ChessGame.IsValidMove(move, board)));
             return validMoves;
         }
 
-        internal static bool IsPlayerInCheck(Player player, GameBoard board)
+        internal static bool IsPlayerInCheck(Player player, ChessGame board)
         {
             IEnumerable<Square> opponentOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner == RevertPlayer(player));
             Square playerKingSquare = s_allSquares.First(sq => new King(player).Equals(board[sq]));

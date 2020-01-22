@@ -1,4 +1,6 @@
-﻿namespace ChessSharp.Pieces
+﻿using ChessSharp;
+
+namespace ChessSharp.Pieces
 {
     /// <summary>Represents the base class of the pieces.</summary>
     public abstract class Piece

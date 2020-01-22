@@ -7,7 +7,7 @@ using System.Linq;
 namespace ChessSharp
 {
     /// <summary>Represents the chess game.</summary>
-    public class GameBoard : IDeepCloneable<GameBoard>
+    public class ChessGame : IDeepCloneable<ChessGame>
     {
         /// <summary>Gets <see cref="Piece"/> in a specific square.</summary>
         /// <param name="file">The <see cref="File"/> of the square.</param>
@@ -33,8 +33,8 @@ namespace ChessSharp
         internal bool CanBlackCastleKingSide { get; set; } = true;
         internal bool CanBlackCastleQueenSide { get; set; } = true;
 
-        /// <summary>Initializes a new instance of <see cref="GameBoard"/>.</summary>
-        public GameBoard()
+        /// <summary>Initializes a new instance of <see cref="ChessGame"/>.</summary>
+        public ChessGame()
         {
             Moves = new List<Move>();
             var whitePawn = new Pawn(Player.White);
@@ -226,12 +226,12 @@ namespace ChessSharp
                 throw new ArgumentNullException(nameof(move));
             }
 
-            GameBoard boardClone = DeepClone(); // Make the move on this board to keep original board as is.
-            Piece piece = boardClone[move.Source];
-            boardClone.Board[(int)move.Source.Rank, (int)move.Source.File] = null;
-            boardClone.Board[(int)move.Destination.Rank, (int)move.Destination.File] = piece;
+            ChessGame clone = DeepClone(); // Make the move on this board to keep original board as is.
+            Piece piece = clone[move.Source];
+            clone.Board[(int)move.Source.Rank, (int)move.Source.File] = null;
+            clone.Board[(int)move.Destination.Rank, (int)move.Destination.File] = piece;
 
-            return ChessUtilities.IsPlayerInCheck(move.Player, boardClone);
+            return ChessUtilities.IsPlayerInCheck(move.Player, clone);
         }
 
         internal void SetGameState()
@@ -295,7 +295,7 @@ namespace ChessSharp
             }
         }
 
-        internal static bool IsValidMove(Move move, GameBoard board)
+        internal static bool IsValidMove(Move move, ChessGame board)
         {
             if (move == null)
             {
@@ -335,9 +335,9 @@ namespace ChessSharp
 
         }
 
-        public GameBoard DeepClone()
+        public ChessGame DeepClone()
         {
-            return new GameBoard
+            return new ChessGame
             {
                 Board = Board.Clone() as Piece[,],
                 Moves = Moves.Select(m => m.DeepClone()).ToList(),

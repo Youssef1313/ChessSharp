@@ -17,7 +17,7 @@ namespace ChessUI
         private readonly Dictionary<string, Point> _whiteLocations;
         private readonly Dictionary<string, Point> _blackLocations;
         private Square _selectedSourceSquare;
-        private GameBoard _gameBoard = new GameBoard();
+        private ChessGame _gameBoard = new ChessGame();
 
 
         private static string InvertSquare(string sq)

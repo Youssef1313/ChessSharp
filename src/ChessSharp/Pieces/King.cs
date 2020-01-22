@@ -8,7 +8,7 @@ namespace ChessSharp.Pieces
     {
         internal King(Player player) : base(player) { }
         
-        internal override bool IsValidGameMove(Move move, GameBoard board)
+        internal override bool IsValidGameMove(Move move, ChessGame board)
         {
             if (move == null)
             {

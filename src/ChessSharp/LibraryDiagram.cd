@@ -56,11 +56,11 @@
       <FileName>ChessUtilities.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ChessSharp.GameBoard">
+  <Class Name="ChessSharp.ChessGame">
     <Position X="23.25" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAQAIACAAACAAAAAAAAACIAkJAAACAACAAIAA=</HashCode>
-      <FileName>GameBoard.cs</FileName>
+      <FileName>ChessGame.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChessSharp.Move">
