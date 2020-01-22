@@ -18,31 +18,6 @@ namespace ChessSharp
 
         internal static Player RevertPlayer(Player player) => player == Player.White ? Player.Black : Player.White;
 
-        internal static GameState GetGameState(GameBoard board)
-        {
-            Player opponent = board.WhoseTurn();
-            Player lastPlayer = RevertPlayer(opponent);
-            bool isInCheck = IsPlayerInCheck(opponent, board);
-            var hasValidMoves = GetValidMoves(board).Count > 0;
-
-            if (isInCheck && !hasValidMoves)
-            {
-                return lastPlayer == Player.White ? GameState.WhiteWinner : GameState.BlackWinner;
-            }
-
-            if (!hasValidMoves)
-            {
-                return GameState.Stalemate;
-            }
-
-            if (isInCheck)
-            {
-                return opponent == Player.White ? GameState.WhiteInCheck : GameState.BlackInCheck;
-            }
-
-            return board.IsInsufficientMaterial() ? GameState.Draw : GameState.NotCompleted;
-        }
-
         /* TODO: Still not sure where to implement it, but I may need methods:
            TODO: bool CanClaimDraw + bool ClaimDraw + OfferDraw
         */

@@ -155,7 +155,7 @@ namespace ChessSharp
             Board[(int) move.Source.Rank, (int) move.Source.File] = null;
             Board[(int) move.Destination.Rank, (int) move.Destination.File] = piece;
             Moves.Add(move);
-            GameState = ChessUtilities.GetGameState(this);
+            SetGameState();
             return true;
         }
 
@@ -217,6 +217,31 @@ namespace ChessSharp
                     !Equals(move.Source, move.Destination) &&
                     (pieceDestination == null || pieceDestination.Owner != move.Player) &&
                     !ChessUtilities.PlayerWillBeInCheck(move, this) && pieceSource.IsValidGameMove(move, this));
+        }
+
+        internal void SetGameState()
+        {
+            Player opponent = this.WhoseTurn();
+            Player lastPlayer = ChessUtilities.RevertPlayer(opponent);
+            bool isInCheck = ChessUtilities.IsPlayerInCheck(opponent, this);
+            var hasValidMoves = ChessUtilities.GetValidMoves(this).Count > 0;
+
+            if (isInCheck && !hasValidMoves)
+            {
+                GameState = lastPlayer == Player.White ? GameState.WhiteWinner : GameState.BlackWinner;
+            }
+
+            if (!hasValidMoves)
+            {
+                GameState = GameState.Stalemate;
+            }
+
+            if (isInCheck)
+            {
+                GameState = opponent == Player.White ? GameState.WhiteInCheck : GameState.BlackInCheck;
+            }
+
+            GameState = IsInsufficientMaterial() ? GameState.Draw : GameState.NotCompleted;
         }
 
         internal bool IsInsufficientMaterial()
