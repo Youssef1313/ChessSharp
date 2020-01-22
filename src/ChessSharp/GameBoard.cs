@@ -3,7 +3,6 @@ using ChessSharp.SquareData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 
 namespace ChessSharp
 {
@@ -217,7 +216,22 @@ namespace ChessSharp
             return (WhoseTurn() == move.Player && pieceSource != null && pieceSource.Owner == move.Player &&
                     !Equals(move.Source, move.Destination) &&
                     (pieceDestination == null || pieceDestination.Owner != move.Player) &&
-                    !ChessUtilities.PlayerWillBeInCheck(move, this) && pieceSource.IsValidGameMove(move, this));
+                    !PlayerWillBeInCheck(move) && pieceSource.IsValidGameMove(move, this));
+        }
+
+        internal bool PlayerWillBeInCheck(Move move)
+        {
+            if (move == null)
+            {
+                throw new ArgumentNullException(nameof(move));
+            }
+
+            GameBoard boardClone = DeepClone(); // Make the move on this board to keep original board as is.
+            Piece piece = boardClone[move.Source];
+            boardClone.Board[(int)move.Source.Rank, (int)move.Source.File] = null;
+            boardClone.Board[(int)move.Destination.Rank, (int)move.Destination.File] = piece;
+
+            return ChessUtilities.IsPlayerInCheck(move.Player, boardClone);
         }
 
         internal void SetGameState()
@@ -294,7 +308,7 @@ namespace ChessSharp
             return (pieceSource != null && pieceSource.Owner == move.Player &&
                     !Equals(move.Source, move.Destination) &&
                     (pieceDestination == null || pieceDestination.Owner != move.Player) &&
-                    !ChessUtilities.PlayerWillBeInCheck(move, board) && pieceSource.IsValidGameMove(move, board));
+                    !board.PlayerWillBeInCheck(move) && pieceSource.IsValidGameMove(move, board));
         }
 
         public GameBoard DeepClone()

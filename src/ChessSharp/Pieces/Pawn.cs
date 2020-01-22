@@ -114,7 +114,7 @@ namespace ChessSharp.Pieces
                 GameBoard boardClone = board.DeepClone();
                 boardClone.Board[(int) move.Destination.Rank, (int) move.Destination.File] = null;
                 boardClone.Board[((int) move.Destination.Rank + (int) move.Source.Rank) / 2, (int) move.Destination.File] = lastMovedPiece;
-                return !ChessUtilities.PlayerWillBeInCheck(move, boardClone);;
+                return !boardClone.PlayerWillBeInCheck(move);
             }
 
             throw new Exception("Unexpected PawnMoveType.");

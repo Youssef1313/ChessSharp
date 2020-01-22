@@ -78,26 +78,6 @@ namespace ChessSharp
                     select piece).Any();
         }
 
-        internal static bool PlayerWillBeInCheck(Move move, GameBoard board)
-        {
-            if (move == null)
-            {
-                throw new ArgumentNullException(nameof(move));
-            }
-
-            if (board == null)
-            {
-                throw new ArgumentNullException(nameof(board));
-            }
-
-            GameBoard boardClone = board.DeepClone(); // Make the move on this board to keep original board as is.
-            Piece piece = boardClone[move.Source];
-            boardClone.Board[(int)move.Source.Rank, (int)move.Source.File] = null;
-            boardClone.Board[(int)move.Destination.Rank, (int)move.Destination.File] = piece;
-
-            return IsPlayerInCheck(move.Player, boardClone);
-        }
-
         internal static bool IsTherePieceInBetween(Square square1, Square square2, Piece[,] board)
         {
             int xStep = Math.Sign(square2.File - square1.File);
