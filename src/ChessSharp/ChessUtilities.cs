@@ -25,7 +25,7 @@ namespace ChessSharp
         /// <returns>Returns a list of the valid moves.</returns>
         public static List<Move> GetValidMoves(ChessGame board)
         {
-            Player player = board.WhoseTurn();
+            Player player = board.WhoseTurn;
             var validMoves = new List<Move>();
 
             IEnumerable<Square> playerOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner == player);
@@ -50,7 +50,7 @@ namespace ChessSharp
         {
             var validMoves = new List<Move>();
             Piece piece = board[source];
-            if (piece == null || piece.Owner != board.WhoseTurn())
+            if (piece == null || piece.Owner != board.WhoseTurn)
             {
                 return validMoves;
             }

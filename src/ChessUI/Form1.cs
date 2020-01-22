@@ -82,7 +82,7 @@ namespace ChessUI
                 // Re-draw to remove previously colored labels.
                 DrawBoard(GetPlayerInCheck());
 
-                if (selectedLabel.Tag.ToString() != _gameBoard.WhoseTurn().ToString()) return;
+                if (selectedLabel.Tag.ToString() != _gameBoard.WhoseTurn.ToString()) return;
                 _selectedSourceSquare = selectedLabel.Name.Substring("lbl_".Length);
                 var validDestinations = ChessUtilities.GetValidMovesOfSourceSquare(_selectedSourceSquare, _gameBoard).Select(m => m.Destination).ToArray();
                 if (validDestinations.Length == 0) return;
@@ -140,7 +140,7 @@ namespace ChessUI
             {
                 Square squareSource = source;
                 Square squareDestination = destination;
-                Player player = _gameBoard.WhoseTurn();
+                Player player = _gameBoard.WhoseTurn;
                 PawnPromotion? pawnPromotion = null;
                 if (_gameBoard[squareSource] is Pawn)
                 {
@@ -177,7 +177,7 @@ namespace ChessUI
                     return;
                 }
 
-                Player whoseTurn = _gameBoard.WhoseTurn();
+                Player whoseTurn = _gameBoard.WhoseTurn;
                 lblWhoseTurn.Text = whoseTurn.ToString();
                 FlipUi(whoseTurn);
             }

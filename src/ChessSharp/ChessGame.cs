@@ -24,6 +24,9 @@ namespace ChessSharp
         /// <summary>Gets a 2D array of <see cref="Piece"/>s in the board.</summary>
         public Piece[,] Board { get; private set; } // TODO: It's bad idea to expose this to public.
 
+        /// <summary>Gets the <see cref="Player"/> who has turn.</summary>
+        public Player WhoseTurn { get; private set; } = Player.White;
+
         /// <summary>Gets the current <see cref="ChessSharp.GameState"/>.</summary>
         public GameState GameState { get; private set; }
 
@@ -61,12 +64,6 @@ namespace ChessSharp
                 { blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn},
                 { blackRook, blackKnight, blackBishop, blackQueen, blackKing, blackBishop, blackKnight, blackRook}
             };
-        }
-
-        /// <summary>Gets the <see cref="Player"/> who has turn.</summary>
-        public Player WhoseTurn()
-        {
-            return Moves.Count == 0 ? Player.White : ChessUtilities.RevertPlayer(Moves.Last().Player);
         }
 
         /// <summary>Makes a move in the game.</summary>
@@ -155,6 +152,7 @@ namespace ChessSharp
             Board[(int) move.Source.Rank, (int) move.Source.File] = null;
             Board[(int) move.Destination.Rank, (int) move.Destination.File] = piece;
             Moves.Add(move);
+            WhoseTurn = ChessUtilities.RevertPlayer(move.Player);
             SetGameState();
             return true;
         }
@@ -213,7 +211,7 @@ namespace ChessSharp
 
             Piece pieceSource = this[move.Source];
             Piece pieceDestination = this[move.Destination];
-            return (WhoseTurn() == move.Player && pieceSource != null && pieceSource.Owner == move.Player &&
+            return (WhoseTurn == move.Player && pieceSource != null && pieceSource.Owner == move.Player &&
                     !Equals(move.Source, move.Destination) &&
                     (pieceDestination == null || pieceDestination.Owner != move.Player) &&
                     !PlayerWillBeInCheck(move) && pieceSource.IsValidGameMove(move, this));
@@ -236,7 +234,7 @@ namespace ChessSharp
 
         internal void SetGameState()
         {
-            Player opponent = this.WhoseTurn();
+            Player opponent = WhoseTurn;
             Player lastPlayer = ChessUtilities.RevertPlayer(opponent);
             bool isInCheck = ChessUtilities.IsPlayerInCheck(opponent, this);
             var hasValidMoves = ChessUtilities.GetValidMoves(this).Count > 0;
@@ -342,6 +340,7 @@ namespace ChessSharp
                 Board = Board.Clone() as Piece[,],
                 Moves = Moves.Select(m => m.DeepClone()).ToList(),
                 GameState = GameState,
+                WhoseTurn = WhoseTurn,
                 CanBlackCastleKingSide = CanBlackCastleKingSide,
                 CanBlackCastleQueenSide = CanBlackCastleQueenSide,
                 CanWhiteCastleKingSide = CanWhiteCastleKingSide,
