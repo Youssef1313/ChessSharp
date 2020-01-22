@@ -15,7 +15,6 @@ namespace ChessSharp.Pieces
             int deltaY = move.GetDeltaY();
             int absDeltaX = move.GetAbsDeltaX();
             
-            
             // Check normal one step pawn move.
             if ((move.Player == Player.White && deltaY == 1 && absDeltaX == 0) ||
                 move.Player == Player.Black && deltaY == -1 && absDeltaX == 0)
@@ -50,7 +49,7 @@ namespace ChessSharp.Pieces
             return PawnMoveType.Invalid;
         }
 
-        internal override bool IsValidGameMove(Move move, GameBoard board)
+        internal override bool IsValidGameMove(Move move, ChessGame board)
         {
             if (move == null)
             {
@@ -76,7 +75,7 @@ namespace ChessSharp.Pieces
 
             if (moveType.Contains(PawnMoveType.TwoSteps))
             {
-                return !ChessUtilities.IsTherePieceInBetween(move.Source, move.Destination, board.Board) && board[move.Destination] == null;
+                return !board.IsTherePieceInBetween(move.Source, move.Destination) && board[move.Destination] == null;
             }
 
             if (moveType.Contains(PawnMoveType.OneStep))
@@ -111,10 +110,10 @@ namespace ChessSharp.Pieces
                 // Two Step pawn move ( white from rank 2 to 4 ) ( black from rank 7 to 5 )
                 // SHOULDN'T REMOVE CAPTURED PAWN FROM THE BOARD HERE!! THIS IS ONLY FOR CHECKING IF MOVE IS LEGAL OR NOT!!
                 // PAWN REMOVAL SHOULD BE DONE IN MAKEMOVE METHOD!!!
-                GameBoard boardClone = board.DeepClone();
-                boardClone.Board[(int) move.Destination.Rank, (int) move.Destination.File] = null;
-                boardClone.Board[((int) move.Destination.Rank + (int) move.Source.Rank) / 2, (int) move.Destination.File] = lastMovedPiece;
-                return !ChessUtilities.PlayerWillBeInCheck(move, boardClone);;
+                ChessGame clone = board.DeepClone();
+                clone.Board[(int) move.Destination.Rank, (int) move.Destination.File] = null;
+                clone.Board[((int) move.Destination.Rank + (int) move.Source.Rank) / 2, (int) move.Destination.File] = lastMovedPiece;
+                return !clone.PlayerWillBeInCheck(move);
             }
 
             throw new Exception("Unexpected PawnMoveType.");

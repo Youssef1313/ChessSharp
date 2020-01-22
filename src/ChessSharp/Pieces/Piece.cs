@@ -1,4 +1,6 @@
-﻿namespace ChessSharp.Pieces
+﻿using ChessSharp;
+
+namespace ChessSharp.Pieces
 {
     /// <summary>Represents the base class of the pieces.</summary>
     public abstract class Piece
@@ -7,7 +9,7 @@
         /// <summary>Gets the owner <see cref="Player"/> of the piece.</summary>
         public Player Owner { get; }
 
-        internal abstract bool IsValidGameMove(Move move, GameBoard board);
+        internal abstract bool IsValidGameMove(Move move, ChessGame board);
 
         public override bool Equals(object obj)
         {

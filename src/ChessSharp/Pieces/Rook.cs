@@ -8,7 +8,7 @@ namespace ChessSharp.Pieces
         internal Rook(Player player) : base(player) { }
 
 
-        internal override bool IsValidGameMove(Move move, GameBoard board)
+        internal override bool IsValidGameMove(Move move, ChessGame board)
         {
             if (move == null)
             {
@@ -20,7 +20,7 @@ namespace ChessSharp.Pieces
                 throw new ArgumentNullException(nameof(board));
             }
 
-            return (move.GetAbsDeltaX() == 0 || move.GetAbsDeltaY() == 0) && !ChessUtilities.IsTherePieceInBetween(move.Source, move.Destination, board.Board);
+            return (move.GetAbsDeltaX() == 0 || move.GetAbsDeltaY() == 0) && !board.IsTherePieceInBetween(move.Source, move.Destination);
 
         }
     }

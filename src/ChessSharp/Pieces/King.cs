@@ -8,7 +8,7 @@ namespace ChessSharp.Pieces
     {
         internal King(Player player) : base(player) { }
         
-        internal override bool IsValidGameMove(Move move, GameBoard board)
+        internal override bool IsValidGameMove(Move move, ChessGame board)
         {
             if (move == null)
             {
@@ -39,38 +39,38 @@ namespace ChessSharp.Pieces
 
             // White king-side castle move.
             if (move.Player == Player.White && move.Destination.File == File.G && board.CanWhiteCastleKingSide &&
-                !ChessUtilities.IsTherePieceInBetween(move.Source, new Square(File.H, Rank.First), board.Board) &&
+                !board.IsTherePieceInBetween(move.Source, new Square(File.H, Rank.First)) &&
                 new Rook(Player.White).Equals(board[File.H, Rank.First]))
             {
-                return !ChessUtilities.PlayerWillBeInCheck(
-                    new Move(move.Source, new Square(File.F, Rank.First), move.Player), board);
+                return !board.PlayerWillBeInCheck(
+                    new Move(move.Source, new Square(File.F, Rank.First), move.Player));
             }
 
             // Black king-side castle move.
             if (move.Player == Player.Black && move.Destination.File == File.G && board.CanBlackCastleKingSide &&
-                !ChessUtilities.IsTherePieceInBetween(move.Source, new Square(File.H, Rank.Eighth), board.Board) &&
+                !board.IsTherePieceInBetween(move.Source, new Square(File.H, Rank.Eighth)) &&
                 new Rook(Player.Black).Equals(board[File.H, Rank.Eighth]))
             {
-                return !ChessUtilities.PlayerWillBeInCheck(
-                    new Move(move.Source, new Square(File.F, Rank.Eighth), move.Player), board);
+                return !board.PlayerWillBeInCheck(
+                    new Move(move.Source, new Square(File.F, Rank.Eighth), move.Player));
             }
 
             // White queen-side castle move.
             if (move.Player == Player.White && move.Destination.File == File.C && board.CanWhiteCastleQueenSide &&
-                !ChessUtilities.IsTherePieceInBetween(move.Source, new Square(File.A, Rank.First), board.Board) &&
+                !board.IsTherePieceInBetween(move.Source, new Square(File.A, Rank.First)) &&
                 new Rook(Player.White).Equals(board[File.A, Rank.First]))
             {
-                return !ChessUtilities.PlayerWillBeInCheck(
-                    new Move(move.Source, new Square(File.D, Rank.First), move.Player), board);
+                return !board.PlayerWillBeInCheck(
+                    new Move(move.Source, new Square(File.D, Rank.First), move.Player));
             }
 
             // Black queen-side castle move.
             if (move.Player == Player.Black && move.Destination.File == File.C && board.CanBlackCastleQueenSide &&
-                !ChessUtilities.IsTherePieceInBetween(move.Source, new Square(File.A, Rank.Eighth), board.Board) &&
+                !board.IsTherePieceInBetween(move.Source, new Square(File.A, Rank.Eighth)) &&
                 new Rook(Player.Black).Equals(board[File.A, Rank.Eighth]))
             {
-                return !ChessUtilities.PlayerWillBeInCheck(
-                    new Move(move.Source, new Square(File.D, Rank.Eighth), move.Player), board);
+                return !board.PlayerWillBeInCheck(
+                    new Move(move.Source, new Square(File.D, Rank.Eighth), move.Player));
             }
 
             return false;

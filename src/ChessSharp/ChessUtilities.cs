@@ -6,9 +6,7 @@ using System.Linq;
 
 namespace ChessSharp
 {
-    /// <summary>
-    /// A static class containing helper methods.
-    /// </summary>
+    /// <summary>A static class containing helper methods.</summary>
     public static class ChessUtilities
     {
         private static readonly IEnumerable<Square> s_allSquares =
@@ -18,75 +16,16 @@ namespace ChessSharp
 
         internal static Player RevertPlayer(Player player) => player == Player.White ? Player.Black : Player.White;
 
-        internal static GameState GetGameState(GameBoard board)
-        {
-            Player opponent = board.WhoseTurn();
-            Player lastPlayer = RevertPlayer(opponent);
-            bool isInCheck = IsPlayerInCheck(opponent, board);
-            var hasValidMoves = GetValidMoves(board).Count > 0;
-
-            if (isInCheck && !hasValidMoves)
-            {
-                return lastPlayer == Player.White ? GameState.WhiteWinner : GameState.BlackWinner;
-            }
-
-            if (!hasValidMoves)
-            {
-                return GameState.Stalemate;
-            }
-
-            if (isInCheck)
-            {
-                return opponent == Player.White ? GameState.WhiteInCheck : GameState.BlackInCheck;
-            }
-
-            return IsInsufficientMaterial(board.Board) ? GameState.Draw : GameState.NotCompleted;
-        }
-
         /* TODO: Still not sure where to implement it, but I may need methods:
            TODO: bool CanClaimDraw + bool ClaimDraw + OfferDraw
         */
 
-        internal static bool IsInsufficientMaterial(Piece[,] board)
-        {
-            Piece[] pieces = board.Cast<Piece>().ToArray();
-            
-            var whitePieces = pieces.Select((p, i) => new {Piece = p, SquareColor = (i % 8 + i / 8) % 2})
-                .Where(p => p.Piece?.Owner == Player.White).ToArray();
-
-            var blackPieces = pieces.Select((p, i) => new {Piece = p, SquareColor = (i % 8 + i / 8) % 2})
-                .Where(p => p.Piece?.Owner == Player.Black).ToArray();
-
-            switch (whitePieces.Length)
-            {
-                // King vs King
-                case 1 when blackPieces.Length == 1:
-                // White King vs black king and (Bishop|Knight)
-                case 1 when blackPieces.Length == 2 && blackPieces.Any(p => p.Piece is Bishop ||
-                                                                            p.Piece is Knight):
-                // Black King vs white king and (Bishop|Knight)
-                case 2 when blackPieces.Length == 1 && whitePieces.Any(p => p.Piece is Bishop ||
-                                                                            p.Piece is Knight):
-                    return true;
-                // King and bishop vs king and bishop
-                case 2 when blackPieces.Length == 2:
-                {
-                    var whiteBishop = whitePieces.First(p => p.Piece is Bishop);
-                    var blackBishop = blackPieces.First(p => p.Piece is Bishop);
-                    return whiteBishop != null && blackBishop != null &&
-                           whiteBishop.SquareColor == blackBishop.SquareColor;
-                }
-                default:
-                    return false;
-            }
-        }
-
-        /// <summary>Gets the valid moves of the given <see cref="GameBoard"/>.</summary>
-        /// <param name="board">The <see cref="GameBoard"/> that you want to get its valid moves.</param>
+        /// <summary>Gets the valid moves of the given <see cref="ChessGame"/>.</summary>
+        /// <param name="board">The <see cref="ChessGame"/> that you want to get its valid moves.</param>
         /// <returns>Returns a list of the valid moves.</returns>
-        public static List<Move> GetValidMoves(GameBoard board)
+        public static List<Move> GetValidMoves(ChessGame board)
         {
-            Player player = board.WhoseTurn();
+            Player player = board.WhoseTurn;
             var validMoves = new List<Move>();
 
             IEnumerable<Square> playerOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner == player);
@@ -96,22 +35,22 @@ namespace ChessSharp
             {
                 validMoves.AddRange(nonPlayerOwnedSquares
                     .Select(nonPlayerOwnedSquare => new Move(playerOwnedSquare, nonPlayerOwnedSquare, player))
-                    .Where(move => GameBoard.IsValidMove(move, board)));
+                    .Where(move => ChessGame.IsValidMove(move, board)));
             }
 
             return validMoves;
         }
 
-        /// <summary>Gets the valid moves of the given <see cref="GameBoard"/> that has a specific given source <see cref="Square"/>.</summary>
+        /// <summary>Gets the valid moves of the given <see cref="ChessGame"/> that has a specific given source <see cref="Square"/>.</summary>
         /// <param name="source">The source <see cref="Square"/> that you're looking for its valid moves.</param>
-        /// <param name="board">The <see cref="GameBoard"/> that you want to get its valid moves from the specified square.</param>
+        /// <param name="board">The <see cref="ChessGame"/> that you want to get its valid moves from the specified square.</param>
         /// <returns>Returns a list of the valid moves that has the given source square.</returns>
         /// 
-        public static List<Move> GetValidMovesOfSourceSquare(Square source, GameBoard board)
+        public static List<Move> GetValidMovesOfSourceSquare(Square source, ChessGame board)
         {
             var validMoves = new List<Move>();
             Piece piece = board[source];
-            if (piece == null || piece.Owner != board.WhoseTurn())
+            if (piece == null || piece.Owner != board.WhoseTurn)
             {
                 return validMoves;
             }
@@ -121,64 +60,22 @@ namespace ChessSharp
 
             validMoves.AddRange(nonPlayerOwnedSquares
                 .Select(nonPlayerOwnedSquare => new Move(source, nonPlayerOwnedSquare, player, PawnPromotion.Queen)) // If promoteTo is null, valid pawn promotion will cause exception. Need to implement this better and cleaner in the future.
-                .Where(move => GameBoard.IsValidMove(move, board)));
+                .Where(move => ChessGame.IsValidMove(move, board)));
             return validMoves;
         }
 
-        internal static bool IsPlayerInCheck(Player player, GameBoard board)
+        internal static bool IsPlayerInCheck(Player player, ChessGame board)
         {
-            IEnumerable<Square> opponentOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner == RevertPlayer(player));
+            Player opponent = RevertPlayer(player);
+            IEnumerable<Square> opponentOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner == opponent);
             Square playerKingSquare = s_allSquares.First(sq => new King(player).Equals(board[sq]));
 
             return (from opponentOwnedSquare in opponentOwnedSquares
                     let piece = board[opponentOwnedSquare]
-                    let move = new Move(opponentOwnedSquare, playerKingSquare, RevertPlayer(player), PawnPromotion.Queen) // Added PawnPromotion in the Move because omitting it causes a bug when King in its rank is in a check by a pawn.
+                    let move = new Move(opponentOwnedSquare, playerKingSquare, opponent, PawnPromotion.Queen) // Added PawnPromotion in the Move because omitting it causes a bug when King in its rank is in a check by a pawn.
                     where piece.IsValidGameMove(move, board)
                     select piece).Any();
         }
 
-        internal static bool PlayerWillBeInCheck(Move move, GameBoard board)
-        {
-            if (move == null)
-            {
-                throw new ArgumentNullException(nameof(move));
-            }
-
-            if (board == null)
-            {
-                throw new ArgumentNullException(nameof(board));
-            }
-
-            GameBoard boardClone = board.DeepClone(); // Make the move on this board to keep original board as is.
-            Piece piece = boardClone[move.Source];
-            boardClone.Board[(int)move.Source.Rank, (int)move.Source.File] = null;
-            boardClone.Board[(int)move.Destination.Rank, (int)move.Destination.File] = piece;
-
-            return IsPlayerInCheck(move.Player, boardClone);
-        }
-
-        internal static bool IsTherePieceInBetween(Square square1, Square square2, Piece[,] board)
-        {
-            int xStep = Math.Sign(square2.File - square1.File);
-            int yStep = Math.Sign(square2.Rank - square1.Rank);
-
-            Rank rank = square1.Rank;
-            File file = square1.File;
-            while (true) // TODO: Prevent possible infinite loop (by throwing an exception) when passing un-logical squares (two squares not on same file, rank, or diagonal).
-            {
-                rank += yStep;
-                file += xStep;
-                if (rank == square2.Rank && file == square2.File)
-                {
-                    return false;
-                }
-
-                if (board[(int)rank, (int)file] != null)
-                {
-                    return true;
-                }
-            }
-
-        }
     }
 }

@@ -7,7 +7,7 @@ using System.Linq;
 namespace ChessSharp
 {
     /// <summary>Represents the chess game.</summary>
-    public class GameBoard : IDeepCloneable<GameBoard>
+    public class ChessGame : IDeepCloneable<ChessGame>
     {
         /// <summary>Gets <see cref="Piece"/> in a specific square.</summary>
         /// <param name="file">The <see cref="File"/> of the square.</param>
@@ -24,6 +24,9 @@ namespace ChessSharp
         /// <summary>Gets a 2D array of <see cref="Piece"/>s in the board.</summary>
         public Piece[,] Board { get; private set; } // TODO: It's bad idea to expose this to public.
 
+        /// <summary>Gets the <see cref="Player"/> who has turn.</summary>
+        public Player WhoseTurn { get; private set; } = Player.White;
+
         /// <summary>Gets the current <see cref="ChessSharp.GameState"/>.</summary>
         public GameState GameState { get; private set; }
 
@@ -33,8 +36,8 @@ namespace ChessSharp
         internal bool CanBlackCastleKingSide { get; set; } = true;
         internal bool CanBlackCastleQueenSide { get; set; } = true;
 
-        /// <summary>Initializes a new instance of <see cref="GameBoard"/>.</summary>
-        public GameBoard()
+        /// <summary>Initializes a new instance of <see cref="ChessGame"/>.</summary>
+        public ChessGame()
         {
             Moves = new List<Move>();
             var whitePawn = new Pawn(Player.White);
@@ -61,12 +64,6 @@ namespace ChessSharp
                 { blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn},
                 { blackRook, blackKnight, blackBishop, blackQueen, blackKing, blackBishop, blackKnight, blackRook}
             };
-        }
-
-        /// <summary>Gets the <see cref="Player"/> who has turn.</summary>
-        public Player WhoseTurn()
-        {
-            return Moves.Count == 0 ? Player.White : ChessUtilities.RevertPlayer(Moves.Last().Player);
         }
 
         /// <summary>Makes a move in the game.</summary>
@@ -155,7 +152,8 @@ namespace ChessSharp
             Board[(int) move.Source.Rank, (int) move.Source.File] = null;
             Board[(int) move.Destination.Rank, (int) move.Destination.File] = piece;
             Moves.Add(move);
-            GameState = ChessUtilities.GetGameState(this);
+            WhoseTurn = ChessUtilities.RevertPlayer(move.Player);
+            SetGameState();
             return true;
         }
 
@@ -213,13 +211,89 @@ namespace ChessSharp
 
             Piece pieceSource = this[move.Source];
             Piece pieceDestination = this[move.Destination];
-            return (WhoseTurn() == move.Player && pieceSource != null && pieceSource.Owner == move.Player &&
+            return (WhoseTurn == move.Player && pieceSource != null && pieceSource.Owner == move.Player &&
                     !Equals(move.Source, move.Destination) &&
                     (pieceDestination == null || pieceDestination.Owner != move.Player) &&
-                    !ChessUtilities.PlayerWillBeInCheck(move, this) && pieceSource.IsValidGameMove(move, this));
+                    !PlayerWillBeInCheck(move) && pieceSource.IsValidGameMove(move, this));
         }
 
-        internal static bool IsValidMove(Move move, GameBoard board)
+        internal bool PlayerWillBeInCheck(Move move)
+        {
+            if (move == null)
+            {
+                throw new ArgumentNullException(nameof(move));
+            }
+
+            ChessGame clone = DeepClone(); // Make the move on this board to keep original board as is.
+            Piece piece = clone[move.Source];
+            clone.Board[(int)move.Source.Rank, (int)move.Source.File] = null;
+            clone.Board[(int)move.Destination.Rank, (int)move.Destination.File] = piece;
+
+            return ChessUtilities.IsPlayerInCheck(move.Player, clone);
+        }
+
+        internal void SetGameState()
+        {
+            Player opponent = WhoseTurn;
+            Player lastPlayer = ChessUtilities.RevertPlayer(opponent);
+            bool isInCheck = ChessUtilities.IsPlayerInCheck(opponent, this);
+            var hasValidMoves = ChessUtilities.GetValidMoves(this).Count > 0;
+
+            if (isInCheck && !hasValidMoves)
+            {
+                GameState = lastPlayer == Player.White ? GameState.WhiteWinner : GameState.BlackWinner;
+                return;
+            }
+
+            if (!hasValidMoves)
+            {
+                GameState = GameState.Stalemate;
+                return;
+            }
+
+            if (isInCheck)
+            {
+                GameState = opponent == Player.White ? GameState.WhiteInCheck : GameState.BlackInCheck;
+                return;
+            }
+            GameState = IsInsufficientMaterial() ? GameState.Draw : GameState.NotCompleted;
+        }
+
+        internal bool IsInsufficientMaterial()
+        {
+            Piece[] pieces = Board.Cast<Piece>().ToArray();
+
+            var whitePieces = pieces.Select((p, i) => new { Piece = p, SquareColor = (i % 8 + i / 8) % 2 })
+                .Where(p => p.Piece?.Owner == Player.White).ToArray();
+
+            var blackPieces = pieces.Select((p, i) => new { Piece = p, SquareColor = (i % 8 + i / 8) % 2 })
+                .Where(p => p.Piece?.Owner == Player.Black).ToArray();
+
+            switch (whitePieces.Length)
+            {
+                // King vs King
+                case 1 when blackPieces.Length == 1:
+                // White King vs black king and (Bishop|Knight)
+                case 1 when blackPieces.Length == 2 && blackPieces.Any(p => p.Piece is Bishop ||
+                                                                            p.Piece is Knight):
+                // Black King vs white king and (Bishop|Knight)
+                case 2 when blackPieces.Length == 1 && whitePieces.Any(p => p.Piece is Bishop ||
+                                                                            p.Piece is Knight):
+                    return true;
+                // King and bishop vs king and bishop
+                case 2 when blackPieces.Length == 2:
+                {
+                    var whiteBishop = whitePieces.First(p => p.Piece is Bishop);
+                    var blackBishop = blackPieces.First(p => p.Piece is Bishop);
+                    return whiteBishop != null && blackBishop != null &&
+                           whiteBishop.SquareColor == blackBishop.SquareColor;
+                }
+                default:
+                    return false;
+            }
+        }
+
+        internal static bool IsValidMove(Move move, ChessGame board)
         {
             if (move == null)
             {
@@ -232,16 +306,41 @@ namespace ChessSharp
             return (pieceSource != null && pieceSource.Owner == move.Player &&
                     !Equals(move.Source, move.Destination) &&
                     (pieceDestination == null || pieceDestination.Owner != move.Player) &&
-                    !ChessUtilities.PlayerWillBeInCheck(move, board) && pieceSource.IsValidGameMove(move, board));
+                    !board.PlayerWillBeInCheck(move) && pieceSource.IsValidGameMove(move, board));
         }
 
-        public GameBoard DeepClone()
+        internal bool IsTherePieceInBetween(Square square1, Square square2)
         {
-            return new GameBoard
+            int xStep = Math.Sign(square2.File - square1.File);
+            int yStep = Math.Sign(square2.Rank - square1.Rank);
+
+            Rank rank = square1.Rank;
+            File file = square1.File;
+            while (true) // TODO: Prevent possible infinite loop (by throwing an exception) when passing un-logical squares (two squares not on same file, rank, or diagonal).
+            {
+                rank += yStep;
+                file += xStep;
+                if (rank == square2.Rank && file == square2.File)
+                {
+                    return false;
+                }
+
+                if (Board[(int)rank, (int)file] != null)
+                {
+                    return true;
+                }
+            }
+
+        }
+
+        public ChessGame DeepClone()
+        {
+            return new ChessGame
             {
                 Board = Board.Clone() as Piece[,],
                 Moves = Moves.Select(m => m.DeepClone()).ToList(),
                 GameState = GameState,
+                WhoseTurn = WhoseTurn,
                 CanBlackCastleKingSide = CanBlackCastleKingSide,
                 CanBlackCastleQueenSide = CanBlackCastleQueenSide,
                 CanWhiteCastleKingSide = CanWhiteCastleKingSide,
