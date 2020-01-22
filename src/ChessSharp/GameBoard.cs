@@ -3,6 +3,7 @@ using ChessSharp.SquareData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 
 namespace ChessSharp
 {
@@ -229,18 +230,20 @@ namespace ChessSharp
             if (isInCheck && !hasValidMoves)
             {
                 GameState = lastPlayer == Player.White ? GameState.WhiteWinner : GameState.BlackWinner;
+                return;
             }
 
             if (!hasValidMoves)
             {
                 GameState = GameState.Stalemate;
+                return;
             }
 
             if (isInCheck)
             {
                 GameState = opponent == Player.White ? GameState.WhiteInCheck : GameState.BlackInCheck;
+                return;
             }
-
             GameState = IsInsufficientMaterial() ? GameState.Draw : GameState.NotCompleted;
         }
 
