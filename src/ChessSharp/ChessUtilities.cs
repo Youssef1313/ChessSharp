@@ -66,12 +66,13 @@ namespace ChessSharp
 
         internal static bool IsPlayerInCheck(Player player, ChessGame board)
         {
-            IEnumerable<Square> opponentOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner == RevertPlayer(player));
+            Player opponent = RevertPlayer(player);
+            IEnumerable<Square> opponentOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner == opponent);
             Square playerKingSquare = s_allSquares.First(sq => new King(player).Equals(board[sq]));
 
             return (from opponentOwnedSquare in opponentOwnedSquares
                     let piece = board[opponentOwnedSquare]
-                    let move = new Move(opponentOwnedSquare, playerKingSquare, RevertPlayer(player), PawnPromotion.Queen) // Added PawnPromotion in the Move because omitting it causes a bug when King in its rank is in a check by a pawn.
+                    let move = new Move(opponentOwnedSquare, playerKingSquare, opponent, PawnPromotion.Queen) // Added PawnPromotion in the Move because omitting it causes a bug when King in its rank is in a check by a pawn.
                     where piece.IsValidGameMove(move, board)
                     select piece).Any();
         }
