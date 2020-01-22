@@ -15,7 +15,6 @@ namespace ChessSharp.Pieces
             int deltaY = move.GetDeltaY();
             int absDeltaX = move.GetAbsDeltaX();
             
-            
             // Check normal one step pawn move.
             if ((move.Player == Player.White && deltaY == 1 && absDeltaX == 0) ||
                 move.Player == Player.Black && deltaY == -1 && absDeltaX == 0)
@@ -76,7 +75,7 @@ namespace ChessSharp.Pieces
 
             if (moveType.Contains(PawnMoveType.TwoSteps))
             {
-                return !ChessUtilities.IsTherePieceInBetween(move.Source, move.Destination, board.Board) && board[move.Destination] == null;
+                return !board.IsTherePieceInBetween(move.Source, move.Destination) && board[move.Destination] == null;
             }
 
             if (moveType.Contains(PawnMoveType.OneStep))

@@ -311,6 +311,30 @@ namespace ChessSharp
                     !board.PlayerWillBeInCheck(move) && pieceSource.IsValidGameMove(move, board));
         }
 
+        internal bool IsTherePieceInBetween(Square square1, Square square2)
+        {
+            int xStep = Math.Sign(square2.File - square1.File);
+            int yStep = Math.Sign(square2.Rank - square1.Rank);
+
+            Rank rank = square1.Rank;
+            File file = square1.File;
+            while (true) // TODO: Prevent possible infinite loop (by throwing an exception) when passing un-logical squares (two squares not on same file, rank, or diagonal).
+            {
+                rank += yStep;
+                file += xStep;
+                if (rank == square2.Rank && file == square2.File)
+                {
+                    return false;
+                }
+
+                if (Board[(int)rank, (int)file] != null)
+                {
+                    return true;
+                }
+            }
+
+        }
+
         public GameBoard DeepClone()
         {
             return new GameBoard

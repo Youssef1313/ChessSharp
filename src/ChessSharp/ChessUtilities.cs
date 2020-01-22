@@ -6,9 +6,7 @@ using System.Linq;
 
 namespace ChessSharp
 {
-    /// <summary>
-    /// A static class containing helper methods.
-    /// </summary>
+    /// <summary>A static class containing helper methods.</summary>
     public static class ChessUtilities
     {
         private static readonly IEnumerable<Square> s_allSquares =
@@ -78,28 +76,6 @@ namespace ChessSharp
                     select piece).Any();
         }
 
-        internal static bool IsTherePieceInBetween(Square square1, Square square2, Piece[,] board)
-        {
-            int xStep = Math.Sign(square2.File - square1.File);
-            int yStep = Math.Sign(square2.Rank - square1.Rank);
 
-            Rank rank = square1.Rank;
-            File file = square1.File;
-            while (true) // TODO: Prevent possible infinite loop (by throwing an exception) when passing un-logical squares (two squares not on same file, rank, or diagonal).
-            {
-                rank += yStep;
-                file += xStep;
-                if (rank == square2.Rank && file == square2.File)
-                {
-                    return false;
-                }
-
-                if (board[(int)rank, (int)file] != null)
-                {
-                    return true;
-                }
-            }
-
-        }
     }
 }
