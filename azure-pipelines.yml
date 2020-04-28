@@ -9,17 +9,17 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
-variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
+#variables:
+#  solution: '**/*.sln'
+#  buildPlatform: 'Any CPU'
+#  buildConfiguration: 'Release'
 
 steps:
 - task: DotNetCoreCLI@2
   displayName: Build
   inputs:
     command: build
-    projects: '**/*.csproj'
+    projects: '**/*.sln'
     arguments: '--configuration Release' # Update this to match your need
 
 #steps:
