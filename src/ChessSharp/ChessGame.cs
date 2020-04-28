@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ChessSharp
+namespace ChessSharpp
 {
     /// <summary>Represents the chess game.</summary>
     public class ChessGame : IDeepCloneable<ChessGame>
