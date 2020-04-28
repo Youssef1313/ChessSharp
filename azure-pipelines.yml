@@ -9,33 +9,33 @@
 pool:
   vmImage: 'windows-latest'
 
-#variables:
-#  solution: '**/*.sln'
-#  buildPlatform: 'Any CPU'
-#  buildConfiguration: 'Release'
-
-steps:
-- task: DotNetCoreCLI@2
-  displayName: Build
-  inputs:
-    command: build
-    projects: '**/*.sln'
-    arguments: '--configuration Release' # Update this to match your need
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
 
 #steps:
-#- task: NuGetToolInstaller@1
-
-#- task: NuGetCommand@2
+#- task: DotNetCoreCLI@2
+#  displayName: Build
 #  inputs:
-#    restoreSolution: '$(solution)'
+#    command: build
+#    projects: '**/*.sln'
+#    arguments: '--configuration Release' # Update this to match your need
 
-#- task: VSBuild@1
-#  inputs:
-#    solution: '$(solution)'
-#    platform: '$(buildPlatform)'
-#    configuration: '$(buildConfiguration)'
+steps:
+- task: NuGetToolInstaller@1
 
-#- task: VSTest@2
-#  inputs:
-#    platform: '$(buildPlatform)'
-#    configuration: '$(buildConfiguration)'
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: VSBuild@1
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: VSTest@2
+  inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
