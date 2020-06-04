@@ -63,7 +63,7 @@ namespace ChessSharp
             }
 
             var validMoves = new List<Move>();
-            Piece piece = board[source.File, source.Rank];
+            Piece? piece = board[source.File, source.Rank];
             if (piece == null || piece.Owner != board.WhoseTurn)
             {
                 return validMoves;

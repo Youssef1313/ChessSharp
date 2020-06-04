@@ -99,7 +99,7 @@ namespace ChessSharp.Pieces
 
                 // Check enpassant.
                 Move lastMove = board.Moves.Last();
-                Piece lastMovedPiece = board[lastMove.Destination.File, lastMove.Destination.Rank];
+                Piece? lastMovedPiece = board[lastMove.Destination.File, lastMove.Destination.Rank];
 
                 if (lastMovedPiece is Pawn || 
                     !GetPawnMoveType(lastMove).Contains(PawnMoveType.TwoSteps) || lastMove.Destination.File != move.Destination.File ||
