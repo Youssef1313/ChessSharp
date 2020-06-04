@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace ChessSharp.SquareData
 {
@@ -6,7 +7,8 @@ namespace ChessSharp.SquareData
     {
         private static File ParseFile(char file)
         {
-            file = char.ToUpper(file);
+            // Culture doesn't really matter here, but to silence CA1304
+            file = char.ToUpper(file, CultureInfo.InvariantCulture);
             if (file < 'A' || file > 'H')
             {
                 throw new ArgumentOutOfRangeException(nameof(file));
@@ -35,7 +37,7 @@ namespace ChessSharp.SquareData
                 throw new ArgumentException("Argument length must be 2", nameof(square));
             }
 
-            File file = ParseFile(char.ToUpper(square[0]));
+            File file = ParseFile(square[0]);
             Rank rank = ParseRank(square[1]);
 
             return new Square(file, rank);
@@ -57,7 +59,9 @@ namespace ChessSharp.SquareData
             Rank = rank;
         }
 
+#pragma warning disable CA2225 // Operator overloads have named alternates - Investigate this later.
         public static implicit operator Square(string s) => Parser.Parse(s);
+#pragma warning restore CA2225 // Operator overloads have named alternates - Investigate this later.
 
         /// <summary>Gets the <see cref="SquareData.File"/> of the square.</summary>
         public File File { get; }
@@ -78,17 +82,7 @@ namespace ChessSharp.SquareData
 
         public override int GetHashCode()
         {
-            // Jon skeet's implementation:
-            // https://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-an-overridden-system-object-gethashcode
-
-            unchecked // Overflow is fine, just wrap
-            {
-                var hash = 17;
-                // Suitable nullity checks etc, of course :)
-                hash = hash * 23 + File.GetHashCode();
-                hash = hash * 23 + Rank.GetHashCode();
-                return hash;
-            }
+            return HashCode.Combine(File, Rank);
         }
 
         /// <summary>Converts the given square to a string.</summary>

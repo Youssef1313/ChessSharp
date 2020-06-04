@@ -12,17 +12,13 @@ namespace ChessSharp
         /// <summary>Gets <see cref="Piece"/> in a specific square.</summary>
         /// <param name="file">The <see cref="File"/> of the square.</param>
         /// <param name="rank">The <see cref="Rank"/> of the square.</param>
-        public Piece this[File file, Rank rank] => Board[(int)rank, (int)file];
-
-        /// <summary>Gets <see cref="Piece"/> in a specific square.</summary>
-        /// <param name="square">The <see cref="Square"/> to get its <see cref="Piece"/>.</param>
-        public Piece this[Square square] => this[square.File, square.Rank];
+        public Piece this[File file, Rank rank] => Board[(int)rank][(int)file];
 
         /// <summary>Gets a list of the game moves.</summary>
         public List<Move> Moves { get; private set; }
 
         /// <summary>Gets a 2D array of <see cref="Piece"/>s in the board.</summary>
-        public Piece[,] Board { get; private set; } // TODO: It's bad idea to expose this to public.
+        public Piece[][] Board { get; private set; } // TODO: It's bad idea to expose this to public.
 
         /// <summary>Gets the <see cref="Player"/> who has turn.</summary>
         public Player WhoseTurn { get; private set; } = Player.White;
@@ -53,16 +49,16 @@ namespace ChessSharp
             var blackBishop = new Bishop(Player.Black);
             var blackQueen = new Queen(Player.Black);
             var blackKing = new King(Player.Black);
-            Board = new Piece[,]
+            Board = new Piece[][]
             {
-                { whiteRook, whiteKnight, whiteBishop, whiteQueen, whiteKing, whiteBishop, whiteKnight, whiteRook },
-                { whitePawn, whitePawn, whitePawn, whitePawn, whitePawn, whitePawn, whitePawn, whitePawn },
-                { null, null, null, null, null, null, null, null },
-                { null, null, null, null, null, null, null, null },
-                { null, null, null, null, null, null, null, null },
-                { null, null, null, null, null, null, null, null },
-                { blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn},
-                { blackRook, blackKnight, blackBishop, blackQueen, blackKing, blackBishop, blackKnight, blackRook}
+                new Piece[] { whiteRook, whiteKnight, whiteBishop, whiteQueen, whiteKing, whiteBishop, whiteKnight, whiteRook },
+                new Piece[] { whitePawn, whitePawn, whitePawn, whitePawn, whitePawn, whitePawn, whitePawn, whitePawn },
+                new Piece[] { null, null, null, null, null, null, null, null },
+                new Piece[] { null, null, null, null, null, null, null, null },
+                new Piece[] { null, null, null, null, null, null, null, null },
+                new Piece[] { null, null, null, null, null, null, null, null },
+                new Piece[] { blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn},
+                new Piece[] { blackRook, blackKnight, blackBishop, blackQueen, blackKing, blackBishop, blackKnight, blackRook}
             };
         }
 
@@ -86,7 +82,7 @@ namespace ChessSharp
                 throw new ArgumentNullException(nameof(move));
             }
 
-            Piece piece = this[move.Source];
+            Piece piece = this[move.Source.File, move.Source.Rank];
             if (piece == null)
             {
                 throw new InvalidOperationException("Source square has no piece.");
@@ -105,16 +101,16 @@ namespace ChessSharp
                 if (move.Destination.File == File.C)
                 {
                     var rook = this[File.A, move.Source.Rank];
-                    Board[(int)move.Source.Rank, (int)File.A] = null;
-                    Board[(int)move.Source.Rank, (int)File.D] = rook;
+                    Board[(int)move.Source.Rank][(int)File.A] = null;
+                    Board[(int)move.Source.Rank][(int)File.D] = rook;
                 }
 
                 // King-side castle
                 if (move.Destination.File == File.G)
                 {
                     var rook = this[File.H, move.Source.Rank];
-                    Board[(int)move.Source.Rank, (int)File.H] = null;
-                    Board[(int)move.Source.Rank, (int)File.F] = rook;
+                    Board[(int)move.Source.Rank][(int)File.H] = null;
+                    Board[(int)move.Source.Rank][(int)File.F] = rook;
                 }
             }
 
@@ -123,34 +119,25 @@ namespace ChessSharp
                 if ((move.Player == Player.White && move.Destination.Rank == Rank.Eighth) ||
                     (move.Player == Player.Black && move.Destination.Rank == Rank.First))
                 {
-                    switch (move.PromoteTo)
+                    piece = move.PromoteTo switch
                     {
-                        case PawnPromotion.Knight:
-                            piece = new Knight(piece.Owner);
-                            break;
-                        case PawnPromotion.Bishop:
-                            piece = new Bishop(piece.Owner);
-                            break;
-                        case PawnPromotion.Rook:
-                            piece = new Rook(piece.Owner);
-                            break;
-                        case PawnPromotion.Queen:
-                            piece = new Queen(piece.Owner);
-                            break;
-                        default:
-                            throw new ArgumentNullException(nameof(move.PromoteTo));
-                    }
+                        PawnPromotion.Knight => new Knight(piece.Owner),
+                        PawnPromotion.Bishop => new Bishop(piece.Owner),
+                        PawnPromotion.Rook => new Rook(piece.Owner),
+                        PawnPromotion.Queen => new Queen(piece.Owner),
+                        _ => throw new ArgumentException($"A promotion move should have a valid {move.PromoteTo} property.", nameof(move)),
+                    };
                 }
                 // Enpassant
                 if (Pawn.GetPawnMoveType(move) == PawnMoveType.Capture &&
-                    this[move.Destination] == null)
+                    this[move.Destination.File, move.Destination.Rank] == null)
                 {
-                    Board[(int) Moves.Last().Destination.Rank, (int) Moves.Last().Destination.File] = null;
+                    Board[(int) Moves.Last().Destination.Rank][(int) Moves.Last().Destination.File] = null;
                 }
 
             }
-            Board[(int) move.Source.Rank, (int) move.Source.File] = null;
-            Board[(int) move.Destination.Rank, (int) move.Destination.File] = piece;
+            Board[(int) move.Source.Rank][(int) move.Source.File] = null;
+            Board[(int) move.Destination.Rank][(int) move.Destination.File] = piece;
             Moves.Add(move);
             WhoseTurn = ChessUtilities.RevertPlayer(move.Player);
             SetGameState();
@@ -209,8 +196,8 @@ namespace ChessSharp
                 throw new ArgumentNullException(nameof(move));
             }
 
-            Piece pieceSource = this[move.Source];
-            Piece pieceDestination = this[move.Destination];
+            Piece pieceSource = this[move.Source.File, move.Source.Rank];
+            Piece pieceDestination = this[move.Destination.File, move.Destination.Rank];
             return (WhoseTurn == move.Player && pieceSource != null && pieceSource.Owner == move.Player &&
                     !Equals(move.Source, move.Destination) &&
                     (pieceDestination == null || pieceDestination.Owner != move.Player) &&
@@ -225,9 +212,9 @@ namespace ChessSharp
             }
 
             ChessGame clone = DeepClone(); // Make the move on this board to keep original board as is.
-            Piece piece = clone[move.Source];
-            clone.Board[(int)move.Source.Rank, (int)move.Source.File] = null;
-            clone.Board[(int)move.Destination.Rank, (int)move.Destination.File] = piece;
+            Piece piece = clone[move.Source.File, move.Source.Rank];
+            clone.Board[(int)move.Source.Rank][(int)move.Source.File] = null;
+            clone.Board[(int)move.Destination.Rank][(int)move.Destination.File] = piece;
 
             return ChessUtilities.IsPlayerInCheck(move.Player, clone);
         }
@@ -300,8 +287,8 @@ namespace ChessSharp
                 throw new ArgumentNullException(nameof(move));
             }
 
-            Piece pieceSource = board[move.Source];
-            Piece pieceDestination = board[move.Destination];
+            Piece pieceSource = board[move.Source.File, move.Source.Rank];
+            Piece pieceDestination = board[move.Destination.File, move.Destination.Rank];
 
             return (pieceSource != null && pieceSource.Owner == move.Player &&
                     !Equals(move.Source, move.Destination) &&
@@ -325,7 +312,7 @@ namespace ChessSharp
                     return false;
                 }
 
-                if (Board[(int)rank, (int)file] != null)
+                if (Board[(int)rank][(int)file] != null)
                 {
                     return true;
                 }
@@ -337,7 +324,7 @@ namespace ChessSharp
         {
             return new ChessGame
             {
-                Board = Board.Clone() as Piece[,],
+                Board = Board.Clone() as Piece[][],
                 Moves = Moves.Select(m => m.DeepClone()).ToList(),
                 GameState = GameState,
                 WhoseTurn = WhoseTurn,

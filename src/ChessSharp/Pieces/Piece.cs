@@ -1,6 +1,4 @@
-﻿using ChessSharp;
-
-namespace ChessSharp.Pieces
+﻿namespace ChessSharp.Pieces
 {
     /// <summary>Represents the base class of the pieces.</summary>
     public abstract class Piece
@@ -30,7 +28,7 @@ namespace ChessSharp.Pieces
             {
                 var hash = 17;
                 // Suitable nullity checks etc, of course :)
-                hash = hash * 23 + this.GetType().Name.GetHashCode();
+                hash = hash * 23 + this.GetType().GetHashCode();
                 hash = hash * 23 + Owner.GetHashCode();
                 return hash;
             }
