@@ -75,12 +75,12 @@ namespace ChessSharp.Pieces
 
             if (moveType.Contains(PawnMoveType.TwoSteps))
             {
-                return !board.IsTherePieceInBetween(move.Source, move.Destination) && board[move.Destination] == null;
+                return !board.IsTherePieceInBetween(move.Source, move.Destination) && board[move.Destination.File, move.Destination.Rank] == null;
             }
 
             if (moveType.Contains(PawnMoveType.OneStep))
             {
-                return board[move.Destination] == null;
+                return board[move.Destination.File, move.Destination.Rank] == null;
             }
 
             if (moveType.Contains(PawnMoveType.Capture))
@@ -92,14 +92,14 @@ namespace ChessSharp.Pieces
                     return false;
                 }
                 // Check regular capture.
-                if (board[move.Destination] != null)
+                if (board[move.Destination.File, move.Destination.Rank] != null)
                 {
                     return true;
                 }
 
                 // Check enpassant.
                 Move lastMove = board.Moves.Last();
-                Piece lastMovedPiece = board[lastMove.Destination];
+                Piece lastMovedPiece = board[lastMove.Destination.File, lastMove.Destination.Rank];
 
                 if (lastMovedPiece is Pawn || 
                     !GetPawnMoveType(lastMove).Contains(PawnMoveType.TwoSteps) || lastMove.Destination.File != move.Destination.File ||
@@ -111,8 +111,8 @@ namespace ChessSharp.Pieces
                 // SHOULDN'T REMOVE CAPTURED PAWN FROM THE BOARD HERE!! THIS IS ONLY FOR CHECKING IF MOVE IS LEGAL OR NOT!!
                 // PAWN REMOVAL SHOULD BE DONE IN MAKEMOVE METHOD!!!
                 ChessGame clone = board.DeepClone();
-                clone.Board[(int) move.Destination.Rank, (int) move.Destination.File] = null;
-                clone.Board[((int) move.Destination.Rank + (int) move.Source.Rank) / 2, (int) move.Destination.File] = lastMovedPiece;
+                clone.Board[(int) move.Destination.Rank][(int) move.Destination.File] = null;
+                clone.Board[((int) move.Destination.Rank + (int) move.Source.Rank) / 2][(int) move.Destination.File] = lastMovedPiece;
                 return !clone.PlayerWillBeInCheck(move);
             }
 

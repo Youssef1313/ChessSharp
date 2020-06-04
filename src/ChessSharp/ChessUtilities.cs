@@ -25,11 +25,16 @@ namespace ChessSharp
         /// <returns>Returns a list of the valid moves.</returns>
         public static List<Move> GetValidMoves(ChessGame board)
         {
+            if (board == null)
+            {
+                throw new ArgumentNullException(nameof(board));
+            }
+
             Player player = board.WhoseTurn;
             var validMoves = new List<Move>();
 
-            IEnumerable<Square> playerOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner == player);
-            Square[] nonPlayerOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner != player).ToArray(); // Converting to array to avoid "Possible multiple enumeration" as suggested by ReSharper.
+            IEnumerable<Square> playerOwnedSquares = s_allSquares.Where(sq => board[sq.File, sq.Rank]?.Owner == player);
+            Square[] nonPlayerOwnedSquares = s_allSquares.Where(sq => board[sq.File, sq.Rank]?.Owner != player).ToArray(); // Converting to array to avoid "Possible multiple enumeration" as suggested by ReSharper.
 
             foreach (Square playerOwnedSquare in playerOwnedSquares)
             {
@@ -48,15 +53,24 @@ namespace ChessSharp
         /// 
         public static List<Move> GetValidMovesOfSourceSquare(Square source, ChessGame board)
         {
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+            if (board == null)
+            {
+                throw new ArgumentNullException(nameof(board));
+            }
+
             var validMoves = new List<Move>();
-            Piece piece = board[source];
+            Piece piece = board[source.File, source.Rank];
             if (piece == null || piece.Owner != board.WhoseTurn)
             {
                 return validMoves;
             }
 
             Player player = piece.Owner;
-            Square[] nonPlayerOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner != player).ToArray();
+            Square[] nonPlayerOwnedSquares = s_allSquares.Where(sq => board[sq.File, sq.Rank]?.Owner != player).ToArray();
 
             validMoves.AddRange(nonPlayerOwnedSquares
                 .Select(nonPlayerOwnedSquare => new Move(source, nonPlayerOwnedSquare, player, PawnPromotion.Queen)) // If promoteTo is null, valid pawn promotion will cause exception. Need to implement this better and cleaner in the future.
@@ -67,11 +81,11 @@ namespace ChessSharp
         internal static bool IsPlayerInCheck(Player player, ChessGame board)
         {
             Player opponent = RevertPlayer(player);
-            IEnumerable<Square> opponentOwnedSquares = s_allSquares.Where(sq => board[sq]?.Owner == opponent);
-            Square playerKingSquare = s_allSquares.First(sq => new King(player).Equals(board[sq]));
+            IEnumerable<Square> opponentOwnedSquares = s_allSquares.Where(sq => board[sq.File, sq.Rank]?.Owner == opponent);
+            Square playerKingSquare = s_allSquares.First(sq => new King(player).Equals(board[sq.File, sq.Rank]));
 
             return (from opponentOwnedSquare in opponentOwnedSquares
-                    let piece = board[opponentOwnedSquare]
+                    let piece = board[opponentOwnedSquare.File, opponentOwnedSquare.Rank]
                     let move = new Move(opponentOwnedSquare, playerKingSquare, opponent, PawnPromotion.Queen) // Added PawnPromotion in the Move because omitting it causes a bug when King in its rank is in a check by a pawn.
                     where piece.IsValidGameMove(move, board)
                     select piece).Any();
