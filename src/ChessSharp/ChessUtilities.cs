@@ -25,10 +25,11 @@ namespace ChessSharp
         /// <returns>Returns a list of the valid moves.</returns>
         public static List<Move> GetValidMoves(ChessGame board)
         {
-            if (board == null)
-            {
-                throw new ArgumentNullException(nameof(board));
-            }
+            // Although nullable is enabled and board is non-nullable ref type, this check is needed
+            // because this is a public method that can be used by an application that doesn't have
+            // nullable enabled.
+            _ = board ?? throw new ArgumentNullException(nameof(board));
+            
 
             Player player = board.WhoseTurn;
             var validMoves = new List<Move>();
@@ -53,17 +54,13 @@ namespace ChessSharp
         /// 
         public static List<Move> GetValidMovesOfSourceSquare(Square source, ChessGame board)
         {
-            if (source == null)
-            {
-                throw new ArgumentNullException(nameof(source));
-            }
             if (board == null)
             {
                 throw new ArgumentNullException(nameof(board));
             }
 
             var validMoves = new List<Move>();
-            Piece piece = board[source.File, source.Rank];
+            Piece? piece = board[source.File, source.Rank];
             if (piece == null || piece.Owner != board.WhoseTurn)
             {
                 return validMoves;

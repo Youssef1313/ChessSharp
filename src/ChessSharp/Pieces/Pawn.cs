@@ -12,6 +12,11 @@ namespace ChessSharp.Pieces
 
         internal static PawnMoveType GetPawnMoveType(Move move)
         {
+            // No need to do null check here, this method isn't public and isn't annotated with nullable.
+            // If the caller try to pass a possible null reference, the compiler should issue a warning.
+            // TODO: Should I add [NotNull] attribute to the argument? What's the benefit?
+            // The argument is already non-nullable.
+
             int deltaY = move.GetDeltaY();
             int absDeltaX = move.GetAbsDeltaX();
             
@@ -51,15 +56,10 @@ namespace ChessSharp.Pieces
 
         internal override bool IsValidGameMove(Move move, ChessGame board)
         {
-            if (move == null)
-            {
-                throw new ArgumentNullException(nameof(move));
-            }
-
-            if (board == null)
-            {
-                throw new ArgumentNullException(nameof(board));
-            }
+            // No need to do null checks here, this method isn't public and isn't annotated with nullable.
+            // If the caller try to pass a possible null reference, the compiler should issue a warning.
+            // TODO: Should I add [NotNull] attribute to the arguments? What's the benefit?
+            // The arguments are already non-nullable.
 
             var moveType = GetPawnMoveType(move);
 
@@ -99,7 +99,7 @@ namespace ChessSharp.Pieces
 
                 // Check enpassant.
                 Move lastMove = board.Moves.Last();
-                Piece lastMovedPiece = board[lastMove.Destination.File, lastMove.Destination.Rank];
+                Piece? lastMovedPiece = board[lastMove.Destination.File, lastMove.Destination.Rank];
 
                 if (lastMovedPiece is Pawn || 
                     !GetPawnMoveType(lastMove).Contains(PawnMoveType.TwoSteps) || lastMove.Destination.File != move.Destination.File ||
@@ -116,7 +116,7 @@ namespace ChessSharp.Pieces
                 return !clone.PlayerWillBeInCheck(move);
             }
 
-            throw new Exception("Unexpected PawnMoveType.");
+            throw new Exception("Unexpected PawnMoveType."); // Should never happen. If it happened, this it's a bug.
 
 
         }

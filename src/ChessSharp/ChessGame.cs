@@ -12,13 +12,13 @@ namespace ChessSharp
         /// <summary>Gets <see cref="Piece"/> in a specific square.</summary>
         /// <param name="file">The <see cref="File"/> of the square.</param>
         /// <param name="rank">The <see cref="Rank"/> of the square.</param>
-        public Piece this[File file, Rank rank] => Board[(int)rank][(int)file];
+        public Piece? this[File file, Rank rank] => Board[(int)rank][(int)file];
 
         /// <summary>Gets a list of the game moves.</summary>
-        public List<Move> Moves { get; private set; }
+        public List<Move> Moves { get; private set; } // TODO: BAD! Investigate why the class consumer would even need this. Make it a private field if appropriate. And make it some kind of interface (`IEnumerable` for example).
 
         /// <summary>Gets a 2D array of <see cref="Piece"/>s in the board.</summary>
-        public Piece[][] Board { get; private set; } // TODO: It's bad idea to expose this to public.
+        public Piece?[][] Board { get; private set; } // TODO: It's bad idea to expose this to public.
 
         /// <summary>Gets the <see cref="Player"/> who has turn.</summary>
         public Player WhoseTurn { get; private set; } = Player.White;
@@ -49,16 +49,16 @@ namespace ChessSharp
             var blackBishop = new Bishop(Player.Black);
             var blackQueen = new Queen(Player.Black);
             var blackKing = new King(Player.Black);
-            Board = new Piece[][]
+            Board = new Piece?[][]
             {
-                new Piece[] { whiteRook, whiteKnight, whiteBishop, whiteQueen, whiteKing, whiteBishop, whiteKnight, whiteRook },
-                new Piece[] { whitePawn, whitePawn, whitePawn, whitePawn, whitePawn, whitePawn, whitePawn, whitePawn },
-                new Piece[] { null, null, null, null, null, null, null, null },
-                new Piece[] { null, null, null, null, null, null, null, null },
-                new Piece[] { null, null, null, null, null, null, null, null },
-                new Piece[] { null, null, null, null, null, null, null, null },
-                new Piece[] { blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn},
-                new Piece[] { blackRook, blackKnight, blackBishop, blackQueen, blackKing, blackBishop, blackKnight, blackRook}
+                new Piece?[] { whiteRook, whiteKnight, whiteBishop, whiteQueen, whiteKing, whiteBishop, whiteKnight, whiteRook },
+                new Piece?[] { whitePawn, whitePawn, whitePawn, whitePawn, whitePawn, whitePawn, whitePawn, whitePawn },
+                new Piece?[] { null, null, null, null, null, null, null, null },
+                new Piece?[] { null, null, null, null, null, null, null, null },
+                new Piece?[] { null, null, null, null, null, null, null, null },
+                new Piece?[] { null, null, null, null, null, null, null, null },
+                new Piece?[] { blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn, blackPawn},
+                new Piece?[] { blackRook, blackKnight, blackBishop, blackQueen, blackKing, blackBishop, blackKnight, blackRook}
             };
         }
 
@@ -82,7 +82,7 @@ namespace ChessSharp
                 throw new ArgumentNullException(nameof(move));
             }
 
-            Piece piece = this[move.Source.File, move.Source.Rank];
+            Piece? piece = this[move.Source.File, move.Source.Rank];
             if (piece == null)
             {
                 throw new InvalidOperationException("Source square has no piece.");
@@ -196,8 +196,8 @@ namespace ChessSharp
                 throw new ArgumentNullException(nameof(move));
             }
 
-            Piece pieceSource = this[move.Source.File, move.Source.Rank];
-            Piece pieceDestination = this[move.Destination.File, move.Destination.Rank];
+            Piece? pieceSource = this[move.Source.File, move.Source.Rank];
+            Piece? pieceDestination = this[move.Destination.File, move.Destination.Rank];
             return (WhoseTurn == move.Player && pieceSource != null && pieceSource.Owner == move.Player &&
                     !Equals(move.Source, move.Destination) &&
                     (pieceDestination == null || pieceDestination.Owner != move.Player) &&
@@ -212,7 +212,7 @@ namespace ChessSharp
             }
 
             ChessGame clone = DeepClone(); // Make the move on this board to keep original board as is.
-            Piece piece = clone[move.Source.File, move.Source.Rank];
+            Piece? piece = clone[move.Source.File, move.Source.Rank]; // TODO: throwing causes un-intended behavior. ?? throw new ArgumentException("Invalid move", nameof(move));
             clone.Board[(int)move.Source.Rank][(int)move.Source.File] = null;
             clone.Board[(int)move.Destination.Rank][(int)move.Destination.File] = piece;
 
@@ -246,9 +246,9 @@ namespace ChessSharp
             GameState = IsInsufficientMaterial() ? GameState.Draw : GameState.NotCompleted;
         }
 
-        internal bool IsInsufficientMaterial()
+        internal bool IsInsufficientMaterial() // TODO: Much allocations seem to happen here? (LINQ)
         {
-            Piece[] pieces = Board.Cast<Piece>().ToArray();
+            IEnumerable<Piece?> pieces = Board.SelectMany(x => x); // https://stackoverflow.com/questions/32588070/flatten-jagged-array-in-c-sharp
 
             var whitePieces = pieces.Select((p, i) => new { Piece = p, SquareColor = (i % 8 + i / 8) % 2 })
                 .Where(p => p.Piece?.Owner == Player.White).ToArray();
@@ -287,8 +287,8 @@ namespace ChessSharp
                 throw new ArgumentNullException(nameof(move));
             }
 
-            Piece pieceSource = board[move.Source.File, move.Source.Rank];
-            Piece pieceDestination = board[move.Destination.File, move.Destination.Rank];
+            Piece? pieceSource = board[move.Source.File, move.Source.Rank];
+            Piece? pieceDestination = board[move.Destination.File, move.Destination.Rank];
 
             return (pieceSource != null && pieceSource.Owner == move.Player &&
                     !Equals(move.Source, move.Destination) &&
@@ -322,9 +322,20 @@ namespace ChessSharp
 
         public ChessGame DeepClone()
         {
+            
             return new ChessGame
             {
-                Board = Board.Clone() as Piece[][],
+                Board = new Piece?[][]
+                {
+                    new Piece?[] { Board[0][0], Board[0][1], Board[0][2], Board[0][3], Board[0][4], Board[0][5], Board[0][6], Board[0][7] },
+                    new Piece?[] { Board[1][0], Board[1][1], Board[1][2], Board[1][3], Board[1][4], Board[1][5], Board[1][6], Board[1][7] },
+                    new Piece?[] { Board[2][0], Board[2][1], Board[2][2], Board[2][3], Board[2][4], Board[2][5], Board[2][6], Board[2][7] },
+                    new Piece?[] { Board[3][0], Board[3][1], Board[3][2], Board[3][3], Board[3][4], Board[3][5], Board[3][6], Board[3][7] },
+                    new Piece?[] { Board[4][0], Board[4][1], Board[4][2], Board[4][3], Board[4][4], Board[4][5], Board[4][6], Board[4][7] },
+                    new Piece?[] { Board[5][0], Board[5][1], Board[5][2], Board[5][3], Board[5][4], Board[5][5], Board[5][6], Board[5][7] },
+                    new Piece?[] { Board[6][0], Board[6][1], Board[6][2], Board[6][3], Board[6][4], Board[6][5], Board[6][6], Board[6][7] },
+                    new Piece?[] { Board[7][0], Board[7][1], Board[7][2], Board[7][3], Board[7][4], Board[7][5], Board[4][6], Board[7][7] },
+                },
                 Moves = Moves.Select(m => m.DeepClone()).ToList(),
                 GameState = GameState,
                 WhoseTurn = WhoseTurn,

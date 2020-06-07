@@ -83,7 +83,7 @@ namespace ChessUI
                 DrawBoard(GetPlayerInCheck());
 
                 if (selectedLabel.Tag.ToString() != _gameBoard.WhoseTurn.ToString()) return;
-                _selectedSourceSquare = selectedLabel.Name.Substring("lbl_".Length);
+                _selectedSourceSquare = selectedLabel.Name.AsSpan().Slice("lbl_".Length); // implicit conversion
                 var validDestinations = ChessUtilities.GetValidMovesOfSourceSquare(_selectedSourceSquare, _gameBoard).Select(m => m.Destination).ToArray();
                 if (validDestinations.Length == 0) return;
                 selectedLabel.BackColor = Color.Cyan;
@@ -94,7 +94,7 @@ namespace ChessUI
             }
             else
             {
-                MakeMove(_selectedSourceSquare.ToString(), selectedLabel.Name.Substring("lbl_".Length));
+                MakeMove(_selectedSourceSquare, selectedLabel.Name.AsSpan().Slice("lbl_".Length));
             }
         }
 
@@ -134,18 +134,16 @@ namespace ChessUI
 
         }
 
-        private void MakeMove(string source, string destination)
+        private void MakeMove(Square source, Square destination)
         {
             try
             {
-                Square squareSource = source;
-                Square squareDestination = destination;
                 Player player = _gameBoard.WhoseTurn;
                 PawnPromotion? pawnPromotion = null;
-                if (_gameBoard[squareSource.File, squareSource.Rank] is Pawn)
+                if (_gameBoard[source.File, source.Rank] is Pawn)
                 {
-                    if ((player == Player.White && squareDestination.Rank == Rank.Eighth) ||
-                        (player == Player.Black && squareDestination.Rank == Rank.First))
+                    if ((player == Player.White && destination.Rank == Rank.Eighth) ||
+                        (player == Player.Black && destination.Rank == Rank.First))
                     {
                         //var promotion = Interaction.InputBox("Promote to what ?", "Promotion").ToLower();
                         // Interaction.InputBox isn't supported in .NET Core currently.
@@ -160,7 +158,7 @@ namespace ChessUI
                     }
                 }
 
-                var move = new Move(squareSource, squareDestination, player, pawnPromotion);
+                var move = new Move(source, destination, player, pawnPromotion);
                 if (!_gameBoard.IsValidMove(move))
                 {
                     MessageBox.Show("Invalid Move!", "Chess", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

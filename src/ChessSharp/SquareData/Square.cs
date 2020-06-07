@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
 namespace ChessSharp.SquareData
@@ -28,10 +29,21 @@ namespace ChessSharp.SquareData
 
         public static Square Parse(string square)
         {
-            if (square == null)
+            _ = square ?? throw new ArgumentNullException(nameof(square));
+
+            if (square.Length != 2)
             {
-                throw new ArgumentNullException(nameof(square));
+                throw new ArgumentException("Argument length must be 2", nameof(square));
             }
+
+            File file = ParseFile(square[0]);
+            Rank rank = ParseRank(square[1]);
+
+            return new Square(file, rank);
+        }
+
+        public static Square Parse(ReadOnlySpan<char> square)
+        {
             if (square.Length != 2)
             {
                 throw new ArgumentException("Argument length must be 2", nameof(square));
@@ -45,7 +57,7 @@ namespace ChessSharp.SquareData
     }
 
     /// <summary>Represents a chess square.</summary>
-    public class Square
+    public struct Square : IEquatable<Square>
     {
 
         /// <summary>
@@ -61,6 +73,7 @@ namespace ChessSharp.SquareData
 
 #pragma warning disable CA2225 // Operator overloads have named alternates - Investigate this later.
         public static implicit operator Square(string s) => Parser.Parse(s);
+        public static implicit operator Square(ReadOnlySpan<char> s) => Parser.Parse(s);
 #pragma warning restore CA2225 // Operator overloads have named alternates - Investigate this later.
 
         /// <summary>Gets the <see cref="SquareData.File"/> of the square.</summary>
@@ -69,28 +82,19 @@ namespace ChessSharp.SquareData
         /// <summary>Gets the <see cref="SquareData.Rank"/> of the square.</summary>
         public Rank Rank { get; }
 
-        public override bool Equals(object obj)
-        {
-            if (obj == null || obj.GetType() != GetType())
-            {
-                return false;
-            }
+        public override bool Equals([NotNullWhen(true)] object? obj) =>
+            obj is Square sq && sq.File == File && sq.Rank == Rank;
 
-            var square = (Square)obj;
-            return square.File == File && square.Rank == Rank;
-        }
-
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(File, Rank);
-        }
+        public override int GetHashCode() => HashCode.Combine(File, Rank);
 
         /// <summary>Converts the given square to a string.</summary>
         /// <returns>Returns string representation of the square. For example, it returns "G2" for a square with G file and second rank.</returns>
-        public override string ToString()
-        {
-            return File.ToString() + ((int)Rank + 1);
-        }
+        public override string ToString() => $"{File}{(int)Rank + 1}";
 
+        public bool Equals(Square other) => other.File == File && other.Rank == Rank; // TODO: What if `other` is null?
+
+        public static bool operator ==(Square left, Square right) => left.Equals(right);
+    
+        public static bool operator !=(Square left, Square right) => !(left == right);
     }
 }
