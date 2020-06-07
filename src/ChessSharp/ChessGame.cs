@@ -212,7 +212,7 @@ namespace ChessSharp
             }
 
             ChessGame clone = DeepClone(); // Make the move on this board to keep original board as is.
-            Piece piece = clone[move.Source.File, move.Source.Rank] ?? throw new ArgumentException("Invalid move", nameof(move));
+            Piece? piece = clone[move.Source.File, move.Source.Rank]; // TODO: throwing causes un-intended behavior. ?? throw new ArgumentException("Invalid move", nameof(move));
             clone.Board[(int)move.Source.Rank][(int)move.Source.File] = null;
             clone.Board[(int)move.Destination.Rank][(int)move.Destination.File] = piece;
 
@@ -246,9 +246,9 @@ namespace ChessSharp
             GameState = IsInsufficientMaterial() ? GameState.Draw : GameState.NotCompleted;
         }
 
-        internal bool IsInsufficientMaterial() // TODO: Much allocations seem to happen here? (LINQ + flattening array)
+        internal bool IsInsufficientMaterial() // TODO: Much allocations seem to happen here? (LINQ)
         {
-            Piece[] pieces = Board.Cast<Piece>().ToArray();
+            IEnumerable<Piece?> pieces = Board.SelectMany(x => x); // https://stackoverflow.com/questions/32588070/flatten-jagged-array-in-c-sharp
 
             var whitePieces = pieces.Select((p, i) => new { Piece = p, SquareColor = (i % 8 + i / 8) % 2 })
                 .Where(p => p.Piece?.Owner == Player.White).ToArray();

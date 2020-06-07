@@ -54,10 +54,6 @@ namespace ChessSharp
         /// 
         public static List<Move> GetValidMovesOfSourceSquare(Square source, ChessGame board)
         {
-            if (source == null)
-            {
-                throw new ArgumentNullException(nameof(source));
-            }
             if (board == null)
             {
                 throw new ArgumentNullException(nameof(board));
