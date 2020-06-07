@@ -22,16 +22,10 @@ namespace ChessSharp
             return new Move(Source, Destination, Player, PromoteTo);
         }
 
-        public override bool Equals([NotNullWhen(true)] object? obj)
-        {
-            if (obj == null || obj.GetType() != this.GetType())
-            {
-                return false;
-            }
-
-            var moveObj = (Move) obj;
-            return moveObj.Source == this.Source && moveObj.Destination == this.Destination;
-        }
+        public override bool Equals([NotNullWhen(true)] object? obj) =>
+            obj is Move move &&
+                move.Source == Source &&
+                move.Destination == Destination; // TODO: Is not checking promote to intended?
 
         public override int GetHashCode() => HashCode.Combine(Source, Destination, Player);
 
@@ -40,13 +34,8 @@ namespace ChessSharp
         /// <param name="destination">The destination <see cref="Square"/> of the <see cref="Move"/>.</param>
         /// <param name="player">The <see cref="Player"/> of the <see cref="Move"/>.</param>
         /// <param name="promoteTo">Optional nullable <see cref="PawnPromotion"/> of the <see cref="Move"/>. Default value is null.</param>
-        public Move(Square source, Square destination, Player player, PawnPromotion? promoteTo = null)
-        {
-            Source = source ?? throw new ArgumentNullException(nameof(source));
-            Destination = destination ?? throw new ArgumentNullException(nameof(destination));
-            Player = player;
-            PromoteTo = promoteTo;
-        }
+        public Move(Square source, Square destination, Player player, PawnPromotion? promoteTo = null) =>
+            (Source, Destination, Player, PromoteTo) = (source, destination, player, promoteTo);
 
         internal int GetAbsDeltaX()
         {
