@@ -37,26 +37,12 @@ namespace ChessSharp
         public Move(Square source, Square destination, Player player, PawnPromotion? promoteTo = null) =>
             (Source, Destination, Player, PromoteTo) = (source, destination, player, promoteTo);
 
-        internal int GetAbsDeltaX()
-        {
-            return Math.Abs(Destination.File - Source.File);
-        }
+        internal int GetAbsDeltaX() => Math.Abs(GetDeltaX());
 
-        internal int GetAbsDeltaY()
-        {
-            return Math.Abs(Destination.Rank - Source.Rank);
-        }
+        internal int GetAbsDeltaY() => Math.Abs(GetDeltaY());
+        
+        internal int GetDeltaX() => Destination.File - Source.File;
 
-        internal int GetDeltaX()
-        {
-            return Destination.File - Source.File;
-        }
-
-        internal int GetDeltaY()
-        {
-            return Destination.Rank - Source.Rank;
-        }
-
-
+        internal int GetDeltaY() => Destination.Rank - Source.Rank;
     }
 }
