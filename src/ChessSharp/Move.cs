@@ -1,6 +1,7 @@
 ﻿using ChessSharp.Pieces;
 using ChessSharp.SquareData;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace ChessSharp
 {
@@ -21,9 +22,8 @@ namespace ChessSharp
             return new Move(Source, Destination, Player, PromoteTo);
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals([NotNullWhen(true)] object? obj)
         {
-
             if (obj == null || obj.GetType() != this.GetType())
             {
                 return false;
@@ -33,21 +33,7 @@ namespace ChessSharp
             return moveObj.Source == this.Source && moveObj.Destination == this.Destination;
         }
 
-        public override int GetHashCode()
-        {
-            // Jon skeet's implementation:
-            // https://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-an-overridden-system-object-gethashcode
-
-            unchecked // Overflow is fine, just wrap
-            {
-                var hash = 17;
-                // Suitable nullity checks etc, of course :)
-                hash = hash * 23 + Source.GetHashCode();
-                hash = hash * 23 + Destination.GetHashCode();
-                hash = hash * 23 + Player.GetHashCode();
-                return hash;
-            }
-        }
+        public override int GetHashCode() => HashCode.Combine(Source, Destination, Player);
 
         /// <summary>Initializes a new instance of the <see cref="Move"/> class with the given arguments.</summary>
         /// <param name="source">The source <see cref="Square"/> of the <see cref="Move"/>.</param>

@@ -10,15 +10,10 @@ namespace ChessSharp.Pieces
         
         internal override bool IsValidGameMove(Move move, ChessGame board)
         {
-            if (move == null)
-            {
-                throw new ArgumentNullException(nameof(move));
-            }
-
-            if (board == null)
-            {
-                throw new ArgumentNullException(nameof(board));
-            }
+            // No need to do null checks here, this method isn't public and isn't annotated with nullable.
+            // If the caller try to pass a possible null reference, the compiler should issue a warning.
+            // TODO: Should I add [NotNull] attribute to the arguments? What's the benefit?
+            // The arguments are already non-nullable.
 
             int absDeltaX = move.GetAbsDeltaX();
             int absDeltaY = move.GetAbsDeltaY();

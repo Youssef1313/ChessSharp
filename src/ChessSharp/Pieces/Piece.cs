@@ -1,4 +1,7 @@
-﻿namespace ChessSharp.Pieces
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
+
+namespace ChessSharp.Pieces
 {
     /// <summary>Represents the base class of the pieces.</summary>
     public abstract class Piece
@@ -9,35 +12,13 @@
 
         internal abstract bool IsValidGameMove(Move move, ChessGame board);
 
-        public override bool Equals(object obj)
-        {
-            if (obj == null || obj.GetType() != this.GetType())
-            {
-                return false;
-            }
 
-            return Owner == ((Piece) obj).Owner;
-        }
+        public override bool Equals([NotNullWhen(true)] object? obj) =>
+            obj is Piece p && p.GetType() == GetType() && Owner == p.Owner;
 
-        public override int GetHashCode()
-        {
-            // Jon skeet's implementation:
-            // https://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-an-overridden-system-object-gethashcode
+        public override int GetHashCode() => HashCode.Combine(GetType(), Owner);
 
-            unchecked // Overflow is fine, just wrap
-            {
-                var hash = 17;
-                // Suitable nullity checks etc, of course :)
-                hash = hash * 23 + this.GetType().GetHashCode();
-                hash = hash * 23 + Owner.GetHashCode();
-                return hash;
-            }
-        }
-
-        protected Piece(Player player)
-        {
-            Owner = player;
-        }
+        protected Piece(Player player) => Owner = player;
 
     }
 }
