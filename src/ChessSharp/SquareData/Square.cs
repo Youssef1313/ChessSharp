@@ -41,6 +41,19 @@ namespace ChessSharp.SquareData
 
             return new Square(file, rank);
         }
+
+        public static Square Parse(ReadOnlySpan<char> square)
+        {
+            if (square.Length != 2)
+            {
+                throw new ArgumentException("Argument length must be 2", nameof(square));
+            }
+
+            File file = ParseFile(square[0]);
+            Rank rank = ParseRank(square[1]);
+
+            return new Square(file, rank);
+        }
     }
 
     /// <summary>Represents a chess square.</summary>
@@ -60,6 +73,7 @@ namespace ChessSharp.SquareData
 
 #pragma warning disable CA2225 // Operator overloads have named alternates - Investigate this later.
         public static implicit operator Square(string s) => Parser.Parse(s);
+        public static implicit operator Square(ReadOnlySpan<char> s) => Parser.Parse(s);
 #pragma warning restore CA2225 // Operator overloads have named alternates - Investigate this later.
 
         /// <summary>Gets the <see cref="SquareData.File"/> of the square.</summary>
