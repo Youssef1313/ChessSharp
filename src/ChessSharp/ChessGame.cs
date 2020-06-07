@@ -15,7 +15,7 @@ namespace ChessSharp
         public Piece? this[File file, Rank rank] => Board[(int)rank][(int)file];
 
         /// <summary>Gets a list of the game moves.</summary>
-        public List<Move> Moves { get; private set; }
+        public List<Move> Moves { get; private set; } // TODO: BAD! Investigate why the class consumer would even need this. Make it a private field if appropriate. And make it some kind of interface (`IEnumerable` for example).
 
         /// <summary>Gets a 2D array of <see cref="Piece"/>s in the board.</summary>
         public Piece?[][] Board { get; private set; } // TODO: It's bad idea to expose this to public.

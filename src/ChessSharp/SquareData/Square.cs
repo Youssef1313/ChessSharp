@@ -91,7 +91,7 @@ namespace ChessSharp.SquareData
         /// <returns>Returns string representation of the square. For example, it returns "G2" for a square with G file and second rank.</returns>
         public override string ToString() => $"{File}{(int)Rank + 1}";
 
-        public bool Equals(Square other) => other.File == File && other.Rank == Rank;
+        public bool Equals(Square other) => other.File == File && other.Rank == Rank; // TODO: What if `other` is null?
 
         public static bool operator ==(Square left, Square right) => left.Equals(right);
     
