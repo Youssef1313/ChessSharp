@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using ChessSharp;
@@ -126,12 +127,10 @@ namespace ChessUI
 
             // Division => Rank             Modulus => File
 
-            Square checkedKingSquare = _gameBoard.Board.Cast<Piece>()
+            Square checkedKingSquare = _gameBoard.Board.SelectMany(x => x)
                 .Select((p, i) => new { Piece = p, Square = new Square((File)(i % 8), (Rank)(i / 8)) })
                 .First(m => m.Piece is King && m.Piece.Owner == playerInCheck).Square;
             _squareLabels.First(lbl => lbl.Name == "lbl_" + checkedKingSquare).BackColor = Color.Red;
-
-
         }
 
         private void MakeMove(Square source, Square destination)
@@ -181,7 +180,7 @@ namespace ChessUI
             }
             catch (Exception exception)
             {
-                MessageBox.Show($"Error\n{exception.Message}", "Chess", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error\n{exception.Message}\n\n{exception.StackTrace}", "Chess", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
