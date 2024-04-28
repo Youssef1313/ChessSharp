@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <UserSecretsId>aspnet-ChessSharpWeb-36C52245-0984-480E-A138-9575F40D628D</UserSecretsId>
   </PropertyGroup>
 

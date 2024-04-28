@@ -52,7 +52,7 @@ public sealed partial class ChessBoardGrid : Grid
         }
     }
 
-    public event Action MoveMade;
+    public event Action? MoveMade;
 
     public void ClickSquare(File file, Rank rank)
     {

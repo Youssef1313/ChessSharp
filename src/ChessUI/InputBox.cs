@@ -1,24 +1,20 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 
-namespace ChessUI
+namespace ChessUI;
+
+public partial class InputBox : Form
 {
-    public partial class InputBox : Form
+    public string? UserInput { get; private set; }
+
+    public InputBox()
     {
+        InitializeComponent();
+    }
 
-        public string UserInput { get; private set; }
-
-        public InputBox()
-        {
-            InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            UserInput = textBox1.Text;
-            Close();
-        }
-
-
+    private void button1_Click(object sender, EventArgs e)
+    {
+        UserInput = textBox1.Text;
+        Close();
     }
 }

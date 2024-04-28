@@ -1,5 +1,4 @@
 using System;
-using ChessSharp;
 using ChessSharp.Pieces;
 using ChessSharp.SquareData;
 using Microsoft.UI;
