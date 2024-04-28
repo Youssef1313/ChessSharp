@@ -85,6 +85,7 @@ public sealed partial class ChessBoardGrid : Grid
         }
         else
         {
+            _validMoves.Clear();
             var moves = ChessUtilities.GetValidMovesOfSourceSquare(clickedSquare, _game);
             if (moves.Count > 0)
             {
