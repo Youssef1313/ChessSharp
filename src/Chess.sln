@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29509.3
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34607.79
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChessSharp", "ChessSharp\ChessSharp.csproj", "{14AF9C40-B183-41EB-A2FB-40D97EC71125}"
 EndProject
@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChessUI", "ChessUI\ChessUI.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChessSharpWeb", "ChessSharpWeb\ChessSharpWeb.csproj", "{6C3157EA-B624-4347-88D9-AF60EC7BFB06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessSharp.UnitTests", "ChessSharp.UnitTests\ChessSharp.UnitTests.csproj", "{67815E3D-5E38-4796-928E-05F4A389879B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChessSharp.UnitTests", "ChessSharp.UnitTests\ChessSharp.UnitTests.csproj", "{67815E3D-5E38-4796-928E-05F4A389879B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChessSharpUno", "ChessSharpUno", "{50047599-DE12-4DA4-9AF7-39E179DAA392}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChessSharpUno", "ChessSharpUno\ChessSharpUno\ChessSharpUno.csproj", "{7B83D419-6291-40C3-9881-CF14D14E1E0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,17 @@ Global
 		{67815E3D-5E38-4796-928E-05F4A389879B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67815E3D-5E38-4796-928E-05F4A389879B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67815E3D-5E38-4796-928E-05F4A389879B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B83D419-6291-40C3-9881-CF14D14E1E0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B83D419-6291-40C3-9881-CF14D14E1E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B83D419-6291-40C3-9881-CF14D14E1E0B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7B83D419-6291-40C3-9881-CF14D14E1E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B83D419-6291-40C3-9881-CF14D14E1E0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7B83D419-6291-40C3-9881-CF14D14E1E0B} = {50047599-DE12-4DA4-9AF7-39E179DAA392}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {510EDAEF-7FB9-48B2-9BED-389416606E34}

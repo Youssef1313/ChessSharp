@@ -1,4 +1,4 @@
-﻿using ChessSharp.Pieces;
+using ChessSharp.Pieces;
 using ChessSharp.SquareData;
 using System;
 using System.Diagnostics.CodeAnalysis;

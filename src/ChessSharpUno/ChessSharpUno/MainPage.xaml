@@ -1,0 +1,12 @@
+﻿<Page x:Class="ChessSharpUno.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:ChessSharpUno"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+  <StackPanel>
+    <TextBlock Text="Player turn: " />
+    <TextBlock x:Name="whoseTurnTextBlock" />
+    <local:ChessBoardGrid x:Name="chessBoard" MoveMade="chessBoard_MoveMade" />
+
+  </StackPanel>
+</Page>
